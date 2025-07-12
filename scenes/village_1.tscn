@@ -1,0 +1,192 @@
+[gd_scene load_steps=19 format=3 uid="uid://dh5dgl6untq10"]
+
+[ext_resource type="Script" uid="uid://wrypsson06ay" path="res://scripts/movement_characterBody.gd" id="1_mjclf"]
+[ext_resource type="Texture2D" uid="uid://cishhnldm20ss" path="res://steven2d/down2.png" id="2_mjclf"]
+[ext_resource type="Texture2D" uid="uid://fjlm7lynecih" path="res://steven2d/down1.png" id="3_82yds"]
+[ext_resource type="Texture2D" uid="uid://cxnxtf5xeqvlo" path="res://steven2d/st1.png" id="4_7sh2r"]
+[ext_resource type="Texture2D" uid="uid://ljmys1w6ppg5" path="res://steven2d/st2.png" id="5_bq2gl"]
+[ext_resource type="Texture2D" uid="uid://wqj0nk0tcdm7" path="res://steven2d/st7.png" id="6_2i2qr"]
+[ext_resource type="Texture2D" uid="uid://bdkft6elyk1dh" path="res://steven2d/st8.png" id="7_nj6wd"]
+[ext_resource type="Texture2D" uid="uid://bjacc13a3dvtj" path="res://steven2d/st3.png" id="8_tslq4"]
+[ext_resource type="Texture2D" uid="uid://bngavpr2hp8iv" path="res://steven2d/st4.png" id="9_e7mge"]
+[ext_resource type="Texture2D" uid="uid://k3k2qatijaem" path="res://steven2d/st5.png" id="10_cayyt"]
+[ext_resource type="Texture2D" uid="uid://4acwsfxoa11l" path="res://steven2d/st6.png" id="11_jibjk"]
+[ext_resource type="Texture2D" uid="uid://b31ox1rvu20uy" path="res://sprites/mairie.png" id="12_82yds"]
+[ext_resource type="Shader" uid="uid://cxtnrc7f56hxg" path="res://shaders/lcd_filter.gdshader" id="13_0aefm"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
+normal = Vector2(0, 1)
+distance = 179.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sh2r"]
+size = Vector2(5.5, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p5rq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mjclf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_82yds")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sh2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bq2gl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2i2qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nj6wd")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_tslq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e7mge")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_cayyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jibjk")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0aefm"]
+size = Vector2(19, 14)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7sh2r"]
+shader = ExtResource("13_0aefm")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.03
+shader_parameter/scanlines_width = 0.5
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.001
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.03
+shader_parameter/aberration = 0.00200005
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.3
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.1
+shader_parameter/vignette_opacity = 0.5
+
+[node name="village1" type="Node2D"]
+
+[node name="limitesMonde" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limitesMonde"]
+shape = SubResource("WorldBoundaryShape2D_0aefm")
+
+[node name="Mairie" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("12_82yds")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mairie"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mairie/StaticBody2D"]
+polygon = PackedVector2Array(142, 3.9, 142, 6.5, 114.6, 17, 109.6, 17, 112, 29.4, 112, 30.8, 89.5, 44, 87, 44, 84, 48, 82.7, 48, 81.6, 50.5, 83, 51.8, 83, 54.3, 79.9, 59, 68.5, 62, 68, 69.5, 85, 73, 98, 73.5, 113, 79.5, 135, 79.5, 140.5, 76.5, 146, 80, 197.5, 81, 200.5, 73, 203.5, 60, 172.2, 52, 170.1, 52, 167, 47.3, 167, 30.6, 174, 21.7, 174, 18.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mairie/StaticBody2D"]
+position = Vector2(219.75, 71)
+shape = SubResource("RectangleShape2D_7sh2r")
+
+[node name="steven" type="CharacterBody2D" parent="."]
+position = Vector2(32, 176)
+script = ExtResource("1_mjclf")
+
+[node name="sprite" type="AnimatedSprite2D" parent="steven"]
+sprite_frames = SubResource("SpriteFrames_4p5rq")
+animation = &"down"
+
+[node name="collision" type="CollisionShape2D" parent="steven"]
+position = Vector2(0.5, 7)
+shape = SubResource("RectangleShape2D_0aefm")
+
+[node name="Camera2D" type="Camera2D" parent="steven"]
+limit_left = 0
+limit_top = -20
+limit_right = 600
+position_smoothing_enabled = true
+
+[node name="interface" type="CanvasLayer" parent="."]
+
+[node name="filter" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="filter"]
+material = SubResource("ShaderMaterial_7sh2r")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

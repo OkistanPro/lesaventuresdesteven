@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c7qcfhpl2vdt8"]
+
+[ext_resource type="Texture2D" uid="uid://krsxpjqhalh0" path="res://sprites/msg_box.png" id="1_2kqna"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wqkf5"]
+texture = ExtResource("1_2kqna")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6spd"]
+content_margin_left = 6.0
+texture = ExtResource("1_2kqna")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_wqkf5")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_a6spd")

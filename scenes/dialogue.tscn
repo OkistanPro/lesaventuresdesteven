@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5xvvcgtbifye"]
+
+[ext_resource type="Theme" uid="uid://c7qcfhpl2vdt8" path="res://themes/dialogue.tres" id="1_bfpow"]
+[ext_resource type="Script" uid="uid://b0j5yimi66uek" path="res://scripts/scene_dialogue.gd" id="1_fyky8"]
+[ext_resource type="FontFile" uid="uid://04rj6q4gw31c" path="res://polices/PixeloidSans.ttf" id="1_jwyou"]
+[ext_resource type="FontFile" uid="uid://drbpuq1xbfywv" path="res://polices/8bit16.ttf" id="3_fyky8"]
+[ext_resource type="Script" uid="uid://csiika0hwv43v" path="res://scripts/message_dialogue.gd" id="4_led2e"]
+[ext_resource type="Script" uid="uid://bdo08r62t4b05" path="res://scripts/choix_dialogue.gd" id="6_vogiq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyky8"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_led2e"]
+font = ExtResource("1_jwyou")
+font_size = 18
+shadow_color = Color(0, 0, 0, 0.219608)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vogiq"]
+font = ExtResource("3_fyky8")
+font_color = Color(0.980392, 0.956863, 0.827451, 1)
+shadow_color = Color(0, 0, 0, 0.219608)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x1cjp"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fyky8")
+
+[node name="boite_message" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -100.0
+offset_right = -15.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_bfpow")
+
+[node name="message" type="Label" parent="boite_message"]
+custom_minimum_size = Vector2(370, 90)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fyky8")
+label_settings = SubResource("LabelSettings_led2e")
+autowrap_mode = 3
+script = ExtResource("4_led2e")
+
+[node name="boite_perso" type="PanelContainer" parent="boite_message"]
+clip_contents = true
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 0
+offset_left = 9.0
+offset_top = -28.0
+offset_right = 159.0
+offset_bottom = 2.0
+
+[node name="perso" type="Label" parent="boite_message/boite_perso"]
+layout_mode = 2
+text = "Steven"
+label_settings = SubResource("LabelSettings_vogiq")
+
+[node name="boite_choix" type="PanelContainer" parent="boite_message"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = -63.0
+offset_bottom = 2.0
+grow_horizontal = 0
+
+[node name="ItemList" type="ItemList" parent="boite_message/boite_choix"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_jwyou")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x1cjp")
+auto_height = true
+script = ExtResource("6_vogiq")
+
+[connection signal="begin_message" from="." to="boite_message/message" method="begin_message"]
+[connection signal="changed_timeline" from="boite_message/boite_choix/ItemList" to="." method="next_message"]
+[connection signal="item_clicked" from="boite_message/boite_choix/ItemList" to="boite_message/boite_choix/ItemList" method="_on_item_clicked"]

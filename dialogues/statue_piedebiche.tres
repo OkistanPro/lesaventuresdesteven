@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=16 format=3 uid="uid://df2j8pp7nt10v"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_78uhn"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_n4tpx"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_sbnw7"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_55hga"]
+[ext_resource type="Script" uid="uid://b2khngrg30oaj" path="res://scripts/dialogues/D_pause.gd" id="4_55hga"]
+
+[sub_resource type="Resource" id="Resource_rvwdt"]
+script = ExtResource("3_55hga")
+nom_perso = "Steven"
+mess = "wow..."
+liste_choix = Array[ExtResource("2_n4tpx")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_k4eoe"]
+script = ExtResource("3_55hga")
+nom_perso = "Steven"
+mess = "\"piédébiché : monument sacrée\""
+liste_choix = Array[ExtResource("2_n4tpx")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_kif5g"]
+script = ExtResource("4_55hga")
+temps = 3.0
+affiche_dialogue = false
+metadata/_custom_type_script = "uid://b2khngrg30oaj"
+
+[sub_resource type="Resource" id="Resource_jfgxv"]
+script = ExtResource("3_55hga")
+nom_perso = "Steven"
+mess = "Effectivement, c'est une belle pièce de collection..."
+liste_choix = Array[ExtResource("2_n4tpx")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_lwbqf"]
+script = ExtResource("3_55hga")
+nom_perso = "aaa"
+mess = "aaaaaab"
+liste_choix = Array[ExtResource("2_n4tpx")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_d554k"]
+script = ExtResource("2_sbnw7")
+liste_messages = Array[ExtResource("1_78uhn")]([SubResource("Resource_lwbqf")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
+
+[sub_resource type="Resource" id="Resource_n4tpx"]
+script = ExtResource("2_n4tpx")
+libelle_choix = "oui"
+goto = SubResource("Resource_d554k")
+variable_condition = ""
+metadata/_custom_type_script = "uid://nj3n5qedxbgm"
+
+[sub_resource type="Resource" id="Resource_55hga"]
+script = ExtResource("2_n4tpx")
+libelle_choix = "nope"
+variable_condition = ""
+metadata/_custom_type_script = "uid://nj3n5qedxbgm"
+
+[sub_resource type="Resource" id="Resource_kv1dm"]
+script = ExtResource("2_n4tpx")
+libelle_choix = "caca"
+variable_condition = ""
+metadata/_custom_type_script = "uid://nj3n5qedxbgm"
+
+[sub_resource type="Resource" id="Resource_x8pax"]
+script = ExtResource("3_55hga")
+nom_perso = "Steven"
+mess = "Impressionnant..."
+liste_choix = Array[ExtResource("2_n4tpx")]([SubResource("Resource_n4tpx"), SubResource("Resource_55hga"), SubResource("Resource_kv1dm")])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_sbnw7")
+liste_messages = Array[ExtResource("1_78uhn")]([SubResource("Resource_rvwdt"), SubResource("Resource_k4eoe"), SubResource("Resource_kif5g"), SubResource("Resource_jfgxv"), SubResource("Resource_x8pax")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
