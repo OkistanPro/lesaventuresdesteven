@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=14 format=3 uid="uid://i2c147vo2x05"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_t1avt"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_fqn2m"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_iexqg"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_ru60o"]
+[ext_resource type="Script" uid="uid://b2khngrg30oaj" path="res://scripts/dialogues/D_pause.gd" id="4_2j3y2"]
+
+[sub_resource type="Resource" id="Resource_5fl63"]
+script = ExtResource("3_ru60o")
+nom_perso = "gerant cafe"
+mess = "Bonjour, je vous sert un cafe ?"
+liste_choix = Array[ExtResource("2_fqn2m")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_on46s"]
+script = ExtResource("3_ru60o")
+nom_perso = "steven"
+mess = "Non merci, je ne fait que passer dire bonjour !"
+liste_choix = Array[ExtResource("2_fqn2m")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ioaht"]
+script = ExtResource("3_ru60o")
+nom_perso = "gerant cafe"
+mess = "Attendez ... ME DIT PAS ... QUE VOUS ETES TEAM THE ???"
+liste_choix = Array[ExtResource("2_fqn2m")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_xi2bv"]
+script = ExtResource("4_2j3y2")
+temps = 1.0
+affiche_dialogue = false
+metadata/_custom_type_script = "uid://b2khngrg30oaj"
+
+[sub_resource type="Resource" id="Resource_cbj5g"]
+script = ExtResource("3_ru60o")
+nom_perso = "steven"
+mess = "Bas ... J'ai pas de préferences ... enfin non."
+liste_choix = Array[ExtResource("2_fqn2m")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_emf1d"]
+script = ExtResource("4_2j3y2")
+temps = 1.0
+affiche_dialogue = false
+metadata/_custom_type_script = "uid://b2khngrg30oaj"
+
+[sub_resource type="Resource" id="Resource_jshfw"]
+script = ExtResource("3_ru60o")
+nom_perso = "gerant cafe "
+mess = "Je vois, je vois, je vois. Je me suis mépris sur vous ..."
+liste_choix = Array[ExtResource("2_fqn2m")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_duejv"]
+script = ExtResource("3_ru60o")
+nom_perso = "gerant cafe"
+mess = "(Et dire que certain prefere le the)"
+liste_choix = Array[ExtResource("2_fqn2m")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_iexqg")
+liste_messages = Array[ExtResource("1_t1avt")]([SubResource("Resource_5fl63"), SubResource("Resource_on46s"), SubResource("Resource_ioaht"), SubResource("Resource_xi2bv"), SubResource("Resource_cbj5g"), SubResource("Resource_emf1d"), SubResource("Resource_jshfw"), SubResource("Resource_duejv")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
