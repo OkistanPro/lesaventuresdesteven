@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=16 format=3 uid="uid://cx0kll3ast7tt"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_8w4j7"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_cqbwp"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_jh6fo"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_cf1xv"]
+
+[sub_resource type="Resource" id="Resource_md6ah"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Villageois"
+mess = "Bonjour toi !"
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_5480o"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Steven"
+mess = "Bonjour !"
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_mk5kl"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Villageois"
+mess = "Tu fais quoi de beau ?"
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_4p064"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Steven"
+mess = "Bas je me promenes ... et vous ?"
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_l1hmn"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Villeagois"
+mess = "Je reflechis a comment nous débarasser du maire de m..."
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_str4q"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Steven"
+mess = "Woaw, mais qu'es ce qu'il vous a fait ce maire ?"
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_rq18j"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Villageois"
+mess = "Voila bientot 3 ans que le village est bloqué par ce tyran ..."
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_yc56u"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Villageois"
+mess = "Et dire que personne ne veut l'admettre, mais ils sont tous terrorisés ..."
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_bg4rh"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Steven"
+mess = "Mais pourquoi ?"
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_rvgad"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Villageois"
+mess = "Parce qu'il est complétement sénil ... Et des rumeurs grave cours sur lui."
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_68d2e"]
+script = ExtResource("3_cf1xv")
+nom_perso = "Steven"
+mess = "Je devrais peut etre mener ma petite enquete de mon coté alors ..."
+liste_choix = Array[ExtResource("2_jh6fo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_cqbwp")
+liste_messages = Array[ExtResource("1_8w4j7")]([SubResource("Resource_md6ah"), SubResource("Resource_5480o"), SubResource("Resource_mk5kl"), SubResource("Resource_4p064"), SubResource("Resource_l1hmn"), SubResource("Resource_str4q"), SubResource("Resource_rq18j"), SubResource("Resource_yc56u"), SubResource("Resource_bg4rh"), SubResource("Resource_rvgad"), SubResource("Resource_68d2e")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
