@@ -1,119 +1,54 @@
-[gd_scene load_steps=19 format=3 uid="uid://dh5dgl6untq10"]
+[gd_scene load_steps=21 format=3 uid="uid://dh5dgl6untq10"]
 
-[ext_resource type="Script" uid="uid://wrypsson06ay" path="res://scripts/movement_characterBody.gd" id="1_mjclf"]
-[ext_resource type="Texture2D" uid="uid://cishhnldm20ss" path="res://steven2d/down2.png" id="2_mjclf"]
-[ext_resource type="Texture2D" uid="uid://fjlm7lynecih" path="res://steven2d/down1.png" id="3_82yds"]
-[ext_resource type="Texture2D" uid="uid://cxnxtf5xeqvlo" path="res://steven2d/st1.png" id="4_7sh2r"]
-[ext_resource type="Texture2D" uid="uid://ljmys1w6ppg5" path="res://steven2d/st2.png" id="5_bq2gl"]
-[ext_resource type="Texture2D" uid="uid://wqj0nk0tcdm7" path="res://steven2d/st7.png" id="6_2i2qr"]
-[ext_resource type="Texture2D" uid="uid://bdkft6elyk1dh" path="res://steven2d/st8.png" id="7_nj6wd"]
-[ext_resource type="Texture2D" uid="uid://bjacc13a3dvtj" path="res://steven2d/st3.png" id="8_tslq4"]
-[ext_resource type="Texture2D" uid="uid://bngavpr2hp8iv" path="res://steven2d/st4.png" id="9_e7mge"]
-[ext_resource type="Texture2D" uid="uid://k3k2qatijaem" path="res://steven2d/st5.png" id="10_cayyt"]
-[ext_resource type="Texture2D" uid="uid://4acwsfxoa11l" path="res://steven2d/st6.png" id="11_jibjk"]
-[ext_resource type="Texture2D" uid="uid://b31ox1rvu20uy" path="res://sprites/mairie.png" id="12_82yds"]
+[ext_resource type="Texture2D" uid="uid://rt7wbbd5v4kf" path="res://sprites/decor_bas.png" id="1_cayyt"]
+[ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="1_e7mge"]
+[ext_resource type="Script" uid="uid://vmv31vsmgoux" path="res://scripts/village_1.gd" id="1_mjclf"]
+[ext_resource type="Texture2D" uid="uid://bu3rjjty6x8ov" path="res://sprites/fontaine/fontaine_00000.png" id="1_nj6wd"]
+[ext_resource type="Texture2D" uid="uid://8dy3wvgxbm1" path="res://sprites/fontaine/fontaine_00001.png" id="2_tslq4"]
+[ext_resource type="Texture2D" uid="uid://2bo0jh5b4u27" path="res://sprites/fontaine/fontaine_00002.png" id="3_e7mge"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="3_mjclf"]
+[ext_resource type="Texture2D" uid="uid://dm43a0kggnawq" path="res://sprites/fontaine/fontaine_00003.png" id="4_cayyt"]
+[ext_resource type="Texture2D" uid="uid://c5dxi7ntaq1ax" path="res://sprites/mairie_00000.png" id="6_tslq4"]
+[ext_resource type="Texture2D" uid="uid://dsfmiuy5ysyw4" path="res://sprites/persos/maire.png" id="11_82yds"]
+[ext_resource type="Script" uid="uid://dlbvp3inobcey" path="res://scripts/maire.gd" id="12_0aefm"]
 [ext_resource type="Shader" uid="uid://cxtnrc7f56hxg" path="res://shaders/lcd_filter.gdshader" id="13_0aefm"]
+[ext_resource type="Texture2D" uid="uid://c86yo2pwhaykd" path="res://sprites/banc_lampe.png" id="19_cayyt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jibjk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nj6wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tslq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e7mge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cayyt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
 distance = 179.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sh2r"]
-size = Vector2(5.5, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh6f3"]
+size = Vector2(123.5, 575)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4p5rq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_mjclf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_82yds")
-}],
-"loop": true,
-"name": &"down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7sh2r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_bq2gl")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_2i2qr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_nj6wd")
-}],
-"loop": true,
-"name": &"left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_tslq4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_e7mge")
-}],
-"loop": true,
-"name": &"right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_cayyt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_jibjk")
-}],
-"loop": true,
-"name": &"up",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjclf"]
+size = Vector2(96, 575)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0aefm"]
-size = Vector2(19, 14)
+size = Vector2(15.2941, 26.4706)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7sh2r"]
+radius = 35.781
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7sh2r"]
 shader = ExtResource("13_0aefm")
@@ -131,7 +66,7 @@ shader_parameter/distort_intensity = 0.001
 shader_parameter/noise_opacity = 0.0
 shader_parameter/noise_speed = 5.0
 shader_parameter/static_noise_intensity = 0.03
-shader_parameter/aberration = 0.00200005
+shader_parameter/aberration = 0.00500005
 shader_parameter/brightness = 1.0
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.3
@@ -140,6 +75,43 @@ shader_parameter/vignette_intensity = 0.1
 shader_parameter/vignette_opacity = 0.5
 
 [node name="village1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_mjclf")
+
+[node name="DecorBas" type="Sprite2D" parent="."]
+position = Vector2(0, 178)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_cayyt")
+centered = false
+
+[node name="decor" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="decor"]
+position = Vector2(0, 15)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_e7mge")
+centered = false
+
+[node name="steven" parent="." instance=ExtResource("3_mjclf")]
+position = Vector2(159, 322)
+
+[node name="fontaine" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(355, 369)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_jibjk")
+autoplay = "default"
+frame = 2
+frame_progress = 0.814685
+offset = Vector2(0, -18.85)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="fontaine"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fontaine/StaticBody2D"]
+position = Vector2(0.177381, -16.6324)
+scale = Vector2(1.07538, 0.971949)
+polygon = PackedVector2Array(7, -1.6, 7, 0.0999985, -22.1, 2, -26.5, 2, -46.5, 12, -49, 12, -56, 22, -58.4, 22, -57, 29.4, -57, 33, -43, 43, -43, 44.8, -12, 47.8, -12, 49.2, 30.1, 46, 36.5, 46, 47.6, 40, 50.1, 40, 59, 26.6, 59, 20.1, 51, 13.1, 51, 11.6, 43, 8.5, 43, 7.4)
 
 [node name="limitesMonde" type="StaticBody2D" parent="."]
 
@@ -147,8 +119,9 @@ shader_parameter/vignette_opacity = 0.5
 shape = SubResource("WorldBoundaryShape2D_0aefm")
 
 [node name="Mairie" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("12_82yds")
+texture = ExtResource("6_tslq4")
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mairie"]
@@ -156,27 +129,61 @@ centered = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mairie/StaticBody2D"]
 polygon = PackedVector2Array(142, 3.9, 142, 6.5, 114.6, 17, 109.6, 17, 112, 29.4, 112, 30.8, 89.5, 44, 87, 44, 84, 48, 82.7, 48, 81.6, 50.5, 83, 51.8, 83, 54.3, 79.9, 59, 68.5, 62, 68, 69.5, 85, 73, 98, 73.5, 113, 79.5, 135, 79.5, 140.5, 76.5, 146, 80, 197.5, 81, 200.5, 73, 203.5, 60, 172.2, 52, 170.1, 52, 167, 47.3, 167, 30.6, 174, 21.7, 174, 18.7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mairie/StaticBody2D"]
-position = Vector2(219.75, 71)
-shape = SubResource("RectangleShape2D_7sh2r")
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Mairie/StaticBody2D"]
+polygon = PackedVector2Array(218, 64.8, 208.8, 84.4, 216.8, 84.8, 219.2, 80.8)
 
-[node name="steven" type="CharacterBody2D" parent="."]
-position = Vector2(32, 176)
-script = ExtResource("1_mjclf")
+[node name="BancLampe" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(94, 151)
+scale = Vector2(2, 2)
+texture = ExtResource("19_cayyt")
 
-[node name="sprite" type="AnimatedSprite2D" parent="steven"]
-sprite_frames = SubResource("SpriteFrames_4p5rq")
-animation = &"down"
+[node name="StaticBody2D" type="StaticBody2D" parent="BancLampe"]
 
-[node name="collision" type="CollisionShape2D" parent="steven"]
-position = Vector2(0.5, 7)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BancLampe/StaticBody2D"]
+polygon = PackedVector2Array(-12.5, 18, 26, 18, 26.5, 2.5, -10.5, 2.5, -13.5, 13)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="BancLampe/StaticBody2D"]
+polygon = PackedVector2Array(-27.5, 27, -24.5, 27, -24.5, -7.5, -22, -19.5, -18.5, -23.5, -22, -25.5, -27, -16.5, -27.5, -8.5)
+
+[node name="goto_rue_droite" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite"]
+position = Vector2(676.75, 298.5)
+shape = SubResource("RectangleShape2D_vh6f3")
+
+[node name="goto_rue_gauche" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_gauche"]
+position = Vector2(-41, 298.5)
+shape = SubResource("RectangleShape2D_mjclf")
+
+[node name="Maire" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(288, 201)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("11_82yds")
+script = ExtResource("12_0aefm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Maire"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maire/StaticBody2D"]
+position = Vector2(1.52588e-05, 3.23529)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0aefm")
 
-[node name="Camera2D" type="Camera2D" parent="steven"]
-limit_left = 0
-limit_top = -20
-limit_right = 600
-position_smoothing_enabled = true
+[node name="Area2D" type="Area2D" parent="Maire"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maire/Area2D"]
+shape = SubResource("CircleShape2D_7sh2r")
+
+[node name="Polygon2D" type="Polygon2D" parent="Maire"]
+visible = false
+position = Vector2(0, -29.815)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="interface" type="CanvasLayer" parent="."]
 
@@ -190,3 +197,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
+[connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="Maire/Area2D" to="Maire" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Maire/Area2D" to="Maire" method="_on_area_2d_body_exited"]

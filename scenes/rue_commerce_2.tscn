@@ -1,0 +1,269 @@
+[gd_scene load_steps=19 format=3 uid="uid://cpwk6rw2kd26i"]
+
+[ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="1_md8g6"]
+[ext_resource type="Script" uid="uid://ciiaw3wjkdwmd" path="res://scripts/rue_commerce_2.gd" id="1_rnnkm"]
+[ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="2_ipdly"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="5_8b64f"]
+[ext_resource type="Texture2D" uid="uid://clfx165hki6j3" path="res://sprites/coffee_tea/tea_coffee_0001_Calque-3.png" id="7_h42qu"]
+[ext_resource type="Texture2D" uid="uid://dwtrafwar64ms" path="res://sprites/coffee_tea/tea_coffee_0000_Calque-4.png" id="8_hopv8"]
+[ext_resource type="Texture2D" uid="uid://dxpyouqpnt2bb" path="res://sprites/coffee_tea/tea_coffee_0004_Calque-5.png" id="8_qfni0"]
+[ext_resource type="Texture2D" uid="uid://bnkqk5onmfpqx" path="res://sprites/coffee_tea/tea_coffee_0003_Calque-6.png" id="9_ei4ya"]
+[ext_resource type="Texture2D" uid="uid://dys86tyl63qln" path="res://sprites/coffee_tea/tea_coffee_0002_Calque-7.png" id="10_hgxkv"]
+[ext_resource type="Texture2D" uid="uid://cxpxcasrfflsc" path="res://sprites/persos/perso__0010_Calque-18.png" id="11_ei4ya"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="12_hgxkv"]
+[ext_resource type="Shader" uid="uid://cxtnrc7f56hxg" path="res://shaders/lcd_filter.gdshader" id="15_6ee2f"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
+normal = Vector2(0, 1)
+distance = 179.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7sh2r"]
+shader = ExtResource("15_6ee2f")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.03
+shader_parameter/scanlines_width = 0.5
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.001
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.03
+shader_parameter/aberration = 0.00200005
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.3
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.1
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b64f"]
+size = Vector2(96, 575)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hopv8"]
+size = Vector2(32.6667, 11.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgxkv"]
+size = Vector2(17.3333, 29.3333)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jqfty"]
+radius = 24.2304
+
+[node name="village1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_rnnkm")
+
+[node name="DecorBas" type="Sprite2D" parent="."]
+position = Vector2(0, 178)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_md8g6")
+centered = false
+
+[node name="decor" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="decor"]
+position = Vector2(0, 15)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_ipdly")
+centered = false
+
+[node name="limitesMonde" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limitesMonde"]
+shape = SubResource("WorldBoundaryShape2D_0aefm")
+
+[node name="steven" parent="." instance=ExtResource("5_8b64f")]
+position = Vector2(159, 322)
+
+[node name="interface" type="CanvasLayer" parent="."]
+
+[node name="filter" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="filter"]
+material = SubResource("ShaderMaterial_7sh2r")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="goto_rue_gauche" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_gauche"]
+position = Vector2(-34, 300)
+shape = SubResource("RectangleShape2D_8b64f")
+
+[node name="tea_coffee_bat" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(327, 161)
+scale = Vector2(2, 2)
+texture = ExtResource("7_h42qu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tea_coffee_bat"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tea_coffee_bat/StaticBody2D"]
+polygon = PackedVector2Array(-11, -44.6, -11, -43.3, -59.8, -34.5, -64.8, -34.5, -71.9, -31.5, -77.6, -31.5, -76, -26.8, -76, 39.3, -56.6, 41.5, -51.1, 41.5, -39.2, 35.5, -38, 35.5, -32, 39.7, -32, 41.4, -3, 44.3, -3, 46.1, 1.7, 44.5, 15.9, 44.5, 21, 41.5, 31.3, 41.5, 34, 37.5, 39, 34.5, 47, 39, 47.5, 41.5, 64.7, 39.5, 76, 39.5, 76, -25.5, 77, -25.5, 77, -31.2, 57, -35.3, 57, -36.3, 13, -42.4, 13, -43.4)
+
+[node name="table_tea1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(512, 290)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_qfni0")
+offset = Vector2(0, -11.525)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table_tea1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea1/StaticBody2D"]
+position = Vector2(1, -9.66669)
+shape = SubResource("RectangleShape2D_hopv8")
+
+[node name="table_tea2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(592, 274)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_qfni0")
+offset = Vector2(0, -11.525)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table_tea2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea2/StaticBody2D"]
+position = Vector2(1, -9.66669)
+shape = SubResource("RectangleShape2D_hopv8")
+
+[node name="table_tea3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(552, 226)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_qfni0")
+offset = Vector2(0, -11.525)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table_tea3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea3/StaticBody2D"]
+position = Vector2(1, -9.66669)
+shape = SubResource("RectangleShape2D_hopv8")
+
+[node name="table_tea4" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(376, 298)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_qfni0")
+offset = Vector2(0, -11.525)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table_tea4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea4/StaticBody2D"]
+position = Vector2(1, -9.66669)
+shape = SubResource("RectangleShape2D_hopv8")
+
+[node name="table_tea5" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(264, 306)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_hopv8")
+offset = Vector2(0, -11.525)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table_tea5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea5/StaticBody2D"]
+position = Vector2(1, -9.66669)
+shape = SubResource("RectangleShape2D_hopv8")
+
+[node name="table_tea6" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(152, 282)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_hopv8")
+offset = Vector2(0, -11.525)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table_tea6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea6/StaticBody2D"]
+position = Vector2(1, -9.66669)
+shape = SubResource("RectangleShape2D_hopv8")
+
+[node name="table_tea7" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(56, 282)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_hopv8")
+offset = Vector2(0, -11.525)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table_tea7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea7/StaticBody2D"]
+position = Vector2(1, -9.66669)
+shape = SubResource("RectangleShape2D_hopv8")
+
+[node name="table_tea8" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(96, 218)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_hopv8")
+offset = Vector2(0, -11.525)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table_tea8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea8/StaticBody2D"]
+position = Vector2(1, -9.66669)
+shape = SubResource("RectangleShape2D_hopv8")
+
+[node name="ombrelle1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(142, 279)
+texture = ExtResource("9_ei4ya")
+offset = Vector2(0, -50)
+
+[node name="ombrelle2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(61, 211)
+texture = ExtResource("9_ei4ya")
+offset = Vector2(0, -50)
+
+[node name="ombrelle3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(552, 303)
+texture = ExtResource("10_hgxkv")
+offset = Vector2(0, -50)
+
+[node name="ombrelle4" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(537, 216)
+texture = ExtResource("10_hgxkv")
+offset = Vector2(0, -50)
+
+[node name="pnj1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(451, 269)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_ei4ya")
+script = ExtResource("12_hgxkv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pnj1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pnj1/StaticBody2D"]
+position = Vector2(-6.10352e-05, -0.666672)
+shape = SubResource("RectangleShape2D_hgxkv")
+
+[node name="Area2D" type="Area2D" parent="pnj1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pnj1/Area2D"]
+shape = SubResource("CircleShape2D_jqfty")
+debug_color = Color(0.903406, 0.267478, 0.395717, 0.42)
+
+[node name="Polygon2D" type="Polygon2D" parent="pnj1"]
+visible = false
+position = Vector2(0, -29.815)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
+
+[connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="pnj1/Area2D" to="pnj1" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="pnj1/Area2D" to="pnj1" method="_on_area_2d_body_exited"]

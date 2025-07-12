@@ -1,0 +1,122 @@
+[gd_scene load_steps=12 format=3 uid="uid://hdxui1dj546j"]
+
+[ext_resource type="Script" uid="uid://vte1qlb04x0a" path="res://scripts/rue_commerce_1.gd" id="1_486vb"]
+[ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="1_ndj3p"]
+[ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="2_uqb0c"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="5_2vcd6"]
+[ext_resource type="Texture2D" uid="uid://bi7snn7iinctr" path="res://sprites/maisons_front.png" id="6_w3f2s"]
+[ext_resource type="Texture2D" uid="uid://c86yo2pwhaykd" path="res://sprites/banc_lampe.png" id="19_6bq2v"]
+[ext_resource type="Shader" uid="uid://cxtnrc7f56hxg" path="res://shaders/lcd_filter.gdshader" id="20_aji8s"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
+normal = Vector2(0, 1)
+distance = 179.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_486vb"]
+size = Vector2(96, 575)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3f2s"]
+size = Vector2(119.545, 86.8182)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7sh2r"]
+shader = ExtResource("20_aji8s")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.03
+shader_parameter/scanlines_width = 0.5
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.001
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.03
+shader_parameter/aberration = 0.00200005
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.3
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.1
+shader_parameter/vignette_opacity = 0.5
+
+[node name="village1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_486vb")
+
+[node name="DecorBas" type="Sprite2D" parent="."]
+position = Vector2(0, 178)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_ndj3p")
+centered = false
+
+[node name="decor" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="decor"]
+position = Vector2(0, 15)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_uqb0c")
+centered = false
+
+[node name="limitesMonde" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limitesMonde"]
+shape = SubResource("WorldBoundaryShape2D_0aefm")
+
+[node name="BancLampe" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(590, 183)
+scale = Vector2(2, 2)
+texture = ExtResource("19_6bq2v")
+region_enabled = true
+region_rect = Rect2(12, 24, 43, 31)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BancLampe"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BancLampe/StaticBody2D"]
+position = Vector2(-7, -11)
+polygon = PackedVector2Array(-12.5, 18, 26, 18, 26.5, 2.5, -10.5, 2.5, -13.5, 13)
+
+[node name="steven" parent="." instance=ExtResource("5_2vcd6")]
+position = Vector2(31, 322)
+
+[node name="goto_rue_droite" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite"]
+position = Vector2(702, 300)
+shape = SubResource("RectangleShape2D_486vb")
+
+[node name="MaisonsFront" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(330, 569)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_w3f2s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MaisonsFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
+position = Vector2(-91.3636, 5.22729)
+shape = SubResource("RectangleShape2D_w3f2s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
+position = Vector2(91.1364, 5.90912)
+shape = SubResource("RectangleShape2D_w3f2s")
+
+[node name="interface" type="CanvasLayer" parent="."]
+
+[node name="filter" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="filter"]
+material = SubResource("ShaderMaterial_7sh2r")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_gauche_body_entered"]

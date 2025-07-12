@@ -61,6 +61,7 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fyky8")
 label_settings = SubResource("LabelSettings_led2e")
 autowrap_mode = 3
+clip_text = true
 script = ExtResource("4_led2e")
 
 [node name="boite_perso" type="PanelContainer" parent="boite_message"]

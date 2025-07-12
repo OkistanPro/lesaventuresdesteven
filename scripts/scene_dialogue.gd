@@ -43,11 +43,14 @@ func next_message() -> void:
 			next_message()
 	else:
 		GestionDialogue.active = false
+		GestionDialogue.timeline_actuel.current_message = 0
 		queue_free()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			if $boite_message/message.is_writing:
+				$boite_message/message.speed = 0.05
 			clicked.emit()
 
 func lancer_event(nom_event : String) -> void:
