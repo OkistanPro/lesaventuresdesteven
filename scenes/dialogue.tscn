@@ -99,6 +99,10 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_x1cjp")
 auto_height = true
 script = ExtResource("6_vogiq")
 
+[node name="Polygon2D" type="Polygon2D" parent="boite_message"]
+visible = false
+polygon = PackedVector2Array(339, 75, 359, 75, 349, 85)
+
 [connection signal="begin_message" from="." to="boite_message/message" method="begin_message"]
 [connection signal="changed_timeline" from="boite_message/boite_choix/ItemList" to="." method="next_message"]
 [connection signal="item_clicked" from="boite_message/boite_choix/ItemList" to="boite_message/boite_choix/ItemList" method="_on_item_clicked"]

@@ -2,13 +2,14 @@ extends Control
 
 signal begin_message(message : String)
 signal clicked
+signal fin_event
 
 func _ready() -> void:
 	next_message()
 
 func next_message() -> void:
 	var obj_dialogue = GestionDialogue.timeline_actuel.get_message()
-	
+	$boite_message/Polygon2D.visible = false
 	if obj_dialogue is D_Message:
 		if obj_dialogue.event_at_start:
 			lancer_event(obj_dialogue.event_at_start)
@@ -18,10 +19,12 @@ func next_message() -> void:
 		if obj_dialogue.liste_choix:
 			$boite_message/boite_choix/ItemList.clear()
 			for choix in obj_dialogue.liste_choix:
-				var item_index = $boite_message/boite_choix/ItemList.add_item(choix.libelle_choix)
-				$boite_message/boite_choix/ItemList.set_item_metadata(item_index, choix)
+				if not choix.variable_condition or (choix.variable_condition and verif_cond(choix.variable_condition)):
+					var item_index = $boite_message/boite_choix/ItemList.add_item(choix.libelle_choix)
+					$boite_message/boite_choix/ItemList.set_item_metadata(item_index, choix)
 			$boite_message/boite_choix.visible = true
 		else:
+			$boite_message/Polygon2D.visible = true
 			await clicked
 			next_message()
 	elif obj_dialogue is D_Pause:
@@ -33,6 +36,11 @@ func next_message() -> void:
 		next_message()
 	elif obj_dialogue is D_Event:
 		lancer_event(obj_dialogue.nom_event)
+		if obj_dialogue.parallele:
+			next_message()
+		else:
+			await fin_event
+			next_message()
 	else:
 		GestionDialogue.active = false
 		queue_free()
@@ -46,3 +54,8 @@ func lancer_event(nom_event : String) -> void:
 	match nom_event:
 		"quitter_jeu":
 			get_tree().quit()
+
+func verif_cond(string_condition : String) -> bool:
+	match string_condition:
+		_:
+			return true
