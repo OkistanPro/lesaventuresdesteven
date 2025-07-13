@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cohg5vn5u2qe8"]
+[gd_scene load_steps=3 format=3 uid="uid://cohg5vn5u2qe8"]
 
+[ext_resource type="Script" uid="uid://bhybyokoixsmm" path="res://scripts/interface.gd" id="1_lw6my"]
 [ext_resource type="PackedScene" uid="uid://da5kxhp50c2xg" path="res://scenes/inventaire.tscn" id="1_tg63u"]
 
 [node name="interface" type="CanvasLayer"]
+script = ExtResource("1_lw6my")
 
 [node name="Inventaire" parent="." instance=ExtResource("1_tg63u")]

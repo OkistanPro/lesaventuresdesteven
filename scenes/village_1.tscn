@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dh5dgl6untq10"]
+[gd_scene load_steps=19 format=3 uid="uid://dh5dgl6untq10"]
 
 [ext_resource type="Texture2D" uid="uid://rt7wbbd5v4kf" path="res://sprites/decor_bas.png" id="1_cayyt"]
 [ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="1_e7mge"]
@@ -10,9 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dm43a0kggnawq" path="res://sprites/fontaine/fontaine_00003.png" id="4_cayyt"]
 [ext_resource type="Texture2D" uid="uid://c5dxi7ntaq1ax" path="res://sprites/mairie_00000.png" id="6_tslq4"]
 [ext_resource type="Texture2D" uid="uid://dsfmiuy5ysyw4" path="res://sprites/persos/maire.png" id="11_82yds"]
-[ext_resource type="Script" uid="uid://dlbvp3inobcey" path="res://scripts/maire.gd" id="12_0aefm"]
-[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="14_7sh2r"]
-[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="15_2i2qr"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="12_7sh2r"]
 [ext_resource type="Texture2D" uid="uid://c86yo2pwhaykd" path="res://sprites/banc_lampe.png" id="19_cayyt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jibjk"]
@@ -50,14 +48,6 @@ size = Vector2(15.2941, 26.4706)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sh2r"]
 radius = 35.781
-
-[sub_resource type="Resource" id="Resource_bq2gl"]
-script = ExtResource("14_7sh2r")
-item_name = &"banc_truc"
-texture_icon = ExtResource("19_cayyt")
-pickable = false
-event_on_not_pick = &"test"
-metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -150,7 +140,8 @@ z_index = 1
 position = Vector2(288, 201)
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("11_82yds")
-script = ExtResource("12_0aefm")
+script = ExtResource("12_7sh2r")
+nom_timeline = "maire_1"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Maire"]
 
@@ -168,15 +159,6 @@ visible = false
 position = Vector2(0, -29.815)
 scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
-
-[node name="ItemObject" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(546, 281)
-texture = ExtResource("19_cayyt")
-offset = Vector2(0, -13.365)
-script = ExtResource("15_2i2qr")
-properties = SubResource("Resource_bq2gl")
-metadata/_custom_type_script = "uid://b1phsyjs6go0l"
 
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]

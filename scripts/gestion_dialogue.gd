@@ -9,7 +9,8 @@ var liste_timeline = {
 	"boulangere" : preload("res://dialogues/boulangere.tres"),
 	"maire_1" : preload("res://dialogues/maire_1.tres"),
 	"pnj_homme" : preload("res://dialogues/pnj_homme.tres"),
-	"lourd" : preload("res://dialogues/lourd.tres")
+	"lourd" : preload("res://dialogues/lourd.tres"),
+	"vendeur_boutique" : preload("res://dialogues/vendeur_boutique.tres")
 }
 var active : bool = false
 

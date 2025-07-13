@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cpwk6rw2kd26i"]
+[gd_scene load_steps=20 format=3 uid="uid://cpwk6rw2kd26i"]
 
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="1_md8g6"]
 [ext_resource type="Script" uid="uid://ciiaw3wjkdwmd" path="res://scripts/rue_commerce_2.gd" id="1_rnnkm"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cxpxcasrfflsc" path="res://sprites/persos/perso__0010_Calque-18.png" id="11_ei4ya"]
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="12_hgxkv"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="13_jqfty"]
+[ext_resource type="Texture2D" uid="uid://bi7snn7iinctr" path="res://sprites/maisons_front.png" id="13_kybir"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
@@ -28,6 +29,9 @@ size = Vector2(17.3333, 29.3333)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jqfty"]
 radius = 24.2304
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqfty"]
+size = Vector2(303.409, 82.2728)
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -208,6 +212,7 @@ position = Vector2(451, 269)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_ei4ya")
 script = ExtResource("12_hgxkv")
+nom_timeline = "pnj_homme"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="pnj1"]
 
@@ -223,6 +228,18 @@ debug_color = Color(0.903406, 0.267478, 0.395717, 0.42)
 
 [node name="Polygon2D" parent="pnj1" instance=ExtResource("13_jqfty")]
 position = Vector2(0, -29.815)
+
+[node name="MaisonsFront" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(330, 569)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("13_kybir")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MaisonsFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
+position = Vector2(0.568253, 7.50003)
+shape = SubResource("RectangleShape2D_jqfty")
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="pnj1/Area2D" to="pnj1" method="_on_area_2d_body_entered"]

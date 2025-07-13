@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://hdxui1dj546j"]
+[gd_scene load_steps=15 format=3 uid="uid://hdxui1dj546j"]
 
 [ext_resource type="Script" uid="uid://vte1qlb04x0a" path="res://scripts/rue_commerce_1.gd" id="1_486vb"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="1_ndj3p"]
 [ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="2_uqb0c"]
 [ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="5_2vcd6"]
 [ext_resource type="Texture2D" uid="uid://bi7snn7iinctr" path="res://sprites/maisons_front.png" id="6_w3f2s"]
-[ext_resource type="Texture2D" uid="uid://c86yo2pwhaykd" path="res://sprites/banc_lampe.png" id="19_6bq2v"]
+[ext_resource type="Texture2D" uid="uid://061e3p2t0v56" path="res://sprites/souvenirs/souvenirs__0001_Calque-3.png" id="7_w3f2s"]
+[ext_resource type="Texture2D" uid="uid://dvwfc2dnb0y23" path="res://sprites/persos/perso__0004_Calque-12.png" id="8_jggnv"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="9_3fw0g"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="10_v20iv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
@@ -15,7 +18,13 @@ distance = 179.0
 size = Vector2(96, 575)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3f2s"]
-size = Vector2(119.545, 86.8182)
+size = Vector2(303.409, 82.2728)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_diepv"]
+size = Vector2(17.3333, 29.3333)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdskb"]
+radius = 24.2304
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -41,20 +50,6 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="limitesMonde"]
 shape = SubResource("WorldBoundaryShape2D_0aefm")
 
-[node name="BancLampe" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(590, 183)
-scale = Vector2(2, 2)
-texture = ExtResource("19_6bq2v")
-region_enabled = true
-region_rect = Rect2(12, 24, 43, 31)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="BancLampe"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BancLampe/StaticBody2D"]
-position = Vector2(-7, -11)
-polygon = PackedVector2Array(-12.5, 18, 26, 18, 26.5, 2.5, -10.5, 2.5, -13.5, 13)
-
 [node name="steven" parent="." instance=ExtResource("5_2vcd6")]
 position = Vector2(31, 322)
 
@@ -74,11 +69,43 @@ texture = ExtResource("6_w3f2s")
 [node name="StaticBody2D" type="StaticBody2D" parent="MaisonsFront"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
-position = Vector2(-91.3636, 5.22729)
+position = Vector2(0.568253, 7.50003)
 shape = SubResource("RectangleShape2D_w3f2s")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
-position = Vector2(91.1364, 5.90912)
-shape = SubResource("RectangleShape2D_w3f2s")
+[node name="souvenirs" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(433, 138)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_w3f2s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="souvenirs"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="souvenirs/StaticBody2D"]
+polygon = PackedVector2Array(-60, -54.6667, -123.333, -42.6667, -123.333, 54.6667, -59.3333, 58, 61.3333, 56.6667, 61.3333, 48.6667, 89.3333, 48.6667, 89.3333, 56.6667, 116, 56.6667, 116, 18, 122, 10, 122, -8.66666, 117.333, -14.6667, 111, -26.2)
+
+[node name="personnage" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(325, 206)
+scale = Vector2(2, 2)
+texture = ExtResource("8_jggnv")
+script = ExtResource("9_3fw0g")
+nom_timeline = "vendeur_boutique"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="personnage"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="personnage/StaticBody2D"]
+position = Vector2(-6.10352e-05, -0.666672)
+shape = SubResource("RectangleShape2D_diepv")
+
+[node name="Area2D" type="Area2D" parent="personnage"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="personnage/Area2D"]
+shape = SubResource("CircleShape2D_kdskb")
+debug_color = Color(0.903406, 0.267478, 0.395717, 0.42)
+
+[node name="Polygon2D" parent="personnage" instance=ExtResource("10_v20iv")]
+position = Vector2(0, -29.815)
 
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="personnage/Area2D" to="personnage" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="personnage/Area2D" to="personnage" method="_on_area_2d_body_exited"]
