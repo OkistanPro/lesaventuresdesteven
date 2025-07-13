@@ -16,9 +16,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GestionDialogue="*res://gestion_dialogue.gd"
+GestionDialogue="*res://scripts/gestion_dialogue.gd"
 Globals="*res://scripts/globals.gd"
-Musique="*res://musique.gd"
+Musique="*res://scripts/musique.gd"
+interface="*res://scenes/interface.tscn"
+filter="*res://scenes/filter.tscn"
+GestionSons="*res://scripts/GestionSons.gd"
 
 [display]
 

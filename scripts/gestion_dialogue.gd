@@ -8,7 +8,8 @@ var liste_timeline = {
 	"statue_piedebiche" : preload("res://dialogues/statue_piedebiche.tres"),
 	"boulangere" : preload("res://dialogues/boulangere.tres"),
 	"maire_1" : preload("res://dialogues/maire_1.tres"),
-	"pnj_homme" : preload("res://dialogues/pnj_homme.tres")
+	"pnj_homme" : preload("res://dialogues/pnj_homme.tres"),
+	"lourd" : preload("res://dialogues/lourd.tres")
 }
 var active : bool = false
 

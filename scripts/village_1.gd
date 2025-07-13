@@ -18,4 +18,4 @@ func _on_goto_rue_droite_body_entered(body: Node2D) -> void:
 		Globals.goto_scene("village_centre", "rue_commerce_droite")
 
 func lancer_dialogue() -> void:
-	$interface.add_child(GestionDialogue.dialogue_scene.instantiate())
+	interface.add_child(GestionDialogue.dialogue_scene.instantiate())

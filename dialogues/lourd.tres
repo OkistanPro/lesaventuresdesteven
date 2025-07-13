@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=6 format=3 uid="uid://codwwt2xlh7fy"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_xtrjq"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_omon2"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_rtnyt"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_d8m5y"]
+
+[sub_resource type="Resource" id="Resource_umwim"]
+script = ExtResource("3_d8m5y")
+nom_perso = "Steven"
+mess = "...frère c'est trop lourd là."
+liste_choix = Array[ExtResource("2_rtnyt")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_omon2")
+liste_messages = Array[ExtResource("1_xtrjq")]([SubResource("Resource_umwim")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

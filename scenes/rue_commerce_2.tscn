@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cpwk6rw2kd26i"]
+[gd_scene load_steps=18 format=3 uid="uid://cpwk6rw2kd26i"]
 
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="1_md8g6"]
 [ext_resource type="Script" uid="uid://ciiaw3wjkdwmd" path="res://scripts/rue_commerce_2.gd" id="1_rnnkm"]
@@ -11,35 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://dys86tyl63qln" path="res://sprites/coffee_tea/tea_coffee_0002_Calque-7.png" id="10_hgxkv"]
 [ext_resource type="Texture2D" uid="uid://cxpxcasrfflsc" path="res://sprites/persos/perso__0010_Calque-18.png" id="11_ei4ya"]
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="12_hgxkv"]
-[ext_resource type="Shader" uid="uid://cxtnrc7f56hxg" path="res://shaders/lcd_filter.gdshader" id="15_6ee2f"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="13_jqfty"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
 distance = 179.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7sh2r"]
-shader = ExtResource("15_6ee2f")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.03
-shader_parameter/scanlines_width = 0.5
-shader_parameter/grille_opacity = 0.0
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = false
-shader_parameter/roll = true
-shader_parameter/roll_speed = 8.0
-shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 1.8
-shader_parameter/distort_intensity = 0.001
-shader_parameter/noise_opacity = 0.0
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.03
-shader_parameter/aberration = 0.00200005
-shader_parameter/brightness = 1.0
-shader_parameter/discolor = true
-shader_parameter/warp_amount = 0.3
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.1
-shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b64f"]
 size = Vector2(96, 575)
@@ -80,19 +56,6 @@ shape = SubResource("WorldBoundaryShape2D_0aefm")
 [node name="steven" parent="." instance=ExtResource("5_8b64f")]
 position = Vector2(159, 322)
 
-[node name="interface" type="CanvasLayer" parent="."]
-
-[node name="filter" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="filter"]
-material = SubResource("ShaderMaterial_7sh2r")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="goto_rue_gauche" type="Area2D" parent="."]
 z_index = 1
 
@@ -116,12 +79,12 @@ z_index = 1
 position = Vector2(512, 290)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_qfni0")
-offset = Vector2(0, -11.525)
+offset = Vector2(0, -2.815)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="table_tea1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea1/StaticBody2D"]
-position = Vector2(1, -9.66669)
+position = Vector2(1, -3.00003)
 shape = SubResource("RectangleShape2D_hopv8")
 
 [node name="table_tea2" type="Sprite2D" parent="."]
@@ -129,12 +92,12 @@ z_index = 1
 position = Vector2(592, 274)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_qfni0")
-offset = Vector2(0, -11.525)
+offset = Vector2(0, -2.815)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="table_tea2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea2/StaticBody2D"]
-position = Vector2(1, -9.66669)
+position = Vector2(1, -3.00003)
 shape = SubResource("RectangleShape2D_hopv8")
 
 [node name="table_tea3" type="Sprite2D" parent="."]
@@ -142,12 +105,12 @@ z_index = 1
 position = Vector2(552, 226)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_qfni0")
-offset = Vector2(0, -11.525)
+offset = Vector2(0, -2.815)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="table_tea3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea3/StaticBody2D"]
-position = Vector2(1, -9.66669)
+position = Vector2(1, -3.00003)
 shape = SubResource("RectangleShape2D_hopv8")
 
 [node name="table_tea4" type="Sprite2D" parent="."]
@@ -155,12 +118,12 @@ z_index = 1
 position = Vector2(376, 298)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_qfni0")
-offset = Vector2(0, -11.525)
+offset = Vector2(0, -2.815)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="table_tea4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea4/StaticBody2D"]
-position = Vector2(1, -9.66669)
+position = Vector2(1, -3.00003)
 shape = SubResource("RectangleShape2D_hopv8")
 
 [node name="table_tea5" type="Sprite2D" parent="."]
@@ -168,12 +131,12 @@ z_index = 1
 position = Vector2(264, 306)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_hopv8")
-offset = Vector2(0, -11.525)
+offset = Vector2(0, -2.815)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="table_tea5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea5/StaticBody2D"]
-position = Vector2(1, -9.66669)
+position = Vector2(1, -3.00003)
 shape = SubResource("RectangleShape2D_hopv8")
 
 [node name="table_tea6" type="Sprite2D" parent="."]
@@ -181,12 +144,12 @@ z_index = 1
 position = Vector2(152, 282)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_hopv8")
-offset = Vector2(0, -11.525)
+offset = Vector2(0, -2.815)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="table_tea6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea6/StaticBody2D"]
-position = Vector2(1, -9.66669)
+position = Vector2(1, -3.00003)
 shape = SubResource("RectangleShape2D_hopv8")
 
 [node name="table_tea7" type="Sprite2D" parent="."]
@@ -194,12 +157,12 @@ z_index = 1
 position = Vector2(56, 282)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_hopv8")
-offset = Vector2(0, -11.525)
+offset = Vector2(0, -2.815)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="table_tea7"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea7/StaticBody2D"]
-position = Vector2(1, -9.66669)
+position = Vector2(1, -3.00003)
 shape = SubResource("RectangleShape2D_hopv8")
 
 [node name="table_tea8" type="Sprite2D" parent="."]
@@ -207,12 +170,12 @@ z_index = 1
 position = Vector2(96, 218)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_hopv8")
-offset = Vector2(0, -11.525)
+offset = Vector2(0, -2.815)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="table_tea8"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table_tea8/StaticBody2D"]
-position = Vector2(1, -9.66669)
+position = Vector2(1, -3.00003)
 shape = SubResource("RectangleShape2D_hopv8")
 
 [node name="ombrelle1" type="Sprite2D" parent="."]
@@ -258,11 +221,8 @@ shape = SubResource("RectangleShape2D_hgxkv")
 shape = SubResource("CircleShape2D_jqfty")
 debug_color = Color(0.903406, 0.267478, 0.395717, 0.42)
 
-[node name="Polygon2D" type="Polygon2D" parent="pnj1"]
-visible = false
+[node name="Polygon2D" parent="pnj1" instance=ExtResource("13_jqfty")]
 position = Vector2(0, -29.815)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="pnj1/Area2D" to="pnj1" method="_on_area_2d_body_entered"]
