@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5xvvcgtbifye"]
+[gd_scene load_steps=12 format=3 uid="uid://b5xvvcgtbifye"]
 
 [ext_resource type="Theme" uid="uid://c7qcfhpl2vdt8" path="res://themes/dialogue.tres" id="1_bfpow"]
 [ext_resource type="Script" uid="uid://b0j5yimi66uek" path="res://scripts/scene_dialogue.gd" id="1_fyky8"]
 [ext_resource type="FontFile" uid="uid://04rj6q4gw31c" path="res://polices/PixeloidSans.ttf" id="1_jwyou"]
 [ext_resource type="FontFile" uid="uid://drbpuq1xbfywv" path="res://polices/8bit16.ttf" id="3_fyky8"]
 [ext_resource type="Script" uid="uid://csiika0hwv43v" path="res://scripts/message_dialogue.gd" id="4_led2e"]
+[ext_resource type="AudioStream" uid="uid://dy3p8c3bv74i3" path="res://sons/discussion.mp3" id="5_x1cjp"]
 [ext_resource type="Script" uid="uid://bdo08r62t4b05" path="res://scripts/choix_dialogue.gd" id="6_vogiq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyky8"]
@@ -63,6 +64,9 @@ label_settings = SubResource("LabelSettings_led2e")
 autowrap_mode = 3
 clip_text = true
 script = ExtResource("4_led2e")
+
+[node name="son_message" type="AudioStreamPlayer" parent="boite_message/message"]
+stream = ExtResource("5_x1cjp")
 
 [node name="boite_perso" type="PanelContainer" parent="boite_message"]
 clip_contents = true

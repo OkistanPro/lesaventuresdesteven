@@ -124,7 +124,7 @@ shape = SubResource("RectangleShape2D_pm3ni")
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = -20
-limit_right = 600
+limit_right = 650
 limit_bottom = 650
 position_smoothing_speed = 20.0
 

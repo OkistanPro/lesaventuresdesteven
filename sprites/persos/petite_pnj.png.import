@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfjyyksfav4nl"
-path="res://.godot/imported/perso__0012_Calque-9.png-36422dbe0a3d34d42f4fc81a3cd9829e.ctex"
+path="res://.godot/imported/petite_pnj.png-45d69f8c32b50da1fb3299c2e38f499b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/persos/perso__0012_Calque-9.png"
-dest_files=["res://.godot/imported/perso__0012_Calque-9.png-36422dbe0a3d34d42f4fc81a3cd9829e.ctex"]
+source_file="res://sprites/persos/petite_pnj.png"
+dest_files=["res://.godot/imported/petite_pnj.png-45d69f8c32b50da1fb3299c2e38f499b.ctex"]
 
 [params]
 

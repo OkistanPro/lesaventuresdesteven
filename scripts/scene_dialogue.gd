@@ -22,6 +22,7 @@ func next_message() -> void:
 				if not choix.variable_condition or (choix.variable_condition and verif_cond(choix.variable_condition)):
 					var item_index = $boite_message/boite_choix/ItemList.add_item(choix.libelle_choix)
 					$boite_message/boite_choix/ItemList.set_item_metadata(item_index, choix)
+					$boite_message/boite_choix/ItemList.set_item_tooltip_enabled(item_index, false)
 			$boite_message/boite_choix.visible = true
 		else:
 			$boite_message/Polygon2D.visible = true

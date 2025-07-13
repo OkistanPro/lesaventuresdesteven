@@ -1,0 +1,196 @@
+[gd_scene load_steps=21 format=3 uid="uid://lks60wflubbl"]
+
+[ext_resource type="Script" uid="uid://dhs4f08w3k5so" path="res://scripts/rue_commerce_0.tres.gd" id="1_0ly6x"]
+[ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_sagis"]
+[ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="3_pax3e"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="4_7jho8"]
+[ext_resource type="Texture2D" uid="uid://bi7snn7iinctr" path="res://sprites/maisons_front.png" id="5_1dxhs"]
+[ext_resource type="Texture2D" uid="uid://5k50fh57grd" path="res://sprites/RPG_EPICERIE_0001_Calque-3.png" id="6_sagis"]
+[ext_resource type="Texture2D" uid="uid://cqmsqiiu5dauh" path="res://sprites/RPG_EPICERIE_0003_Calque-1.png" id="7_7jho8"]
+[ext_resource type="Texture2D" uid="uid://bjs5qy24gb04k" path="res://sprites/RPG_EPICERIE_0002_Calque-2.png" id="8_1dxhs"]
+[ext_resource type="Texture2D" uid="uid://d1cqs1a3e3cj2" path="res://sprites/RPG_epi_0004_Calque-5.png" id="9_g815p"]
+[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="10_g815p"]
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="11_p1xge"]
+[ext_resource type="Texture2D" uid="uid://cirp6d80fsnen" path="res://sprites/RPG_EPICERIE_0005_Calque-4.png" id="12_g815p"]
+[ext_resource type="Texture2D" uid="uid://dipcxa44jnxxl" path="res://sprites/persos/grande_pnj.png" id="13_6asm6"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="14_l3vmb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
+normal = Vector2(0, 1)
+distance = 179.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_486vb"]
+size = Vector2(96, 575)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3f2s"]
+size = Vector2(303.409, 82.2728)
+
+[sub_resource type="Resource" id="Resource_6asm6"]
+script = ExtResource("11_p1xge")
+item_name = &"banane"
+texture_icon = ExtResource("9_g815p")
+pickable = true
+event_on_not_pick = &""
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2j44v"]
+size = Vector2(15.2941, 12.4706)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_54f4n"]
+radius = 35.781
+
+[node name="village_ruecomm0" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_0ly6x")
+
+[node name="DecorBas" type="Sprite2D" parent="."]
+position = Vector2(0, 178)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_sagis")
+centered = false
+
+[node name="decor" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="decor"]
+position = Vector2(0, 15)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("3_pax3e")
+centered = false
+
+[node name="limitesMonde" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limitesMonde"]
+shape = SubResource("WorldBoundaryShape2D_0aefm")
+
+[node name="steven" parent="." instance=ExtResource("4_7jho8")]
+position = Vector2(31, 322)
+
+[node name="goto_rue_gauche" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_gauche"]
+position = Vector2(-42, 300)
+shape = SubResource("RectangleShape2D_486vb")
+
+[node name="goto_rue_droite" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite"]
+position = Vector2(702, 300)
+shape = SubResource("RectangleShape2D_486vb")
+
+[node name="MaisonsFront" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(330, 569)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("5_1dxhs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MaisonsFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
+position = Vector2(0.568253, 7.50003)
+shape = SubResource("RectangleShape2D_w3f2s")
+
+[node name="epicerie" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(332, 142)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_sagis")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="epicerie"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="epicerie/StaticBody2D"]
+polygon = PackedVector2Array(-64, -52.6667, -64, -18, -64, -6.66667, -63.3333, 51.3333, -17.6, 51, -9.33334, 44.6667, 11.3333, 44.6667, 17.2, 51, 62.6667, 51.3333, 62.6667, -8.66667, 62.6667, -16, 62.6667, -52.6667)
+
+[node name="boites_epicerie1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(202, 208)
+texture = ExtResource("7_7jho8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="boites_epicerie1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boites_epicerie1/StaticBody2D"]
+polygon = PackedVector2Array(-26, 10, -19, 10, -14, 13, 12, 13, 21, 13, 26, 9, 26, -8, -12, -8, -21, -8, -27, -2)
+
+[node name="boites_epicerie3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(130, 208)
+texture = ExtResource("8_1dxhs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="boites_epicerie3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boites_epicerie3/StaticBody2D"]
+polygon = PackedVector2Array(-26, 10, -19, 10, -14, 13, 12, 13, 21, 13, 26, 9, 26, -8, -12, -8, -21, -8, -27, -2)
+
+[node name="boites_epicerie4" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(50, 192)
+texture = ExtResource("7_7jho8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="boites_epicerie4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boites_epicerie4/StaticBody2D"]
+polygon = PackedVector2Array(-26, 10, -19, 10, -14, 13, 12, 13, 21, 13, 26, 9, 26, -8, -12, -8, -21, -8, -27, -2)
+
+[node name="boites_epicerie2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(463, 208)
+texture = ExtResource("8_1dxhs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="boites_epicerie2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boites_epicerie2/StaticBody2D"]
+polygon = PackedVector2Array(-26, 10, -19, 10, -14, 13, 12, 13, 21, 13, 26, 9, 27, -8, -12, -8, -21, -8, -27, -2)
+
+[node name="boites_epicerie5" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(559, 208)
+texture = ExtResource("8_1dxhs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="boites_epicerie5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boites_epicerie5/StaticBody2D"]
+polygon = PackedVector2Array(-26, 10, -19, 10, -14, 13, 12, 13, 21, 13, 26, 9, 27, -8, -12, -8, -21, -8, -27, -2)
+
+[node name="banane" type="Sprite2D" parent="."]
+position = Vector2(227, 198)
+texture = ExtResource("9_g815p")
+script = ExtResource("10_g815p")
+properties = SubResource("Resource_6asm6")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="pomme" type="Sprite2D" parent="."]
+position = Vector2(435, 228)
+texture = ExtResource("12_g815p")
+
+[node name="PNJ" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(107, 213)
+scale = Vector2(2, 2)
+texture = ExtResource("13_6asm6")
+script = ExtResource("14_l3vmb")
+nom_timeline = "pnj_femme1"
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PNJ"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/StaticBody2D"]
+position = Vector2(1.52588e-05, 10.2353)
+shape = SubResource("RectangleShape2D_2j44v")
+
+[node name="Area2D" type="Area2D" parent="PNJ"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/Area2D"]
+shape = SubResource("CircleShape2D_54f4n")
+
+[node name="Polygon2D" type="Polygon2D" parent="PNJ"]
+visible = false
+position = Vector2(0, -29.815)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
+
+[connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
+[connection signal="body_entered" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_exited"]

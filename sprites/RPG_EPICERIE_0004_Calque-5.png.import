@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c48dos35t36vi"
-path="res://.godot/imported/perso__0005_Calque-13.png-e1ce5d2122278be1fd4ebe1166e25b42.ctex"
+uid="uid://5q4nnhw2xxru"
+path="res://.godot/imported/RPG_EPICERIE_0004_Calque-5.png-1950537f571607bb680d68b2e37ced88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/persos/perso__0005_Calque-13.png"
-dest_files=["res://.godot/imported/perso__0005_Calque-13.png-e1ce5d2122278be1fd4ebe1166e25b42.ctex"]
+source_file="res://sprites/RPG_EPICERIE_0004_Calque-5.png"
+dest_files=["res://.godot/imported/RPG_EPICERIE_0004_Calque-5.png-1950537f571607bb680d68b2e37ced88.ctex"]
 
 [params]
 

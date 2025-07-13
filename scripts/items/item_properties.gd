@@ -7,3 +7,4 @@ class_name ItemProperties
 
 @export var pickable : bool
 @export var event_on_not_pick : StringName
+var picked : bool

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dipcxa44jnxxl"
-path="res://.godot/imported/perso__0011_Calque-19.png-2c0ac2c408dacaba7cd2e768b012a7cc.ctex"
+uid="uid://blkb5s4vwdwh"
+path="res://.godot/imported/petit_pnj.png-a7d47b092f4911a08087be6be6b300ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/persos/perso__0011_Calque-19.png"
-dest_files=["res://.godot/imported/perso__0011_Calque-19.png-2c0ac2c408dacaba7cd2e768b012a7cc.ctex"]
+source_file="res://sprites/persos/petit_pnj.png"
+dest_files=["res://.godot/imported/petit_pnj.png-a7d47b092f4911a08087be6be6b300ae.ctex"]
 
 [params]
 

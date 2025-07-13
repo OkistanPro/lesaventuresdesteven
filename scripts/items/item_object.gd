@@ -21,6 +21,8 @@ func _ready() -> void:
 	
 	area.body_entered.connect(player_inside)
 	area.body_exited.connect(player_outside)
+	if properties.picked:
+		queue_free()
 
 func player_inside(body : PhysicsBody2D):
 	if body == $"../steven":
@@ -38,6 +40,7 @@ func _input(event: InputEvent) -> void:
 			if properties.pickable:
 				Globals.pick_item(properties)
 				GestionSons.play_sound("collect_item")
+				properties.picked = true
 				queue_free()
 			else:
 				Globals.item_event(properties.event_on_not_pick)

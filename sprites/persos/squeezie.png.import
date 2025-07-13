@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvwfc2dnb0y23"
-path="res://.godot/imported/perso__0004_Calque-12.png-66475d9f184129771b0ab2e236c603ff.ctex"
+uid="uid://bf4wlx1ctr72x"
+path="res://.godot/imported/squeezie.png-20e4d70cb96fff9f798f85d2c32127ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/persos/perso__0004_Calque-12.png"
-dest_files=["res://.godot/imported/perso__0004_Calque-12.png-66475d9f184129771b0ab2e236c603ff.ctex"]
+source_file="res://sprites/persos/squeezie.png"
+dest_files=["res://.godot/imported/squeezie.png-20e4d70cb96fff9f798f85d2c32127ec.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhyg2mpy5qjr1"
-path="res://.godot/imported/perso__0002_Calque-10.png-92effe25cdfae56adc2f7a563e260af6.ctex"
+uid="uid://bae4lxv64f0i8"
+path="res://.godot/imported/dame_hotel.png-e26327cbfbccc4f9873247db00a19fb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/persos/perso__0002_Calque-10.png"
-dest_files=["res://.godot/imported/perso__0002_Calque-10.png-92effe25cdfae56adc2f7a563e260af6.ctex"]
+source_file="res://sprites/persos/dame_hotel.png"
+dest_files=["res://.godot/imported/dame_hotel.png-e26327cbfbccc4f9873247db00a19fb2.ctex"]
 
 [params]
 
