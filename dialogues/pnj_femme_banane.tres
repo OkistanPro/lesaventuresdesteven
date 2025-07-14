@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=6 format=3 uid="uid://cxoakdmqev2in"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_hkdhu"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_4jp0a"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_ljy0d"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_rnt1e"]
+
+[sub_resource type="Resource" id="Resource_5bb3k"]
+script = ExtResource("3_ljy0d")
+nom_perso = "Villageoise"
+mess = "Ouuu, une belle banane bien jaune"
+liste_choix = Array[ExtResource("2_4jp0a")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("4_rnt1e")
+liste_messages = Array[ExtResource("1_hkdhu")]([SubResource("Resource_5bb3k")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

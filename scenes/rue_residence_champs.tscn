@@ -1,0 +1,122 @@
+[gd_scene load_steps=17 format=3 uid="uid://b7v1lskaooitx"]
+
+[ext_resource type="Texture2D" uid="uid://blejbvji5xy8n" path="res://sprites/champ.png" id="1_blxw8"]
+[ext_resource type="Texture2D" uid="uid://brwgewxnqvf3p" path="res://sprites/RPG-RUE-HABITANT.png" id="1_m52ug"]
+[ext_resource type="Script" uid="uid://csdyyxakdxm6v" path="res://scripts/rue_residence_champs.gd" id="1_o6bdf"]
+[ext_resource type="Texture2D" uid="uid://d3p62oprr1av5" path="res://sprites/limites_bas.png" id="2_aphba"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="2_foary"]
+[ext_resource type="Texture2D" uid="uid://b107vcgyehf7r" path="res://sprites/RPG_CHAMP_0005_Calque-14.png" id="5_notw4"]
+[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="6_fucvl"]
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="7_15iwy"]
+[ext_resource type="Texture2D" uid="uid://ctqensfx18cd1" path="res://sprites/RPG_CHAMP_0001_ITEM-CAROTTE.png" id="8_entdd"]
+[ext_resource type="Texture2D" uid="uid://5xt5ulqnf78t" path="res://sprites/RPG_PARC_2_0002_barriere.png" id="10_18sym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_notw4"]
+size = Vector2(389.091, 177.727)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoivi"]
+size = Vector2(1.36366, 8.63636)
+
+[sub_resource type="Resource" id="Resource_offx8"]
+script = ExtResource("7_15iwy")
+item_name = &"carotte"
+texture_icon = ExtResource("8_entdd")
+pickable = true
+event_on_not_pick = &"carotte_sous_terre"
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fucvl"]
+size = Vector2(18, 419.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18sym"]
+size = Vector2(16, 229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1isu"]
+size = Vector2(12.7273, 91.3636)
+
+[node name="rue_residence_champ" type="Node2D"]
+script = ExtResource("1_o6bdf")
+
+[node name="champ" type="Sprite2D" parent="."]
+position = Vector2(329, 502)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_blxw8")
+
+[node name="limites_bas" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(326, 739)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_aphba")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="limites_bas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites_bas/StaticBody2D"]
+position = Vector2(5.00003, 35.6818)
+shape = SubResource("RectangleShape2D_notw4")
+
+[node name="decor_habitation" type="Sprite2D" parent="."]
+position = Vector2(330, 221)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_m52ug")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decor_habitation"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor_habitation/StaticBody2D"]
+polygon = PackedVector2Array(-150, -1.81818, -114.545, -1.81818, -112.727, -6.81818, -89.5455, -6.81818, -88.1818, -1.81818, -37.7273, -2.27273, -37.7273, -13.1818, -17.2727, -13.1818, 11.3636, -13.6364, 35.9091, -13.6364, 35.9091, -1.81818, 84.5454, -1.81818, 86.3636, -7.72727, 109.545, -7.72727, 110.455, -1.81818, 152.727, -1.81818, 152.727, -76.3636, -151.818, -76.3636)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decor_habitation/StaticBody2D"]
+position = Vector2(-113.864, -0.227287)
+shape = SubResource("RectangleShape2D_hoivi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="decor_habitation/StaticBody2D"]
+position = Vector2(-88.4091, -0.227272)
+shape = SubResource("RectangleShape2D_hoivi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="decor_habitation/StaticBody2D"]
+position = Vector2(85.2273, -0.227272)
+shape = SubResource("RectangleShape2D_hoivi")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="decor_habitation/StaticBody2D"]
+position = Vector2(110.682, -0.227272)
+shape = SubResource("RectangleShape2D_hoivi")
+
+[node name="steven" parent="." instance=ExtResource("2_foary")]
+z_index = 0
+y_sort_enabled = true
+position = Vector2(31, 322)
+
+[node name="ItemObject" type="Sprite2D" parent="."]
+position = Vector2(555, 544)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("5_notw4")
+script = ExtResource("6_fucvl")
+properties = SubResource("Resource_offx8")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="goto_rue_gauche" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_gauche"]
+position = Vector2(-5, 422.75)
+shape = SubResource("RectangleShape2D_fucvl")
+
+[node name="goto_rue_droite" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite"]
+position = Vector2(664, 327.5)
+shape = SubResource("RectangleShape2D_18sym")
+
+[node name="barrière" type="Sprite2D" parent="."]
+position = Vector2(646, 530)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("10_18sym")
+region_enabled = true
+region_rect = Rect2(289.483, 0, 10.5172, 108)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="barrière"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrière/StaticBody2D"]
+position = Vector2(3.63635, 3.40909)
+shape = SubResource("RectangleShape2D_e1isu")
+
+[connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]

@@ -11,7 +11,8 @@ var liste_timeline = {
 	"pnj_homme" : preload("res://dialogues/pnj_homme.tres"),
 	"lourd" : preload("res://dialogues/lourd.tres"),
 	"vendeur_boutique" : preload("res://dialogues/vendeur_boutique.tres"),
-	"pnj_femme1" : preload("res://dialogues/pnj_femme1.tres")
+	"pnj_femme1" : preload("res://dialogues/pnj_femme1.tres"),
+	"pnj_femme_banane" : preload("res://dialogues/pnj_femme_banane.tres")
 }
 var active : bool = false
 

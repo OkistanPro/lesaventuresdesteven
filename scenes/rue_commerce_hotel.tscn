@@ -15,7 +15,7 @@ distance = 179.0
 size = Vector2(96, 575)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3f2s"]
-size = Vector2(303.409, 82.2728)
+size = Vector2(303.409, 89.5456)
 
 [node name="village_hotel" type="Node2D"]
 y_sort_enabled = true
@@ -67,7 +67,7 @@ texture = ExtResource("5_7d6uk")
 [node name="StaticBody2D" type="StaticBody2D" parent="MaisonsFront"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
-position = Vector2(0.568253, 14.7728)
+position = Vector2(0.568253, 11.1364)
 shape = SubResource("RectangleShape2D_w3f2s")
 
 [node name="Rpg-hotel" type="Sprite2D" parent="."]

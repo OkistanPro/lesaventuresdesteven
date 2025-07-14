@@ -1,0 +1,275 @@
+[gd_scene load_steps=24 format=3 uid="uid://bl82wtc5mljsj"]
+
+[ext_resource type="Script" uid="uid://8ife12ett742" path="res://scripts/rue_croisement_residence.gd" id="1_k6500"]
+[ext_resource type="Texture2D" uid="uid://bnscvyrcolbut" path="res://sprites/RPG_CROISEMENT_0003_Calque-6.png" id="2_3xqw6"]
+[ext_resource type="Texture2D" uid="uid://dpis1wgvfhudi" path="res://sprites/RPG_CROISEMENT_0001_arbre.png" id="3_gl0ag"]
+[ext_resource type="Texture2D" uid="uid://bmcjtv8awh14m" path="res://sprites/RPG_CROISEMENT_0002_Calque-8.png" id="4_dxba7"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="5_kccj5"]
+[ext_resource type="Texture2D" uid="uid://bvb3j1w06lp7w" path="res://sprites/RPG_CROISEMENT_0000_Calque-5.png" id="5_rq2oj"]
+[ext_resource type="Texture2D" uid="uid://wwq3hoaysdjx" path="res://sprites/RPG_EPICERIE_0002_Calque-3.png" id="7_dxba7"]
+[ext_resource type="Texture2D" uid="uid://bbsela2c1kt2n" path="res://sprites/HERBES HAUTES.png" id="8_rq2oj"]
+[ext_resource type="Texture2D" uid="uid://rswb04pllwff" path="res://sprites/FLEURS.png" id="9_k6500"]
+[ext_resource type="Shader" uid="uid://bl6nhjph8qnbu" path="res://shaders/fleur.gdshader" id="9_kccj5"]
+[ext_resource type="Texture2D" uid="uid://hthuaho5p6vj" path="res://sprites/FEUILLE PAR TERRE.png" id="10_0kf8h"]
+[ext_resource type="Shader" uid="uid://d0q8j56tgn11c" path="res://shaders/fleur_rose.gdshader" id="10_wessl"]
+[ext_resource type="Shader" uid="uid://c2f140whsd2qu" path="res://shaders/fleur_jaune.gdshader" id="12_7ktdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl0ag"]
+size = Vector2(110.909, 40.9091)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fucvl"]
+size = Vector2(18, 201.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxba7"]
+size = Vector2(180.75, 61.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kf8h"]
+size = Vector2(182, 28.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq2oj"]
+size = Vector2(714, 61.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6500"]
+size = Vector2(14.0909, 41.8183)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u6t76"]
+shader = ExtResource("9_kccj5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_su6mw"]
+shader = ExtResource("10_wessl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ugkx1"]
+shader = ExtResource("12_7ktdt")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wessl"]
+size = Vector2(14, 319)
+
+[node name="rue_residence_champ" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_k6500")
+
+[node name="RpgCroisement0003Calque-6" type="Sprite2D" parent="."]
+position = Vector2(-16, -20)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_3xqw6")
+centered = false
+
+[node name="steven" parent="." instance=ExtResource("5_kccj5")]
+z_index = 0
+y_sort_enabled = true
+position = Vector2(31, 322)
+
+[node name="statue-devant" type="Sprite2D" parent="."]
+position = Vector2(329, 478)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("4_dxba7")
+offset = Vector2(1.36363, -33.6364)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="statue-devant"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="statue-devant/StaticBody2D"]
+polygon = PackedVector2Array(-35.9091, -12.7273, -41.3637, -7.72728, -42.2727, -0.909088, -39.5455, 5.90909, -36.8182, 14.0909, -25.4546, 19.0909, -13.1818, 20, -7.72729, 22.2727, 5.90907, 20.4545, 15, 22.7273, 35.9091, 25.9091, 45, 21.8182, 47.2727, 15.4545, 46.3636, 3.63635, 43.1818, -3.63637, 33.1818, -10, 0.909073, -15.4545, -22.7273, -15)
+
+[node name="arbres_bas" type="Sprite2D" parent="."]
+position = Vector2(332, 623)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("3_gl0ag")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="arbres_bas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arbres_bas/StaticBody2D"]
+position = Vector2(-96.8182, 13.6365)
+shape = SubResource("RectangleShape2D_gl0ag")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="arbres_bas/StaticBody2D"]
+position = Vector2(95.9091, 13.6365)
+shape = SubResource("RectangleShape2D_gl0ag")
+
+[node name="kyu_statue" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(329, 309)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("5_rq2oj")
+
+[node name="goto_rue_gauche" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_gauche"]
+position = Vector2(-6, 387.063)
+shape = SubResource("RectangleShape2D_fucvl")
+
+[node name="goto_rue_droite" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite"]
+position = Vector2(665, 373.125)
+shape = SubResource("RectangleShape2D_fucvl")
+
+[node name="goto_rue_bas" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_bas"]
+position = Vector2(330.375, 668.438)
+shape = SubResource("RectangleShape2D_dxba7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="goto_rue_bas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_bas/StaticBody2D"]
+position = Vector2(332, 684.25)
+shape = SubResource("RectangleShape2D_0kf8h")
+
+[node name="goto_rue_haut" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_haut"]
+position = Vector2(327, -3.5625)
+shape = SubResource("RectangleShape2D_rq2oj")
+
+[node name="arbre1" type="Sprite2D" parent="."]
+position = Vector2(11, 686)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("7_dxba7")
+offset = Vector2(0, -36.485)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="arbre1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arbre1/StaticBody2D"]
+position = Vector2(-2.04546, -15.909)
+shape = SubResource("RectangleShape2D_k6500")
+
+[node name="arbre2" type="Sprite2D" parent="."]
+position = Vector2(35, 614)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("7_dxba7")
+offset = Vector2(0, -36.485)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="arbre2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arbre2/StaticBody2D"]
+position = Vector2(-2.04546, -15.909)
+shape = SubResource("RectangleShape2D_k6500")
+
+[node name="arbre3" type="Sprite2D" parent="."]
+position = Vector2(-5, 574)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("7_dxba7")
+offset = Vector2(0, -36.485)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="arbre3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arbre3/StaticBody2D"]
+position = Vector2(-2.04546, -15.909)
+shape = SubResource("RectangleShape2D_k6500")
+
+[node name="arbre4" type="Sprite2D" parent="."]
+position = Vector2(675, 686)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("7_dxba7")
+offset = Vector2(0, -36.485)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="arbre4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arbre4/StaticBody2D"]
+position = Vector2(-2.04544, -15.909)
+shape = SubResource("RectangleShape2D_k6500")
+
+[node name="arbre5" type="Sprite2D" parent="."]
+position = Vector2(675, 622)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("7_dxba7")
+offset = Vector2(0, -36.485)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="arbre5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arbre5/StaticBody2D"]
+position = Vector2(-2.04544, -15.909)
+shape = SubResource("RectangleShape2D_k6500")
+
+[node name="arbre6" type="Sprite2D" parent="."]
+position = Vector2(659, 574)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("7_dxba7")
+offset = Vector2(0, -36.485)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="arbre6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arbre6/StaticBody2D"]
+position = Vector2(-2.04544, -15.909)
+shape = SubResource("RectangleShape2D_k6500")
+
+[node name="HerbesHautes1" type="Sprite2D" parent="."]
+position = Vector2(106, 233)
+scale = Vector2(2, 2)
+texture = ExtResource("8_rq2oj")
+offset = Vector2(0, -5)
+
+[node name="HerbesHautes2" type="Sprite2D" parent="."]
+position = Vector2(578, 67)
+scale = Vector2(2, 2)
+texture = ExtResource("8_rq2oj")
+offset = Vector2(0, -5)
+
+[node name="HerbesHautes3" type="Sprite2D" parent="."]
+position = Vector2(218, 94)
+scale = Vector2(2, 2)
+texture = ExtResource("8_rq2oj")
+offset = Vector2(0, -5)
+
+[node name="rouge" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u6t76")
+position = Vector2(37, 117)
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("9_k6500")
+offset = Vector2(0.5, -5.5)
+region_enabled = true
+region_rect = Rect2(6, 23, 7, 14)
+
+[node name="rouge2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u6t76")
+position = Vector2(67, 148)
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("9_k6500")
+offset = Vector2(0.5, -5.5)
+region_enabled = true
+region_rect = Rect2(6, 23, 7, 14)
+
+[node name="rose" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_su6mw")
+position = Vector2(628, 256)
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("9_k6500")
+offset = Vector2(0.5, -5.5)
+region_enabled = true
+region_rect = Rect2(42, 24, 8, 14)
+
+[node name="rose2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ugkx1")
+position = Vector2(586, 120)
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("9_k6500")
+offset = Vector2(0.5, -5.5)
+region_enabled = true
+region_rect = Rect2(24, 21, 7, 17)
+
+[node name="FeuilleParTerre" type="Sprite2D" parent="."]
+position = Vector2(101, 489)
+scale = Vector2(2, 2)
+texture = ExtResource("10_0kf8h")
+
+[node name="FeuilleParTerre2" type="Sprite2D" parent="."]
+position = Vector2(98, 551)
+scale = Vector2(2, 2)
+texture = ExtResource("10_0kf8h")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-6, 387.063)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-14, -253.563)
+shape = SubResource("RectangleShape2D_wessl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(684, -253.563)
+shape = SubResource("RectangleShape2D_wessl")
+
+[connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
+[connection signal="body_entered" from="goto_rue_bas" to="." method="_on_goto_rue_bas_body_entered"]
+[connection signal="body_entered" from="goto_rue_haut" to="." method="_on_goto_rue_haut_body_entered"]

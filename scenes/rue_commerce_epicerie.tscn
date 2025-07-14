@@ -171,6 +171,9 @@ scale = Vector2(2, 2)
 texture = ExtResource("13_6asm6")
 script = ExtResource("14_l3vmb")
 nom_timeline = "pnj_femme1"
+nom_timeline_selon_select = Dictionary[String, String]({
+"banane": "pnj_femme_banane"
+})
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="PNJ"]

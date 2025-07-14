@@ -125,8 +125,10 @@ shape = SubResource("RectangleShape2D_pm3ni")
 limit_left = 0
 limit_top = -20
 limit_right = 650
-limit_bottom = 650
-position_smoothing_speed = 20.0
+limit_bottom = 620
+limit_smoothed = true
+position_smoothing_speed = 2.0
+editor_draw_limits = true
 
 [node name="collisionmains" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6.5)

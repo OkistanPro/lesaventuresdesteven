@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dh5dgl6untq10"]
+[gd_scene load_steps=27 format=3 uid="uid://dh5dgl6untq10"]
 
 [ext_resource type="Texture2D" uid="uid://rt7wbbd5v4kf" path="res://sprites/decor_bas.png" id="1_cayyt"]
 [ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="1_e7mge"]
@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://c5dxi7ntaq1ax" path="res://sprites/mairie_00000.png" id="6_tslq4"]
 [ext_resource type="Texture2D" uid="uid://dsfmiuy5ysyw4" path="res://sprites/persos/maire.png" id="11_82yds"]
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="12_7sh2r"]
+[ext_resource type="Texture2D" uid="uid://d0wcwcfsfivwa" path="res://sprites/FLAQUE D EAU.png" id="13_0aefm"]
+[ext_resource type="Texture2D" uid="uid://rswb04pllwff" path="res://sprites/FLEURS.png" id="14_7sh2r"]
+[ext_resource type="Shader" uid="uid://bl6nhjph8qnbu" path="res://shaders/fleur.gdshader" id="14_bq2gl"]
+[ext_resource type="Shader" uid="uid://c2f140whsd2qu" path="res://shaders/fleur_jaune.gdshader" id="16_2i2qr"]
 [ext_resource type="Texture2D" uid="uid://c86yo2pwhaykd" path="res://sprites/banc_lampe.png" id="19_cayyt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jibjk"]
@@ -33,21 +37,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sh2r"]
+size = Vector2(24.5, 200)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
 distance = 179.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vh6f3"]
-size = Vector2(123.5, 575)
+size = Vector2(87.5, 467)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82yds"]
+size = Vector2(96, 466)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjclf"]
-size = Vector2(96, 575)
+size = Vector2(678, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0aefm"]
 size = Vector2(15.2941, 26.4706)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sh2r"]
 radius = 35.781
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2i2qr"]
+shader = ExtResource("14_bq2gl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nj6wd"]
+shader = ExtResource("16_2i2qr")
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -88,6 +104,16 @@ position = Vector2(0.177381, -16.6324)
 scale = Vector2(1.07538, 0.971949)
 polygon = PackedVector2Array(7, -1.6, 7, 0.0999985, -22.1, 2, -26.5, 2, -46.5, 12, -49, 12, -56, 22, -58.4, 22, -57, 29.4, -57, 33, -43, 43, -43, 44.8, -12, 47.8, -12, 49.2, 30.1, 46, 36.5, 46, 47.6, 40, 50.1, 40, 59, 26.6, 59, 20.1, 51, 13.1, 51, 11.6, 43, 8.5, 43, 7.4)
 
+[node name="limitesHerbe" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limitesHerbe"]
+position = Vector2(-12.75, 576)
+shape = SubResource("RectangleShape2D_7sh2r")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="limitesHerbe"]
+position = Vector2(672.25, 576)
+shape = SubResource("RectangleShape2D_7sh2r")
+
 [node name="limitesMonde" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="limitesMonde"]
@@ -125,14 +151,21 @@ polygon = PackedVector2Array(-27.5, 27, -24.5, 27, -24.5, -7.5, -22, -19.5, -18.
 z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite"]
-position = Vector2(676.75, 298.5)
+position = Vector2(694.75, 244.5)
 shape = SubResource("RectangleShape2D_vh6f3")
 
 [node name="goto_rue_gauche" type="Area2D" parent="."]
 z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_gauche"]
-position = Vector2(-41, 298.5)
+position = Vector2(-41, 244)
+shape = SubResource("RectangleShape2D_82yds")
+
+[node name="goto_rue_bas" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_bas"]
+position = Vector2(329, 716)
 shape = SubResource("RectangleShape2D_mjclf")
 
 [node name="Maire" type="Sprite2D" parent="."]
@@ -160,7 +193,32 @@ position = Vector2(0, -29.815)
 scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
+[node name="FlaqueDEau" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.541176)
+position = Vector2(240, 444)
+scale = Vector2(2, 2)
+texture = ExtResource("13_0aefm")
+
+[node name="rouge" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2i2qr")
+position = Vector2(37, 613)
+scale = Vector2(2.8, 2.8)
+texture = ExtResource("14_7sh2r")
+offset = Vector2(0.5, -5.5)
+region_enabled = true
+region_rect = Rect2(6, 23, 7, 14)
+
+[node name="rose2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_nj6wd")
+position = Vector2(610, 496)
+scale = Vector2(2, 2)
+texture = ExtResource("14_7sh2r")
+offset = Vector2(0.5, -5.5)
+region_enabled = true
+region_rect = Rect2(24, 21, 7, 17)
+
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="goto_rue_bas" to="." method="_on_goto_rue_bas_body_entered"]
 [connection signal="body_entered" from="Maire/Area2D" to="Maire" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Maire/Area2D" to="Maire" method="_on_area_2d_body_exited"]

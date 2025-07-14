@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://hdxui1dj546j"]
+[gd_scene load_steps=19 format=3 uid="uid://hdxui1dj546j"]
 
 [ext_resource type="Script" uid="uid://vte1qlb04x0a" path="res://scripts/rue_commerce_1.gd" id="1_w87nh"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_lbbow"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dbct782wab607" path="res://sprites/souvenirs/souvenirs__0000_Calque-4.png" id="10_5nyyj"]
 [ext_resource type="Texture2D" uid="uid://42lhrku8y0t3" path="res://sprites/RPG_EPICERIE_0001_Calque-2.png" id="11_e4yk3"]
 [ext_resource type="Texture2D" uid="uid://5q4nnhw2xxru" path="res://sprites/RPG_EPICERIE_0004_Calque-5.png" id="12_qplw4"]
+[ext_resource type="Texture2D" uid="uid://hthuaho5p6vj" path="res://sprites/FEUILLE PAR TERRE.png" id="13_qplw4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
@@ -205,6 +206,33 @@ position = Vector2(-31, 904)
 scale = Vector2(2.9, 2.9)
 texture = ExtResource("12_qplw4")
 offset = Vector2(0.689655, -71.3793)
+
+[node name="FeuilleParTerre3" type="Sprite2D" parent="."]
+position = Vector2(112, 223)
+scale = Vector2(2, 2)
+texture = ExtResource("13_qplw4")
+region_enabled = true
+region_rect = Rect2(22, 27, 9, 6)
+
+[node name="FeuilleParTerre5" type="Sprite2D" parent="."]
+position = Vector2(84, 289)
+scale = Vector2(2, 2)
+texture = ExtResource("13_qplw4")
+region_enabled = true
+region_rect = Rect2(10, 36, 12, 7)
+
+[node name="FeuilleParTerre6" type="Sprite2D" parent="."]
+position = Vector2(107, 372)
+scale = Vector2(2, 2)
+texture = ExtResource("13_qplw4")
+region_enabled = true
+region_rect = Rect2(26, 38, 8, 7)
+
+[node name="FeuilleParTerre4" type="Sprite2D" parent="."]
+position = Vector2(99, 414)
+scale = Vector2(2, 2)
+texture = ExtResource("13_qplw4")
+flip_h = true
 
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="personnage/Area2D" to="personnage" method="_on_area_2d_body_entered"]

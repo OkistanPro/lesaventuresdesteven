@@ -3,12 +3,23 @@ extends Node
 signal inventory_changed(added : ItemProperties)
 
 var village_centre = preload("res://scenes/village_1.tscn")
+
 var rue_commerce_epicerie = preload("res://scenes/rue_commerce_epicerie.tscn")
 var rue_commerce_souvenirs = preload("res://scenes/rue_commerce_souvenirs.tscn")
 var rue_commerce_coffee = preload("res://scenes/rue_commerce_coffee.tscn")
 var rue_commerce_hotel = preload("res://scenes/rue_commerce_hotel.tscn")
+
+var croisement_residence = preload("res://scenes/rue_croisement_residence.tscn")
+var rue_residence_champ = preload("res://scenes/rue_residence_champs.tscn")
+var rue_residence_laparc1 = preload("res://scenes/rue_residence_parc1.tscn")
+var rue_residence_laparc2 = preload("res://scenes/rue_residence_parc2.tscn")
+
 var direction_from : String
 var y_from : float
+var selected_item : int = -1
+var selected_item_name : String
+
+var in_menu : bool = false
 
 var fleche_input = preload("res://scenes/fleche_input.tscn")
 
@@ -28,6 +39,8 @@ func goto_scene(from : String, to : String, y : float) -> void:
 					get_tree().change_scene_to_packed.call_deferred(rue_commerce_epicerie)
 				"rue_commerce_hotel":
 					get_tree().change_scene_to_packed.call_deferred(rue_commerce_hotel)
+				"croisement_residence":
+					get_tree().change_scene_to_packed.call_deferred(croisement_residence)
 		"rue_commerce_hotel":
 			match to:
 				"village_centre":
@@ -48,6 +61,35 @@ func goto_scene(from : String, to : String, y : float) -> void:
 			match to:
 				"rue_commerce_epicerie":
 					get_tree().change_scene_to_packed.call_deferred(rue_commerce_epicerie)
+		
+		"croisement_residence":
+			match to:
+				"village_centre":
+					get_tree().change_scene_to_packed.call_deferred(village_centre)
+				"rue_residence_champ":
+					get_tree().change_scene_to_packed.call_deferred(rue_residence_champ)
+				"rue_residence_parc1":
+					get_tree().change_scene_to_packed.call_deferred(rue_residence_laparc1)
+		"rue_residence_champ":
+			match to:
+				"croisement_residence":
+					get_tree().change_scene_to_packed.call_deferred(croisement_residence)
+				"rue_residence_ferme":
+					pass
+		"rue_residence_parc1":
+			match to:
+				"croisement_residence":
+					get_tree().change_scene_to_packed.call_deferred(croisement_residence)
+				"rue_residence_parc2":
+					get_tree().change_scene_to_packed.call_deferred(rue_residence_laparc2)
+		"rue_residence_parc2":
+			match to:
+				"rue_residence_parc1":
+					get_tree().change_scene_to_packed.call_deferred(rue_residence_laparc1)
+
+
+
+
 
 func item_event(name_event : StringName):
 	match name_event:
