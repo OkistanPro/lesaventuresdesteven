@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://hdxui1dj546j"]
+[gd_scene load_steps=22 format=3 uid="uid://hdxui1dj546j"]
 
 [ext_resource type="Script" uid="uid://vte1qlb04x0a" path="res://scripts/rue_commerce_1.gd" id="1_w87nh"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_lbbow"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://42lhrku8y0t3" path="res://sprites/RPG_EPICERIE_0001_Calque-2.png" id="11_e4yk3"]
 [ext_resource type="Texture2D" uid="uid://5q4nnhw2xxru" path="res://sprites/RPG_EPICERIE_0004_Calque-5.png" id="12_qplw4"]
 [ext_resource type="Texture2D" uid="uid://hthuaho5p6vj" path="res://sprites/FEUILLE PAR TERRE.png" id="13_qplw4"]
+[ext_resource type="Texture2D" uid="uid://c7xnbj543cy2t" path="res://sprites/POT DE FLEUR.png" id="14_op1yb"]
+[ext_resource type="Texture2D" uid="uid://do56ogd7msbvy" path="res://sprites/POT DE FLEUR 2.png" id="15_2fhiq"]
+[ext_resource type="Texture2D" uid="uid://df78sb412tm" path="res://sprites/POT DE FLEUR 3.png" id="16_0gg83"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
@@ -233,6 +236,34 @@ position = Vector2(99, 414)
 scale = Vector2(2, 2)
 texture = ExtResource("13_qplw4")
 flip_h = true
+
+[node name="PotDeFleur" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(232, 214)
+texture = ExtResource("14_op1yb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PotDeFleur"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PotDeFleur/StaticBody2D"]
+polygon = PackedVector2Array(-13, 7, -16, 15, -10, 30, 9, 30, 16, 15, 12, 7)
+
+[node name="PotDeFleur2" type="Sprite2D" parent="."]
+position = Vector2(148, 203)
+texture = ExtResource("15_2fhiq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PotDeFleur2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PotDeFleur2/StaticBody2D"]
+polygon = PackedVector2Array(-13, 7, -16, 15, -10, 30, 9, 30, 16, 15, 12, 7)
+
+[node name="PotDeFleur3" type="Sprite2D" parent="."]
+position = Vector2(618, 199)
+texture = ExtResource("16_0gg83")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PotDeFleur3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PotDeFleur3/StaticBody2D"]
+polygon = PackedVector2Array(-13, 7, -16, 15, -10, 30, 9, 30, 16, 15, 12, 7)
 
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="personnage/Area2D" to="personnage" method="_on_area_2d_body_entered"]

@@ -13,6 +13,7 @@ var croisement_residence = preload("res://scenes/rue_croisement_residence.tscn")
 var rue_residence_champ = preload("res://scenes/rue_residence_champs.tscn")
 var rue_residence_laparc1 = preload("res://scenes/rue_residence_parc1.tscn")
 var rue_residence_laparc2 = preload("res://scenes/rue_residence_parc2.tscn")
+var rue_residence_ferme = preload("res://scenes/rue_residence_ferme.tscn")
 
 var direction_from : String
 var y_from : float
@@ -75,7 +76,7 @@ func goto_scene(from : String, to : String, y : float) -> void:
 				"croisement_residence":
 					get_tree().change_scene_to_packed.call_deferred(croisement_residence)
 				"rue_residence_ferme":
-					pass
+					get_tree().change_scene_to_packed.call_deferred(rue_residence_ferme)
 		"rue_residence_parc1":
 			match to:
 				"croisement_residence":
@@ -86,7 +87,10 @@ func goto_scene(from : String, to : String, y : float) -> void:
 			match to:
 				"rue_residence_parc1":
 					get_tree().change_scene_to_packed.call_deferred(rue_residence_laparc1)
-
+		"rue_residence_ferme":
+			match to:
+				"rue_residence_champ":
+					get_tree().change_scene_to_packed.call_deferred(rue_residence_champ)
 
 
 

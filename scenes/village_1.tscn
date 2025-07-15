@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dh5dgl6untq10"]
+[gd_scene load_steps=31 format=3 uid="uid://dh5dgl6untq10"]
 
 [ext_resource type="Texture2D" uid="uid://rt7wbbd5v4kf" path="res://sprites/decor_bas.png" id="1_cayyt"]
 [ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="1_e7mge"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://rswb04pllwff" path="res://sprites/FLEURS.png" id="14_7sh2r"]
 [ext_resource type="Shader" uid="uid://bl6nhjph8qnbu" path="res://shaders/fleur.gdshader" id="14_bq2gl"]
 [ext_resource type="Shader" uid="uid://c2f140whsd2qu" path="res://shaders/fleur_jaune.gdshader" id="16_2i2qr"]
+[ext_resource type="Shader" uid="uid://krk3b7tdexe0" path="res://shaders/buisson.gdshader" id="17_tslq4"]
+[ext_resource type="Texture2D" uid="uid://dnrwvmn5p82et" path="res://sprites/BUISSON.png" id="18_e7mge"]
 [ext_resource type="Texture2D" uid="uid://c86yo2pwhaykd" path="res://sprites/banc_lampe.png" id="19_cayyt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jibjk"]
@@ -64,6 +66,12 @@ shader = ExtResource("14_bq2gl")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nj6wd"]
 shader = ExtResource("16_2i2qr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cayyt"]
+shader = ExtResource("17_tslq4")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jibjk"]
+radius = 22.0907
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -216,6 +224,28 @@ texture = ExtResource("14_7sh2r")
 offset = Vector2(0.5, -5.5)
 region_enabled = true
 region_rect = Rect2(24, 21, 7, 17)
+
+[node name="buisson1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cayyt")
+position = Vector2(122, 590)
+texture = ExtResource("18_e7mge")
+offset = Vector2(1, -14)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="buisson1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buisson1/StaticBody2D"]
+shape = SubResource("CircleShape2D_jibjk")
+
+[node name="buisson2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cayyt")
+position = Vector2(620, 605)
+texture = ExtResource("18_e7mge")
+offset = Vector2(1, -14)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="buisson2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buisson2/StaticBody2D"]
+shape = SubResource("CircleShape2D_jibjk")
 
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]

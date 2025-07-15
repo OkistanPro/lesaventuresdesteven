@@ -1,0 +1,188 @@
+[gd_scene load_steps=17 format=3 uid="uid://uq4ks8udgkhu"]
+
+[ext_resource type="Script" uid="uid://n5j1yg38wj1d" path="res://scripts/rue_residence_ferme.gd" id="1_dqhc6"]
+[ext_resource type="Texture2D" uid="uid://bvguepu4vppxa" path="res://sprites/RPG-RUE-FERME_ferme.png" id="1_m6sjl"]
+[ext_resource type="Texture2D" uid="uid://7yvnw71i6bk7" path="res://sprites/RPG-RUE-FERME_arbrescotes.png" id="2_wb20b"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="4_afdon"]
+[ext_resource type="Texture2D" uid="uid://civ8pgsqyhg54" path="res://sprites/RPG_FERME_0002_poussin1.png" id="4_cas2x"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="5_ovgsu"]
+[ext_resource type="Texture2D" uid="uid://dn1gh8u65i7m1" path="res://sprites/RPG_FERME_0003_poussin2.png" id="6_dqhc6"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="6_ovgsu"]
+[ext_resource type="Texture2D" uid="uid://c5gq33vw871rh" path="res://sprites/RPG_FERME_0004_poussin3.png" id="7_sayq4"]
+[ext_resource type="Texture2D" uid="uid://bll8q2qvww2mx" path="res://sprites/RPG_FERME_0006_poussin4.png" id="8_tqii1"]
+[ext_resource type="Texture2D" uid="uid://dsw3ymu0sh6gs" path="res://sprites/RPG_FERME_0007_chariot.png" id="9_nqt51"]
+[ext_resource type="Texture2D" uid="uid://b86hjikjwwk5n" path="res://sprites/RPG_FERME_0007_poussin_fond.png" id="11_sayq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usxj3"]
+size = Vector2(49.0909, 305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afdon"]
+size = Vector2(261.136, 35)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cas2x"]
+radius = 11.3636
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovgsu"]
+size = Vector2(41.5, 324)
+
+[node name="RueResidenceFerme" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_dqhc6")
+
+[node name="ferme" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(330, 330)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_m6sjl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ferme"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ferme/StaticBody2D"]
+polygon = PackedVector2Array(-98.1818, -5.45454, -90.9091, -2.72728, -55, -2.72728, -45.4546, -4.09091, -36.3636, -6.81819, -35.4546, -12.7273, -35.4546, -18.1818, -25, -21.8182, -20.9091, -16.8182, -15.9091, -12.2727, -14.0909, -15.9091, -13.6364, -20.4545, -8.63637, -24.0909, -3.18182, -29.0909, 29.0909, -29.0909, 29.5454, -17.2727, 30.9091, -13.6364, 36.8182, -20, 41.8182, -28.6364, 42.2727, -40.9091, 52.7273, -44.0909, 67.2727, -45.9091, 87.7273, -44.0909, 99.0909, -39.5455, 99.5454, -29.0909, 107.273, -15.4545, 110.455, -13.6364, 112.727, -20.9091, 113.636, -26.3636, 152.727, -26.3636, 154.091, -69.5455, -101.818, -67.7273)
+
+[node name="arbres" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(330, 330)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_wb20b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="arbres"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arbres/StaticBody2D"]
+position = Vector2(-127.273, 0.681793)
+shape = SubResource("RectangleShape2D_usxj3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="arbres/StaticBody2D"]
+position = Vector2(27.1591, 135.227)
+shape = SubResource("RectangleShape2D_afdon")
+
+[node name="steven" parent="." instance=ExtResource("4_afdon")]
+z_index = 0
+position = Vector2(622, 481)
+
+[node name="poussin1" type="Sprite2D" parent="."]
+position = Vector2(178.31, 378.245)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("4_cas2x")
+script = ExtResource("5_ovgsu")
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="poussin1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="poussin1/StaticBody2D"]
+polygon = PackedVector2Array(-6.95909, -2.38408, 4.85909, -2.38408, 6.67728, 2.16136, 4.85909, 10.7977, -4.23182, 10.3432, -2.86818, 4.4341)
+
+[node name="Area2D" type="Area2D" parent="poussin1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poussin1/Area2D"]
+shape = SubResource("CircleShape2D_cas2x")
+
+[node name="Polygon2D" parent="poussin1" instance=ExtResource("6_ovgsu")]
+position = Vector2(0, -18.9059)
+
+[node name="poussin2" type="Sprite2D" parent="."]
+position = Vector2(340, 382)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_dqhc6")
+script = ExtResource("5_ovgsu")
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="poussin2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="poussin2/StaticBody2D"]
+polygon = PackedVector2Array(-5.45456, 4.54546, -5.45456, 9.09091, 0.454544, 9.09091, -0.454559, 4.54546, 2.27272, 3.63637, 3.63635, -0.909088, -5.45456, -1.36363, -7.72728, 2.27274)
+
+[node name="Area2D" type="Area2D" parent="poussin2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poussin2/Area2D"]
+shape = SubResource("CircleShape2D_cas2x")
+
+[node name="Polygon2D" parent="poussin2" instance=ExtResource("6_ovgsu")]
+position = Vector2(0, -18.9059)
+
+[node name="poussin3" type="Sprite2D" parent="."]
+position = Vector2(416, 343)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("7_sayq4")
+script = ExtResource("5_ovgsu")
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="poussin3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="poussin3/StaticBody2D"]
+polygon = PackedVector2Array(-4.54546, 0, 2.72728, -0.909088, 6.67728, 2.16136, 11.3636, 4.09091, -10.9091, 8.18181, -6.81818, 5.45454)
+
+[node name="Area2D" type="Area2D" parent="poussin3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poussin3/Area2D"]
+shape = SubResource("CircleShape2D_cas2x")
+
+[node name="Polygon2D" parent="poussin3" instance=ExtResource("6_ovgsu")]
+position = Vector2(0, -18.9059)
+
+[node name="poussin4" type="Sprite2D" parent="."]
+position = Vector2(576, 489)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("8_tqii1")
+script = ExtResource("5_ovgsu")
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="poussin4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="poussin4/StaticBody2D"]
+polygon = PackedVector2Array(6.81818, 2.27272, 5, 17.2727, -5.45456, 16.3636, -3.18182, 2.72726)
+
+[node name="Area2D" type="Area2D" parent="poussin4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poussin4/Area2D"]
+shape = SubResource("CircleShape2D_cas2x")
+
+[node name="Polygon2D" parent="poussin4" instance=ExtResource("6_ovgsu")]
+position = Vector2(0, -18.9059)
+
+[node name="poussin5" type="Sprite2D" parent="."]
+position = Vector2(313, 266)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("11_sayq4")
+script = ExtResource("5_ovgsu")
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="Area2D" type="Area2D" parent="poussin5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poussin5/Area2D"]
+shape = SubResource("CircleShape2D_cas2x")
+
+[node name="Polygon2D" parent="poussin5" instance=ExtResource("6_ovgsu")]
+position = Vector2(0, -18.9059)
+color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[node name="chariot" type="Sprite2D" parent="."]
+position = Vector2(461, 484)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("9_nqt51")
+offset = Vector2(-6.36361, -5.90912)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="chariot"]
+position = Vector2(-0.909088, -5.90909)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="chariot/StaticBody2D"]
+position = Vector2(-5.45454, -10)
+polygon = PackedVector2Array(41.0954, 6.51819, 29.2773, 13.7909, 31.0954, 20.6091, 22.9136, 25.1545, 18.3682, 22.4273, 18.3682, 17.8818, 3.36818, 24.2455, -7.54091, 18.3364, -21.6318, 26.0636, -24.8136, 24.2455, -12.0864, 15.6091, -26.6318, 3.79091, -27.0864, 0.154541, 12.2727, -18.1818)
+
+[node name="goto_rue_droite" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite"]
+position = Vector2(656.25, 429)
+shape = SubResource("RectangleShape2D_ovgsu")
+
+[connection signal="body_entered" from="poussin1/Area2D" to="poussin1" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="poussin1/Area2D" to="poussin1" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="poussin2/Area2D" to="poussin2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="poussin2/Area2D" to="poussin2" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="poussin3/Area2D" to="poussin3" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="poussin3/Area2D" to="poussin3" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="poussin4/Area2D" to="poussin4" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="poussin4/Area2D" to="poussin4" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="poussin5/Area2D" to="poussin5" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="poussin5/Area2D" to="poussin5" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
