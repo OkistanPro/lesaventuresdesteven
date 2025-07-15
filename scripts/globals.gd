@@ -20,8 +20,9 @@ var y_from : float
 var selected_item : int = -1
 var selected_item_name : String
 
+var parle_au_fermier : bool = false
+var in_cinematique : bool = true
 var in_menu : bool = false
-
 var fleche_input = preload("res://scenes/fleche_input.tscn")
 
 var inventory : Array[ItemProperties]
@@ -99,6 +100,8 @@ func item_event(name_event : StringName):
 	match name_event:
 		&"test":
 			GestionDialogue.lancer_timeline("lourd")
+		&"carotte_sous_terre":
+			GestionDialogue.lancer_timeline("carotte_sous_terre")
 
 func pick_item(item : ItemProperties):
 	inventory.append(item)

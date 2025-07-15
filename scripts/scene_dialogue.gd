@@ -2,7 +2,6 @@ extends Control
 
 signal begin_message(message : String)
 signal clicked
-signal fin_event
 
 func _ready() -> void:
 	next_message()
@@ -12,8 +11,12 @@ func next_message() -> void:
 	$boite_message/Polygon2D.visible = false
 	if obj_dialogue is D_Message:
 		if obj_dialogue.event_at_start:
-			lancer_event(obj_dialogue.event_at_start)
-		$boite_message/boite_perso/perso.text = obj_dialogue.nom_perso
+			GestionDialogue.lancer_event(obj_dialogue.event_at_start)
+		if obj_dialogue.nom_perso == "":
+			$boite_message/boite_perso.visible = false
+		else:
+			$boite_message/boite_perso.visible = true
+			$boite_message/boite_perso/perso.text = obj_dialogue.nom_perso
 		begin_message.emit(obj_dialogue.mess)
 		await $boite_message/message.message_ended
 		if obj_dialogue.liste_choix:
@@ -36,11 +39,11 @@ func next_message() -> void:
 		visible = true
 		next_message()
 	elif obj_dialogue is D_Event:
-		lancer_event(obj_dialogue.nom_event)
+		GestionDialogue.lancer_event(obj_dialogue.nom_event)
 		if obj_dialogue.parallele:
 			next_message()
 		else:
-			await fin_event
+			await GestionDialogue.fin_event
 			next_message()
 	else:
 		GestionDialogue.active = false
@@ -51,13 +54,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if $boite_message/message.is_writing:
-				$boite_message/message.speed = 0.05
+				$boite_message/message.speed = 0.02
 			clicked.emit()
-
-func lancer_event(nom_event : String) -> void:
-	match nom_event:
-		"quitter_jeu":
-			get_tree().quit()
 
 func verif_cond(string_condition : String) -> bool:
 	match string_condition:

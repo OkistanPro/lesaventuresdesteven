@@ -21,7 +21,7 @@ size = Vector2(1.36366, 8.63636)
 script = ExtResource("7_15iwy")
 item_name = &"carotte"
 texture_icon = ExtResource("8_entdd")
-pickable = true
+pickable = false
 event_on_not_pick = &"carotte_sous_terre"
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 

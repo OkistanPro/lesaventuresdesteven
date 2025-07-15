@@ -1,0 +1,225 @@
+[gd_scene load_steps=13 format=3 uid="uid://t5h8pq3nop40"]
+
+[ext_resource type="Script" uid="uid://dcoeq7ho0eo0p" path="res://scripts/cinematique.gd" id="1_kppc5"]
+[ext_resource type="Texture2D" uid="uid://ce56sy7rxb6ar" path="res://sprites/textures/grass 3.png" id="2_r0wtw"]
+[ext_resource type="Shader" uid="uid://dn5evd1y7vqws" path="res://shaders/menu.gdshader" id="3_x5fem"]
+[ext_resource type="FontFile" uid="uid://c6quss0etcsrc" path="res://polices/PixeloidSans-Bold.ttf" id="4_loff6"]
+[ext_resource type="Shader" uid="uid://c2b0nsjbx2d3h" path="res://shaders/vignette.gdshader" id="5_xib5t"]
+[ext_resource type="Texture2D" uid="uid://cy6qmn0j6mtpm" path="res://sprites/vignette_shader.png" id="6_j8pg7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v86rl"]
+shader = ExtResource("3_x5fem")
+shader_parameter/luminosity = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ytvr"]
+font = ExtResource("4_loff6")
+font_color = Color(1, 1, 0.560784, 1)
+outline_size = 14
+outline_color = Color(0.306929, 0.300008, 0.163758, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.698039)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhnvy"]
+shader = ExtResource("5_xib5t")
+shader_parameter/map = ExtResource("6_j8pg7")
+shader_parameter/percentage = 1.0
+
+[sub_resource type="Animation" id="Animation_mhnvy"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vignette:material:shader_parameter/percentage")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dans un village tyrannisé..."]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:material:shader_parameter/luminosity")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("blanc:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_con2f"]
+resource_name = "cinematique_debut"
+length = 37.41
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vignette:material:shader_parameter/percentage")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.566667, -0.893397, 0, 0, 0.962121, 0.25, 0),
+"times": PackedFloat32Array(0, 37)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 34.7373, 35.3)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8.20317, 15.5768, 23.5, 31.1667, 34.8333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Dans un village tyrannisé...", "...où les habitants sont exploités...", "...où règne la terreur et le massacre...", "...le sort du village dépendra d'un seul et unique...", "...poussin.", "Attends, poussin ?"]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:material:shader_parameter/luminosity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -1.57167, 0.00339169, 0.25, 0, 0, -0.25, 0, 1.76772, -0.00691575, -1.00674, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -1.57167, 0.00339169, 0.25, 0, 0, -0.25, 0, 1.76772, -0.00691575, -1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -1.57167, 0.00339169, 0.25, 0, 0, -0.25, 0, 1.76772, -0.00691575, -1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -1.57167, 0.00339169, 0.25, 0, 0, -0.25, 0, 1.76772, -0.00691575, -1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -1.57167, 0.00339169, 0.25, 0),
+"times": PackedFloat32Array(0, 1.57167, 6.03228, 8.23333, 8.25838, 9.79672, 13.3667, 15.6, 15.6531, 17.1591, 21.6197, 23.5333, 23.6176, 25.0893, 29.5499, 31.2, 31.362, 32.8003)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("blanc:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(35.6509, 36.9959)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ytvr"]
+_data = {
+&"RESET": SubResource("Animation_mhnvy"),
+&"cinematique_debut": SubResource("Animation_con2f")
+}
+
+[node name="cinematique" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kppc5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 134.0
+offset_bottom = 224.0
+scale = Vector2(3, 3)
+texture = ExtResource("2_r0wtw")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+material = SubResource("ShaderMaterial_v86rl")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.5
+offset_top = -53.0
+offset_right = 190.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dans un village tyrannisé..."
+label_settings = SubResource("LabelSettings_4ytvr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_mhnvy")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4ytvr")
+}
+autoplay = "cinematique_debut"
+
+[node name="blanc" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

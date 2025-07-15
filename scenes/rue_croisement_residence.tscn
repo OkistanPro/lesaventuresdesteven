@@ -22,10 +22,10 @@ size = Vector2(110.909, 40.9091)
 size = Vector2(18, 201.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxba7"]
-size = Vector2(180.75, 61.125)
+size = Vector2(180.75, 99.0005)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kf8h"]
-size = Vector2(182, 28.5)
+size = Vector2(182, 90.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rq2oj"]
 size = Vector2(714, 61.125)
@@ -75,6 +75,7 @@ offset = Vector2(1.36363, -33.6364)
 [node name="StaticBody2D" type="StaticBody2D" parent="statue-devant"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="statue-devant/StaticBody2D"]
+position = Vector2(0, -14.3478)
 polygon = PackedVector2Array(-35.9091, -12.7273, -41.3637, -7.72728, -42.2727, -0.909088, -39.5455, 5.90909, -36.8182, 14.0909, -25.4546, 19.0909, -13.1818, 20, -7.72729, 22.2727, 5.90907, 20.4545, 15, 22.7273, 35.9091, 25.9091, 45, 21.8182, 47.2727, 15.4545, 46.3636, 3.63635, 43.1818, -3.63637, 33.1818, -10, 0.909073, -15.4545, -22.7273, -15)
 
 [node name="arbres_bas" type="Sprite2D" parent="."]
@@ -107,13 +108,13 @@ shape = SubResource("RectangleShape2D_fucvl")
 [node name="goto_rue_bas" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_bas"]
-position = Vector2(330.375, 668.438)
+position = Vector2(330.375, 649.5)
 shape = SubResource("RectangleShape2D_dxba7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="goto_rue_bas"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_bas/StaticBody2D"]
-position = Vector2(332, 684.25)
+position = Vector2(332, 653.25)
 shape = SubResource("RectangleShape2D_0kf8h")
 
 [node name="goto_rue_haut" type="Area2D" parent="."]

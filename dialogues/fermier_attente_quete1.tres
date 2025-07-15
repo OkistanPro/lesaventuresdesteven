@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=6 format=3 uid="uid://bc1s2nkxweaiu"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_t5ieh"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_y5xiy"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_ynqr6"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_uyuyw"]
+
+[sub_resource type="Resource" id="Resource_otmwv"]
+script = ExtResource("3_uyuyw")
+nom_perso = "fermier"
+mess = "...j'ai toujours pas trouvé un truc à te donner..."
+liste_choix = Array[ExtResource("2_y5xiy")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_ynqr6")
+liste_messages = Array[ExtResource("1_t5ieh")]([SubResource("Resource_otmwv")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

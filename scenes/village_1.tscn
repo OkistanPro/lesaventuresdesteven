@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dh5dgl6untq10"]
+[gd_scene load_steps=36 format=3 uid="uid://dh5dgl6untq10"]
 
 [ext_resource type="Texture2D" uid="uid://rt7wbbd5v4kf" path="res://sprites/decor_bas.png" id="1_cayyt"]
 [ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="1_e7mge"]
@@ -18,6 +18,9 @@
 [ext_resource type="Shader" uid="uid://krk3b7tdexe0" path="res://shaders/buisson.gdshader" id="17_tslq4"]
 [ext_resource type="Texture2D" uid="uid://dnrwvmn5p82et" path="res://sprites/BUISSON.png" id="18_e7mge"]
 [ext_resource type="Texture2D" uid="uid://c86yo2pwhaykd" path="res://sprites/banc_lampe.png" id="19_cayyt"]
+[ext_resource type="Texture2D" uid="uid://bfjyyksfav4nl" path="res://sprites/persos/petite_pnj.png" id="19_jibjk"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="20_4p5rq"]
+[ext_resource type="Texture2D" uid="uid://c7qgwnubxbgf3" path="res://sprites/PANCARTE.png" id="21_jibjk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jibjk"]
 animations = [{
@@ -72,6 +75,12 @@ shader = ExtResource("17_tslq4")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jibjk"]
 radius = 22.0907
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jocfw"]
+size = Vector2(14, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cayyt"]
+radius = 16.5076
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -207,6 +216,11 @@ position = Vector2(240, 444)
 scale = Vector2(2, 2)
 texture = ExtResource("13_0aefm")
 
+[node name="Area2D" type="Area2D" parent="FlaqueDEau"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FlaqueDEau/Area2D"]
+polygon = PackedVector2Array(-3, -4.5, -12.5, -1.5, -12.5, 3, -4.5, 5, 7, 1, 8, -2.5, -0.5, -5.5)
+
 [node name="rouge" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_2i2qr")
 position = Vector2(37, 613)
@@ -247,8 +261,47 @@ offset = Vector2(1, -14)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="buisson2/StaticBody2D"]
 shape = SubResource("CircleShape2D_jibjk")
 
+[node name="PetitePnj" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(448, 435)
+scale = Vector2(2, 2)
+texture = ExtResource("19_jibjk")
+script = ExtResource("12_7sh2r")
+nom_timeline = "pnj_fontaine"
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PetitePnj"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PetitePnj/StaticBody2D"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_jocfw")
+
+[node name="Area2D" type="Area2D" parent="PetitePnj"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PetitePnj/Area2D"]
+shape = SubResource("CircleShape2D_cayyt")
+
+[node name="Polygon2D" parent="PetitePnj" instance=ExtResource("20_4p5rq")]
+position = Vector2(0, -17)
+
+[node name="gestion_pnj" type="Node" parent="PetitePnj"]
+
+[node name="Pancarte" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(443, 305)
+texture = ExtResource("21_jibjk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Pancarte"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pancarte/StaticBody2D"]
+polygon = PackedVector2Array(-30, 21, -30, 5, 23, 5, 23, 22)
+
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_bas" to="." method="_on_goto_rue_bas_body_entered"]
 [connection signal="body_entered" from="Maire/Area2D" to="Maire" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Maire/Area2D" to="Maire" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="FlaqueDEau/Area2D" to="steven" method="_on_flaque_body_entered"]
+[connection signal="body_exited" from="FlaqueDEau/Area2D" to="steven" method="_on_flaque_body_exited"]
+[connection signal="body_entered" from="PetitePnj/Area2D" to="PetitePnj" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PetitePnj/Area2D" to="PetitePnj" method="_on_area_2d_body_exited"]

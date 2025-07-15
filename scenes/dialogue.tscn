@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://04rj6q4gw31c" path="res://polices/PixeloidSans.ttf" id="1_jwyou"]
 [ext_resource type="FontFile" uid="uid://drbpuq1xbfywv" path="res://polices/8bit16.ttf" id="3_fyky8"]
 [ext_resource type="Script" uid="uid://csiika0hwv43v" path="res://scripts/message_dialogue.gd" id="4_led2e"]
-[ext_resource type="AudioStream" uid="uid://dy3p8c3bv74i3" path="res://sons/discussion.mp3" id="5_x1cjp"]
+[ext_resource type="AudioStream" uid="uid://b060hikn1n5cr" path="res://sons/discussion_message.wav" id="5_x1cjp"]
 [ext_resource type="Script" uid="uid://bdo08r62t4b05" path="res://scripts/choix_dialogue.gd" id="6_vogiq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyky8"]

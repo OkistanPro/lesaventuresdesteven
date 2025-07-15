@@ -3,8 +3,6 @@ extends Control
 var theme_select = StyleBoxFlat.new()
 
 func _ready() -> void:
-	if Globals.in_menu:
-		queue_free()
 	Globals.inventory_changed.connect(refresh_list)
 	refresh_list(null)
 	
@@ -24,7 +22,7 @@ func refresh_list(added : ItemProperties) -> void:
 		$ItemList.set_item_metadata(index, item)
 
 func _process(delta: float) -> void:
-	if GestionDialogue.active:
+	if GestionDialogue.active or Globals.in_cinematique or Globals.in_menu:
 		visible = false
 	else:
 		visible = true

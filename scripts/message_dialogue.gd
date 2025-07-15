@@ -19,8 +19,9 @@ func begin_message(message : String) -> void:
 	is_writing = false
 
 func show_char() -> void:
-	$son_message.volume_db = randi_range(-4, 0)
-	$son_message.play()
+	if speed == 1.0:
+		$son_message.volume_db = randi_range(-4, 0)
+		$son_message.play()
 	var c = message_buffer[i]
 	text += c
 	match c:
