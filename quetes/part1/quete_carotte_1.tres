@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://3ruwphgmq30s"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_swd1e"]
+
+[resource]
+script = ExtResource("1_swd1e")
+titre_quete = "Ramasser la carotte"
+desc_quete = "Fouiller le champs pour récuperer la carotte."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"

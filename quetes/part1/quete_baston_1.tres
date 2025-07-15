@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://qutk7gwgtptp"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_412rc"]
+
+[resource]
+script = ExtResource("1_412rc")
+titre_quete = "Se rendre a la fontaine pour en decoudre"
+desc_quete = "Vous vous rendrez au milieu du village et devez intervenir et demander ce qu'il se passe."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"

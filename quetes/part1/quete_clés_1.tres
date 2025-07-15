@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://c8hps63xgqedv"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_riwtt"]
+
+[resource]
+script = ExtResource("1_riwtt")
+titre_quete = "Recuperer 7 clés"
+desc_quete = "vous devez récuperer 7 clés cachées dans le village pour ouvrir les porte de la mairie."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"

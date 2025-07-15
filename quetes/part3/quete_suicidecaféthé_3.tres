@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://dpp570xclp5cm"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_1s23h"]
+
+[resource]
+script = ExtResource("1_1s23h")
+titre_quete = "Aidé le gerent du café et du thé"
+desc_quete = "Vous devez aidé les gerents du thé et du café."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://c5sv6lwgw18pg"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_76bye"]
+
+[resource]
+script = ExtResource("1_76bye")
+titre_quete = "Compter le nombre de fleurs de couleur"
+desc_quete = "Vous devez compter le nombres de fleurs de couleurs et l'indiquer sur le cadenas."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"

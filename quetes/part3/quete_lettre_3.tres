@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://c7odhfmygxtwb"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_imdtk"]
+
+[resource]
+script = ExtResource("1_imdtk")
+titre_quete = "Ouvrir et inspecter la lettre"
+desc_quete = "Vous devez inspecter la lettre de l'homme, il ne la comprend pas."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"

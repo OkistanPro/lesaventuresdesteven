@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://cc872o3j4xu00"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_271ge"]
+
+[resource]
+script = ExtResource("1_271ge")
+titre_quete = "Retrouver le téléphone dans la fontaine"
+desc_quete = "Vous devez retrouver le téléphone du vendeur dans la fontaine."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"

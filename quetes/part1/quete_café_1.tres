@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://datxcgtb83qg3"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_xvi7s"]
+
+[resource]
+script = ExtResource("1_xvi7s")
+titre_quete = "Casser la machine a thé"
+desc_quete = "Vous devez casser la machine dans le salon de thé."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"

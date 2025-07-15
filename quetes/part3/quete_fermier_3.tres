@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://be54n0mhl2amf"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_vvq4f"]
+
+[resource]
+script = ExtResource("1_vvq4f")
+titre_quete = "Parler au fermier"
+desc_quete = "Vous devez parler fermier, il a besoins d'oublier sa vie."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"

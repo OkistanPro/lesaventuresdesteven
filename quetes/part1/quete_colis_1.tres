@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://27c73dcji0ks"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_axe3f"]
+
+[resource]
+script = ExtResource("1_axe3f")
+titre_quete = "Distribuer les 3 colis"
+desc_quete = "Vous devez distribuez 3 colis au PNJ indiqué."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"
