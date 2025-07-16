@@ -21,13 +21,14 @@ var selected_item : int = -1
 var selected_item_name : String
 
 var parle_au_fermier : bool = false
-var in_cinematique : bool = true
+var in_cinematique : bool = false
 var in_menu : bool = false
 var fleche_input = preload("res://scenes/fleche_input.tscn")
 
 var inventory : Array[ItemProperties]
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	await get_tree().create_timer(2.0).timeout
 	# GestionDialogue.lancer_timeline("boulangere")
 

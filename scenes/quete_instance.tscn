@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw648jrb2ck3a"]
+
+[ext_resource type="Texture2D" uid="uid://dkf4t8tu83sbd" path="res://sprites/LETTRE.png" id="1_uq23b"]
+[ext_resource type="FontFile" uid="uid://c6quss0etcsrc" path="res://polices/PixeloidSans-Bold.ttf" id="2_aslmp"]
+[ext_resource type="FontFile" uid="uid://04rj6q4gw31c" path="res://polices/PixeloidSans.ttf" id="3_4hism"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yflpb"]
+font = ExtResource("2_aslmp")
+font_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_is5pg"]
+font = ExtResource("3_4hism")
+font_size = 9
+
+[node name="quete_instance" type="Control"]
+custom_minimum_size = Vector2(400, 65)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="lettre" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -29.0
+offset_right = 80.0
+offset_bottom = 28.0
+grow_vertical = 2
+texture = ExtResource("1_uq23b")
+expand_mode = 1
+
+[node name="lettre_ombre" type="TextureRect" parent="lettre"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uq23b")
+expand_mode = 1
+
+[node name="NomQuete" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 103.0
+offset_top = 8.0
+offset_right = -21.0
+offset_bottom = 30.0
+grow_horizontal = 2
+text = "Casser la machine a thé"
+label_settings = SubResource("LabelSettings_yflpb")
+vertical_alignment = 1
+
+[node name="DescQuete" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_top = 32.0
+offset_right = -19.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Vous devez casser la machine dans le salon de thé."
+label_settings = SubResource("LabelSettings_is5pg")

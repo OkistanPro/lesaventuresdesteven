@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_swd1e")
 titre_quete = "Ramasser la carotte"
-desc_quete = "Fouiller le champs pour récuperer la carotte."
+desc_quete = "Fouiller le champ pour récupérer une carotte."
 state = 0
 metadata/_custom_type_script = "uid://ca284lm2gr3ex"

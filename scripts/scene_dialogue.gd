@@ -43,6 +43,7 @@ func next_message() -> void:
 		if obj_dialogue.parallele:
 			next_message()
 		else:
+			visible = false
 			await GestionDialogue.fin_event
 			next_message()
 	else:

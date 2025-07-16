@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 		mult = 1.8
 		$sprite.speed_scale = 2.0
 	
-	if not GestionDialogue.active:
+	if not GestionDialogue.active and not interface.in_quetes:
 		velocity = direction.normalized() * SPEED * mult
 	else:
 		velocity = Vector2.ZERO

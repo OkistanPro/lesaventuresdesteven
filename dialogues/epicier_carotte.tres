@@ -1,0 +1,152 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=25 format=3 uid="uid://bmme7260b6jjk"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_6cju8"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_p7ipw"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_yddiq"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_4srnx"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="5_e11ci"]
+
+[sub_resource type="Resource" id="Resource_pk31g"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Salut petit enfant jaune."
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_4srnx"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Cool. Vois-tu, j'ai demandé au fermier de me prendre des légumes pour mon marché..."
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_e11ci"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Sauf qu'il a oublié une carotte dans la marchandise"
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_pcebl"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Et la dame qui se trouve à ma gauche voudrait bien une carotte"
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_n1b0d"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Est-ce que tu pourrais prendre la carotte manquante dans son potager ?"
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_48s1p"]
+script = ExtResource("5_e11ci")
+nom_event = "lancement_quete_carotte"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[sub_resource type="Resource" id="Resource_wty4d"]
+script = ExtResource("2_p7ipw")
+liste_messages = Array[ExtResource("1_6cju8")]([SubResource("Resource_4srnx"), SubResource("Resource_e11ci"), SubResource("Resource_pcebl"), SubResource("Resource_n1b0d"), SubResource("Resource_48s1p")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
+
+[sub_resource type="Resource" id="Resource_58qp4"]
+script = ExtResource("2_yddiq")
+libelle_choix = "Oui"
+goto = SubResource("Resource_wty4d")
+variable_condition = ""
+metadata/_custom_type_script = "uid://nj3n5qedxbgm"
+
+[sub_resource type="Resource" id="Resource_g4irc"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Mmmm... tu es un garçon difficile toi"
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_3cqg8"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Si tu le fais, je te donnerai un \"kayou\" en échange."
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_kdfmr"]
+script = ExtResource("3_4srnx")
+nom_perso = "steven"
+mess = "Oh le kayou ! Ok monsieur que dois-t-on faire ?"
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_hxymn"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Cool. Vois-tu, j'ai demandé au fermier de me prendre des légumes pour mon marché..."
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_qrp1s"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Sauf qu'il a oublié une carotte dans la marchandise"
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_iooak"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Et la dame qui se trouve à ma gauche voudrait bien une carotte"
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_m3ld0"]
+script = ExtResource("3_4srnx")
+nom_perso = "epicier"
+mess = "Est-ce que tu pourrais prendre la carotte manquante dans son potager ?"
+liste_choix = Array[ExtResource("2_yddiq")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_rl6mr"]
+script = ExtResource("5_e11ci")
+nom_event = "lancement_quete_carotte"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[sub_resource type="Resource" id="Resource_eca73"]
+script = ExtResource("2_p7ipw")
+liste_messages = Array[ExtResource("1_6cju8")]([SubResource("Resource_g4irc"), SubResource("Resource_3cqg8"), SubResource("Resource_kdfmr"), SubResource("Resource_hxymn"), SubResource("Resource_qrp1s"), SubResource("Resource_iooak"), SubResource("Resource_m3ld0"), SubResource("Resource_rl6mr")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
+
+[sub_resource type="Resource" id="Resource_aqhbl"]
+script = ExtResource("2_yddiq")
+libelle_choix = "Moyennant paiement"
+goto = SubResource("Resource_eca73")
+variable_condition = ""
+metadata/_custom_type_script = "uid://nj3n5qedxbgm"
+
+[sub_resource type="Resource" id="Resource_vksps"]
+script = ExtResource("3_4srnx")
+nom_perso = ""
+mess = "Tiens, tu tombe à pique, est-ce que tu pourrais faire quelque chose pour moi ?"
+liste_choix = Array[ExtResource("2_yddiq")]([SubResource("Resource_58qp4"), SubResource("Resource_aqhbl")])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_p7ipw")
+liste_messages = Array[ExtResource("1_6cju8")]([SubResource("Resource_pk31g"), SubResource("Resource_vksps")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

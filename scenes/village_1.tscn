@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dh5dgl6untq10"]
+[gd_scene load_steps=37 format=3 uid="uid://dh5dgl6untq10"]
 
 [ext_resource type="Texture2D" uid="uid://rt7wbbd5v4kf" path="res://sprites/decor_bas.png" id="1_cayyt"]
 [ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="1_e7mge"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bfjyyksfav4nl" path="res://sprites/persos/petite_pnj.png" id="19_jibjk"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="20_4p5rq"]
 [ext_resource type="Texture2D" uid="uid://c7qgwnubxbgf3" path="res://sprites/PANCARTE.png" id="21_jibjk"]
+[ext_resource type="Script" uid="uid://b3nydqa6c6rcr" path="res://scripts/pancarte.gd" id="22_4p5rq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jibjk"]
 animations = [{
@@ -290,11 +291,21 @@ position = Vector2(0, -17)
 z_index = 1
 position = Vector2(443, 305)
 texture = ExtResource("21_jibjk")
+script = ExtResource("22_4p5rq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Pancarte"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pancarte/StaticBody2D"]
 polygon = PackedVector2Array(-30, 21, -30, 5, 23, 5, 23, 22)
+
+[node name="Area2D" type="Area2D" parent="Pancarte"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pancarte/Area2D"]
+position = Vector2(-2, 31)
+polygon = PackedVector2Array(-38, -27, -38, 8, 34, 7, 34, -27)
+
+[node name="Polygon2D" parent="Pancarte" instance=ExtResource("20_4p5rq")]
+position = Vector2(-4, -33)
 
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
@@ -305,3 +316,5 @@ polygon = PackedVector2Array(-30, 21, -30, 5, 23, 5, 23, 22)
 [connection signal="body_exited" from="FlaqueDEau/Area2D" to="steven" method="_on_flaque_body_exited"]
 [connection signal="body_entered" from="PetitePnj/Area2D" to="PetitePnj" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="PetitePnj/Area2D" to="PetitePnj" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Pancarte/Area2D" to="Pancarte" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Pancarte/Area2D" to="Pancarte" method="_on_area_2d_body_exited"]

@@ -4,6 +4,7 @@ var musique_cinematique = preload("res://sons/OST_CINEMATIQUE.wav")
 var musique_menu = preload("res://sons/OST_MENU.wav")
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	if Globals.in_cinematique:
 		stream = musique_cinematique
 	if Globals.in_menu:

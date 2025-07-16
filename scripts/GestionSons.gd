@@ -10,6 +10,7 @@ var sounds = {
 
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	stream = AudioStreamPolyphonic.new()
 	play()
 	playback = get_stream_playback()

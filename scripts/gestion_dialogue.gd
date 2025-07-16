@@ -8,7 +8,7 @@ var dialogue_scene : PackedScene = preload("res://scenes/dialogue.tscn")
 var timeline_actuel : D_Timeline
 var liste_timeline = {
 	"statue_piedebiche" : preload("res://dialogues/statue_piedebiche.tres"),
-	"boulangere" : preload("res://dialogues/boulangere.tres"),
+	"epicier_carotte" : preload("res://dialogues/epicier_carotte.tres"),
 	"maire_1" : preload("res://dialogues/maire_1.tres"),
 	"pnj_homme" : preload("res://dialogues/pnj_homme.tres"),
 	"lourd" : preload("res://dialogues/lourd.tres"),
@@ -32,6 +32,8 @@ func lancer_timeline(nom_timeline : String) -> void:
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"lancement_quete_carotte":
+			GestionQuetes.lancer_quete("quete_carotte_1.tres")
 		"degourdir_jambe":
 			event_declencheur.emit("degourdir_jambe")
 			Globals.parle_au_fermier = true
