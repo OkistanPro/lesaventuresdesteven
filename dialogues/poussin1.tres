@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=11 format=3 uid="uid://b0omm5jgyc8n1"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_pogcg"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_hi4ic"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_q44ys"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_o86lj"]
+
+[sub_resource type="Resource" id="Resource_3ukhp"]
+script = ExtResource("3_o86lj")
+nom_perso = "Poussin"
+mess = "piou piou piou piou piou"
+liste_choix = Array[ExtResource("2_hi4ic")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_n5mws"]
+script = ExtResource("3_o86lj")
+nom_perso = "steven"
+mess = "Super tranquille et toi ? Alors, toujours à la recherche de la graine que t'a perdu hier ?"
+liste_choix = Array[ExtResource("2_hi4ic")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_sy0fh"]
+script = ExtResource("3_o86lj")
+nom_perso = "Poussin"
+mess = "piou piou piou piou piou piou piou piou piou piou"
+liste_choix = Array[ExtResource("2_hi4ic")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_s277v"]
+script = ExtResource("3_o86lj")
+nom_perso = "Steven"
+mess = "C'est vrai que ça se tente, j'espère quand même que tu vas le retrouver..."
+liste_choix = Array[ExtResource("2_hi4ic")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_amegk"]
+script = ExtResource("3_o86lj")
+nom_perso = "Steven"
+mess = "Faut pas que ça te travaille trop le cerveau ok ?"
+liste_choix = Array[ExtResource("2_hi4ic")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_1t2gp"]
+script = ExtResource("3_o86lj")
+nom_perso = "Poussin"
+mess = "piou"
+liste_choix = Array[ExtResource("2_hi4ic")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_q44ys")
+liste_messages = Array[ExtResource("1_pogcg")]([SubResource("Resource_3ukhp"), SubResource("Resource_n5mws"), SubResource("Resource_sy0fh"), SubResource("Resource_s277v"), SubResource("Resource_amegk"), SubResource("Resource_1t2gp")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

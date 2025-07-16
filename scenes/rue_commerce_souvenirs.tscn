@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="8_2fhiq"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="9_0gg83"]
 [ext_resource type="Texture2D" uid="uid://dbct782wab607" path="res://sprites/souvenirs/souvenirs__0000_Calque-4.png" id="10_5nyyj"]
-[ext_resource type="Texture2D" uid="uid://42lhrku8y0t3" path="res://sprites/RPG_EPICERIE_0001_Calque-2.png" id="11_e4yk3"]
+[ext_resource type="Texture2D" uid="uid://wwq3hoaysdjx" path="res://sprites/RPG_EPICERIE_0002_Calque-3.png" id="11_op1yb"]
 [ext_resource type="Texture2D" uid="uid://5q4nnhw2xxru" path="res://sprites/RPG_EPICERIE_0004_Calque-5.png" id="12_qplw4"]
 [ext_resource type="Texture2D" uid="uid://hthuaho5p6vj" path="res://sprites/FEUILLE PAR TERRE.png" id="13_qplw4"]
 [ext_resource type="Texture2D" uid="uid://c7xnbj543cy2t" path="res://sprites/POT DE FLEUR.png" id="14_op1yb"]
@@ -139,56 +139,56 @@ polygon = PackedVector2Array(-19.3333, 7.33334, -4, 10.6667, 17.3333, 9.33334, 8
 z_index = 2
 position = Vector2(7, 190)
 scale = Vector2(2, 2)
-texture = ExtResource("11_e4yk3")
+texture = ExtResource("11_op1yb")
 offset = Vector2(-0.5, -20.5)
 
 [node name="arbre2" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(31, 94)
 scale = Vector2(2, 2)
-texture = ExtResource("11_e4yk3")
+texture = ExtResource("11_op1yb")
 offset = Vector2(-0.5, -20.5)
 
 [node name="arbre3" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(7, 374)
 scale = Vector2(2, 2)
-texture = ExtResource("11_e4yk3")
+texture = ExtResource("11_op1yb")
 offset = Vector2(-0.5, -20.5)
 
 [node name="arbre4" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(31, 278)
 scale = Vector2(2, 2)
-texture = ExtResource("11_e4yk3")
+texture = ExtResource("11_op1yb")
 offset = Vector2(-0.5, -20.5)
 
 [node name="arbre5" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(7, 566)
 scale = Vector2(2, 2)
-texture = ExtResource("11_e4yk3")
+texture = ExtResource("11_op1yb")
 offset = Vector2(-0.5, -20.5)
 
 [node name="arbre6" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(31, 470)
 scale = Vector2(2, 2)
-texture = ExtResource("11_e4yk3")
+texture = ExtResource("11_op1yb")
 offset = Vector2(-0.5, -20.5)
 
 [node name="arbre7" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(7, 750)
 scale = Vector2(2, 2)
-texture = ExtResource("11_e4yk3")
+texture = ExtResource("11_op1yb")
 offset = Vector2(-0.5, -20.5)
 
 [node name="arbre8" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(31, 654)
 scale = Vector2(2, 2)
-texture = ExtResource("11_e4yk3")
+texture = ExtResource("11_op1yb")
 offset = Vector2(-0.5, -20.5)
 
 [node name="plaine" type="Sprite2D" parent="."]

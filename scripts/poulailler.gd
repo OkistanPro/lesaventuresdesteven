@@ -7,4 +7,4 @@ func _ready() -> void:
 
 func _on_goto_exterieur_body_entered(body: Node2D) -> void:
 	if body == $steven:
-		Globals.goto_scene("poulailler", "rue_residence_ferme", $steven.position.y)
+		Globals.goto_scene("poulailler", "rue_residence_ferme", $steven.position.y, self)

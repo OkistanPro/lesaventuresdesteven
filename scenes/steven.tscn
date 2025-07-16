@@ -133,3 +133,6 @@ editor_draw_limits = true
 [node name="collisionmains" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_y6deb")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true

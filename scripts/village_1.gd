@@ -11,14 +11,14 @@ func _ready() -> void:
 
 func _on_goto_rue_gauche_body_entered(body: Node2D) -> void:
 	if body == $steven:
-		Globals.goto_scene("village_centre", "rue_commerce_epicerie", $steven.position.y)
+		Globals.goto_scene("village_centre", "rue_commerce_epicerie", $steven.position.y, self)
 
 
 func _on_goto_rue_droite_body_entered(body: Node2D) -> void:
 	if body == $steven:
-		Globals.goto_scene("village_centre", "rue_commerce_hotel", $steven.position.y)
+		Globals.goto_scene("village_centre", "rue_commerce_hotel", $steven.position.y, self)
 
 
 func _on_goto_rue_bas_body_entered(body: Node2D) -> void:
 	if body == $steven:
-		Globals.goto_scene("village_centre", "croisement_residence", $steven.position.x)
+		Globals.goto_scene("village_centre", "croisement_residence", $steven.position.x, self)

@@ -7,4 +7,4 @@ func _ready() -> void:
 
 func _on_goto_rue_droite_body_entered(body: Node2D) -> void:
 	if body == $steven:
-		Globals.goto_scene("rue_commerce_souvenirs", "rue_commerce_epicerie", $steven.position.y)
+		Globals.goto_scene("rue_commerce_souvenirs", "rue_commerce_epicerie", $steven.position.y, self)

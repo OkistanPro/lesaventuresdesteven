@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=10 format=3 uid="uid://xyulthle813n"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_g87um"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_hh0ir"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_kqdoj"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_sdl0t"]
+
+[sub_resource type="Resource" id="Resource_eyc3e"]
+script = ExtResource("3_sdl0t")
+nom_perso = "poussin"
+mess = "piou piou piou piou piou"
+liste_choix = Array[ExtResource("2_hh0ir")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_w8kkt"]
+script = ExtResource("3_sdl0t")
+nom_perso = "poussin"
+mess = "piou piou piou piou piou piou piou piou piou piou piou piou piou piou piou"
+liste_choix = Array[ExtResource("2_hh0ir")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_hh0ir"]
+script = ExtResource("3_sdl0t")
+nom_perso = "poussin"
+mess = "piou piou piou piou piou piou piou piou piou piou piou piou piou piou piou"
+liste_choix = Array[ExtResource("2_hh0ir")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_sdl0t"]
+script = ExtResource("3_sdl0t")
+nom_perso = "poussin"
+mess = "piou piou piou"
+liste_choix = Array[ExtResource("2_hh0ir")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_cyl75"]
+script = ExtResource("3_sdl0t")
+nom_perso = "Steven"
+mess = "...alors je l'aurais pas tourné comme ça mais c'est vrai que t'a pas tort."
+liste_choix = Array[ExtResource("2_hh0ir")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_kqdoj")
+liste_messages = Array[ExtResource("1_g87um")]([SubResource("Resource_eyc3e"), SubResource("Resource_w8kkt"), SubResource("Resource_hh0ir"), SubResource("Resource_sdl0t"), SubResource("Resource_cyl75")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

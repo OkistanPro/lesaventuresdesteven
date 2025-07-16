@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=9 format=3 uid="uid://f8arp4wqrg7a"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_jeuhr"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_1rtx3"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_lfcub"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_hyw14"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="4_hyw14"]
+
+[sub_resource type="Resource" id="Resource_rjegt"]
+script = ExtResource("3_hyw14")
+nom_perso = "epicier"
+mess = "Oh parfait, elle va être ravie !"
+liste_choix = Array[ExtResource("2_lfcub")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_7l8rq"]
+script = ExtResource("3_hyw14")
+nom_perso = "epicier"
+mess = "Voilà pour toi un \"kayou\""
+liste_choix = Array[ExtResource("2_lfcub")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_24a0m"]
+script = ExtResource("4_hyw14")
+nom_event = "fin_quete_carotte"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[resource]
+script = ExtResource("2_1rtx3")
+liste_messages = Array[ExtResource("1_jeuhr")]([SubResource("Resource_rjegt"), SubResource("Resource_7l8rq"), SubResource("Resource_24a0m")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

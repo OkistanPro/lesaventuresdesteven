@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://uq4ks8udgkhu"]
+[gd_scene load_steps=25 format=3 uid="uid://uq4ks8udgkhu"]
 
 [ext_resource type="Script" uid="uid://n5j1yg38wj1d" path="res://scripts/rue_residence_ferme.gd" id="1_dqhc6"]
 [ext_resource type="Texture2D" uid="uid://bvguepu4vppxa" path="res://sprites/RPG-RUE-FERME_ferme.png" id="1_m6sjl"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b86hjikjwwk5n" path="res://sprites/RPG_FERME_0007_poussin_fond.png" id="11_sayq4"]
 [ext_resource type="Texture2D" uid="uid://dhyg2mpy5qjr1" path="res://sprites/persos/fermier.png" id="13_tqii1"]
 [ext_resource type="Script" uid="uid://bumxfwekngies" path="res://scripts/gestion_fermier.gd" id="14_nqt51"]
+[ext_resource type="AudioStream" uid="uid://dagt5vfx8pu51" path="res://sons/BRUITAGE DE POUSSIN.mp3" id="15_qvbws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usxj3"]
 size = Vector2(49.0909, 305)
@@ -38,6 +39,9 @@ radius = 21.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvbws"]
 size = Vector2(27.5, 11.5171)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvbws"]
+radius = 37.054
 
 [node name="RueResidenceFerme" type="Node2D"]
 y_sort_enabled = true
@@ -79,6 +83,7 @@ position = Vector2(178.31, 378.245)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("4_cas2x")
 script = ExtResource("5_ovgsu")
+nom_timeline = "poussin1"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="poussin1"]
@@ -99,6 +104,7 @@ position = Vector2(340, 382)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("6_dqhc6")
 script = ExtResource("5_ovgsu")
+nom_timeline = "poussin2"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="poussin2"]
@@ -119,6 +125,7 @@ position = Vector2(416, 343)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_sayq4")
 script = ExtResource("5_ovgsu")
+nom_timeline = "poussin3"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="poussin3"]
@@ -139,6 +146,7 @@ position = Vector2(576, 489)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("8_tqii1")
 script = ExtResource("5_ovgsu")
+nom_timeline = "poussin4"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="poussin4"]
@@ -159,6 +167,7 @@ position = Vector2(313, 266)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("11_sayq4")
 script = ExtResource("5_ovgsu")
+nom_timeline = "poussin5_dos"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="Area2D" type="Area2D" parent="poussin5"]
@@ -228,6 +237,34 @@ position = Vector2(265, 292)
 rotation = -0.333005
 shape = SubResource("RectangleShape2D_qvbws")
 
+[node name="PNJ" type="Sprite2D" parent="."]
+position = Vector2(467, 519)
+script = ExtResource("5_ovgsu")
+nom_timeline = "poussin_dead"
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PNJ"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="PNJ/StaticBody2D"]
+polygon = PackedVector2Array(-14, -8, 5, -15, 15, -15, 17, -13, 15, 6, 15, 11, -7, 11, -14, 20, -27, 4)
+
+[node name="Area2D" type="Area2D" parent="PNJ"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/Area2D"]
+shape = SubResource("CircleShape2D_qvbws")
+
+[node name="Polygon2D" parent="PNJ" instance=ExtResource("6_ovgsu")]
+position = Vector2(0, -24)
+
+[node name="gestion_pnj" type="Node" parent="PNJ"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(376, 400)
+stream = ExtResource("15_qvbws")
+volume_db = -20.0
+autoplay = true
+panning_strength = 0.6
+
 [connection signal="body_entered" from="poussin1/Area2D" to="poussin1" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="poussin1/Area2D" to="poussin1" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="poussin2/Area2D" to="poussin2" method="_on_area_2d_body_entered"]
@@ -242,3 +279,5 @@ shape = SubResource("RectangleShape2D_qvbws")
 [connection signal="body_entered" from="fermier/Area2D" to="fermier" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="fermier/Area2D" to="fermier" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="goto_ferme" to="." method="_on_goto_ferme_body_entered"]
+[connection signal="body_entered" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_exited"]

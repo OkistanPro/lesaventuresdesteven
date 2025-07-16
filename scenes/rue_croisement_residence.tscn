@@ -67,6 +67,7 @@ y_sort_enabled = true
 position = Vector2(31, 322)
 
 [node name="statue-devant" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(329, 515)
 scale = Vector2(2.3, 2.3)
 texture = ExtResource("4_dxba7")
@@ -79,6 +80,7 @@ position = Vector2(0, -14.3478)
 polygon = PackedVector2Array(-35.9091, -12.7273, -41.3637, -7.72728, -42.2727, -0.909088, -39.5455, 5.90909, -36.8182, 14.0909, -25.4546, 19.0909, -13.1818, 20, -7.72729, 22.2727, 5.90907, 20.4545, 15, 22.7273, 35.9091, 25.9091, 45, 21.8182, 47.2727, 15.4545, 46.3636, 3.63635, 43.1818, -3.63637, 33.1818, -10, 0.909073, -15.4545, -22.7273, -15)
 
 [node name="arbres_bas" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(332, 623)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("3_gl0ag")
@@ -124,6 +126,7 @@ position = Vector2(327, -3.5625)
 shape = SubResource("RectangleShape2D_rq2oj")
 
 [node name="arbre1" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(11, 686)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_dxba7")
@@ -136,6 +139,7 @@ position = Vector2(-2.04546, -15.909)
 shape = SubResource("RectangleShape2D_k6500")
 
 [node name="arbre2" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(35, 614)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_dxba7")
@@ -148,6 +152,7 @@ position = Vector2(-2.04546, -15.909)
 shape = SubResource("RectangleShape2D_k6500")
 
 [node name="arbre3" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(-5, 574)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_dxba7")
@@ -160,6 +165,7 @@ position = Vector2(-2.04546, -15.909)
 shape = SubResource("RectangleShape2D_k6500")
 
 [node name="arbre4" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(675, 686)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_dxba7")
@@ -172,6 +178,7 @@ position = Vector2(-2.04544, -15.909)
 shape = SubResource("RectangleShape2D_k6500")
 
 [node name="arbre5" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(675, 622)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_dxba7")
@@ -184,6 +191,7 @@ position = Vector2(-2.04544, -15.909)
 shape = SubResource("RectangleShape2D_k6500")
 
 [node name="arbre6" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(659, 574)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_dxba7")
@@ -196,24 +204,28 @@ position = Vector2(-2.04544, -15.909)
 shape = SubResource("RectangleShape2D_k6500")
 
 [node name="HerbesHautes1" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(106, 233)
 scale = Vector2(2, 2)
 texture = ExtResource("8_rq2oj")
 offset = Vector2(0, -5)
 
 [node name="HerbesHautes2" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(578, 67)
 scale = Vector2(2, 2)
 texture = ExtResource("8_rq2oj")
 offset = Vector2(0, -5)
 
 [node name="HerbesHautes3" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(218, 94)
 scale = Vector2(2, 2)
 texture = ExtResource("8_rq2oj")
 offset = Vector2(0, -5)
 
 [node name="rouge" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_u6t76")
 position = Vector2(37, 117)
 scale = Vector2(2.7, 2.7)
@@ -223,6 +235,7 @@ region_enabled = true
 region_rect = Rect2(6, 23, 7, 14)
 
 [node name="rouge2" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_u6t76")
 position = Vector2(67, 148)
 scale = Vector2(2.7, 2.7)
@@ -232,6 +245,7 @@ region_enabled = true
 region_rect = Rect2(6, 23, 7, 14)
 
 [node name="rose" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_su6mw")
 position = Vector2(628, 256)
 scale = Vector2(2.7, 2.7)
@@ -241,6 +255,7 @@ region_enabled = true
 region_rect = Rect2(42, 24, 8, 14)
 
 [node name="buisson1" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_4ayj8")
 position = Vector2(149, 114)
 texture = ExtResource("13_ugkx1")
@@ -252,6 +267,7 @@ offset = Vector2(1, -14)
 shape = SubResource("CircleShape2D_u6t76")
 
 [node name="buisson2" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_4ayj8")
 position = Vector2(588, 187)
 texture = ExtResource("13_ugkx1")
@@ -263,6 +279,7 @@ offset = Vector2(1, -14)
 shape = SubResource("CircleShape2D_u6t76")
 
 [node name="buisson3" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_4ayj8")
 position = Vector2(499, 255)
 texture = ExtResource("13_ugkx1")
@@ -274,6 +291,7 @@ offset = Vector2(1, -14)
 shape = SubResource("CircleShape2D_u6t76")
 
 [node name="rose2" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_ugkx1")
 position = Vector2(586, 120)
 scale = Vector2(2.7, 2.7)
