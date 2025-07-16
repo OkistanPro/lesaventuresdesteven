@@ -19,9 +19,31 @@ var liste_timeline = {
 	"fermier_attente_quete1" : preload("res://dialogues/fermier_attente_quete1.tres"),
 	"carotte_sous_terre": preload("res://dialogues/carotte_sous_terre.tres"),
 	"pasforet" : preload("res://dialogues/pasforet.tres"),
-	"pnj_fontaine" : preload("res://dialogues/pnj_fille1.tres")
+	"pnj_fontaine" : preload("res://dialogues/pnj_fille1.tres"),
+	"graines" : preload("res://dialogues/graines.tres"),
+	"oeuf" : preload("res://dialogues/oeuf.tres")
 }
 var active : bool = false
+
+func _ready() -> void :
+	var directories_to_look_at = ["res://dialogues/"]
+	while directories_to_look_at:
+		var dir = DirAccess.open(directories_to_look_at[0])
+		if dir:
+			dir.list_dir_begin()
+			var file_name = dir.get_next()
+			while file_name != "":
+				if dir.current_is_dir():
+					print("Found directory: " + file_name)
+					directories_to_look_at.append(directories_to_look_at[0] + file_name)
+				else:
+					print("Found file: " + file_name)
+					liste_timeline[file_name.get_slice(".", 0)] = load(directories_to_look_at[0] + "/" + file_name)
+				file_name = dir.get_next()
+		else:
+			print(directories_to_look_at[0])
+			print("An error occurred when trying to access the path.")
+		directories_to_look_at.pop_front()
 
 func lancer_timeline(nom_timeline : String) -> void:
 	if not active:

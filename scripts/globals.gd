@@ -15,6 +15,8 @@ var rue_residence_laparc1 = preload("res://scenes/rue_residence_parc1.tscn")
 var rue_residence_laparc2 = preload("res://scenes/rue_residence_parc2.tscn")
 var rue_residence_ferme = preload("res://scenes/rue_residence_ferme.tscn")
 
+var poulailler = preload("res://scenes/poulailler.tscn")
+
 var direction_from : String
 var y_from : float
 var selected_item : int = -1
@@ -93,7 +95,12 @@ func goto_scene(from : String, to : String, y : float) -> void:
 			match to:
 				"rue_residence_champ":
 					get_tree().change_scene_to_packed.call_deferred(rue_residence_champ)
-
+				"poulailler":
+					get_tree().change_scene_to_packed.call_deferred(poulailler)
+		"poulailler":
+			match to:
+				"rue_residence_ferme":
+					get_tree().change_scene_to_packed.call_deferred(rue_residence_ferme)
 
 
 

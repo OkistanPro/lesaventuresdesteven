@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://uq4ks8udgkhu"]
+[gd_scene load_steps=23 format=3 uid="uid://uq4ks8udgkhu"]
 
 [ext_resource type="Script" uid="uid://n5j1yg38wj1d" path="res://scripts/rue_residence_ferme.gd" id="1_dqhc6"]
 [ext_resource type="Texture2D" uid="uid://bvguepu4vppxa" path="res://sprites/RPG-RUE-FERME_ferme.png" id="1_m6sjl"]
@@ -36,6 +36,9 @@ size = Vector2(17.3333, 19.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_nqt51"]
 radius = 21.5
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvbws"]
+size = Vector2(27.5, 11.5171)
+
 [node name="RueResidenceFerme" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_dqhc6")
@@ -69,7 +72,7 @@ shape = SubResource("RectangleShape2D_afdon")
 
 [node name="steven" parent="." instance=ExtResource("4_afdon")]
 z_index = 0
-position = Vector2(622, 481)
+position = Vector2(293, 321)
 
 [node name="poussin1" type="Sprite2D" parent="."]
 position = Vector2(178.31, 378.245)
@@ -218,6 +221,13 @@ shape = SubResource("CircleShape2D_nqt51")
 [node name="Polygon2D" parent="fermier" instance=ExtResource("6_ovgsu")]
 position = Vector2(0, -22.9059)
 
+[node name="goto_ferme" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_ferme"]
+position = Vector2(265, 292)
+rotation = -0.333005
+shape = SubResource("RectangleShape2D_qvbws")
+
 [connection signal="body_entered" from="poussin1/Area2D" to="poussin1" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="poussin1/Area2D" to="poussin1" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="poussin2/Area2D" to="poussin2" method="_on_area_2d_body_entered"]
@@ -231,3 +241,4 @@ position = Vector2(0, -22.9059)
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="fermier/Area2D" to="fermier" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="fermier/Area2D" to="fermier" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="goto_ferme" to="." method="_on_goto_ferme_body_entered"]

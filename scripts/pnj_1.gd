@@ -27,7 +27,7 @@ func _ready() -> void:
 		detection_shape.owner = get_tree().edited_scene_root
 
 		
-		polygon_instance.visible 
+		polygon_instance.visible = false
 		add_child(polygon_instance)
 		polygon_instance.owner = get_tree().edited_scene_root
 		node_custom.name = "gestion_pnj"

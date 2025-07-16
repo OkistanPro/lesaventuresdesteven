@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://b21tvn732wndu"]
+
+[ext_resource type="Texture2D" uid="uid://d21cpculgsn0" path="res://sprites/RPG POULAILLER.png" id="1_jchfr"]
+[ext_resource type="Script" uid="uid://cny4if3eab6ug" path="res://scripts/poulailler.gd" id="1_qke2o"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="2_qke2o"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="4_upxet"]
+[ext_resource type="Script" uid="uid://bhsk7fhnl4vyo" path="res://scripts/interaction_component.gd" id="4_w6uxl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upxet"]
+size = Vector2(68, 5.25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qke2o"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w6uxl"]
+radius = 29.0172
+
+[node name="Poulailler" type="Node2D"]
+script = ExtResource("1_qke2o")
+
+[node name="RpgPoulailler" type="Sprite2D" parent="."]
+position = Vector2(316.6, 462.8)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_jchfr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RpgPoulailler"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RpgPoulailler/StaticBody2D"]
+polygon = PackedVector2Array(-84.5455, 51.8182, -63.1818, 56.3636, -61.8182, 50, -52.7273, 52.7273, -47.2727, 53.6364, -39.0909, 49.5455, -22.2727, 41.8182, -18.6364, 40, -17.7273, 25.4546, -19.0909, 24.0909, -11.3636, 21.8182, -0.454552, 21.3636, 30.4545, 22.7273, 46.8182, 25.4546, 64.5455, 30.4546, 70, 53.1818, 86.8182, 50.9091, 86.8182, 46.8182, 90.9091, 50.9091, 92.2727, 59.5455, 90.4545, 70.9091, 78.6364, 83.6364, 64.0909, 93.1818, 45, 98.6364, 26.8182, 102.273, 28.6364, 121.364, 93.6364, 100, 111.818, 48.6364, 96.3636, 29.0909, 59.0909, 10.4546, -10.4546, 5.9091, -60, 16.3636, -104.091, 40.4546, -121.818, 81.8182, -104.545, 112.727, -31.8182, 126.364, -26.3636, 119.545, -23.6364, 103.636, -45, 100, -65.4545, 95, -84.0909, 85.4545, -93.6364, 74.0909, -95.4545, 65, -89.5455, 52.2727, -83.6364, 46.3636)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RpgPoulailler/StaticBody2D"]
+polygon = PackedVector2Array(25.4545, 28.6364, 24.0909, 33.1818, 27.2727, 35.9091, 32.7273, 36.3636, 33.1818, 44.0909, 40.9091, 46.8182, 53.6364, 47.2727, 56.3636, 47.2727, 63.6364, 39.5455, 63.1818, 37.2727, 57.7273, 39.0909, 55.4545, 40.9091, 52.2727, 35.9091, 42.7273, 36.8182, 35.4545, 34.0909, 35.9091, 29.0909, 33.1818, 25, 25.9091, 26.8182)
+
+[node name="steven" parent="." instance=ExtResource("2_qke2o")]
+position = Vector2(316.6, 565.8)
+
+[node name="goto_exterieur" type="Area2D" parent="."]
+position = Vector2(207.6, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_exterieur"]
+position = Vector2(111.4, 509)
+shape = SubResource("RectangleShape2D_upxet")
+
+[node name="dialogue_graines" type="Area2D" parent="."]
+
+[node name="InteractionComponent" type="Node" parent="dialogue_graines"]
+script = ExtResource("4_w6uxl")
+nom_timeline = "graines"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue_graines"]
+position = Vector2(269, 504)
+shape = SubResource("CircleShape2D_qke2o")
+
+[node name="Polygon2D" parent="dialogue_graines" instance=ExtResource("4_upxet")]
+position = Vector2(267, 476)
+
+[node name="dialogue_oeuf" type="Area2D" parent="."]
+position = Vector2(97, 5)
+
+[node name="InteractionComponent" type="Node" parent="dialogue_oeuf"]
+script = ExtResource("4_w6uxl")
+nom_timeline = "oeuf"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue_oeuf"]
+position = Vector2(269, 504)
+shape = SubResource("CircleShape2D_w6uxl")
+
+[node name="Polygon2D" parent="dialogue_oeuf" instance=ExtResource("4_upxet")]
+position = Vector2(267, 476)
+
+[connection signal="body_entered" from="goto_exterieur" to="." method="_on_goto_exterieur_body_entered"]

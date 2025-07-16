@@ -302,7 +302,7 @@ polygon = PackedVector2Array(-30, 21, -30, 5, 23, 5, 23, 22)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pancarte/Area2D"]
 position = Vector2(-2, 31)
-polygon = PackedVector2Array(-38, -27, -38, 8, 34, 7, 34, -27)
+polygon = PackedVector2Array(-28, -23, -38, 8, 34, 7, 25, -23)
 
 [node name="Polygon2D" parent="Pancarte" instance=ExtResource("20_4p5rq")]
 position = Vector2(-4, -33)

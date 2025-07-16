@@ -11,6 +11,8 @@ func _input(event: InputEvent) -> void:
 
 func _on_visibility_changed() -> void:
 	if visible:
+		while $Panel/VBoxContainer.get_child_count() > 0:
+			$Panel/VBoxContainer.get_child(0).queue_free()
 		for quete_string in GestionQuetes.liste_quetes:
 			var quete = GestionQuetes.liste_quetes[quete_string]
 			if quete.state != Quete.Quete_State.INACTIF:
