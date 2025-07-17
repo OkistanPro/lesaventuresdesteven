@@ -1,0 +1,147 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=23 format=3 uid="uid://draixtwy36sfm"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_332as"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_0uh5m"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_76y55"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_xsw6r"]
+
+[sub_resource type="Resource" id="Resource_oqans"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Hoteliere"
+mess = "Bonjour, vous etes surement la nouvelle recrus de ménage que j'ai embauché ..."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_76y55"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Steven"
+mess = "Non, je suis Ste..."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_xsw6r"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Hoteliere"
+mess = "Parfait ! Alors, pour vous équiper de quoi nettoyer l'hotel, il suffit de prendre le balais derriere cette porte"
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_hla0n"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Hoteliere"
+mess = "Puis, il suffit simplement de chasser toutes ces toiles d'araignées ..."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_c412k"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Steven"
+mess = "Mais, j'ai jamais di...."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_x0nc8"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Hoteliere"
+mess = "Et de balayer ces poussieres par çi par la ..."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_i05vj"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Hoteliere"
+mess = "Nous nous devons d'acceuillir les nouveaux venus a l'hotel en modestie ..."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_i76be"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Steven"
+mess = "Tres bien, tres bien ... j'y vais ..."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_n5bo3"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Hoteliere"
+mess = "Merci, jeune ... poussin ..."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_hd6lp"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Hoteliere"
+mess = "Bizzare les nouvelles recrues de menages ..."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_a68fa"]
+script = ExtResource("2_0uh5m")
+liste_messages = Array[ExtResource("1_332as")]([SubResource("Resource_i76be"), SubResource("Resource_n5bo3"), SubResource("Resource_hd6lp")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
+
+[sub_resource type="Resource" id="Resource_pfx4w"]
+script = ExtResource("2_76y55")
+libelle_choix = "Aller chercher le balais"
+goto = SubResource("Resource_a68fa")
+variable_condition = ""
+metadata/_custom_type_script = "uid://nj3n5qedxbgm"
+
+[sub_resource type="Resource" id="Resource_cccvh"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Steven"
+mess = "AAAALLEEEER SALUUUUTT ..."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_miihx"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Hoteliere"
+mess = "Qu'es ce qui vous arrive, revenez ... MONSIEUR !"
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_rciry"]
+script = ExtResource("3_xsw6r")
+nom_perso = ""
+mess = "Et Steven s'enfuit de l'hotel."
+liste_choix = Array[ExtResource("2_76y55")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_r6c47"]
+script = ExtResource("2_0uh5m")
+liste_messages = Array[ExtResource("1_332as")]([SubResource("Resource_cccvh"), SubResource("Resource_miihx"), SubResource("Resource_rciry")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
+
+[sub_resource type="Resource" id="Resource_a1rwq"]
+script = ExtResource("2_76y55")
+libelle_choix = "S'enfuir en courant"
+goto = SubResource("Resource_r6c47")
+variable_condition = ""
+metadata/_custom_type_script = "uid://nj3n5qedxbgm"
+
+[sub_resource type="Resource" id="Resource_nxlel"]
+script = ExtResource("3_xsw6r")
+nom_perso = "Steven"
+mess = "(Bon on dirait que j'ai pas trop le choix ...)"
+liste_choix = Array[ExtResource("2_76y55")]([SubResource("Resource_pfx4w"), SubResource("Resource_a1rwq")])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_0uh5m")
+liste_messages = Array[ExtResource("1_332as")]([SubResource("Resource_oqans"), SubResource("Resource_76y55"), SubResource("Resource_xsw6r"), SubResource("Resource_hla0n"), SubResource("Resource_c412k"), SubResource("Resource_x0nc8"), SubResource("Resource_i05vj"), SubResource("Resource_nxlel")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
