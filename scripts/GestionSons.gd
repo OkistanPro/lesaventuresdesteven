@@ -5,6 +5,10 @@ var sounds = {
 	"collect_item" : [
 		preload("res://sons/collect_item_sparkle_pop_09.wav"),
 		-15.0
+	],
+	"no_timeline" : [
+		preload("res://sons/ui_menu_button_error_01.wav"),
+		-15.0
 	]
 }
 

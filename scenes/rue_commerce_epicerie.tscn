@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://lks60wflubbl"]
+[gd_scene load_steps=26 format=3 uid="uid://lks60wflubbl"]
 
 [ext_resource type="Script" uid="uid://dhs4f08w3k5so" path="res://scripts/rue_commerce_0.tres.gd" id="1_0ly6x"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_sagis"]
@@ -35,6 +35,9 @@ texture_icon = ExtResource("9_g815p")
 pickable = true
 event_on_not_pick = &""
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pscvu"]
+radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2j44v"]
 size = Vector2(15.2941, 12.4706)
@@ -165,6 +168,14 @@ texture = ExtResource("9_g815p")
 script = ExtResource("10_g815p")
 properties = SubResource("Resource_6asm6")
 metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="banane"]
+
+[node name="@CollisionShape2D@33786" type="CollisionShape2D" parent="banane/Area2D"]
+shape = SubResource("CircleShape2D_pscvu")
+
+[node name="Polygon2D" parent="banane" instance=ExtResource("16_54f4n")]
+position = Vector2(0, -17.5)
 
 [node name="pomme" type="Sprite2D" parent="."]
 position = Vector2(435, 228)

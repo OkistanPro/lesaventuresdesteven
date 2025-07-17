@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7v1lskaooitx"]
+[gd_scene load_steps=19 format=3 uid="uid://b7v1lskaooitx"]
 
 [ext_resource type="Texture2D" uid="uid://blejbvji5xy8n" path="res://sprites/champ.png" id="1_blxw8"]
 [ext_resource type="Texture2D" uid="uid://brwgewxnqvf3p" path="res://sprites/RPG-RUE-HABITANT.png" id="1_m52ug"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="7_15iwy"]
 [ext_resource type="Texture2D" uid="uid://ctqensfx18cd1" path="res://sprites/RPG_CHAMP_0001_ITEM-CAROTTE.png" id="8_entdd"]
 [ext_resource type="Texture2D" uid="uid://5xt5ulqnf78t" path="res://sprites/RPG_PARC_2_0002_barriere.png" id="10_18sym"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="10_e1isu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_notw4"]
 size = Vector2(389.091, 177.727)
@@ -24,6 +25,9 @@ texture_icon = ExtResource("8_entdd")
 pickable = false
 event_on_not_pick = &"carotte_sous_terre"
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_itce0"]
+radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fucvl"]
 size = Vector2(18, 419.5)
@@ -92,6 +96,17 @@ texture = ExtResource("5_notw4")
 script = ExtResource("6_fucvl")
 properties = SubResource("Resource_offx8")
 metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="ItemObject"]
+
+[node name="@CollisionShape2D@41081" type="CollisionShape2D" parent="ItemObject/Area2D"]
+shape = SubResource("CircleShape2D_itce0")
+
+[node name="Polygon2D" type="Polygon2D" parent="ItemObject" instance=ExtResource("10_e1isu")]
+visible = false
+position = Vector2(0, -16)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="goto_rue_gauche" type="Area2D" parent="."]
 

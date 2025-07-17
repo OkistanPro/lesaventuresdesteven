@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("inv_1"):
 		if $ItemList.item_count > 0:
-			if not $ItemList.get_selected_items():
+			if 0 not in $ItemList.get_selected_items():
 				$ItemList.select(0)
 				select_item_data()
 			else:
@@ -40,7 +40,7 @@ func _input(event: InputEvent) -> void:
 				Globals.selected_item = -1
 	if event.is_action_pressed("inv_2"):
 		if $ItemList.item_count > 1:
-			if not $ItemList.get_selected_items():
+			if 1 not in $ItemList.get_selected_items():
 				$ItemList.select(1)
 				select_item_data()
 			else:
@@ -48,7 +48,7 @@ func _input(event: InputEvent) -> void:
 				Globals.selected_item = -1
 	if event.is_action_pressed("inv_3"):
 		if $ItemList.item_count > 2:
-			if not $ItemList.get_selected_items():
+			if 2 not in $ItemList.get_selected_items():
 				$ItemList.select(2)
 				select_item_data()
 			else:
@@ -56,7 +56,7 @@ func _input(event: InputEvent) -> void:
 				Globals.selected_item = -1
 	if event.is_action_pressed("inv_4"):
 		if $ItemList.item_count > 3:
-			if not $ItemList.get_selected_items():
+			if 3 not in $ItemList.get_selected_items():
 				$ItemList.select(3)
 				select_item_data()
 			else:
@@ -64,7 +64,7 @@ func _input(event: InputEvent) -> void:
 				Globals.selected_item = -1
 	if event.is_action_pressed("inv_5"):
 		if $ItemList.item_count > 4:
-			if not $ItemList.get_selected_items():
+			if 4 not in $ItemList.get_selected_items():
 				$ItemList.select(4)
 				select_item_data()
 			else:
@@ -72,7 +72,7 @@ func _input(event: InputEvent) -> void:
 				Globals.selected_item = -1
 	if event.is_action_pressed("inv_6"):
 		if $ItemList.item_count > 5:
-			if not $ItemList.get_selected_items():
+			if 5 not in $ItemList.get_selected_items():
 				$ItemList.select(5)
 				select_item_data()
 			else:
@@ -80,7 +80,7 @@ func _input(event: InputEvent) -> void:
 				Globals.selected_item = -1
 	if event.is_action_pressed("inv_7"):
 		if $ItemList.item_count > 6:
-			if not $ItemList.get_selected_items():
+			if 6 not in $ItemList.get_selected_items():
 				$ItemList.select(6)
 				select_item_data()
 			else:
@@ -88,7 +88,7 @@ func _input(event: InputEvent) -> void:
 				Globals.selected_item = -1
 	if event.is_action_pressed("inv_8"):
 		if $ItemList.item_count > 7:
-			if not $ItemList.get_selected_items():
+			if 7 not in $ItemList.get_selected_items():
 				$ItemList.select(7)
 				select_item_data()
 			else:

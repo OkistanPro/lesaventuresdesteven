@@ -117,8 +117,16 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 
 
 
-func item_event(name_event : StringName):
+func item_event(name_event : StringName, send_object : ItemProperties = null):
 	match name_event:
+		&"montre":
+			if not send_object.picked:
+				Globals.pick_item(send_object)
+				GestionSons.play_sound("collect_item")
+				send_object.picked = true
+				send_object.event_on_not_pick = "trou_vide"
+		&"trou_vide":
+			GestionDialogue.lancer_timeline("trou_vide")
 		&"test":
 			GestionDialogue.lancer_timeline("lourd")
 		&"carotte_sous_terre":

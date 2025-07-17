@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://gilqi1v1v1hn"]
+[gd_scene load_steps=31 format=3 uid="uid://gilqi1v1v1hn"]
 
 [ext_resource type="Script" uid="uid://cd561svy56fgh" path="res://scripts/rue_residence_parc_2.gd" id="1_58awy"]
 [ext_resource type="Texture2D" uid="uid://7w7xx3axax0d" path="res://sprites/RPG_PARC_1_0001_Calque-5.png" id="2_4ky22"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://rswb04pllwff" path="res://sprites/FLEURS.png" id="9_pqfvm"]
 [ext_resource type="Shader" uid="uid://d0q8j56tgn11c" path="res://shaders/fleur_rose.gdshader" id="11_2i44t"]
 [ext_resource type="Shader" uid="uid://c2f140whsd2qu" path="res://shaders/fleur_jaune.gdshader" id="12_wcme7"]
+[ext_resource type="Texture2D" uid="uid://7ioyhkwqfl3o" path="res://sprites/TROU DE TERRRE.png" id="13_2i44t"]
+[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="14_w8ygl"]
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="15_eqotn"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="16_mgyc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hoivi"]
 size = Vector2(1.36366, 8.63636)
@@ -42,6 +46,22 @@ shader = ExtResource("11_2i44t")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eqotn"]
 shader = ExtResource("12_wcme7")
+
+[sub_resource type="Resource" id="Resource_agpoo"]
+script = ExtResource("15_eqotn")
+item_name = &"trou_vide"
+pickable = false
+event_on_not_pick = &"trou_vide"
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w8ygl"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eqotn"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mgyc0"]
+radius = 30.0
 
 [node name="rue_residence_parc2" type="Node2D"]
 y_sort_enabled = true
@@ -107,6 +127,7 @@ position = Vector2(145.682, -52.9545)
 shape = SubResource("RectangleShape2D_ty0cq")
 
 [node name="toboggan" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(198, 538)
 scale = Vector2(2.4, 2.4)
 texture = ExtResource("5_64fnk")
@@ -120,6 +141,7 @@ position = Vector2(0.416664, -6.25)
 polygon = PackedVector2Array(34.1667, 26.6667, 1.25, 30, -30, 6.66667, -30, 1.25, 8.33334, -4.16666, 12.5, -0.833328, 26.6667, 6.25, 34.1667, 21.25)
 
 [node name="Banc" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(544, 563)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("6_4ky22")
@@ -196,5 +218,59 @@ scale = Vector2(2.7, 2.7)
 texture = ExtResource("9_pqfvm")
 region_enabled = true
 region_rect = Rect2(24, 21, 7, 17)
+
+[node name="trou_de_terre" type="Sprite2D" parent="."]
+position = Vector2(450, 552)
+scale = Vector2(2, 2)
+texture = ExtResource("13_2i44t")
+script = ExtResource("14_w8ygl")
+properties = SubResource("Resource_agpoo")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre"]
+
+[node name="@CollisionShape2D@59021" type="CollisionShape2D" parent="trou_de_terre/Area2D"]
+shape = SubResource("CircleShape2D_w8ygl")
+
+[node name="Polygon2D" type="Polygon2D" parent="trou_de_terre" instance=ExtResource("16_mgyc0")]
+position = Vector2(0, -10)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
+
+[node name="trou_de_terre2" type="Sprite2D" parent="."]
+position = Vector2(274, 480)
+scale = Vector2(2, 2)
+texture = ExtResource("13_2i44t")
+script = ExtResource("14_w8ygl")
+properties = SubResource("Resource_agpoo")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre2"]
+
+[node name="@CollisionShape2D@59022" type="CollisionShape2D" parent="trou_de_terre2/Area2D"]
+shape = SubResource("CircleShape2D_eqotn")
+
+[node name="Polygon2D" type="Polygon2D" parent="trou_de_terre2" instance=ExtResource("16_mgyc0")]
+position = Vector2(0, -10)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
+
+[node name="trou_de_terre3" type="Sprite2D" parent="."]
+position = Vector2(634, 488)
+scale = Vector2(2, 2)
+texture = ExtResource("13_2i44t")
+script = ExtResource("14_w8ygl")
+properties = SubResource("Resource_agpoo")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre3"]
+
+[node name="@CollisionShape2D@59023" type="CollisionShape2D" parent="trou_de_terre3/Area2D"]
+shape = SubResource("CircleShape2D_mgyc0")
+
+[node name="Polygon2D" type="Polygon2D" parent="trou_de_terre3" instance=ExtResource("16_mgyc0")]
+position = Vector2(0, -10)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]

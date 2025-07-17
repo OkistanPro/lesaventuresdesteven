@@ -41,7 +41,7 @@ func _input(event: InputEvent) -> void:
 		elif Globals.selected_item_name in nom_timeline_selon_select:
 			GestionDialogue.lancer_timeline(nom_timeline_selon_select[Globals.selected_item_name])
 		else:
-			pass
+			GestionSons.play_sound("no_timeline")
 			# truc sonore si jamais on a pas l'objet
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == $"../steven":

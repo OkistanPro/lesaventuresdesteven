@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cdy3i0fsqbxvk"]
+[gd_scene load_steps=33 format=3 uid="uid://cdy3i0fsqbxvk"]
 
 [ext_resource type="Script" uid="uid://deasxn1co6tks" path="res://scripts/rue_residence_parc_1.gd" id="1_55ydb"]
 [ext_resource type="Texture2D" uid="uid://7w7xx3axax0d" path="res://sprites/RPG_PARC_1_0001_Calque-5.png" id="2_dfewk"]
@@ -8,12 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://nob6w0x0qruq" path="res://sprites/RPG_PARC_ITEM_0006_tondeuse.png" id="5_muyxg"]
 [ext_resource type="Texture2D" uid="uid://ccce1tdl4wl6h" path="res://sprites/RPG_PARC_ITEM_0005_trucla.png" id="6_muyxg"]
 [ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="7_gimey"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="8_gimey"]
 [ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="8_okygd"]
 [ext_resource type="Texture2D" uid="uid://5xt5ulqnf78t" path="res://sprites/RPG_PARC_2_0002_barriere.png" id="10_ko2y3"]
 [ext_resource type="Texture2D" uid="uid://bbsela2c1kt2n" path="res://sprites/HERBES HAUTES.png" id="11_kgp2x"]
 [ext_resource type="Shader" uid="uid://bl6nhjph8qnbu" path="res://shaders/fleur.gdshader" id="12_i20xv"]
 [ext_resource type="Texture2D" uid="uid://rswb04pllwff" path="res://sprites/FLEURS.png" id="12_lk5db"]
 [ext_resource type="Shader" uid="uid://c2f140whsd2qu" path="res://shaders/fleur_jaune.gdshader" id="14_r56y0"]
+[ext_resource type="Texture2D" uid="uid://7ioyhkwqfl3o" path="res://sprites/TROU DE TERRRE.png" id="16_okygd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hoivi"]
 size = Vector2(1.36366, 8.63636)
@@ -28,9 +30,12 @@ size = Vector2(300.909, 6.81818)
 script = ExtResource("8_okygd")
 item_name = &"tondeuse"
 texture_icon = ExtResource("5_muyxg")
-pickable = false
+pickable = true
 event_on_not_pick = &""
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_okygd"]
+radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55ydb"]
 size = Vector2(673, 14)
@@ -43,6 +48,36 @@ shader = ExtResource("12_i20xv")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gimey"]
 shader = ExtResource("14_r56y0")
+
+[sub_resource type="Resource" id="Resource_hrolg"]
+script = ExtResource("8_okygd")
+item_name = &"trou_vide"
+pickable = false
+event_on_not_pick = &"trou_vide"
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrolg"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g0t67"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sufv0"]
+radius = 30.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_okygd"]
+size = Vector2(64, 64)
+
+[sub_resource type="Resource" id="Resource_g0t67"]
+script = ExtResource("8_okygd")
+item_name = &"montre"
+texture_icon = SubResource("PlaceholderTexture2D_okygd")
+pickable = false
+event_on_not_pick = &"montre"
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmisc"]
+radius = 30.0
 
 [node name="rue_residence_parc1" type="Node2D"]
 y_sort_enabled = true
@@ -108,14 +143,23 @@ position = Vector2(0, 0.22728)
 shape = SubResource("RectangleShape2D_p1jxm")
 
 [node name="tondeuse" type="Sprite2D" parent="."]
-position = Vector2(116, 509)
+position = Vector2(192, 453)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_muyxg")
 script = ExtResource("7_gimey")
 properties = SubResource("Resource_55ydb")
 metadata/_custom_type_script = "uid://b1phsyjs6go0l"
 
+[node name="Area2D" type="Area2D" parent="tondeuse"]
+
+[node name="@CollisionShape2D@34657" type="CollisionShape2D" parent="tondeuse/Area2D"]
+shape = SubResource("CircleShape2D_okygd")
+
+[node name="Polygon2D" parent="tondeuse" instance=ExtResource("8_gimey")]
+position = Vector2(0, -32)
+
 [node name="balancoire" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(177, 531)
 scale = Vector2(2, 2)
 texture = ExtResource("5_6ta74")
@@ -144,6 +188,7 @@ position = Vector2(2, -24)
 polygon = PackedVector2Array(11, 14.5, -18.5, 16.5, -15.5, 22, 12, 21, 13.5, 16.5)
 
 [node name="balance" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(494, 541)
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("6_muyxg")
@@ -216,6 +261,70 @@ scale = Vector2(2.7, 2.7)
 texture = ExtResource("12_lk5db")
 region_enabled = true
 region_rect = Rect2(24, 21, 7, 17)
+
+[node name="trou_de_terre3" type="Sprite2D" parent="."]
+position = Vector2(434, 544)
+scale = Vector2(2, 2)
+texture = ExtResource("16_okygd")
+script = ExtResource("7_gimey")
+properties = SubResource("Resource_hrolg")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre3"]
+
+[node name="@CollisionShape2D@55401" type="CollisionShape2D" parent="trou_de_terre3/Area2D"]
+shape = SubResource("CircleShape2D_hrolg")
+
+[node name="Polygon2D" parent="trou_de_terre3" instance=ExtResource("8_gimey")]
+position = Vector2(-3, -10)
+
+[node name="trou_de_terre4" type="Sprite2D" parent="."]
+position = Vector2(410, 432)
+scale = Vector2(2, 2)
+texture = ExtResource("16_okygd")
+script = ExtResource("7_gimey")
+properties = SubResource("Resource_hrolg")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre4"]
+
+[node name="@CollisionShape2D@55402" type="CollisionShape2D" parent="trou_de_terre4/Area2D"]
+shape = SubResource("CircleShape2D_g0t67")
+
+[node name="Polygon2D" parent="trou_de_terre4" instance=ExtResource("8_gimey")]
+position = Vector2(-3, -10)
+
+[node name="trou_de_terre5" type="Sprite2D" parent="."]
+position = Vector2(50, 440)
+scale = Vector2(2, 2)
+texture = ExtResource("16_okygd")
+script = ExtResource("7_gimey")
+properties = SubResource("Resource_hrolg")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre5"]
+
+[node name="@CollisionShape2D@55403" type="CollisionShape2D" parent="trou_de_terre5/Area2D"]
+shape = SubResource("CircleShape2D_sufv0")
+
+[node name="Polygon2D" parent="trou_de_terre5" instance=ExtResource("8_gimey")]
+position = Vector2(-3, -10)
+
+[node name="trou_de_terre6" type="Sprite2D" parent="."]
+position = Vector2(626, 568)
+scale = Vector2(2, 2)
+texture = ExtResource("16_okygd")
+script = ExtResource("7_gimey")
+properties = SubResource("Resource_g0t67")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre6"]
+
+[node name="@CollisionShape2D@55404" type="CollisionShape2D" parent="trou_de_terre6/Area2D"]
+shape = SubResource("CircleShape2D_fmisc")
+
+[node name="Polygon2D" parent="trou_de_terre6" instance=ExtResource("8_gimey")]
+position = Vector2(-3, -10)
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
