@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=9 format=3 uid="uid://h58cecovrygp"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_m3p6l"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_q3ssy"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_ur1mi"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_4qyta"]
+
+[sub_resource type="Resource" id="Resource_air6u"]
+script = ExtResource("3_4qyta")
+nom_perso = "Vendeur"
+mess = "Mais non ! TU L'AS !!"
+liste_choix = Array[ExtResource("2_ur1mi")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_kv033"]
+script = ExtResource("3_4qyta")
+nom_perso = "Steven"
+mess = "Oui, regarde. Il l'avait enterrer dans LaParc, je crois que les enfants vous aiment pas trop ..."
+liste_choix = Array[ExtResource("2_ur1mi")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_5tyt6"]
+script = ExtResource("3_4qyta")
+nom_perso = "Vendeur"
+mess = "RAAAAh, morveux. Merci encore Steven, tu me sauves la vie !"
+liste_choix = Array[ExtResource("2_ur1mi")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_lym3m"]
+script = ExtResource("3_4qyta")
+nom_perso = "Vendeur"
+mess = "Tu peux prendre ce que tu veux dans mon magasin. Bien sur, un seul objet. "
+liste_choix = Array[ExtResource("2_ur1mi")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_q3ssy")
+liste_messages = Array[ExtResource("1_m3p6l")]([SubResource("Resource_air6u"), SubResource("Resource_kv033"), SubResource("Resource_5tyt6"), SubResource("Resource_lym3m")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

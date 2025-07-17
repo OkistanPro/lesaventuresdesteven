@@ -1,9 +1,51 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=3 format=3 uid="uid://cobhcuyil7nyr"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=10 format=3 uid="uid://cobhcuyil7nyr"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_a5dyd"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_ixque"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_xg6nx"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_4ujs8"]
+
+[sub_resource type="Resource" id="Resource_v1gdk"]
+script = ExtResource("3_4ujs8")
+nom_perso = "Petit garcon"
+mess = "Bonjour petit monsieur jaune !"
+liste_choix = Array[ExtResource("2_ixque")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_e0f71"]
+script = ExtResource("3_4ujs8")
+nom_perso = "Steven"
+mess = "Alors, tu apprendras que ça peut etre tres raciste ce que tu dits ..."
+liste_choix = Array[ExtResource("2_ixque")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_p3l3o"]
+script = ExtResource("3_4ujs8")
+nom_perso = "Petit garcon"
+mess = "Bonjouuur petit monsieur jaune pas raciste !"
+liste_choix = Array[ExtResource("2_ixque")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_s2jbl"]
+script = ExtResource("3_4ujs8")
+nom_perso = "Steven"
+mess = ".... ALORS ..."
+liste_choix = Array[ExtResource("2_ixque")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_1u7bp"]
+script = ExtResource("3_4ujs8")
+nom_perso = "Steven"
+mess = "Oh et puis t'es qu'un enfant, laisse tomber ..."
+liste_choix = Array[ExtResource("2_ixque")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_xg6nx")
-liste_messages = Array[ExtResource("1_a5dyd")]([])
+liste_messages = Array[ExtResource("1_a5dyd")]([SubResource("Resource_v1gdk"), SubResource("Resource_e0f71"), SubResource("Resource_p3l3o"), SubResource("Resource_s2jbl"), SubResource("Resource_1u7bp")])
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

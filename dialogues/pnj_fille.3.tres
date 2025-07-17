@@ -1,9 +1,59 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=3 format=3 uid="uid://c1fd43fkmbs5m"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=11 format=3 uid="uid://c1fd43fkmbs5m"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_rj24j"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_0oen2"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_f8bno"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_6sjad"]
+
+[sub_resource type="Resource" id="Resource_xv1nl"]
+script = ExtResource("3_6sjad")
+nom_perso = "Steven"
+mess = "Bonjour toi !"
+liste_choix = Array[ExtResource("2_0oen2")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_wkdn8"]
+script = ExtResource("3_6sjad")
+nom_perso = "Petite fille"
+mess = "Bonjour monsieur !"
+liste_choix = Array[ExtResource("2_0oen2")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_gneji"]
+script = ExtResource("3_6sjad")
+nom_perso = "Steven"
+mess = "Fait beau aujourd'hui ... nan ?"
+liste_choix = Array[ExtResource("2_0oen2")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_4w46b"]
+script = ExtResource("3_6sjad")
+nom_perso = "Petite fille"
+mess = "Pfffff ... nan fait pas beau !"
+liste_choix = Array[ExtResource("2_0oen2")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_tytji"]
+script = ExtResource("3_6sjad")
+nom_perso = "Petite fille"
+mess = "On m'as volé mon kayou, fait pas beau !"
+liste_choix = Array[ExtResource("2_0oen2")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_vgnp7"]
+script = ExtResource("3_6sjad")
+nom_perso = "Steven"
+mess = "Mais si t'en trouveras plein de kayou !"
+liste_choix = Array[ExtResource("2_0oen2")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_f8bno")
-liste_messages = Array[ExtResource("1_rj24j")]([])
+liste_messages = Array[ExtResource("1_rj24j")]([SubResource("Resource_xv1nl"), SubResource("Resource_wkdn8"), SubResource("Resource_gneji"), SubResource("Resource_4w46b"), SubResource("Resource_tytji"), SubResource("Resource_vgnp7")])
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
