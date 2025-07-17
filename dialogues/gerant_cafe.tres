@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_5fl63"]
 script = ExtResource("3_ru60o")
-nom_perso = "gerant cafe"
+nom_perso = "Gerant cafe"
 mess = "Bonjour, je vous sert un cafe ?"
 liste_choix = Array[ExtResource("2_fqn2m")]([])
 event_at_start = ""
@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_on46s"]
 script = ExtResource("3_ru60o")
-nom_perso = "steven"
+nom_perso = "Steven"
 mess = "Non merci, je ne fait que passer dire bonjour !"
 liste_choix = Array[ExtResource("2_fqn2m")]([])
 event_at_start = ""
@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_ioaht"]
 script = ExtResource("3_ru60o")
-nom_perso = "gerant cafe"
+nom_perso = "Gerant cafe"
 mess = "Attendez ... ME DIT PAS ... QUE VOUS ETES TEAM THE ???"
 liste_choix = Array[ExtResource("2_fqn2m")]([])
 event_at_start = ""
@@ -38,7 +38,7 @@ metadata/_custom_type_script = "uid://b2khngrg30oaj"
 
 [sub_resource type="Resource" id="Resource_cbj5g"]
 script = ExtResource("3_ru60o")
-nom_perso = "steven"
+nom_perso = "Steven"
 mess = "Bas ... J'ai pas de préferences ... enfin non."
 liste_choix = Array[ExtResource("2_fqn2m")]([])
 event_at_start = ""
@@ -52,7 +52,7 @@ metadata/_custom_type_script = "uid://b2khngrg30oaj"
 
 [sub_resource type="Resource" id="Resource_jshfw"]
 script = ExtResource("3_ru60o")
-nom_perso = "gerant cafe "
+nom_perso = "Gerant cafe "
 mess = "Je vois, je vois, je vois. Je me suis mépris sur vous ..."
 liste_choix = Array[ExtResource("2_fqn2m")]([])
 event_at_start = ""
@@ -60,7 +60,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_duejv"]
 script = ExtResource("3_ru60o")
-nom_perso = "gerant cafe"
+nom_perso = "Gerant cafe"
 mess = "(Et dire que certain prefere le the)"
 liste_choix = Array[ExtResource("2_fqn2m")]([])
 event_at_start = ""

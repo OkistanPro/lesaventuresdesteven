@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=22 format=3 uid="uid://cnjhujb5f1e2r"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=23 format=3 uid="uid://cnjhujb5f1e2r"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_veyp2"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_8mm1c"]
@@ -7,17 +7,24 @@
 
 [sub_resource type="Resource" id="Resource_cbgqv"]
 script = ExtResource("3_guliq")
-nom_perso = "Maire Laupok"
-mess = "Et salut à toi mon ami
-C'eeesssttt..."
+nom_perso = "Maire"
+mess = "Et salut à toi, jeune ..."
+liste_choix = Array[ExtResource("2_su65c")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ejox2"]
+script = ExtResource("3_guliq")
+nom_perso = "Maire"
+mess = "... poussin ?!?"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_5t8uv"]
 script = ExtResource("3_guliq")
-nom_perso = "Maire Laupok"
-mess = "LAUPOK !"
+nom_perso = "Maire"
+mess = "Qu'es-ce qui t'amenes de beau ? ... a sortir de ton poulailler ?"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -25,31 +32,31 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_su65c"]
 script = ExtResource("3_guliq")
 nom_perso = "Steven"
-mess = "Ouais, comme... presque tous les jours nan ?"
+mess = "Bouh !"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_guliq"]
 script = ExtResource("3_guliq")
-nom_perso = "Steven"
-mess = "On habite dans une zone trop élevé en rayons UV pour qu'une moindre goutte de pluie arrive."
+nom_perso = "Maire"
+mess = "AAAAAAAAAAAAAAAH un poussin qui parle !!!!!"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_i1ph1"]
 script = ExtResource("3_guliq")
-nom_perso = "Laupok"
-mess = "...ouuuii c'est vrai haha"
+nom_perso = "Maire"
+mess = "... a mais oui c'est vrai, QUOIIIII ???"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_qye0n"]
 script = ExtResource("3_guliq")
-nom_perso = "Laupok"
-mess = "Je me rappelais pas que les poussins avait une tel cultur.... OUAIS bah bonne journée hein"
+nom_perso = "Maire"
+mess = "Je me rappelais pas que les poussins avait... OUAIS bah bonne journée hein"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -84,7 +91,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_t4705"]
 script = ExtResource("3_guliq")
-nom_perso = "Laupok"
+nom_perso = "Maire"
 mess = "..."
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
@@ -93,14 +100,14 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_4g2p3"]
 script = ExtResource("3_guliq")
 nom_perso = "Steven"
-mess = "..."
+mess = "... piouuu ?"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_viukw"]
 script = ExtResource("3_guliq")
-nom_perso = "Laupok"
+nom_perso = "Maire"
 mess = "....a....aaAAAATCHOUM"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
@@ -108,7 +115,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_u5xvh"]
 script = ExtResource("3_guliq")
-nom_perso = "Laupok"
+nom_perso = "Maire"
 mess = "pardon."
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
@@ -128,13 +135,13 @@ metadata/_custom_type_script = "uid://nj3n5qedxbgm"
 
 [sub_resource type="Resource" id="Resource_bkfkk"]
 script = ExtResource("3_guliq")
-nom_perso = "Maire Laupok"
-mess = "Belle journée n'est-ce pas ?"
+nom_perso = "Maire"
+mess = "... ce fermier va me le payer, il n'as pas encore vus de quoi je suis capable ..."
 liste_choix = Array[ExtResource("2_su65c")]([SubResource("Resource_43i7l"), SubResource("Resource_71ffn")])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_8mm1c")
-liste_messages = Array[ExtResource("1_veyp2")]([SubResource("Resource_cbgqv"), SubResource("Resource_5t8uv"), SubResource("Resource_bkfkk")])
+liste_messages = Array[ExtResource("1_veyp2")]([SubResource("Resource_cbgqv"), SubResource("Resource_ejox2"), SubResource("Resource_5t8uv"), SubResource("Resource_bkfkk")])
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

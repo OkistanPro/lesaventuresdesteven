@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_qcdub"]
 script = ExtResource("3_onpbk")
-nom_perso = "steven"
+nom_perso = "Steven"
 mess = "Bonjour madame !"
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_vaysu"]
 script = ExtResource("3_onpbk")
-nom_perso = "Villageoise"
+nom_perso = "Brigitte"
 mess = "Oh bonjour Steven, qu'est-ce qui t'amènes de beau ici ?"
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_t2pvh"]
 script = ExtResource("3_onpbk")
-nom_perso = "steven"
+nom_perso = "Steven"
 mess = "Je me promene par-ci, par-là et vous ?"
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
@@ -31,7 +31,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_dxsk3"]
 script = ExtResource("3_onpbk")
-nom_perso = "Villageoise"
+nom_perso = "Brigitte"
 mess = "Je profite du beau temps !"
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
@@ -39,7 +39,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_lkcg3"]
 script = ExtResource("3_onpbk")
-nom_perso = "Villageoise"
+nom_perso = "Brigitte"
 mess = "Après avoir choisi les plus beaux fruits je vais un tour à LaParc."
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
@@ -47,7 +47,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_21lr3"]
 script = ExtResource("3_onpbk")
-nom_perso = "steven"
+nom_perso = "Steven"
 mess = "C'est \"le\" parc non ?"
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_b0bvi"]
 script = ExtResource("3_onpbk")
-nom_perso = "Villageoise"
+nom_perso = "Brigitte"
 mess = "Oui, mais le notre se nomme \"LaParc\" tout attaché."
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
@@ -63,7 +63,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_t3vbl"]
 script = ExtResource("3_onpbk")
-nom_perso = "Villageoise"
+nom_perso = "Brigitte"
 mess = "Encore des idées de ce maire bizarre ..."
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""

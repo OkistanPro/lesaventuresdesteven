@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_5bb3k"]
 script = ExtResource("3_ljy0d")
-nom_perso = "Villageoise"
+nom_perso = "Brigitte"
 mess = "Ouuu, une belle banane bien jaune"
 liste_choix = Array[ExtResource("2_4jp0a")]([])
 event_at_start = ""

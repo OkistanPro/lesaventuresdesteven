@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=10 format=3 uid="uid://briyk1l6mrl7b"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_tq21k"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_epdeo"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_i51ge"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_tal2f"]
+[ext_resource type="Script" uid="uid://b2khngrg30oaj" path="res://scripts/dialogues/D_pause.gd" id="4_fiwnt"]
+
+[sub_resource type="Resource" id="Resource_tnioa"]
+script = ExtResource("3_tal2f")
+nom_perso = "Steven"
+mess = "Heeyy, ça va depuis le temps ? ... T'as pas bougé d'une plume ..."
+liste_choix = Array[ExtResource("2_epdeo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ehpjo"]
+script = ExtResource("4_fiwnt")
+temps = 1.0
+affiche_dialogue = false
+metadata/_custom_type_script = "uid://b2khngrg30oaj"
+
+[sub_resource type="Resource" id="Resource_5ki4y"]
+script = ExtResource("3_tal2f")
+nom_perso = "Poussin"
+mess = "..."
+liste_choix = Array[ExtResource("2_epdeo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_k242y"]
+script = ExtResource("3_tal2f")
+nom_perso = "Steven"
+mess = "Ok bas je vais pas plus te déranger que ça hein ..."
+liste_choix = Array[ExtResource("2_epdeo")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_i51ge")
+liste_messages = Array[ExtResource("1_tq21k")]([SubResource("Resource_tnioa"), SubResource("Resource_ehpjo"), SubResource("Resource_5ki4y"), SubResource("Resource_k242y")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

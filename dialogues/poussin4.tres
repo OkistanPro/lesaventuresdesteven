@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_61bts"]
 script = ExtResource("3_tponm")
-nom_perso = "poussin"
+nom_perso = "Poussin"
 mess = "piou piou piou piou piou"
 liste_choix = Array[ExtResource("2_fwccq")]([])
 event_at_start = ""
@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_d1ya2"]
 script = ExtResource("3_tponm")
-nom_perso = "poussin"
+nom_perso = "Poussin"
 mess = "piiiiiiiiou"
 liste_choix = Array[ExtResource("2_fwccq")]([])
 event_at_start = ""
@@ -39,7 +39,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_md55f"]
 script = ExtResource("3_tponm")
-nom_perso = "poussin"
+nom_perso = "Poussin"
 mess = ".......piouuuu"
 liste_choix = Array[ExtResource("2_fwccq")]([])
 event_at_start = ""

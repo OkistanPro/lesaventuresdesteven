@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_h6d3s"]
 script = ExtResource("3_h6d3s")
-nom_perso = "poussin"
+nom_perso = "Poussin"
 mess = "..."
 liste_choix = Array[ExtResource("2_7nawg")]([])
 event_at_start = ""

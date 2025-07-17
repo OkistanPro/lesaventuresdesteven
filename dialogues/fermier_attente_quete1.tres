@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_otmwv"]
 script = ExtResource("3_uyuyw")
-nom_perso = "fermier"
+nom_perso = "Fermier"
 mess = "...j'ai toujours pas trouvé un truc à te donner..."
 liste_choix = Array[ExtResource("2_y5xiy")]([])
 event_at_start = ""
