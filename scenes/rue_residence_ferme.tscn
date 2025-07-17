@@ -105,6 +105,8 @@ scale = Vector2(2.2, 2.2)
 texture = ExtResource("6_dqhc6")
 script = ExtResource("5_ovgsu")
 nom_timeline = "poussin2"
+random_timeline = true
+nom_timeline_random = Array[String](["poussin2_2"])
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="poussin2"]
@@ -126,6 +128,8 @@ scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_sayq4")
 script = ExtResource("5_ovgsu")
 nom_timeline = "poussin3"
+random_timeline = true
+nom_timeline_random = Array[String](["poussin3_2"])
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="poussin3"]
@@ -147,6 +151,8 @@ scale = Vector2(2.2, 2.2)
 texture = ExtResource("8_tqii1")
 script = ExtResource("5_ovgsu")
 nom_timeline = "poussin4"
+random_timeline = true
+nom_timeline_random = Array[String](["poussin4_2"])
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="poussin4"]
@@ -168,6 +174,8 @@ scale = Vector2(2.2, 2.2)
 texture = ExtResource("11_sayq4")
 script = ExtResource("5_ovgsu")
 nom_timeline = "poussin5_dos"
+random_timeline = true
+nom_timeline_random = Array[String](["poussin5_dos_2"])
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="Area2D" type="Area2D" parent="poussin5"]
@@ -211,6 +219,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("13_tqii1")
 script = ExtResource("5_ovgsu")
 nom_timeline = "fermier_quete1"
+random_timeline = true
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="gestion_fermier" type="Node" parent="fermier"]
@@ -237,26 +246,26 @@ position = Vector2(265, 292)
 rotation = -0.333005
 shape = SubResource("RectangleShape2D_qvbws")
 
-[node name="PNJ" type="Sprite2D" parent="."]
+[node name="poussin_dead" type="Sprite2D" parent="."]
 position = Vector2(467, 519)
 script = ExtResource("5_ovgsu")
 nom_timeline = "poussin_dead"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PNJ"]
+[node name="StaticBody2D" type="StaticBody2D" parent="poussin_dead"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="PNJ/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="poussin_dead/StaticBody2D"]
 polygon = PackedVector2Array(-14, -8, 5, -15, 15, -15, 17, -13, 15, 6, 15, 11, -7, 11, -14, 20, -27, 4)
 
-[node name="Area2D" type="Area2D" parent="PNJ"]
+[node name="Area2D" type="Area2D" parent="poussin_dead"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poussin_dead/Area2D"]
 shape = SubResource("CircleShape2D_qvbws")
 
-[node name="Polygon2D" parent="PNJ" instance=ExtResource("6_ovgsu")]
+[node name="Polygon2D" parent="poussin_dead" instance=ExtResource("6_ovgsu")]
 position = Vector2(0, -24)
 
-[node name="gestion_pnj" type="Node" parent="PNJ"]
+[node name="gestion_pnj" type="Node" parent="poussin_dead"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(376, 400)
@@ -279,5 +288,5 @@ panning_strength = 0.6
 [connection signal="body_entered" from="fermier/Area2D" to="fermier" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="fermier/Area2D" to="fermier" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="goto_ferme" to="." method="_on_goto_ferme_body_entered"]
-[connection signal="body_entered" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="poussin_dead/Area2D" to="poussin_dead" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="poussin_dead/Area2D" to="poussin_dead" method="_on_area_2d_body_exited"]

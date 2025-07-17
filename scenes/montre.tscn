@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfdwme1s54xhw"]
+
+[ext_resource type="Texture2D" uid="uid://ftvw283xjy8w" path="res://sprites/MONTRE.png" id="1_lkb4w"]
+[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="1_nfpmv"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="2_lkb4w"]
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="3_kqr0v"]
+[ext_resource type="Texture2D" uid="uid://bubndnlittn22" path="res://sprites/MONTRE_ITEM.png" id="4_46gmv"]
+
+[sub_resource type="Resource" id="Resource_ydjaa"]
+script = ExtResource("3_kqr0v")
+item_name = &"montre"
+texture_icon = ExtResource("4_46gmv")
+pickable = true
+event_on_not_pick = &""
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4pce"]
+radius = 30.0
+
+[node name="Montre" type="Sprite2D"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_lkb4w")
+script = ExtResource("1_nfpmv")
+properties = SubResource("Resource_ydjaa")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="@CollisionShape2D@102846" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_y4pce")
+
+[node name="Polygon2D" type="Polygon2D" parent="." instance=ExtResource("2_lkb4w")]
+visible = false
+position = Vector2(0, -10)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)

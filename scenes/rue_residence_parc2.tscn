@@ -55,13 +55,10 @@ event_on_not_pick = &"trou_vide"
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w8ygl"]
-radius = 30.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eqotn"]
-radius = 30.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgyc0"]
-radius = 30.0
 
 [node name="rue_residence_parc2" type="Node2D"]
 y_sort_enabled = true
@@ -220,9 +217,10 @@ region_enabled = true
 region_rect = Rect2(24, 21, 7, 17)
 
 [node name="trou_de_terre" type="Sprite2D" parent="."]
-position = Vector2(450, 552)
+position = Vector2(444, 572)
 scale = Vector2(2, 2)
 texture = ExtResource("13_2i44t")
+offset = Vector2(3, -10)
 script = ExtResource("14_w8ygl")
 properties = SubResource("Resource_agpoo")
 metadata/_custom_type_script = "uid://b1phsyjs6go0l"
@@ -232,15 +230,14 @@ metadata/_custom_type_script = "uid://b1phsyjs6go0l"
 [node name="@CollisionShape2D@59021" type="CollisionShape2D" parent="trou_de_terre/Area2D"]
 shape = SubResource("CircleShape2D_w8ygl")
 
-[node name="Polygon2D" type="Polygon2D" parent="trou_de_terre" instance=ExtResource("16_mgyc0")]
+[node name="Polygon2D" parent="trou_de_terre" instance=ExtResource("16_mgyc0")]
 position = Vector2(0, -10)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="trou_de_terre2" type="Sprite2D" parent="."]
-position = Vector2(274, 480)
+position = Vector2(268, 498)
 scale = Vector2(2, 2)
 texture = ExtResource("13_2i44t")
+offset = Vector2(3, -9)
 script = ExtResource("14_w8ygl")
 properties = SubResource("Resource_agpoo")
 metadata/_custom_type_script = "uid://b1phsyjs6go0l"
@@ -250,15 +247,14 @@ metadata/_custom_type_script = "uid://b1phsyjs6go0l"
 [node name="@CollisionShape2D@59022" type="CollisionShape2D" parent="trou_de_terre2/Area2D"]
 shape = SubResource("CircleShape2D_eqotn")
 
-[node name="Polygon2D" type="Polygon2D" parent="trou_de_terre2" instance=ExtResource("16_mgyc0")]
+[node name="Polygon2D" parent="trou_de_terre2" instance=ExtResource("16_mgyc0")]
 position = Vector2(0, -10)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="trou_de_terre3" type="Sprite2D" parent="."]
-position = Vector2(634, 488)
+position = Vector2(629, 508)
 scale = Vector2(2, 2)
 texture = ExtResource("13_2i44t")
+offset = Vector2(2.5, -10)
 script = ExtResource("14_w8ygl")
 properties = SubResource("Resource_agpoo")
 metadata/_custom_type_script = "uid://b1phsyjs6go0l"
@@ -268,9 +264,7 @@ metadata/_custom_type_script = "uid://b1phsyjs6go0l"
 [node name="@CollisionShape2D@59023" type="CollisionShape2D" parent="trou_de_terre3/Area2D"]
 shape = SubResource("CircleShape2D_mgyc0")
 
-[node name="Polygon2D" type="Polygon2D" parent="trou_de_terre3" instance=ExtResource("16_mgyc0")]
+[node name="Polygon2D" parent="trou_de_terre3" instance=ExtResource("16_mgyc0")]
 position = Vector2(0, -10)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]

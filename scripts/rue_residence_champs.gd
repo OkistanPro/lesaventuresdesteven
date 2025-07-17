@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
-	if GestionQuetes.liste_quetes["quete_carotte_1.tres"].state == Quete.Quete_State.EN_COURS:
+	if get_node_or_null("ItemObject") != null and GestionQuetes.liste_quetes["quete_carotte_1.tres"].state == Quete.Quete_State.EN_COURS:
 		$ItemObject.properties.pickable = true
 	if Globals.direction_from == "rue_residence_ferme":
 		$steven.position = Vector2(30, Globals.y_from)

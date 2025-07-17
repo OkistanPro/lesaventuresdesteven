@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=18 format=3 uid="uid://dlcme8pxcftfd"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=18 format=3 uid="uid://03sadns7auha"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_8w4j7"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_cqbwp"]

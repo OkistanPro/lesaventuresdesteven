@@ -7,21 +7,6 @@ signal event_declencheur(nom_event : String)
 var dialogue_scene : PackedScene = preload("res://scenes/dialogue.tscn")
 var timeline_actuel : D_Timeline
 var liste_timeline = {
-	"statue_piedebiche" : preload("res://dialogues/statue_piedebiche.tres"),
-	"epicier_carotte" : preload("res://dialogues/epicier_carotte.tres"),
-	"maire_1" : preload("res://dialogues/maire_1.tres"),
-	"pnj_homme" : preload("res://dialogues/pnj_homme.tres"),
-	"lourd" : preload("res://dialogues/lourd.tres"),
-	"vendeur_boutique" : preload("res://dialogues/vendeur_boutique.tres"),
-	"pnj_femme1" : preload("res://dialogues/pnj_femme1.tres"),
-	"pnj_femme_banane" : preload("res://dialogues/pnj_femme_banane.tres"),
-	"fermier_quete1" : preload("res://dialogues/fermier_quete1.tres"),
-	"fermier_attente_quete1" : preload("res://dialogues/fermier_attente_quete1.tres"),
-	"carotte_sous_terre": preload("res://dialogues/carotte_sous_terre.tres"),
-	"pasforet" : preload("res://dialogues/pasforet.tres"),
-	"pnj_fontaine" : preload("res://dialogues/pnj_fille1.tres"),
-	"graines" : preload("res://dialogues/graines.tres"),
-	"oeuf" : preload("res://dialogues/oeuf.tres")
 }
 var active : bool = false
 

@@ -268,7 +268,7 @@ position = Vector2(448, 435)
 scale = Vector2(2, 2)
 texture = ExtResource("19_jibjk")
 script = ExtResource("12_7sh2r")
-nom_timeline = "pnj_fontaine"
+nom_timeline = "pnj_fille2"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="PetitePnj"]

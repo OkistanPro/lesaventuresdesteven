@@ -4,6 +4,9 @@ class_name PNJ
 
 @export var nom_timeline : String
 @export var nom_timeline_selon_select : Dictionary[String, String]
+@export var random_timeline : bool = false
+@export var nom_timeline_random : Array[String]
+var first_time : bool = true
 var in_body : bool = false
 var polygon = preload("res://scenes/fleche_input.tscn")
 
@@ -37,7 +40,14 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interagir") and in_body:
 		if Globals.selected_item == -1:
-			GestionDialogue.lancer_timeline(nom_timeline)
+			if not random_timeline:
+				GestionDialogue.lancer_timeline(nom_timeline)
+			else:
+				if first_time:
+					GestionDialogue.lancer_timeline(nom_timeline)
+					first_time = false
+				else:
+					GestionDialogue.lancer_timeline(nom_timeline_random[randi_range(0, len(nom_timeline_random)-1)])
 		elif Globals.selected_item_name in nom_timeline_selon_select:
 			GestionDialogue.lancer_timeline(nom_timeline_selon_select[Globals.selected_item_name])
 		else:

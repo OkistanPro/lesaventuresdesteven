@@ -20,7 +20,7 @@ func refresh_list(added : ItemProperties) -> void:
 	for item in Globals.inventory:
 		var index = $ItemList.add_icon_item(item.texture_icon)
 		$ItemList.set_item_metadata(index, item)
-	if $ItemList.get_selected_items() and $ItemList.item_count > $ItemList.get_selected_items()[0]:
+	if not $ItemList.get_selected_items() or ($ItemList.get_selected_items() and $ItemList.item_count > $ItemList.get_selected_items()[0]):
 		Globals.selected_item = -1
 
 func _process(delta: float) -> void:

@@ -102,11 +102,8 @@ metadata/_custom_type_script = "uid://b1phsyjs6go0l"
 [node name="@CollisionShape2D@41081" type="CollisionShape2D" parent="ItemObject/Area2D"]
 shape = SubResource("CircleShape2D_itce0")
 
-[node name="Polygon2D" type="Polygon2D" parent="ItemObject" instance=ExtResource("10_e1isu")]
-visible = false
+[node name="Polygon2D" parent="ItemObject" instance=ExtResource("10_e1isu")]
 position = Vector2(0, -16)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="goto_rue_gauche" type="Area2D" parent="."]
 
