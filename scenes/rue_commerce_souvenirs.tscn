@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://hdxui1dj546j"]
+[gd_scene load_steps=23 format=3 uid="uid://hdxui1dj546j"]
 
 [ext_resource type="Script" uid="uid://vte1qlb04x0a" path="res://scripts/rue_commerce_1.gd" id="1_w87nh"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_lbbow"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dvwfc2dnb0y23" path="res://sprites/persos/theobabac.png" id="7_op1yb"]
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="8_2fhiq"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="9_0gg83"]
+[ext_resource type="Script" uid="uid://cck6fmt7ues22" path="res://scripts/gestion_vendeur.gd" id="10_2fhiq"]
 [ext_resource type="Texture2D" uid="uid://dbct782wab607" path="res://sprites/souvenirs/souvenirs__0000_Calque-4.png" id="10_5nyyj"]
 [ext_resource type="Texture2D" uid="uid://wwq3hoaysdjx" path="res://sprites/RPG_EPICERIE_0002_Calque-3.png" id="11_op1yb"]
 [ext_resource type="Texture2D" uid="uid://5q4nnhw2xxru" path="res://sprites/RPG_EPICERIE_0004_Calque-5.png" id="12_qplw4"]
@@ -96,7 +97,10 @@ position = Vector2(293, 206)
 scale = Vector2(2, 2)
 texture = ExtResource("7_op1yb")
 script = ExtResource("8_2fhiq")
-nom_timeline = "vendeur_boutique"
+nom_timeline = "vendeur_montre"
+nom_timeline_selon_select = Dictionary[String, String]({
+"montre": "vendeur_montre_donne"
+})
 
 [node name="StaticBody2D" type="StaticBody2D" parent="personnage"]
 
@@ -112,6 +116,9 @@ debug_color = Color(0.903406, 0.267478, 0.395717, 0.42)
 
 [node name="Polygon2D" parent="personnage" instance=ExtResource("9_0gg83")]
 position = Vector2(0, -29.815)
+
+[node name="gestion_vendeur" type="Node" parent="personnage"]
+script = ExtResource("10_2fhiq")
 
 [node name="obj1" type="Sprite2D" parent="."]
 z_index = 1

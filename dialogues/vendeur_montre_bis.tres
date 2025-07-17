@@ -1,0 +1,91 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=16 format=3 uid="uid://dydkvw2oxk6gb"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_5bbt3"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_buto7"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_ol38h"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_v08ip"]
+
+[sub_resource type="Resource" id="Resource_p5213"]
+script = ExtResource("3_ol38h")
+nom_perso = "Steven"
+mess = "Ok, ça marche !"
+liste_choix = Array[ExtResource("2_buto7")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_bri35"]
+script = ExtResource("3_ol38h")
+nom_perso = "Vendeur"
+mess = "Yes, je savais que je pouvais compter sur toi !"
+liste_choix = Array[ExtResource("2_buto7")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_dfj64"]
+script = ExtResource("3_ol38h")
+nom_perso = "Vendeur"
+mess = "Si tu veux je t'offrirai un objet gratuit, ce que tu veux dans ma boutique !"
+liste_choix = Array[ExtResource("2_buto7")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_fskkh"]
+script = ExtResource("3_ol38h")
+nom_perso = "Steven"
+mess = "Giga cool ça !"
+liste_choix = Array[ExtResource("2_buto7")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_tjiti"]
+script = ExtResource("4_v08ip")
+liste_messages = Array[ExtResource("1_5bbt3")]([SubResource("Resource_p5213"), SubResource("Resource_bri35"), SubResource("Resource_dfj64"), SubResource("Resource_fskkh")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
+
+[sub_resource type="Resource" id="Resource_fgggp"]
+script = ExtResource("2_buto7")
+libelle_choix = "Accepter"
+goto = SubResource("Resource_tjiti")
+variable_condition = ""
+metadata/_custom_type_script = "uid://nj3n5qedxbgm"
+
+[sub_resource type="Resource" id="Resource_5ewfe"]
+script = ExtResource("3_ol38h")
+nom_perso = "Steven"
+mess = "Je vais d'abord continuer à me balader, mais je reviendrais, promis !"
+liste_choix = Array[ExtResource("2_buto7")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_7qor2"]
+script = ExtResource("3_ol38h")
+nom_perso = "Vendeur"
+mess = "Ok !"
+liste_choix = Array[ExtResource("2_buto7")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_geibq"]
+script = ExtResource("4_v08ip")
+liste_messages = Array[ExtResource("1_5bbt3")]([SubResource("Resource_5ewfe"), SubResource("Resource_7qor2")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
+
+[sub_resource type="Resource" id="Resource_xwul4"]
+script = ExtResource("2_buto7")
+libelle_choix = "Refuser"
+goto = SubResource("Resource_geibq")
+variable_condition = ""
+metadata/_custom_type_script = "uid://nj3n5qedxbgm"
+
+[sub_resource type="Resource" id="Resource_hq5i5"]
+script = ExtResource("3_ol38h")
+nom_perso = "Vendeur"
+mess = "Alors, tu voudras m'aider à rapporter ma montre ?"
+liste_choix = Array[ExtResource("2_buto7")]([SubResource("Resource_fgggp"), SubResource("Resource_xwul4")])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("4_v08ip")
+liste_messages = Array[ExtResource("1_5bbt3")]([SubResource("Resource_hq5i5")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

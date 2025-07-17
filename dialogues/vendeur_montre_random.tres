@@ -1,37 +1,14 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=14 format=3 uid="uid://c7rygb7wugrw2"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=13 format=3 uid="uid://c7rygb7wugrw2"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_juudk"]
 [ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_54hne"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_nvgfj"]
 [ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_7kv72"]
-[ext_resource type="Script" uid="uid://b2khngrg30oaj" path="res://scripts/dialogues/D_pause.gd" id="4_pcxfn"]
-
-[sub_resource type="Resource" id="Resource_tuem5"]
-script = ExtResource("3_7kv72")
-nom_perso = "Vendeur"
-mess = "Bonjoouuur monsieur."
-liste_choix = Array[ExtResource("2_54hne")]([])
-event_at_start = ""
-metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
-
-[sub_resource type="Resource" id="Resource_m66bv"]
-script = ExtResource("3_7kv72")
-nom_perso = "Steven"
-mess = "Bonjour !"
-liste_choix = Array[ExtResource("2_54hne")]([])
-event_at_start = ""
-metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
-
-[sub_resource type="Resource" id="Resource_cp8nu"]
-script = ExtResource("4_pcxfn")
-temps = 1.0
-affiche_dialogue = false
-metadata/_custom_type_script = "uid://b2khngrg30oaj"
 
 [sub_resource type="Resource" id="Resource_54hne"]
 script = ExtResource("3_7kv72")
 nom_perso = "Vendeur"
-mess = "Juste, si je viens à mourir ..."
+mess = "Oh, qu'est-ce qu'elle est belle ma montre..."
 liste_choix = Array[ExtResource("2_54hne")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -39,21 +16,15 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_7kv72"]
 script = ExtResource("3_7kv72")
 nom_perso = "Vendeur"
-mess = "Dites à ma femme ... \"que\""
+mess = "Tu trouves pas qu'elle est belle ma montre ?"
 liste_choix = Array[ExtResource("2_54hne")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
-[sub_resource type="Resource" id="Resource_pcxfn"]
-script = ExtResource("4_pcxfn")
-temps = 1.0
-affiche_dialogue = true
-metadata/_custom_type_script = "uid://b2khngrg30oaj"
-
 [sub_resource type="Resource" id="Resource_oksq7"]
 script = ExtResource("3_7kv72")
 nom_perso = "Steven"
-mess = "...\"que\" ?"
+mess = "Oh oui, elle est jolie !"
 liste_choix = Array[ExtResource("2_54hne")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -61,12 +32,44 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_l3bow"]
 script = ExtResource("3_7kv72")
 nom_perso = "Vendeur"
-mess = "\"que\"."
+mess = "Rohlalalala trop trop beau."
+liste_choix = Array[ExtResource("2_54hne")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_dnhma"]
+script = ExtResource("3_7kv72")
+nom_perso = "Vendeur"
+mess = "Regarde comme les aiguilles elles tournent là..."
+liste_choix = Array[ExtResource("2_54hne")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_m2tyk"]
+script = ExtResource("3_7kv72")
+nom_perso = "Steven"
+mess = "Ah.. oui oui c'est super (...il a fini avec sa montre là !)"
+liste_choix = Array[ExtResource("2_54hne")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_h8285"]
+script = ExtResource("3_7kv72")
+nom_perso = "Vendeur"
+mess = "Papapapa j'ai un style mon gars !"
+liste_choix = Array[ExtResource("2_54hne")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_pwdyp"]
+script = ExtResource("3_7kv72")
+nom_perso = "Steven"
+mess = "(...meh...)"
 liste_choix = Array[ExtResource("2_54hne")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_nvgfj")
-liste_messages = Array[ExtResource("1_juudk")]([SubResource("Resource_tuem5"), SubResource("Resource_m66bv"), SubResource("Resource_cp8nu"), SubResource("Resource_54hne"), SubResource("Resource_7kv72"), SubResource("Resource_pcxfn"), SubResource("Resource_oksq7"), SubResource("Resource_l3bow")])
+liste_messages = Array[ExtResource("1_juudk")]([SubResource("Resource_54hne"), SubResource("Resource_7kv72"), SubResource("Resource_oksq7"), SubResource("Resource_l3bow"), SubResource("Resource_dnhma"), SubResource("Resource_m2tyk"), SubResource("Resource_h8285"), SubResource("Resource_pwdyp")])
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

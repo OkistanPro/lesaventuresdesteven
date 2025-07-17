@@ -39,6 +39,19 @@ func lancer_timeline(nom_timeline : String) -> void:
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"fin_quete_montre":
+			GestionQuetes.end_quete("quete_relique_1.tres")
+			event_declencheur.emit("fin_quete_montre")
+			for item in Globals.inventory:
+				if item.item_name == &"montre":
+					Globals.inventory.erase(item)
+					break
+			Globals.inventory_changed.emit(null)
+		"lancement_quete_montre":
+			GestionQuetes.lancer_quete("quete_relique_1.tres")
+			event_declencheur.emit("lancement_quete_montre")
+		"vendeur_montre_bis":
+			event_declencheur.emit("vendeur_montre_bis")
 		"fin_quete_carotte":
 			GestionQuetes.end_quete("quete_carotte_1.tres")
 			event_declencheur.emit("end_quete_carotte")

@@ -104,6 +104,7 @@ position = Vector2(-5, 412.75)
 shape = SubResource("RectangleShape2D_fucvl")
 
 [node name="RpgParc20002Barriere" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(329, 409)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("6_58awy")
@@ -173,6 +174,7 @@ position = Vector2(330.875, 630.375)
 shape = SubResource("RectangleShape2D_b832p")
 
 [node name="HerbesHautes1" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(381, 585)
 scale = Vector2(2, 2)
 texture = ExtResource("8_ty0cq")
@@ -217,6 +219,7 @@ region_enabled = true
 region_rect = Rect2(24, 21, 7, 17)
 
 [node name="trou_de_terre" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(444, 572)
 scale = Vector2(2, 2)
 texture = ExtResource("13_2i44t")
@@ -234,6 +237,7 @@ shape = SubResource("CircleShape2D_w8ygl")
 position = Vector2(0, -10)
 
 [node name="trou_de_terre2" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(268, 498)
 scale = Vector2(2, 2)
 texture = ExtResource("13_2i44t")
@@ -251,6 +255,7 @@ shape = SubResource("CircleShape2D_eqotn")
 position = Vector2(0, -10)
 
 [node name="trou_de_terre3" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(629, 508)
 scale = Vector2(2, 2)
 texture = ExtResource("13_2i44t")
