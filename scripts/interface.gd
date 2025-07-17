@@ -18,7 +18,14 @@ func fen_quetes() -> void:
 		$"Quêtes".visible = false
 		in_quetes = false
 
-func anim_quete(nom_quete : String) -> void:
+func start_quete(nom_quete : String) -> void:
 	var new_anim_quete_instance = anim_quete_scene.instantiate()
 	new_anim_quete_instance.get_node("HFlowContainer/nom_quete").text = nom_quete
 	add_child(new_anim_quete_instance)
+	new_anim_quete_instance.get_node("AnimationPlayer").play("new_quete")
+
+func end_quete(nom_quete : String) -> void:
+	var new_anim_quete_instance = anim_quete_scene.instantiate()
+	new_anim_quete_instance.get_node("HFlowContainer/nom_quete").text = nom_quete
+	add_child(new_anim_quete_instance)
+	new_anim_quete_instance.get_node("AnimationPlayer").play("fin_quete")

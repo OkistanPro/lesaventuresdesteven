@@ -1,6 +1,8 @@
 extends Node
 
-var liste_quetes : Dictionary
+var liste_quetes : Dictionary = {
+	
+}
 
 func _ready() -> void:
 	var directories_to_look_at = ["res://quetes/"]
@@ -24,4 +26,8 @@ func _ready() -> void:
 
 func lancer_quete(nom_quete : String):
 	liste_quetes[nom_quete].lancer_quete()
-	interface.anim_quete(liste_quetes[nom_quete].titre_quete)
+	interface.start_quete(liste_quetes[nom_quete].titre_quete)
+
+func end_quete(nom_quete : String):
+	liste_quetes[nom_quete].terminer_quete()
+	interface.end_quete(liste_quetes[nom_quete].titre_quete)

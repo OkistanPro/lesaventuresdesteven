@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://kfuxu6dok02b"]
+[gd_scene load_steps=15 format=3 uid="uid://kfuxu6dok02b"]
 
 [ext_resource type="FontFile" uid="uid://c6quss0etcsrc" path="res://polices/PixeloidSans-Bold.ttf" id="1_6sprp"]
 [ext_resource type="FontFile" uid="uid://04rj6q4gw31c" path="res://polices/PixeloidSans.ttf" id="2_map0o"]
 [ext_resource type="AudioStream" uid="uid://bj62gkaf2w3yr" path="res://sons/ui_menu_popup_message_04.wav" id="3_map0o"]
+[ext_resource type="AudioStream" uid="uid://cyqo0ilg526mn" path="res://sons/jingle_chime_03_positive.wav" id="4_hmhmo"]
 
 [sub_resource type="Gradient" id="Gradient_map0o"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
@@ -30,6 +31,112 @@ font_size = 9
 [sub_resource type="LabelSettings" id="LabelSettings_6sprp"]
 font = ExtResource("2_map0o")
 font_size = 7
+
+[sub_resource type="Animation" id="Animation_hmhmo"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HFlowContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HFlowContainer:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("consult_label:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("consult_label:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HFlowContainer/new_quete:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Nouvelle quête :"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HFlowContainer/new_quete:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("consult_label:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 22)]
+}
 
 [sub_resource type="Animation" id="Animation_map0o"]
 resource_name = "new_quete"
@@ -118,9 +225,34 @@ tracks/6/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.6, 7.5686, 8)
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HFlowContainer/new_quete:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Nouvelle quête :"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 36)]
+}
 
-[sub_resource type="Animation" id="Animation_hmhmo"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_jyq4a"]
+resource_name = "fin_quete"
+length = 8.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -128,9 +260,9 @@ tracks/0/path = NodePath("HFlowContainer:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(50, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -139,32 +271,39 @@ tracks/1/path = NodePath("HFlowContainer:modulate:a")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 7.50114, 8)
 }
-tracks/2/type = "bezier"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("consult_label:position:x")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
 }
-tracks/3/type = "bezier"
+tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("consult_label:modulate:a")
+tracks/3/path = NodePath("AudioStreamPlayer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_hmhmo")
+}],
+"times": PackedFloat32Array(0.0333334)
 }
+tracks/3/use_blend = true
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
@@ -172,14 +311,63 @@ tracks/4/path = NodePath("TextureRect:modulate:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6, 7.5686, 8)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HFlowContainer/new_quete:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Quête terminée :"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HFlowContainer/new_quete:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.87),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.134198, 0.73, 0.1241, 1), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("consult_label:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 22)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jyq4a"]
 _data = {
 &"RESET": SubResource("Animation_hmhmo"),
+&"fin_quete": SubResource("Animation_jyq4a"),
 &"new_quete": SubResource("Animation_map0o")
 }
 
@@ -194,7 +382,7 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 400.0
-offset_bottom = 36.0
+offset_bottom = 22.0
 texture = SubResource("GradientTexture2D_hmhmo")
 expand_mode = 1
 
@@ -218,8 +406,11 @@ text = "Créer un bateau"
 label_settings = SubResource("LabelSettings_6swfg")
 
 [node name="consult_label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 50.0
 offset_top = 15.0
-offset_right = 254.0
+offset_right = 304.0
 offset_bottom = 36.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hmhmo")
 text = "Consulter la liste des quêtes sur le panneau à côté de la fontaine"
@@ -229,7 +420,6 @@ label_settings = SubResource("LabelSettings_6sprp")
 libraries = {
 &"": SubResource("AnimationLibrary_jyq4a")
 }
-autoplay = "new_quete"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -20.0

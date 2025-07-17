@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=6 format=3 uid="uid://c2kwuu61a1rfq"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_gl5ke"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_igv3a"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_pk77t"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_doxip"]
+
+[sub_resource type="Resource" id="Resource_ppysu"]
+script = ExtResource("3_doxip")
+nom_perso = "epicier"
+mess = "Est-ce que tu pourrais prendre la carotte manquante dans son potager ?"
+liste_choix = Array[ExtResource("2_pk77t")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_igv3a")
+liste_messages = Array[ExtResource("1_gl5ke")]([SubResource("Resource_ppysu")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

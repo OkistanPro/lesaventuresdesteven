@@ -72,3 +72,4 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Vous devez casser la machine dans le salon de thé."
 label_settings = SubResource("LabelSettings_is5pg")
+autowrap_mode = 3

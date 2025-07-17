@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://lks60wflubbl"]
+[gd_scene load_steps=25 format=3 uid="uid://lks60wflubbl"]
 
 [ext_resource type="Script" uid="uid://dhs4f08w3k5so" path="res://scripts/rue_commerce_0.tres.gd" id="1_0ly6x"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_sagis"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="14_l3vmb"]
 [ext_resource type="Texture2D" uid="uid://cchem0p4ilxnw" path="res://sprites/persos/epicerie.png" id="15_2j44v"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="16_54f4n"]
+[ext_resource type="Script" uid="uid://ddv0tvkxeb8sd" path="res://scripts/gestion_epicier.gd" id="17_54f4n"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
@@ -206,6 +207,9 @@ texture = ExtResource("15_2j44v")
 flip_h = true
 script = ExtResource("14_l3vmb")
 nom_timeline = "epicier_carotte"
+nom_timeline_selon_select = Dictionary[String, String]({
+"carotte": "epicier_carotte_done"
+})
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Epicerie"]
@@ -217,12 +221,13 @@ shape = SubResource("RectangleShape2D_pscvu")
 [node name="Area2D" type="Area2D" parent="Epicerie"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Epicerie/Area2D"]
-polygon = PackedVector2Array(-3.5, -16.5, -9, 10.5, -4, 20.5, 18, 21, 19, 3, 16.5, -15)
+polygon = PackedVector2Array(-3.5, -16.5, -9, 10.5, -8.5, 25, 12, 18.5, 19, 3, 16.5, -15)
 
 [node name="Polygon2D" parent="Epicerie" instance=ExtResource("16_54f4n")]
 position = Vector2(0, -24)
 
 [node name="gestion_pnj" type="Node" parent="Epicerie"]
+script = ExtResource("17_54f4n")
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]

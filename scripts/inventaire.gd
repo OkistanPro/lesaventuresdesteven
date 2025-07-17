@@ -10,7 +10,7 @@ func _ready() -> void:
 	theme_select.bg_color.a = 0.5
 
 func refresh_list(added : ItemProperties) -> void:
-	if added:
+	if added != null:
 		$TextureRect.texture = added.texture_icon
 		$TextureRect.visible = true
 		$Label.text = added.item_name
@@ -20,6 +20,8 @@ func refresh_list(added : ItemProperties) -> void:
 	for item in Globals.inventory:
 		var index = $ItemList.add_icon_item(item.texture_icon)
 		$ItemList.set_item_metadata(index, item)
+	if $ItemList.get_selected_items() and $ItemList.item_count > $ItemList.get_selected_items()[0]:
+		Globals.selected_item = -1
 
 func _process(delta: float) -> void:
 	if GestionDialogue.active or Globals.in_cinematique or Globals.in_menu:
@@ -28,36 +30,72 @@ func _process(delta: float) -> void:
 		visible = true
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("select_inventaire"):
-		if Globals.selected_item == -1:
-			Globals.selected_item = $ItemList.get_selected_items()[0]
-			Globals.selected_item_name = $ItemList.get_item_metadata($ItemList.get_selected_items()[0]).item_name
-			print(Globals.selected_item_name)
-			$ItemList.add_theme_stylebox_override("selected", theme_select)
-		else:
-			Globals.selected_item = -1
-			$ItemList.remove_theme_stylebox_override("selected")
 	if event.is_action_pressed("inv_1"):
 		if $ItemList.item_count > 0:
-			$ItemList.select(0)
+			if not $ItemList.get_selected_items():
+				$ItemList.select(0)
+				select_item_data()
+			else:
+				$ItemList.deselect(0)
+				Globals.selected_item = -1
 	if event.is_action_pressed("inv_2"):
 		if $ItemList.item_count > 1:
-			$ItemList.select(1)
+			if not $ItemList.get_selected_items():
+				$ItemList.select(1)
+				select_item_data()
+			else:
+				$ItemList.deselect(1)
+				Globals.selected_item = -1
 	if event.is_action_pressed("inv_3"):
 		if $ItemList.item_count > 2:
-			$ItemList.select(2)
+			if not $ItemList.get_selected_items():
+				$ItemList.select(2)
+				select_item_data()
+			else:
+				$ItemList.deselect(2)
+				Globals.selected_item = -1
 	if event.is_action_pressed("inv_4"):
 		if $ItemList.item_count > 3:
-			$ItemList.select(3)
+			if not $ItemList.get_selected_items():
+				$ItemList.select(3)
+				select_item_data()
+			else:
+				$ItemList.deselect(3)
+				Globals.selected_item = -1
 	if event.is_action_pressed("inv_5"):
 		if $ItemList.item_count > 4:
-			$ItemList.select(4)
+			if not $ItemList.get_selected_items():
+				$ItemList.select(4)
+				select_item_data()
+			else:
+				$ItemList.deselect(4)
+				Globals.selected_item = -1
 	if event.is_action_pressed("inv_6"):
 		if $ItemList.item_count > 5:
-			$ItemList.select(5)
+			if not $ItemList.get_selected_items():
+				$ItemList.select(5)
+				select_item_data()
+			else:
+				$ItemList.deselect(5)
+				Globals.selected_item = -1
 	if event.is_action_pressed("inv_7"):
 		if $ItemList.item_count > 6:
-			$ItemList.select(6)
+			if not $ItemList.get_selected_items():
+				$ItemList.select(6)
+				select_item_data()
+			else:
+				$ItemList.deselect(6)
+				Globals.selected_item = -1
 	if event.is_action_pressed("inv_8"):
 		if $ItemList.item_count > 7:
-			$ItemList.select(7)
+			if not $ItemList.get_selected_items():
+				$ItemList.select(7)
+				select_item_data()
+			else:
+				$ItemList.deselect(7)
+				Globals.selected_item = -1
+
+func select_item_data() -> void:
+	Globals.selected_item = $ItemList.get_selected_items()[0]
+	Globals.selected_item_name = $ItemList.get_item_metadata($ItemList.get_selected_items()[0]).item_name
+	print(Globals.selected_item_name)
