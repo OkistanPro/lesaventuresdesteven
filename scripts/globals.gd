@@ -29,6 +29,8 @@ var in_cinematique : bool = false
 var in_menu : bool = false
 var fleche_input = preload("res://scenes/fleche_input.tscn")
 
+var nombre_colis : int = 0
+
 var inventory : Array[ItemProperties]
 
 func _ready() -> void:

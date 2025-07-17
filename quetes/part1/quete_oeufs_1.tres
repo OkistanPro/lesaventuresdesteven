@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quete" load_steps=2 format=3 uid="uid://bk3ccia013yys"]
+
+[ext_resource type="Script" uid="uid://ca284lm2gr3ex" path="res://scripts/quete.gd" id="1_wtc2v"]
+
+[resource]
+script = ExtResource("1_wtc2v")
+titre_quete = "Ramasser les oeufs dans le poulailler"
+desc_quete = "Ramasser les oeufs dans le poulailler pour aider le fermier de Steven."
+state = 0
+metadata/_custom_type_script = "uid://ca284lm2gr3ex"

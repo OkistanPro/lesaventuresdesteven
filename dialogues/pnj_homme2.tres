@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=12 format=3 uid="uid://byj6p4v0keptb"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=15 format=3 uid="uid://byj6p4v0keptb"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_bjalw"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_gvo6h"]
@@ -8,7 +8,15 @@
 [sub_resource type="Resource" id="Resource_c2a37"]
 script = ExtResource("3_elo6n")
 nom_perso = "Marc"
-mess = "Bonjour, je me disais et si je construisais une maison comme ça regarde. Et si je mettais la mon mirroire et ici mon armoire ..."
+mess = "Mmm, et si je construisais une maison ?"
+liste_choix = Array[ExtResource("2_nn3le")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_nn3le"]
+script = ExtResource("3_elo6n")
+nom_perso = "Marc"
+mess = "Et si je mettais là mon miroir et ici mon armoire..."
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -16,7 +24,15 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_v2aop"]
 script = ExtResource("3_elo6n")
 nom_perso = "Marc"
-mess = "A coté je metterais la table a manger, bien sur en disposant les chaises de façon a que tout le monde puisse prendre place ..."
+mess = "A côté je mettrais la table a manger..."
+liste_choix = Array[ExtResource("2_nn3le")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_elo6n"]
+script = ExtResource("3_elo6n")
+nom_perso = "Marc"
+mess = "...en disposant les chaises de façon à ce que tout le monde puisse prendre place..."
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -32,7 +48,15 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_1rmn6"]
 script = ExtResource("3_elo6n")
 nom_perso = "Marc"
-mess = "Et la bien sur je metterais mon tapis a moi, j'arrangerais le tout. Ah oui et pas de lit hein, interdit par le maire ..."
+mess = "Et là bien sûr je metterais mon tapis à moi, j'arrangerais le tout."
+liste_choix = Array[ExtResource("2_nn3le")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_hlqpr"]
+script = ExtResource("3_elo6n")
+nom_perso = "Marc"
+mess = "Ah oui et pas de lit hein, interdit par le maire..."
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -40,7 +64,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_iqotx"]
 script = ExtResource("3_elo6n")
 nom_perso = "Steven"
-mess = "Comment sa interdit par le maire ?"
+mess = "Comment ça interdit par le maire ?"
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -48,7 +72,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_i3t4x"]
 script = ExtResource("3_elo6n")
 nom_perso = "Marc"
-mess = "Bas enfaite dep... ATTENDS TU VIENS DE PARLER LA ?"
+mess = "Bah en fait dep... AAAAHHHHHHHH TU VIENS DE PARLER LA ?"
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -63,5 +87,5 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_gvo6h")
-liste_messages = Array[ExtResource("1_bjalw")]([SubResource("Resource_c2a37"), SubResource("Resource_v2aop"), SubResource("Resource_xqme4"), SubResource("Resource_1rmn6"), SubResource("Resource_iqotx"), SubResource("Resource_i3t4x"), SubResource("Resource_7rv00")])
+liste_messages = Array[ExtResource("1_bjalw")]([SubResource("Resource_c2a37"), SubResource("Resource_nn3le"), SubResource("Resource_v2aop"), SubResource("Resource_elo6n"), SubResource("Resource_xqme4"), SubResource("Resource_1rmn6"), SubResource("Resource_hlqpr"), SubResource("Resource_iqotx"), SubResource("Resource_i3t4x"), SubResource("Resource_7rv00")])
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

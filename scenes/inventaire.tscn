@@ -1,8 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://da5kxhp50c2xg"]
+[gd_scene load_steps=17 format=3 uid="uid://da5kxhp50c2xg"]
 
 [ext_resource type="Script" uid="uid://r55y6p14kc66" path="res://scripts/inventaire.gd" id="1_c2fa3"]
 [ext_resource type="Texture2D" uid="uid://b2lxkarf8wcvv" path="res://sprites/msg_box2.png" id="2_8anfk"]
 [ext_resource type="FontFile" uid="uid://c6quss0etcsrc" path="res://polices/PixeloidSans-Bold.ttf" id="3_8anfk"]
+[ext_resource type="FontFile" uid="uid://drbpuq1xbfywv" path="res://polices/8bit16.ttf" id="3_o536d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tnoi0"]
+texture = ExtResource("2_8anfk")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_c2fa3"]
+font = ExtResource("3_o536d")
+font_size = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tnoi0"]
 
@@ -98,6 +110,18 @@ tracks/5/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_8anfk"]
 resource_name = "new_item"
@@ -169,6 +193,18 @@ tracks/5/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.38, 1.67, 2)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tnoi0"]
 _data = {
@@ -190,6 +226,24 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_c2fa3")
 
+[node name="nom_item" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 79.0
+offset_top = -61.0
+offset_right = -80.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_tnoi0")
+text = "CACA"
+label_settings = SubResource("LabelSettings_c2fa3")
+horizontal_alignment = 1
+
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 1
 anchors_preset = 12
@@ -206,7 +260,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_tnoi0")
 theme_override_styles/panel = SubResource("StyleBoxTexture_8anfk")
 theme_override_styles/hovered = SubResource("StyleBoxFlat_c2fa3")
 text_overrun_behavior = 0
-max_columns = 8
+max_columns = 0
 fixed_icon_size = Vector2i(32, 32)
 
 [node name="flou" type="TextureRect" parent="."]
@@ -226,6 +280,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_o536d")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -233,9 +288,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = 158.745
+offset_top = -20.0
 offset_right = 20.0
-offset_bottom = 198.745
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(20, 20)

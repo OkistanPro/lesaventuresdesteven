@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cdy3i0fsqbxvk"]
+[gd_scene load_steps=37 format=3 uid="uid://cdy3i0fsqbxvk"]
 
 [ext_resource type="Script" uid="uid://deasxn1co6tks" path="res://scripts/rue_residence_parc_1.gd" id="1_55ydb"]
 [ext_resource type="Texture2D" uid="uid://7w7xx3axax0d" path="res://sprites/RPG_PARC_1_0001_Calque-5.png" id="2_dfewk"]
@@ -17,6 +17,8 @@
 [ext_resource type="Shader" uid="uid://c2f140whsd2qu" path="res://shaders/fleur_jaune.gdshader" id="14_r56y0"]
 [ext_resource type="Texture2D" uid="uid://7ioyhkwqfl3o" path="res://sprites/TROU DE TERRRE.png" id="16_okygd"]
 [ext_resource type="Texture2D" uid="uid://bubndnlittn22" path="res://sprites/MONTRE_ITEM.png" id="17_hrolg"]
+[ext_resource type="Texture2D" uid="uid://cxpxcasrfflsc" path="res://sprites/persos/grand_pnj.png" id="18_sufv0"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="19_fmisc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hoivi"]
 size = Vector2(1.36366, 8.63636)
@@ -72,6 +74,12 @@ event_on_not_pick = &"montre"
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fmisc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sufv0"]
+size = Vector2(19, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1s7ji"]
+radius = 22.0227
 
 [node name="rue_residence_parc1" type="Node2D"]
 y_sort_enabled = true
@@ -324,5 +332,37 @@ shape = SubResource("CircleShape2D_fmisc")
 [node name="Polygon2D" parent="trou_de_terre6" instance=ExtResource("8_gimey")]
 position = Vector2(-3, -10)
 
+[node name="Marc" type="Sprite2D" parent="."]
+position = Vector2(277, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("18_sufv0")
+script = ExtResource("19_fmisc")
+nom_timeline = "pnj_homme2"
+nom_timeline_selon_select = Dictionary[String, String]({
+"Colis Pour Marc": "pnj_homme2_colis"
+})
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Marc"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marc/StaticBody2D"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_sufv0")
+
+[node name="Area2D" type="Area2D" parent="Marc"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marc/Area2D"]
+shape = SubResource("CircleShape2D_1s7ji")
+
+[node name="Polygon2D" type="Polygon2D" parent="Marc" instance=ExtResource("8_gimey")]
+visible = false
+position = Vector2(0, -24)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
+
+[node name="gestion_pnj" type="Node" parent="Marc"]
+
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
+[connection signal="body_entered" from="Marc/Area2D" to="Marc" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Marc/Area2D" to="Marc" method="_on_area_2d_body_exited"]

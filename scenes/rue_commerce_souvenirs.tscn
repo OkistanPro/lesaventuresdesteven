@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://hdxui1dj546j"]
+[gd_scene load_steps=26 format=3 uid="uid://hdxui1dj546j"]
 
 [ext_resource type="Script" uid="uid://vte1qlb04x0a" path="res://scripts/rue_commerce_1.gd" id="1_w87nh"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_lbbow"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c7xnbj543cy2t" path="res://sprites/POT DE FLEUR.png" id="14_op1yb"]
 [ext_resource type="Texture2D" uid="uid://do56ogd7msbvy" path="res://sprites/POT DE FLEUR 2.png" id="15_2fhiq"]
 [ext_resource type="Texture2D" uid="uid://df78sb412tm" path="res://sprites/POT DE FLEUR 3.png" id="16_0gg83"]
+[ext_resource type="Texture2D" uid="uid://dipcxa44jnxxl" path="res://sprites/persos/grande_pnj.png" id="18_0gg83"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
@@ -33,6 +34,12 @@ size = Vector2(17.3333, 29.3333)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdskb"]
 radius = 24.2304
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gg83"]
+size = Vector2(17.5, 28.1911)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0gg83"]
+radius = 19.7845
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -272,6 +279,39 @@ texture = ExtResource("16_0gg83")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PotDeFleur3/StaticBody2D"]
 polygon = PackedVector2Array(-13, 7, -16, 15, -10, 30, 9, 30, 16, 15, 12, 7)
 
+[node name="carole" type="Sprite2D" parent="."]
+position = Vector2(86.5177, 351.618)
+scale = Vector2(2, 2)
+texture = ExtResource("18_0gg83")
+flip_h = true
+script = ExtResource("8_2fhiq")
+nom_timeline = "pnj_femme3"
+nom_timeline_selon_select = Dictionary[String, String]({
+"Colis Pour Carole": "pnj_femme3_colis"
+})
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="carole"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carole/StaticBody2D"]
+position = Vector2(-0.00885773, 4.09557)
+shape = SubResource("RectangleShape2D_0gg83")
+
+[node name="Area2D" type="Area2D" parent="carole"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carole/Area2D"]
+shape = SubResource("CircleShape2D_0gg83")
+
+[node name="Polygon2D" type="Polygon2D" parent="carole" instance=ExtResource("9_0gg83")]
+visible = false
+position = Vector2(0, -24)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
+
+[node name="gestion_pnj" type="Node" parent="carole"]
+
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="personnage/Area2D" to="personnage" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="personnage/Area2D" to="personnage" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="carole/Area2D" to="carole" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="carole/Area2D" to="carole" method="_on_area_2d_body_exited"]

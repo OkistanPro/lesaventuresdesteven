@@ -26,10 +26,10 @@ func show_char() -> void:
 	text += c
 	match c:
 		" ":
-			await get_tree().create_timer(0.03*speed).timeout
+			await get_tree().create_timer(0.015*speed).timeout
 		".":
-			await get_tree().create_timer(0.08*speed).timeout
+			await get_tree().create_timer(0.04*speed).timeout
 		_:
-			await get_tree().create_timer(0.02*speed).timeout
+			await get_tree().create_timer(0.018*speed).timeout
 	i += 1
 	return

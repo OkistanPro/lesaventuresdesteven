@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=12 format=3 uid="uid://er5wqkr4mb8i"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_e7udb"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_pjwe8"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_3hamr"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_84664"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="4_pjwe8"]
+
+[sub_resource type="Resource" id="Resource_e7udb"]
+script = ExtResource("3_3hamr")
+nom_perso = "Steven"
+mess = "Un colis pour vous monsieur !"
+liste_choix = Array[ExtResource("2_pjwe8")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_pjwe8"]
+script = ExtResource("3_3hamr")
+nom_perso = "Marc"
+mess = "Merci ! Oh c'est original ça un poussin qui livre mon colis !"
+liste_choix = Array[ExtResource("2_pjwe8")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_3hamr"]
+script = ExtResource("3_3hamr")
+nom_perso = "Marc"
+mess = "Je pourrais enfin mettre cette Xbox 360 édition Q en bas de la TV"
+liste_choix = Array[ExtResource("2_pjwe8")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_84664"]
+script = ExtResource("3_3hamr")
+nom_perso = "Steven"
+mess = "...c'est un colis de légumes."
+liste_choix = Array[ExtResource("2_pjwe8")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_te2mf"]
+script = ExtResource("3_3hamr")
+nom_perso = "Marc"
+mess = "Ah oops c'est pas le bon, my bad !"
+liste_choix = Array[ExtResource("2_pjwe8")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_xo0sd"]
+script = ExtResource("4_pjwe8")
+nom_event = "take_colis_marc"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[resource]
+script = ExtResource("4_84664")
+liste_messages = Array[ExtResource("1_e7udb")]([SubResource("Resource_e7udb"), SubResource("Resource_pjwe8"), SubResource("Resource_3hamr"), SubResource("Resource_84664"), SubResource("Resource_te2mf"), SubResource("Resource_xo0sd")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

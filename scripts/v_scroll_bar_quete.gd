@@ -10,10 +10,10 @@ func _process(delta: float) -> void:
 		max_value = $"../VBoxContainer".size.y - 300 + 50
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("scroll_down"):
+	if event.is_action_pressed("scroll_down") and visible:
 		value += 5
 		_on_scrolling()
-	if event.is_action_pressed("scroll_up"):
+	if event.is_action_pressed("scroll_up") and visible:
 		value -= 5
 		_on_scrolling()
 

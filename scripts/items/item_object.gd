@@ -42,7 +42,7 @@ func player_outside(body : PhysicsBody2D):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interagir"):
-		if inside_item:
+		if inside_item and not interface.get_node("Inventaire/AnimationPlayer").is_playing():
 			if properties.pickable and not properties.picked:
 				Globals.pick_item(properties)
 				GestionSons.play_sound("collect_item")

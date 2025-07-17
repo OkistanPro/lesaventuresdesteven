@@ -219,7 +219,9 @@ scale = Vector2(2, 2)
 texture = ExtResource("13_tqii1")
 script = ExtResource("5_ovgsu")
 nom_timeline = "fermier_quete1"
-random_timeline = true
+nom_timeline_selon_select = Dictionary[String, String]({
+"Colis Pour Fermier": "fermier_oeufs"
+})
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="gestion_fermier" type="Node" parent="fermier"]
