@@ -1,0 +1,122 @@
+[gd_scene load_steps=15 format=3 uid="uid://qtitxsw365x5"]
+
+[ext_resource type="Texture2D" uid="uid://bmmgkmqa5ti87" path="res://sprites/RPG FERME.png" id="1_b8bfn"]
+[ext_resource type="Script" uid="uid://dgnthjxm7j6v0" path="res://scripts/ferme.gd" id="1_e06cm"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="2_aakfg"]
+[ext_resource type="Texture2D" uid="uid://516f5x66uq4t" path="res://sprites/light_FERME.png" id="3_cdp30"]
+[ext_resource type="Texture2D" uid="uid://dhyg2mpy5qjr1" path="res://sprites/persos/fermier.png" id="5_75j5f"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="6_w3hym"]
+[ext_resource type="Script" uid="uid://bumxfwekngies" path="res://scripts/gestion_fermier.gd" id="7_6eagx"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="8_81ufu"]
+[ext_resource type="Texture2D" uid="uid://blkb5s4vwdwh" path="res://sprites/persos/petit_pnj.png" id="8_w3hym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdp30"]
+size = Vector2(280, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73fry"]
+size = Vector2(17.3333, 19.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3l2fy"]
+radius = 21.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3hym"]
+size = Vector2(13.5, 12.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w3hym"]
+radius = 18.9932
+
+[node name="Ferme" type="Node2D"]
+script = ExtResource("1_e06cm")
+
+[node name="RpgFerme" type="Sprite2D" parent="."]
+position = Vector2(399, 301)
+scale = Vector2(2, 2)
+texture = ExtResource("1_b8bfn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RpgFerme"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RpgFerme/StaticBody2D"]
+polygon = PackedVector2Array(12.5, 27, 12.5, 41.5, 57, 43, 58, 27.5, 118.5, 28, 119, -1, -124, -1, -123.5, 25, -89.5, 26, -87, 54.5, -82.5, 56, -82.5, 48.5, -69.5, 49, -69, 68, -52, 68.5, -52, 49, -37, 48.5, -37.5, 56, -33.5, 55.5, -32, 40.5, -29.5, 39.5, -29.5, 27.5, -17, 27.5, -16.5, 40.5, -6, 40.5, -3, 39, -1.5, 27)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RpgFerme/StaticBody2D"]
+polygon = PackedVector2Array(-117.5, 26, -119.5, 96, -12.5, 97.5, -28, 106.5, -135, 106.5, -128.5, 25)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="RpgFerme/StaticBody2D"]
+polygon = PackedVector2Array(94.5, 98, 106.5, 107.5, 155, 108, 155.5, 27, 118, 26, 119.5, 98.5)
+
+[node name="steven" parent="." instance=ExtResource("2_aakfg")]
+position = Vector2(481, 481)
+
+[node name="goto_poulailler" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_poulailler"]
+position = Vector2(480, 513.5)
+shape = SubResource("RectangleShape2D_cdp30")
+
+[node name="fermier" type="Sprite2D" parent="."]
+position = Vector2(564, 401)
+scale = Vector2(2, 2)
+texture = ExtResource("5_75j5f")
+script = ExtResource("6_w3hym")
+nom_timeline = "fermier_quete1"
+nom_timeline_selon_select = Dictionary[String, String]({
+"Colis Pour Fermier": "fermier_oeufs",
+"oeufs": "fermier_oeufs_donne"
+})
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="gestion_fermier" type="Node" parent="fermier"]
+script = ExtResource("7_6eagx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="fermier"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fermier/StaticBody2D"]
+position = Vector2(-6.10352e-05, 5.74998)
+shape = SubResource("RectangleShape2D_73fry")
+
+[node name="Area2D" type="Area2D" parent="fermier"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fermier/Area2D"]
+shape = SubResource("CircleShape2D_3l2fy")
+
+[node name="Polygon2D" parent="fermier" instance=ExtResource("8_81ufu")]
+position = Vector2(0, -22.9059)
+
+[node name="PNJ" type="Sprite2D" parent="."]
+position = Vector2(325.039, 447.384)
+scale = Vector2(2, 2)
+texture = ExtResource("8_w3hym")
+script = ExtResource("6_w3hym")
+nom_timeline = "pnj_gracon2"
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PNJ"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/StaticBody2D"]
+position = Vector2(0.23056, 6.55789)
+shape = SubResource("RectangleShape2D_w3hym")
+
+[node name="Area2D" type="Area2D" parent="PNJ"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/Area2D"]
+shape = SubResource("CircleShape2D_w3hym")
+debug_color = Color(0.788719, 0.308742, 0.75744, 0.42)
+
+[node name="Polygon2D" type="Polygon2D" parent="PNJ" instance=ExtResource("8_81ufu")]
+visible = false
+position = Vector2(0, -18)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
+
+[node name="gestion_pnj" type="Node" parent="PNJ"]
+
+[node name="LightFerme" type="Sprite2D" parent="."]
+position = Vector2(399, 301)
+scale = Vector2(2, 2)
+texture = ExtResource("3_cdp30")
+
+[connection signal="body_entered" from="goto_poulailler" to="." method="_on_goto_poulailler_body_entered"]
+[connection signal="body_entered" from="fermier/Area2D" to="fermier" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="fermier/Area2D" to="fermier" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_exited"]

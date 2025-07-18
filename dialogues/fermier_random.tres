@@ -1,0 +1,91 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=15 format=3 uid="uid://c4ch8288cfmn3"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_2nwm6"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_3tb12"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_jnm60"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_iwkgh"]
+
+[sub_resource type="Resource" id="Resource_t84o8"]
+script = ExtResource("3_iwkgh")
+nom_perso = "Fermier"
+mess = "Aujourd'hui j'ai eu une vingtaine d'oeufs je suis super content !"
+liste_choix = Array[ExtResource("2_jnm60")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_jnm60"]
+script = ExtResource("3_iwkgh")
+nom_perso = "Steven"
+mess = "Ah c'est trop cool je vais avoir plein de frères et soeurs..."
+liste_choix = Array[ExtResource("2_jnm60")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_iwkgh"]
+script = ExtResource("3_iwkgh")
+nom_perso = "Fermier"
+mess = "Je vais surtout avoir plein de sous !"
+liste_choix = Array[ExtResource("2_jnm60")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_334cn"]
+script = ExtResource("3_iwkgh")
+nom_perso = "Steven"
+mess = "Comment ça ?..."
+liste_choix = Array[ExtResource("2_jnm60")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_8ldsj"]
+script = ExtResource("3_iwkgh")
+nom_perso = "Fermier"
+mess = "En plus je pense être le seul à avoir un aussi bon rendement, je pourrais faire un peu plus de marge."
+liste_choix = Array[ExtResource("2_jnm60")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_d5fij"]
+script = ExtResource("3_iwkgh")
+nom_perso = "Fermier"
+mess = "Ah la misère est finie !"
+liste_choix = Array[ExtResource("2_jnm60")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_r832b"]
+script = ExtResource("3_iwkgh")
+nom_perso = "Steven"
+mess = "(.......IL VEND MES FRÈRES ??!)"
+liste_choix = Array[ExtResource("2_jnm60")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_mgmvk"]
+script = ExtResource("3_iwkgh")
+nom_perso = "Steven"
+mess = "(MAIS C'EST UN MALADE MENTALE !!)"
+liste_choix = Array[ExtResource("2_jnm60")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_k44nv"]
+script = ExtResource("3_iwkgh")
+nom_perso = "Fermier"
+mess = "Tu penses qu'il faudrait que je commence à construire un stand ?"
+liste_choix = Array[ExtResource("2_jnm60")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_dpccy"]
+script = ExtResource("3_iwkgh")
+nom_perso = "Steven"
+mess = "..."
+liste_choix = Array[ExtResource("2_jnm60")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("2_3tb12")
+liste_messages = Array[ExtResource("1_2nwm6")]([SubResource("Resource_t84o8"), SubResource("Resource_jnm60"), SubResource("Resource_iwkgh"), SubResource("Resource_334cn"), SubResource("Resource_8ldsj"), SubResource("Resource_d5fij"), SubResource("Resource_r832b"), SubResource("Resource_mgmvk"), SubResource("Resource_k44nv"), SubResource("Resource_dpccy")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

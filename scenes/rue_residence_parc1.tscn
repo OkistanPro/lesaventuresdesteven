@@ -131,6 +131,7 @@ position = Vector2(662, 411.5)
 shape = SubResource("RectangleShape2D_fucvl")
 
 [node name="barriere" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(330, 410)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("4_r0oth")
@@ -208,6 +209,7 @@ position = Vector2(332, 637)
 shape = SubResource("RectangleShape2D_55ydb")
 
 [node name="barrière" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(6, 513)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("10_ko2y3")
@@ -354,11 +356,8 @@ shape = SubResource("RectangleShape2D_sufv0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Marc/Area2D"]
 shape = SubResource("CircleShape2D_1s7ji")
 
-[node name="Polygon2D" type="Polygon2D" parent="Marc" instance=ExtResource("8_gimey")]
-visible = false
+[node name="Polygon2D" parent="Marc" instance=ExtResource("8_gimey")]
 position = Vector2(0, -24)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="gestion_pnj" type="Node" parent="Marc"]
 

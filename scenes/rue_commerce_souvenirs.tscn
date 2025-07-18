@@ -302,11 +302,8 @@ shape = SubResource("RectangleShape2D_0gg83")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="carole/Area2D"]
 shape = SubResource("CircleShape2D_0gg83")
 
-[node name="Polygon2D" type="Polygon2D" parent="carole" instance=ExtResource("9_0gg83")]
-visible = false
+[node name="Polygon2D" parent="carole" instance=ExtResource("9_0gg83")]
 position = Vector2(0, -24)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="gestion_pnj" type="Node" parent="carole"]
 

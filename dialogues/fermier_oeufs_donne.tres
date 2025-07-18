@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=10 format=3 uid="uid://dppkndbpk1beu"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=12 format=3 uid="uid://dppkndbpk1beu"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_mdrob"]
 [ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_8kvy1"]
 [ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_y2tb7"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="4_8kvy1"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_yd7al"]
 
 [sub_resource type="Resource" id="Resource_h0gjy"]
@@ -16,7 +17,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_mdrob"]
 script = ExtResource("3_y2tb7")
 nom_perso = "Steven"
-mess = "Woaw, sa me touche ... c'est franchement gentil de votre part !"
+mess = "Woaw, ça me touche ... c'est franchement gentil de ta part !"
 liste_choix = Array[ExtResource("2_8kvy1")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -24,7 +25,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_8kvy1"]
 script = ExtResource("3_y2tb7")
 nom_perso = "Fermier"
-mess = "Mais de rien, t'inquietes pas ..."
+mess = "Mais de rien !"
 liste_choix = Array[ExtResource("2_8kvy1")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -40,12 +41,18 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_yd7al"]
 script = ExtResource("3_y2tb7")
 nom_perso = "Fermier"
-mess = "Oui, a plus tard Steven !"
+mess = "Oui, à plus tard Steven !"
 liste_choix = Array[ExtResource("2_8kvy1")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
+[sub_resource type="Resource" id="Resource_pmsb6"]
+script = ExtResource("4_8kvy1")
+nom_event = "fin_quetes_oeufs"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
 [resource]
 script = ExtResource("4_yd7al")
-liste_messages = Array[ExtResource("1_mdrob")]([SubResource("Resource_h0gjy"), SubResource("Resource_mdrob"), SubResource("Resource_8kvy1"), SubResource("Resource_y2tb7"), SubResource("Resource_yd7al")])
+liste_messages = Array[ExtResource("1_mdrob")]([SubResource("Resource_h0gjy"), SubResource("Resource_mdrob"), SubResource("Resource_8kvy1"), SubResource("Resource_y2tb7"), SubResource("Resource_yd7al"), SubResource("Resource_pmsb6")])
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

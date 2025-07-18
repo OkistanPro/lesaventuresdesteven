@@ -39,6 +39,14 @@ func lancer_timeline(nom_timeline : String) -> void:
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"fin_quetes_oeufs":
+			GestionQuetes.end_quete("quete_oeufs_1.tres")
+			event_declencheur.emit("fin_quetes_oeufs")
+			for item in Globals.inventory:
+				if item.item_name == &"oeufs":
+					Globals.inventory.erase(item)
+					break
+			Globals.inventory_changed.emit(null)
 		"fin_quete_colis":
 			GestionQuetes.end_quete("quete_colis_1.tres")
 			event_declencheur.emit("fin_quete_colis")

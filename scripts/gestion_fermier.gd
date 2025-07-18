@@ -11,3 +11,5 @@ func on_event(nom_event : String):
 			pnj.nom_timeline = "fermier_attente_quete1"
 		"lancement_quetes_oeufs":
 			pnj.nom_timeline = "fermier_wait_oeufs"
+		"fin_quete_oeufs":
+			pnj.nom_timeline = "fermier_random"

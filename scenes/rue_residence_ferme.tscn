@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://uq4ks8udgkhu"]
+[gd_scene load_steps=22 format=3 uid="uid://uq4ks8udgkhu"]
 
 [ext_resource type="Script" uid="uid://n5j1yg38wj1d" path="res://scripts/rue_residence_ferme.gd" id="1_dqhc6"]
 [ext_resource type="Texture2D" uid="uid://bvguepu4vppxa" path="res://sprites/RPG-RUE-FERME_ferme.png" id="1_m6sjl"]
@@ -12,8 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bll8q2qvww2mx" path="res://sprites/RPG_FERME_0006_poussin4.png" id="8_tqii1"]
 [ext_resource type="Texture2D" uid="uid://dsw3ymu0sh6gs" path="res://sprites/RPG_FERME_0007_chariot.png" id="9_nqt51"]
 [ext_resource type="Texture2D" uid="uid://b86hjikjwwk5n" path="res://sprites/RPG_FERME_0007_poussin_fond.png" id="11_sayq4"]
-[ext_resource type="Texture2D" uid="uid://dhyg2mpy5qjr1" path="res://sprites/persos/fermier.png" id="13_tqii1"]
-[ext_resource type="Script" uid="uid://bumxfwekngies" path="res://scripts/gestion_fermier.gd" id="14_nqt51"]
 [ext_resource type="AudioStream" uid="uid://dagt5vfx8pu51" path="res://sons/BRUITAGE DE POUSSIN.mp3" id="15_qvbws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usxj3"]
@@ -26,22 +24,19 @@ size = Vector2(261.136, 35)
 radius = 11.3636
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovgsu"]
-size = Vector2(41.5, 324)
+size = Vector2(43, 324)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqt51"]
 size = Vector2(28, 327)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqii1"]
-size = Vector2(17.3333, 19.5)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nqt51"]
-radius = 21.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvbws"]
 size = Vector2(27.5, 11.5171)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qvbws"]
 radius = 37.054
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgbdv"]
+size = Vector2(129, 20)
 
 [node name="RueResidenceFerme" type="Node2D"]
 y_sort_enabled = true
@@ -76,7 +71,7 @@ shape = SubResource("RectangleShape2D_afdon")
 
 [node name="steven" parent="." instance=ExtResource("4_afdon")]
 z_index = 0
-position = Vector2(293, 321)
+position = Vector2(482, 272)
 
 [node name="poussin1" type="Sprite2D" parent="."]
 position = Vector2(178.31, 378.245)
@@ -204,7 +199,7 @@ polygon = PackedVector2Array(41.0954, 6.51819, 29.2773, 13.7909, 31.0954, 20.609
 position = Vector2(11, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite"]
-position = Vector2(656.25, 429)
+position = Vector2(655.5, 429)
 shape = SubResource("RectangleShape2D_ovgsu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="goto_rue_droite"]
@@ -212,34 +207,6 @@ shape = SubResource("RectangleShape2D_ovgsu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite/StaticBody2D"]
 position = Vector2(663, 429.5)
 shape = SubResource("RectangleShape2D_nqt51")
-
-[node name="fermier" type="Sprite2D" parent="."]
-position = Vector2(588, 345)
-scale = Vector2(2, 2)
-texture = ExtResource("13_tqii1")
-script = ExtResource("5_ovgsu")
-nom_timeline = "fermier_quete1"
-nom_timeline_selon_select = Dictionary[String, String]({
-"Colis Pour Fermier": "fermier_oeufs"
-})
-metadata/_custom_type_script = "uid://c7f5ewx6x32to"
-
-[node name="gestion_fermier" type="Node" parent="fermier"]
-script = ExtResource("14_nqt51")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="fermier"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fermier/StaticBody2D"]
-position = Vector2(-6.10352e-05, 5.74998)
-shape = SubResource("RectangleShape2D_tqii1")
-
-[node name="Area2D" type="Area2D" parent="fermier"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fermier/Area2D"]
-shape = SubResource("CircleShape2D_nqt51")
-
-[node name="Polygon2D" parent="fermier" instance=ExtResource("6_ovgsu")]
-position = Vector2(0, -22.9059)
 
 [node name="goto_ferme" type="Area2D" parent="."]
 
@@ -276,6 +243,12 @@ volume_db = -20.0
 autoplay = true
 panning_strength = 0.6
 
+[node name="goto_maison" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_maison"]
+position = Vector2(484.5, 240)
+shape = SubResource("RectangleShape2D_tgbdv")
+
 [connection signal="body_entered" from="poussin1/Area2D" to="poussin1" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="poussin1/Area2D" to="poussin1" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="poussin2/Area2D" to="poussin2" method="_on_area_2d_body_entered"]
@@ -287,8 +260,7 @@ panning_strength = 0.6
 [connection signal="body_entered" from="poussin5/Area2D" to="poussin5" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="poussin5/Area2D" to="poussin5" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
-[connection signal="body_entered" from="fermier/Area2D" to="fermier" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="fermier/Area2D" to="fermier" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="goto_ferme" to="." method="_on_goto_ferme_body_entered"]
 [connection signal="body_entered" from="poussin_dead/Area2D" to="poussin_dead" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="poussin_dead/Area2D" to="poussin_dead" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="goto_maison" to="." method="_on_goto_maison_body_entered"]

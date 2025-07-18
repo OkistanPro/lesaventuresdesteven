@@ -352,11 +352,8 @@ metadata/_custom_type_script = "uid://b1phsyjs6go0l"
 [node name="@CollisionShape2D@110357" type="CollisionShape2D" parent="Colis1/Area2D"]
 shape = SubResource("CircleShape2D_rnxx3")
 
-[node name="Polygon2D" type="Polygon2D" parent="Colis1" instance=ExtResource("16_54f4n")]
-visible = false
+[node name="Polygon2D" parent="Colis1" instance=ExtResource("16_54f4n")]
 position = Vector2(0, -32)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Colis1"]
 process_mode = 4
@@ -377,11 +374,8 @@ metadata/_custom_type_script = "uid://b1phsyjs6go0l"
 [node name="@CollisionShape2D@110900" type="CollisionShape2D" parent="Colis2/Area2D"]
 shape = SubResource("CircleShape2D_87m5q")
 
-[node name="Polygon2D" type="Polygon2D" parent="Colis2" instance=ExtResource("16_54f4n")]
-visible = false
+[node name="Polygon2D" parent="Colis2" instance=ExtResource("16_54f4n")]
 position = Vector2(0, -32)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Colis2"]
 process_mode = 4
@@ -405,11 +399,8 @@ position = Vector2(-3, 24)
 position = Vector2(4, -23)
 shape = SubResource("CircleShape2D_5cycb")
 
-[node name="Polygon2D" type="Polygon2D" parent="Colis3" instance=ExtResource("16_54f4n")]
-visible = false
+[node name="Polygon2D" parent="Colis3" instance=ExtResource("16_54f4n")]
 position = Vector2(0, -33)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Colis3"]
 process_mode = 4

@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_e0f71"]
 script = ExtResource("3_4ujs8")
 nom_perso = "Steven"
-mess = "Alors, tu apprendras que ça peut etre tres raciste ce que tu dits ..."
+mess = "Alors, sache que ça peut être interprété comme un peu raciste ce que tu dis..."
 liste_choix = Array[ExtResource("2_ixque")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"

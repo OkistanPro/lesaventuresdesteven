@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b21tvn732wndu"]
+[gd_scene load_steps=11 format=3 uid="uid://b21tvn732wndu"]
 
 [ext_resource type="Texture2D" uid="uid://d21cpculgsn0" path="res://sprites/RPG POULAILLER.png" id="1_jchfr"]
 [ext_resource type="Script" uid="uid://cny4if3eab6ug" path="res://scripts/poulailler.gd" id="1_qke2o"]
 [ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="2_qke2o"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="4_upxet"]
 [ext_resource type="Script" uid="uid://bhsk7fhnl4vyo" path="res://scripts/interaction_component.gd" id="4_w6uxl"]
+[ext_resource type="Script" uid="uid://4q14edmhfnmt" path="res://scripts/cache_oeuf.gd" id="6_yt6yf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upxet"]
 size = Vector2(68, 5.25)
@@ -14,6 +15,9 @@ radius = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w6uxl"]
 radius = 29.0172
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yt6yf"]
+radius = 41.0122
 
 [node name="Poulailler" type="Node2D"]
 script = ExtResource("1_qke2o")
@@ -68,4 +72,23 @@ shape = SubResource("CircleShape2D_w6uxl")
 [node name="Polygon2D" parent="dialogue_oeuf" instance=ExtResource("4_upxet")]
 position = Vector2(267, 476)
 
+[node name="cache_oeuf" type="Polygon2D" parent="."]
+position = Vector2(396, 443)
+color = Color(0, 0, 0, 0)
+offset = Vector2(-396, -443)
+polygon = PackedVector2Array(386, 428, 405, 423, 405, 458, 389, 462, 386, 446)
+uv = PackedVector2Array(386, 428, 405, 423, 405, 458, 389, 462, 386, 446)
+script = ExtResource("6_yt6yf")
+
+[node name="Area2D" type="Area2D" parent="cache_oeuf"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cache_oeuf/Area2D"]
+shape = SubResource("CircleShape2D_yt6yf")
+
+[node name="Polygon2D" parent="cache_oeuf" instance=ExtResource("4_upxet")]
+position = Vector2(0, -24)
+color = Color(0.396889, 0.396889, 0.396889, 1)
+
 [connection signal="body_entered" from="goto_exterieur" to="." method="_on_goto_exterieur_body_entered"]
+[connection signal="body_entered" from="cache_oeuf/Area2D" to="cache_oeuf" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="cache_oeuf/Area2D" to="cache_oeuf" method="_on_area_2d_body_exited"]
