@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cdy3i0fsqbxvk"]
+[gd_scene load_steps=38 format=3 uid="uid://cdy3i0fsqbxvk"]
 
 [ext_resource type="Script" uid="uid://deasxn1co6tks" path="res://scripts/rue_residence_parc_1.gd" id="1_55ydb"]
 [ext_resource type="Texture2D" uid="uid://7w7xx3axax0d" path="res://sprites/RPG_PARC_1_0001_Calque-5.png" id="2_dfewk"]
@@ -80,6 +80,9 @@ size = Vector2(19, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1s7ji"]
 radius = 22.0227
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmisc"]
+size = Vector2(52.5, 18)
 
 [node name="rue_residence_parc1" type="Node2D"]
 y_sort_enabled = true
@@ -361,7 +364,22 @@ position = Vector2(0, -24)
 
 [node name="gestion_pnj" type="Node" parent="Marc"]
 
+[node name="goto_maison2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_maison2"]
+position = Vector2(106.75, 192)
+shape = SubResource("RectangleShape2D_fmisc")
+
+[node name="goto_maison5" type="Area2D" parent="."]
+position = Vector2(439, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_maison5"]
+position = Vector2(106.75, 192)
+shape = SubResource("RectangleShape2D_fmisc")
+
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="Marc/Area2D" to="Marc" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Marc/Area2D" to="Marc" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="goto_maison2" to="." method="_on_goto_maison_2_body_entered"]
+[connection signal="body_entered" from="goto_maison5" to="." method="_on_goto_maison_5_body_entered"]

@@ -25,7 +25,7 @@ func refresh_list(added : ItemProperties) -> void:
 		$nom_item.visible = false
 
 func _process(delta: float) -> void:
-	if GestionDialogue.active or Globals.in_cinematique or Globals.in_menu:
+	if GestionDialogue.active or Globals.in_cinematique or Globals.in_menu or Globals.in_reveil:
 		visible = false
 	else:
 		visible = true

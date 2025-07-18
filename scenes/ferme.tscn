@@ -26,6 +26,7 @@ size = Vector2(13.5, 12.5)
 radius = 18.9932
 
 [node name="Ferme" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_e06cm")
 
 [node name="RpgFerme" type="Sprite2D" parent="."]
@@ -54,9 +55,11 @@ position = Vector2(480, 513.5)
 shape = SubResource("RectangleShape2D_cdp30")
 
 [node name="fermier" type="Sprite2D" parent="."]
-position = Vector2(564, 401)
+z_index = 1
+position = Vector2(563, 419)
 scale = Vector2(2, 2)
 texture = ExtResource("5_75j5f")
+offset = Vector2(0.5, -9)
 script = ExtResource("6_w3hym")
 nom_timeline = "fermier_quete1"
 nom_timeline_selon_select = Dictionary[String, String]({
@@ -71,18 +74,20 @@ script = ExtResource("7_6eagx")
 [node name="StaticBody2D" type="StaticBody2D" parent="fermier"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fermier/StaticBody2D"]
-position = Vector2(-6.10352e-05, 5.74998)
+position = Vector2(0.499939, -1.25002)
 shape = SubResource("RectangleShape2D_73fry")
 
 [node name="Area2D" type="Area2D" parent="fermier"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fermier/Area2D"]
+position = Vector2(0.5, -7)
 shape = SubResource("CircleShape2D_3l2fy")
 
 [node name="Polygon2D" parent="fermier" instance=ExtResource("8_81ufu")]
-position = Vector2(0, -22.9059)
+position = Vector2(0, -34.9059)
 
 [node name="PNJ" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(325.039, 447.384)
 scale = Vector2(2, 2)
 texture = ExtResource("8_w3hym")
@@ -102,11 +107,8 @@ shape = SubResource("RectangleShape2D_w3hym")
 shape = SubResource("CircleShape2D_w3hym")
 debug_color = Color(0.788719, 0.308742, 0.75744, 0.42)
 
-[node name="Polygon2D" type="Polygon2D" parent="PNJ" instance=ExtResource("8_81ufu")]
-visible = false
+[node name="Polygon2D" parent="PNJ" instance=ExtResource("8_81ufu")]
 position = Vector2(0, -18)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="gestion_pnj" type="Node" parent="PNJ"]
 

@@ -15,6 +15,13 @@ func _ready() -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	await Musique.finished
+	skip()
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("interagir"):
+		skip()
+
+func skip() -> void:
 	Globals.in_cinematique = false
 	Globals.in_menu = true
 	Musique.stop()

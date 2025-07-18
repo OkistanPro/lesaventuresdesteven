@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_dl1ho"]
 script = ExtResource("3_0gcdb")
 nom_perso = "epicier"
-mess = "Bonjour, ... euh pourquoi ?"
+mess = "Bonjour... euh pourquoi ?"
 liste_choix = Array[ExtResource("2_ecety")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_ut1xn"]
 script = ExtResource("3_0gcdb")
 nom_perso = "steven"
-mess = "Oui "
+mess = "Oui."
 liste_choix = Array[ExtResource("2_ecety")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"

@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0alt2v8iuh18"]
+[gd_scene load_steps=9 format=3 uid="uid://c0alt2v8iuh18"]
 
+[ext_resource type="Script" uid="uid://dy7mm5ramxr1a" path="res://scripts/maison_1.gd" id="1_d8878"]
 [ext_resource type="Texture2D" uid="uid://v7sv6mg0md5y" path="res://sprites/RPG MAISON_1.png" id="1_kwhq1"]
 [ext_resource type="Texture2D" uid="uid://bcq2jekk7ti1x" path="res://sprites/RPG-MAISON_table_0000_Calque-3.png" id="2_d8878"]
 [ext_resource type="Texture2D" uid="uid://ceyd8x5gpksrj" path="res://sprites/RPG-MAISON_pouf_0001_pouf.png" id="3_w7u2n"]
 [ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="4_jh11v"]
+[ext_resource type="Script" uid="uid://bneh5b8qe3cod" path="res://scripts/fleche_maison.gd" id="6_w7u2n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8878"]
+size = Vector2(76, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7u2n"]
+radius = 75.71
 
 [node name="Maison1" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_d8878")
 
 [node name="RpgMaison1" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
@@ -48,7 +57,28 @@ offset = Vector2(0.5, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rpg-maisonPouf0001Pouf/StaticBody2D"]
 position = Vector2(0, -7.5)
-polygon = PackedVector2Array(-27.5, 19, -24.5, 21, -17.5, 22.5, -8, 25, 1, 26, 13.5, 25, 23, 20, 29.5, 13.5, 32, 6.5, 32, -1, 28, -3.5, 19.5, -6, 11, -7, 0.5, -14.5, -9.5, -20, -21, -15.5, -27.5, -9, -31.5, 0, -32.5, 8.5, -30, 16)
+polygon = PackedVector2Array(-27.5, 19, -24.5, 21, -17.5, 22.5, -8, 25, 1, 26, 13.5, 25, 23, 20, 29.5, 13.5, 32, 6.5, 32, -1, 28, -3.5, 19.5, -6, 11, -7, 0.5, -14.5, -10, -17.5, -21, -15.5, -27.5, -9, -31.5, 0, -32.5, 8.5, -30, 16)
 
 [node name="steven" parent="." instance=ExtResource("4_jh11v")]
-position = Vector2(406, 452)
+position = Vector2(410, 452)
+
+[node name="goto_champ" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_champ"]
+position = Vector2(410, 501)
+shape = SubResource("RectangleShape2D_d8878")
+
+[node name="fleche_maison" type="Polygon2D" parent="."]
+position = Vector2(410, 468)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-4, -6, -4, -42, 4, -42, 4, -6, 14, -6, 0, 8, -14, -6)
+script = ExtResource("6_w7u2n")
+
+[node name="Area2D" type="Area2D" parent="fleche_maison"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fleche_maison/Area2D"]
+shape = SubResource("CircleShape2D_w7u2n")
+
+[connection signal="body_entered" from="goto_champ" to="." method="_on_goto_champ_body_entered"]
+[connection signal="body_entered" from="fleche_maison/Area2D" to="fleche_maison" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="fleche_maison/Area2D" to="fleche_maison" method="_on_area_2d_body_exited"]

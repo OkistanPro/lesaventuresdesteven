@@ -9,6 +9,10 @@ var sounds = {
 	"no_timeline" : [
 		preload("res://sons/ui_menu_button_error_01.wav"),
 		-15.0
+	],
+	"ding_epicerie" : [
+		preload("res://sons/494565__775noise__shop-door-bell.wav"),
+		-15.0
 	]
 }
 

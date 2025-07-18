@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7v1lskaooitx"]
+[gd_scene load_steps=20 format=3 uid="uid://b7v1lskaooitx"]
 
 [ext_resource type="Texture2D" uid="uid://blejbvji5xy8n" path="res://sprites/champ.png" id="1_blxw8"]
 [ext_resource type="Texture2D" uid="uid://brwgewxnqvf3p" path="res://sprites/RPG-RUE-HABITANT.png" id="1_m52ug"]
@@ -34,6 +34,9 @@ size = Vector2(18, 419.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18sym"]
 size = Vector2(16, 229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itce0"]
+size = Vector2(52.5, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1isu"]
 size = Vector2(12.7273, 91.3636)
@@ -87,7 +90,7 @@ shape = SubResource("RectangleShape2D_hoivi")
 [node name="steven" parent="." instance=ExtResource("2_foary")]
 z_index = 0
 y_sort_enabled = true
-position = Vector2(31, 322)
+position = Vector2(205, 343)
 
 [node name="ItemObject" type="Sprite2D" parent="."]
 position = Vector2(555, 544)
@@ -117,6 +120,19 @@ shape = SubResource("RectangleShape2D_fucvl")
 position = Vector2(664, 327.5)
 shape = SubResource("RectangleShape2D_18sym")
 
+[node name="goto_maison1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_maison1"]
+position = Vector2(106.75, 208)
+shape = SubResource("RectangleShape2D_itce0")
+
+[node name="goto_maison4" type="Area2D" parent="."]
+position = Vector2(439, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_maison4"]
+position = Vector2(106.75, 208)
+shape = SubResource("RectangleShape2D_itce0")
+
 [node name="barrière" type="Sprite2D" parent="."]
 position = Vector2(646, 530)
 scale = Vector2(2.2, 2.2)
@@ -132,3 +148,5 @@ shape = SubResource("RectangleShape2D_e1isu")
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
+[connection signal="body_entered" from="goto_maison1" to="." method="_on_goto_maison_1_body_entered"]
+[connection signal="body_entered" from="goto_maison4" to="." method="_on_goto_maison_4_body_entered"]

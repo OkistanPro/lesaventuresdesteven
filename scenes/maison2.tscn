@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://umlhb4qp0rar"]
+[gd_scene load_steps=9 format=3 uid="uid://umlhb4qp0rar"]
 
 [ext_resource type="Texture2D" uid="uid://da80t74536vlq" path="res://sprites/RPG MAISON_2.png" id="1_7l1nc"]
+[ext_resource type="Script" uid="uid://brd1uxyc4ddsf" path="res://scripts/maison_2.gd" id="1_u4bah"]
 [ext_resource type="Texture2D" uid="uid://bcq2jekk7ti1x" path="res://sprites/RPG-MAISON_table_0000_Calque-3.png" id="2_4skea"]
 [ext_resource type="Texture2D" uid="uid://ceyd8x5gpksrj" path="res://sprites/RPG-MAISON_pouf_0001_pouf.png" id="3_u4bah"]
 [ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="4_3cv8x"]
+[ext_resource type="Script" uid="uid://bneh5b8qe3cod" path="res://scripts/fleche_maison.gd" id="5_4skea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4bah"]
+size = Vector2(76, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3cv8x"]
+radius = 75.71
 
 [node name="Maison2" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_u4bah")
 
 [node name="RpgMaison2" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
@@ -53,3 +62,24 @@ polygon = PackedVector2Array(-27.5, 19, -24.5, 21, -17.5, 22.5, -8, 25, 1, 26, 1
 
 [node name="steven" parent="." instance=ExtResource("4_3cv8x")]
 position = Vector2(406, 452)
+
+[node name="goto_champ" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_champ"]
+position = Vector2(410, 501)
+shape = SubResource("RectangleShape2D_u4bah")
+
+[node name="fleche_maison" type="Polygon2D" parent="."]
+position = Vector2(410, 468)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-4, -6, -4, -42, 4, -42, 4, -6, 14, -6, 0, 8, -14, -6)
+script = ExtResource("5_4skea")
+
+[node name="Area2D" type="Area2D" parent="fleche_maison"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fleche_maison/Area2D"]
+shape = SubResource("CircleShape2D_3cv8x")
+
+[connection signal="body_entered" from="goto_champ" to="." method="_on_goto_champ_body_entered"]
+[connection signal="body_entered" from="fleche_maison/Area2D" to="fleche_maison" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="fleche_maison/Area2D" to="fleche_maison" method="_on_area_2d_body_exited"]

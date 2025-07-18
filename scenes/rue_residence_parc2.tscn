@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://gilqi1v1v1hn"]
+[gd_scene load_steps=32 format=3 uid="uid://gilqi1v1v1hn"]
 
 [ext_resource type="Script" uid="uid://cd561svy56fgh" path="res://scripts/rue_residence_parc_2.gd" id="1_58awy"]
 [ext_resource type="Texture2D" uid="uid://7w7xx3axax0d" path="res://sprites/RPG_PARC_1_0001_Calque-5.png" id="2_4ky22"]
@@ -59,6 +59,9 @@ metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 [sub_resource type="CircleShape2D" id="CircleShape2D_eqotn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgyc0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8ygl"]
+size = Vector2(52.5, 18)
 
 [node name="rue_residence_parc2" type="Node2D"]
 y_sort_enabled = true
@@ -272,4 +275,19 @@ shape = SubResource("CircleShape2D_mgyc0")
 [node name="Polygon2D" parent="trou_de_terre3" instance=ExtResource("16_mgyc0")]
 position = Vector2(0, -10)
 
+[node name="goto_maison3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_maison3"]
+position = Vector2(106.75, 192)
+shape = SubResource("RectangleShape2D_w8ygl")
+
+[node name="goto_maison6" type="Area2D" parent="."]
+position = Vector2(439, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_maison6"]
+position = Vector2(106.75, 192)
+shape = SubResource("RectangleShape2D_w8ygl")
+
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="goto_maison3" to="." method="_on_goto_maison_3_body_entered"]
+[connection signal="body_entered" from="goto_maison6" to="." method="_on_goto_maison_6_body_entered"]

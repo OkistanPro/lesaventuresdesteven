@@ -9,6 +9,7 @@ var timeline_actuel : D_Timeline
 var liste_timeline = {
 }
 var active : bool = false
+var kayou = preload("res://items/kayou.tres")
 
 func _ready() -> void :
 	var directories_to_look_at = ["res://dialogues/"]
@@ -91,12 +92,15 @@ func lancer_event(nom_event : String) -> void:
 			event_declencheur.emit("vendeur_montre_bis")
 		"fin_quete_carotte":
 			GestionQuetes.end_quete("quete_carotte_1.tres")
-			event_declencheur.emit("end_quete_carotte")
+			event_declencheur.emit("fin_quete_carotte")
 			for item in Globals.inventory:
 				if item.item_name == &"carotte":
 					Globals.inventory.erase(item)
 					break
 			Globals.inventory_changed.emit(null)
+			Globals.pick_item(kayou)
+			GestionSons.play_sound("collect_item")
+			kayou.picked = true
 		"graine_regardé":
 			Globals.graine_regarde = true
 		"lancement_quete_carotte":

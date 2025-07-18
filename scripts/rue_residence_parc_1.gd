@@ -3,11 +3,16 @@ extends Node2D
 var montre = preload("res://scenes/montre.tscn")
 
 func _ready() -> void:
+	Musique.interieur = false
 	Globals.event_declencheur.connect(_montre)
 	if Globals.direction_from == "croisement_residence":
 		$steven.position = Vector2(30, Globals.y_from+80.0)
 	if Globals.direction_from == "rue_residence_parc2":
 		$steven.position = Vector2(601, Globals.y_from)
+	if Globals.direction_from == "maison2":
+		$steven.position = Vector2(107, 234)
+	if Globals.direction_from == "maison5":
+		$steven.position = Vector2(545, 234)
 
 func _on_goto_rue_gauche_body_entered(body: Node2D) -> void:
 	if body == $steven:
@@ -26,3 +31,11 @@ func _montre(nom_event  : String) -> void:
 		montre_instance.reparent(self)
 		$trou_de_terre6/Polygon2D.visible = false
 		$trou_de_terre6/Area2D.monitoring = false
+
+func _on_goto_maison_2_body_entered(body: Node2D) -> void:
+	if body == $steven:
+		Globals.goto_scene("rue_residence_parc1", "maison2", $steven.position.y, self)
+
+func _on_goto_maison_5_body_entered(body: Node2D) -> void:
+	if body == $steven:
+		Globals.goto_scene("rue_residence_parc1", "maison5", $steven.position.y, self)

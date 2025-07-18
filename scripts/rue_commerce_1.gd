@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	Musique.interieur = false
 	if Globals.direction_from == "rue_commerce_epicerie":
 		$steven.position = Vector2(601, Globals.y_from)
 

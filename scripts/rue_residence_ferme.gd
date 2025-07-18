@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	Musique.interieur = false
 	if Globals.graine_regarde:
 		$poussin3.nom_timeline_random[$poussin3.nom_timeline_random.find("poussin3")] = "poussin3_graines"
 	if Globals.direction_from == "rue_residence_champ":

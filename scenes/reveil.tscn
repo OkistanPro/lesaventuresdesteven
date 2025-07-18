@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm2jelsmhwhhy"]
+
+[ext_resource type="VideoStream" uid="uid://ctb4sausbu1fc" path="res://videos/reveil_steven.ogv" id="1_am2xp"]
+[ext_resource type="Script" uid="uid://dvmhtm0vv3vlk" path="res://scripts/reveil.gd" id="1_qpawh"]
+
+[node name="Reveil" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qpawh")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_am2xp")
+autoplay = true
+expand = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

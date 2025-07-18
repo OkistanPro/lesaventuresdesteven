@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=3 uid="uid://bajqax68dyjlr"]
+
+[ext_resource type="Texture2D" uid="uid://mmaqywa5ib8j" path="res://sprites/RPG-EPICERIE-INTERIEUR_0002_main.png" id="1_xak5c"]
+[ext_resource type="Script" uid="uid://bjsplchuo7crj" path="res://scripts/epicerie.gd" id="1_yksub"]
+[ext_resource type="Texture2D" uid="uid://bw4rqqe1b2i18" path="res://sprites/RPG-EPICERIE-INTERIEUR_0001_sacs.png" id="2_x1xv2"]
+[ext_resource type="Texture2D" uid="uid://hn1n7cs4qvjt" path="res://sprites/RPG-EPICERIE-INTERIEUR_0000_fruits_legumes.png" id="3_etk7t"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="4_etk7t"]
+[ext_resource type="Texture2D" uid="uid://cchem0p4ilxnw" path="res://sprites/persos/epicerie.png" id="6_w588x"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="7_1qpcd"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="8_d0d2x"]
+[ext_resource type="Script" uid="uid://ddv0tvkxeb8sd" path="res://scripts/gestion_epicier.gd" id="9_sc41l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etk7t"]
+size = Vector2(87, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo8sx"]
+size = Vector2(17, 21.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i758k"]
+radius = 44.5028
+
+[node name="Epicerie" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_yksub")
+
+[node name="Epicerie" type="Sprite2D" parent="."]
+position = Vector2(400, 299)
+scale = Vector2(2, 2)
+texture = ExtResource("1_xak5c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Epicerie"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Epicerie/StaticBody2D"]
+polygon = PackedVector2Array(-121.5, 1.5, -118, 2, -117, 11, 17.5, 11.5, 19.5, 4.5, 18, 0.5, 33, 1, 35, 8, 39.5, 12, 46.5, 13.5, 68, 12.5, 99.5, 10.5, 106.5, 11, 106.5, -22.5, -121.5, -23.5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Epicerie/StaticBody2D"]
+polygon = PackedVector2Array(-121.5, -3, -121.5, 80, 63, 80, 63, 90, -132, 88, -134, 60.5, -130.5, 1)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Epicerie/StaticBody2D"]
+polygon = PackedVector2Array(106.5, 80, 106.5, 89, 121.5, 89, 122, 7, 106.5, 6)
+
+[node name="Sacs" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(203, 417)
+scale = Vector2(2, 2)
+texture = ExtResource("2_x1xv2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sacs"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sacs/StaticBody2D"]
+polygon = PackedVector2Array(-18, 16.5, -0.5, 17, 2, 17.5, 15, 18, 19, 16.5, 19, 6, 8, 1, 8, -7.5, 6.5, -10, -7.5, -10, -9, -3, -18.5, 2.5, -18, 13.5)
+
+[node name="fruits_legumes" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(393, 393)
+scale = Vector2(2, 2)
+texture = ExtResource("3_etk7t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="fruits_legumes"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fruits_legumes/StaticBody2D"]
+polygon = PackedVector2Array(-54, 17, 52, 17.5, 52.5, -9.5, -51, -10.5)
+
+[node name="steven" parent="." instance=ExtResource("4_etk7t")]
+position = Vector2(568, 427)
+
+[node name="goto_rue" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue"]
+position = Vector2(569.5, 477)
+shape = SubResource("RectangleShape2D_etk7t")
+
+[node name="Epicerie2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(552, 263)
+scale = Vector2(2, 2)
+texture = ExtResource("6_w588x")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 19, 20.26)
+script = ExtResource("7_1qpcd")
+nom_timeline = "epicier_carotte"
+nom_timeline_selon_select = Dictionary[String, String]({
+"carotte": "epicier_carotte_done"
+})
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Epicerie2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Epicerie2/StaticBody2D"]
+position = Vector2(0, 7.75)
+shape = SubResource("RectangleShape2D_uo8sx")
+
+[node name="Area2D" type="Area2D" parent="Epicerie2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Epicerie2/Area2D"]
+shape = SubResource("CircleShape2D_i758k")
+
+[node name="Polygon2D" parent="Epicerie2" instance=ExtResource("8_d0d2x")]
+position = Vector2(0, -24)
+
+[node name="gestion_pnj" type="Node" parent="Epicerie2"]
+script = ExtResource("9_sc41l")
+
+[connection signal="body_entered" from="goto_rue" to="." method="_on_goto_rue_body_entered"]
+[connection signal="body_entered" from="Epicerie2/Area2D" to="Epicerie2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Epicerie2/Area2D" to="Epicerie2" method="_on_area_2d_body_exited"]
