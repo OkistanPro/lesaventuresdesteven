@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=8 format=3 uid="uid://clru83t8katto"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_rd0ve"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_l16if"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_ild0l"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_gsq3b"]
+
+[sub_resource type="Resource" id="Resource_fffsn"]
+script = ExtResource("3_ild0l")
+nom_perso = "Steven"
+mess = "Mais, viens avec nous non ?"
+liste_choix = Array[ExtResource("2_l16if")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_vqqrc"]
+script = ExtResource("3_ild0l")
+nom_perso = "Poussin"
+mess = "PIOOOUU ... piouuuuu"
+liste_choix = Array[ExtResource("2_l16if")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_oo0q6"]
+script = ExtResource("3_ild0l")
+nom_perso = "Steven"
+mess = "Je comprend, on n'est mieux seul quelque fois ... (Steven se rapelle)"
+liste_choix = Array[ExtResource("2_l16if")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("4_gsq3b")
+liste_messages = Array[ExtResource("1_rd0ve")]([SubResource("Resource_fffsn"), SubResource("Resource_vqqrc"), SubResource("Resource_oo0q6")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=10 format=3 uid="uid://bpu65sexy6fjf"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_8vvrq"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_wvprv"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_gkbhr"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_hjeis"]
+
+[sub_resource type="Resource" id="Resource_u40lj"]
+script = ExtResource("3_gkbhr")
+nom_perso = "Steven"
+mess = "Je te jure que ça va mal finir ..."
+liste_choix = Array[ExtResource("2_wvprv")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_boe17"]
+script = ExtResource("3_gkbhr")
+nom_perso = "Poussin"
+mess = "Piou Piou PIOUUUU"
+liste_choix = Array[ExtResource("2_wvprv")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_iwh4v"]
+script = ExtResource("3_gkbhr")
+nom_perso = "Steven"
+mess = "olalalalala ...."
+liste_choix = Array[ExtResource("2_wvprv")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ilili"]
+script = ExtResource("3_gkbhr")
+nom_perso = "Poussin"
+mess = "PIOOOOUUUUU !"
+liste_choix = Array[ExtResource("2_wvprv")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_8vvrq"]
+script = ExtResource("3_gkbhr")
+nom_perso = "Steven"
+mess = "Ouais, bah moi aussi Piouuu ..."
+liste_choix = Array[ExtResource("2_wvprv")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("4_hjeis")
+liste_messages = Array[ExtResource("1_8vvrq")]([SubResource("Resource_u40lj"), SubResource("Resource_boe17"), SubResource("Resource_iwh4v"), SubResource("Resource_ilili"), SubResource("Resource_8vvrq")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

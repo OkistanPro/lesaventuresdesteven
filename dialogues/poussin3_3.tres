@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=10 format=3 uid="uid://q4vsh153drs1"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_of4cq"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_fhnpj"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_i1yt5"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_y4tol"]
+
+[sub_resource type="Resource" id="Resource_a260l"]
+script = ExtResource("3_i1yt5")
+nom_perso = "Steven"
+mess = "Saluut frerot, comment tu vas ?"
+liste_choix = Array[ExtResource("2_fhnpj")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_bg51g"]
+script = ExtResource("3_i1yt5")
+nom_perso = "Poussin"
+mess = "PIOU PIOU !"
+liste_choix = Array[ExtResource("2_fhnpj")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_0n2y0"]
+script = ExtResource("3_i1yt5")
+nom_perso = "Steven"
+mess = "Bas non, pas trop enfin non ..."
+liste_choix = Array[ExtResource("2_fhnpj")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ge5ms"]
+script = ExtResource("3_i1yt5")
+nom_perso = "Poussin"
+mess = "PIOU !"
+liste_choix = Array[ExtResource("2_fhnpj")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_of4cq"]
+script = ExtResource("3_i1yt5")
+nom_perso = "Steven"
+mess = "Bah, je vais te laisser si je te genes tant ..."
+liste_choix = Array[ExtResource("2_fhnpj")]([])
+event_at_start = ""
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("4_y4tol")
+liste_messages = Array[ExtResource("1_of4cq")]([SubResource("Resource_a260l"), SubResource("Resource_bg51g"), SubResource("Resource_0n2y0"), SubResource("Resource_ge5ms"), SubResource("Resource_of4cq")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
