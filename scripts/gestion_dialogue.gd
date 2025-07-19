@@ -40,6 +40,14 @@ func lancer_timeline(nom_timeline : String) -> void:
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"musique_interieur":
+			Musique.stream = Musique.musique_interieur
+			Musique.play()
+		"musique_triste":
+			Musique.stream = Musique.musique_triste
+			Musique.play()
+		"changement_musique":
+			Musique.stop()
 		"fin_quetes_oeufs":
 			GestionQuetes.end_quete("quete_oeufs_1.tres")
 			event_declencheur.emit("fin_quetes_oeufs")

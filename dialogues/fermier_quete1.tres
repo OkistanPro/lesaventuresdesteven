@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=26 format=3 uid="uid://b2gvwjv4gcmen"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=30 format=3 uid="uid://b2gvwjv4gcmen"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_qqv1b"]
 [ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_gr4wi"]
@@ -36,6 +36,12 @@ script = ExtResource("4_4rnu0")
 temps = 2.0
 affiche_dialogue = false
 metadata/_custom_type_script = "uid://b2khngrg30oaj"
+
+[sub_resource type="Resource" id="Resource_2g7fn"]
+script = ExtResource("5_gr4wi")
+nom_event = "changement_musique"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [sub_resource type="Resource" id="Resource_q3pmv"]
 script = ExtResource("3_jimhr")
@@ -77,6 +83,12 @@ liste_choix = Array[ExtResource("2_gr4wi")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
+[sub_resource type="Resource" id="Resource_ggcuc"]
+script = ExtResource("5_gr4wi")
+nom_event = "musique_triste"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
 [sub_resource type="Resource" id="Resource_t6ehg"]
 script = ExtResource("3_jimhr")
 nom_perso = "Steven"
@@ -109,6 +121,12 @@ liste_choix = Array[ExtResource("2_gr4wi")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
+[sub_resource type="Resource" id="Resource_cr62c"]
+script = ExtResource("5_gr4wi")
+nom_event = "changement_musique"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
 [sub_resource type="Resource" id="Resource_qqv1b"]
 script = ExtResource("3_jimhr")
 nom_perso = "Steven"
@@ -124,6 +142,12 @@ mess = "...piou piou piou piou ?"
 liste_choix = Array[ExtResource("2_gr4wi")]([])
 event_at_start = ""
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ccejq"]
+script = ExtResource("5_gr4wi")
+nom_event = "musique_interieur"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [sub_resource type="Resource" id="Resource_gr4wi"]
 script = ExtResource("3_jimhr")
@@ -157,5 +181,5 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [resource]
 script = ExtResource("5_mkfh3")
-liste_messages = Array[ExtResource("1_qqv1b")]([SubResource("Resource_u3gfe"), SubResource("Resource_fkqx5"), SubResource("Resource_e4yrw"), SubResource("Resource_p50tf"), SubResource("Resource_q3pmv"), SubResource("Resource_uc42m"), SubResource("Resource_jkgbo"), SubResource("Resource_m6bo6"), SubResource("Resource_v3afc"), SubResource("Resource_t6ehg"), SubResource("Resource_wirt8"), SubResource("Resource_2cm7l"), SubResource("Resource_cui7v"), SubResource("Resource_qqv1b"), SubResource("Resource_go0la"), SubResource("Resource_gr4wi"), SubResource("Resource_jimhr"), SubResource("Resource_4rnu0"), SubResource("Resource_mkfh3")])
+liste_messages = Array[ExtResource("1_qqv1b")]([SubResource("Resource_u3gfe"), SubResource("Resource_fkqx5"), SubResource("Resource_e4yrw"), SubResource("Resource_p50tf"), SubResource("Resource_2g7fn"), SubResource("Resource_q3pmv"), SubResource("Resource_uc42m"), SubResource("Resource_jkgbo"), SubResource("Resource_m6bo6"), SubResource("Resource_v3afc"), SubResource("Resource_ggcuc"), SubResource("Resource_t6ehg"), SubResource("Resource_wirt8"), SubResource("Resource_2cm7l"), SubResource("Resource_cui7v"), SubResource("Resource_cr62c"), SubResource("Resource_qqv1b"), SubResource("Resource_go0la"), SubResource("Resource_ccejq"), SubResource("Resource_gr4wi"), SubResource("Resource_jimhr"), SubResource("Resource_4rnu0"), SubResource("Resource_mkfh3")])
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

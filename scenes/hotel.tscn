@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://m1b62it2csl7"]
+
+[ext_resource type="Script" uid="uid://b7xjakfqdm58k" path="res://scripts/hotel.gd" id="1_frj80"]
+[ext_resource type="Texture2D" uid="uid://crfx0laxbw18s" path="res://sprites/RPG HALL HOTEL.png" id="1_n8khp"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="3_5ami5"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="4_nypwa"]
+[ext_resource type="Texture2D" uid="uid://bae4lxv64f0i8" path="res://sprites/persos/dame_hotel.png" id="5_4fgw4"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="6_0tfin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ami5"]
+size = Vector2(111.5, 7.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nypwa"]
+size = Vector2(220, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwmit"]
+size = Vector2(16.6666, 22.7778)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4fgw4"]
+radius = 40.6506
+
+[node name="Hotel" type="Node2D"]
+script = ExtResource("1_frj80")
+
+[node name="RpgHallHotel" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+scale = Vector2(2, 2)
+texture = ExtResource("1_n8khp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RpgHallHotel"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RpgHallHotel/StaticBody2D"]
+polygon = PackedVector2Array(-53, -3, -49.5, 5.5, -43.5, 12.5, -37, 17.5, -28, 22.5, -18, 24, 6.5, 23.5, 9.5, 22.5, 23.5, 18.5, 35.5, 11.5, 45, -2, 114, -2.5, 114, -25.5, -121, -26, -120, 0, -115.5, 9, -91.5, 14, -76, 14.5, -56.5, 7.5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RpgHallHotel/StaticBody2D"]
+polygon = PackedVector2Array(-115, 50.5, -98.5, 49, -91, 43, -87, 35.5, -79, 29, -54.5, 38, -52.5, 45.5, -52.5, 50.5, -39.5, 53.5, -32, 57, -29, 66.5, -28, 84, -115.5, 83)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="RpgHallHotel/StaticBody2D"]
+polygon = PackedVector2Array(25.5, 84, 26, 61.5, 44, 52, 60.5, 47, 61, 37, 65, 30, 83, 30.5, 93, 33.5, 95, 48.5, 101, 50, 111.5, 53.5, 117.5, 72.5, 115.5, 85.5)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="RpgHallHotel/StaticBody2D"]
+polygon = PackedVector2Array(-113.5, -23, -129.5, -23, -127, 96, -29, 96, -28, 83, -113, 81)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="RpgHallHotel/StaticBody2D"]
+polygon = PackedVector2Array(112.5, -17.5, 113, 83, 25.5, 83.5, 26, 94.5, 126.5, 96, 125.5, -18.5)
+
+[node name="goto_rue" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue"]
+position = Vector2(396.25, 492)
+shape = SubResource("RectangleShape2D_5ami5")
+
+[node name="steven" parent="." instance=ExtResource("3_5ami5")]
+position = Vector2(395, 447)
+
+[node name="fleche" type="Area2D" parent="."]
+position = Vector2(396, 478)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fleche"]
+position = Vector2(2, -21)
+shape = SubResource("RectangleShape2D_nypwa")
+
+[node name="Polygon2D" parent="." instance=ExtResource("4_nypwa")]
+position = Vector2(396, 478)
+
+[node name="DameHotel" type="Sprite2D" parent="."]
+position = Vector2(382, 294)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("5_4fgw4")
+region_enabled = true
+region_rect = Rect2(0, 0, 19, 26.0204)
+script = ExtResource("6_0tfin")
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DameHotel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DameHotel/StaticBody2D"]
+position = Vector2(1.52588e-05, 1.38889)
+shape = SubResource("RectangleShape2D_fwmit")
+
+[node name="Area2D" type="Area2D" parent="DameHotel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DameHotel/Area2D"]
+shape = SubResource("CircleShape2D_4fgw4")
+
+[node name="Polygon2D" type="Polygon2D" parent="DameHotel" instance=ExtResource("4_nypwa")]
+visible = false
+position = Vector2(0, -17.7778)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
+
+[node name="gestion_pnj" type="Node" parent="DameHotel"]
+
+[connection signal="body_entered" from="goto_rue" to="." method="_on_goto_rue_body_entered"]
+[connection signal="body_entered" from="fleche" to="." method="_on_fleche_body_entered"]
+[connection signal="body_exited" from="fleche" to="." method="_on_fleche_body_exited"]

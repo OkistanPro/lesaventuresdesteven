@@ -217,7 +217,7 @@ position = Vector2(451, 285)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_oh4dw")
 script = ExtResource("11_bs2ak")
-nom_timeline = "pnj_homme"
+nom_timeline = "pnj_homme1"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="pnj1"]
 

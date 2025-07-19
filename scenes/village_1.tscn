@@ -289,7 +289,7 @@ position = Vector2(0, -17)
 
 [node name="Pancarte" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(443, 305)
+position = Vector2(339, 497)
 texture = ExtResource("21_jibjk")
 script = ExtResource("22_4p5rq")
 

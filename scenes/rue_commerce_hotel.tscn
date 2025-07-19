@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://1bdu2jwu5g63"]
+[gd_scene load_steps=11 format=3 uid="uid://1bdu2jwu5g63"]
 
 [ext_resource type="Script" uid="uid://do2gi0jo3igxr" path="res://scripts/village_hotel.gd" id="1_p06e1"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_rg7nq"]
@@ -16,6 +16,9 @@ size = Vector2(96, 575)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3f2s"]
 size = Vector2(303.409, 89.5456)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ef3c"]
+size = Vector2(15, 7)
 
 [node name="village_hotel" type="Node2D"]
 y_sort_enabled = true
@@ -42,7 +45,7 @@ centered = false
 shape = SubResource("WorldBoundaryShape2D_0aefm")
 
 [node name="steven" parent="." instance=ExtResource("4_xgjan")]
-position = Vector2(31, 322)
+position = Vector2(223, 330)
 
 [node name="goto_rue_droite" type="Area2D" parent="."]
 z_index = 1
@@ -83,5 +86,13 @@ offset = Vector2(-3.33334, -28.0952)
 position = Vector2(-3.80952, -23.3333)
 polygon = PackedVector2Array(-107.619, 77.6191, -89.0476, 82.8572, -70, 86.1905, -54.7619, 80.9524, -46.6667, 80.4762, -46.6667, 88.5714, -22.8571, 89.0476, 30.4762, 84.7619, 71.9048, 68.0952, 100, 25.7143, 102.857, -23.8095, -89.0476, -16.6667, -103.81, 15.2381)
 
+[node name="goto_hotel" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_hotel"]
+z_index = 2
+position = Vector2(234.5, 299.5)
+shape = SubResource("RectangleShape2D_1ef3c")
+
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="goto_hotel" to="." method="_on_goto_hotel_body_entered"]

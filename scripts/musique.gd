@@ -3,6 +3,7 @@ var musique_interieur = preload("res://musique/OST_MAISON.wav")
 var musique_village = preload("res://musique/OST_VILLAGEe.wav")
 var musique_cinematique = preload("res://sons/OST_CINEMATIQUE.wav")
 var musique_menu = preload("res://sons/OST_MENU.wav")
+var musique_triste = preload("res://musique/OST_TRISTE_STEVEN.wav")
 
 var interieur : bool = true:
 	set(value):

@@ -222,7 +222,7 @@ region_enabled = true
 region_rect = Rect2(24, 21, 7, 17)
 
 [node name="trou_de_terre" type="Sprite2D" parent="."]
-z_index = 1
+z_index = -1
 position = Vector2(444, 572)
 scale = Vector2(2, 2)
 texture = ExtResource("13_2i44t")
@@ -240,7 +240,7 @@ shape = SubResource("CircleShape2D_w8ygl")
 position = Vector2(0, -10)
 
 [node name="trou_de_terre2" type="Sprite2D" parent="."]
-z_index = 1
+z_index = -1
 position = Vector2(268, 498)
 scale = Vector2(2, 2)
 texture = ExtResource("13_2i44t")
@@ -258,7 +258,7 @@ shape = SubResource("CircleShape2D_eqotn")
 position = Vector2(0, -10)
 
 [node name="trou_de_terre3" type="Sprite2D" parent="."]
-z_index = 1
+z_index = -1
 position = Vector2(629, 508)
 scale = Vector2(2, 2)
 texture = ExtResource("13_2i44t")
