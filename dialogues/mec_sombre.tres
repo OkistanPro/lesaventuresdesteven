@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=17 format=3 uid="uid://c50a0gqpo6xg6"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_itwtg"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_p4wf8"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_p2s4t"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_djsal"]
+
+[sub_resource type="Resource" id="Resource_38mwe"]
+script = ExtResource("3_p2s4t")
+nom_perso = ""
+mess = "Vous appercevez une silhouette cacher dans les arbres ..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_lnp16"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "Bonjour Steven, je te cherchais vois-tu ..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_itwtg"]
+script = ExtResource("3_p2s4t")
+nom_perso = "Steven"
+mess = "Co.. Comment vous connaissez mon nom ? ET .. Pourquoi vous me cherchiez ?"
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_p4wf8"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "J'ai une quête tres importante a te donner, serait tu prets ?"
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_p2s4t"]
+script = ExtResource("3_p2s4t")
+nom_perso = "Steven"
+mess = "Euh ... Et bien, j'imagine que oui ... Mais dite moi qui etes vous ?"
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_djsal"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "Tu ne dois pas le savoir, tu doits seulement savoir ta quete ..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_4iqxr"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "Tu doits récuperer 7 clés dans village, elles sont toutes cachées dans le village ..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_c3gvs"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "Et tu doit les retrouvez afin d'ouvrir une porte qui mene sur la vérité ..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_b2r4j"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "Une porte unique en ces lieux, une porte que tu doit ouvrir, une vérité que tu doit voir ..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_eje2f"]
+script = ExtResource("3_p2s4t")
+nom_perso = "Steven"
+mess = "Et quelle est cette vérité ? ... Pourquoi moi ? ... ET POURQUOI ICI ? ...."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_axyv5"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "A toi de jouer Steven ..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_gyiox"]
+script = ExtResource("3_p2s4t")
+nom_perso = ""
+mess = "L'homme encapuchoné disparus dans la pénombre des arbres ..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("4_djsal")
+liste_messages = Array[ExtResource("1_itwtg")]([SubResource("Resource_38mwe"), SubResource("Resource_lnp16"), SubResource("Resource_itwtg"), SubResource("Resource_p4wf8"), SubResource("Resource_p2s4t"), SubResource("Resource_djsal"), SubResource("Resource_4iqxr"), SubResource("Resource_c3gvs"), SubResource("Resource_b2r4j"), SubResource("Resource_eje2f"), SubResource("Resource_axyv5"), SubResource("Resource_gyiox")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
