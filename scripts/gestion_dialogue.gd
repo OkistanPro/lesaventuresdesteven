@@ -40,6 +40,9 @@ func lancer_timeline(nom_timeline : String) -> void:
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"ouvre_portail":
+			# Ouvre portail
+			pass
 		"fin_quete_menage":
 			GestionQuetes.end_quete("quete_menage_1.tres")
 			event_declencheur.emit("fin_quete_menage")

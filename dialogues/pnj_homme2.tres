@@ -11,6 +11,7 @@ nom_perso = "Marc"
 mess = "Mmm, et si je construisais une maison ?"
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_nn3le"]
@@ -19,6 +20,7 @@ nom_perso = "Marc"
 mess = "Et si je mettais là mon miroir et ici mon armoire..."
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_v2aop"]
@@ -27,6 +29,7 @@ nom_perso = "Marc"
 mess = "A côté je mettrais la table a manger..."
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_elo6n"]
@@ -35,6 +38,7 @@ nom_perso = "Marc"
 mess = "...en disposant les chaises de façon à ce que tout le monde puisse prendre place..."
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_xqme4"]
@@ -43,6 +47,7 @@ nom_perso = "Steven"
 mess = "..."
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_1rmn6"]
@@ -51,6 +56,7 @@ nom_perso = "Marc"
 mess = "Et là bien sûr je metterais mon tapis à moi, j'arrangerais le tout."
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_hlqpr"]
@@ -59,6 +65,7 @@ nom_perso = "Marc"
 mess = "Ah oui et pas de lit hein, interdit par le maire..."
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_iqotx"]
@@ -67,6 +74,7 @@ nom_perso = "Steven"
 mess = "Comment ça interdit par le maire ?"
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_i3t4x"]
@@ -75,6 +83,7 @@ nom_perso = "Marc"
 mess = "Bah en fait dep... AAAAHHHHHHHH TU VIENS DE PARLER LA ?"
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_7rv00"]
@@ -83,6 +92,7 @@ nom_perso = "Steven"
 mess = "... piou ?"
 liste_choix = Array[ExtResource("2_nn3le")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]

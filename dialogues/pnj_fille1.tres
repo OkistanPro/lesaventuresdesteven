@@ -11,6 +11,7 @@ nom_perso = "Petite fille"
 mess = "AAAAAAAAAH maman y'a un poussin qui marche !!!"
 liste_choix = Array[ExtResource("2_o5ndl")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_volrp"]
@@ -19,6 +20,7 @@ nom_perso = "Steven"
 mess = "Bouh !"
 liste_choix = Array[ExtResource("2_o5ndl")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_bap01"]
@@ -27,6 +29,7 @@ nom_perso = "Petite fille"
 mess = "AAAAAAAAAH et il parle notre langue !!!!"
 liste_choix = Array[ExtResource("2_o5ndl")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]

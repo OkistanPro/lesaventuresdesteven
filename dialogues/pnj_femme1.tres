@@ -11,6 +11,7 @@ nom_perso = "Steven"
 mess = "Bonjour madame !"
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_vaysu"]
@@ -19,6 +20,7 @@ nom_perso = "Brigitte"
 mess = "Oh bonjour petit poussin, qu'est-ce qui t'amènes de beau ici ?"
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_t2pvh"]
@@ -27,6 +29,7 @@ nom_perso = "Steven"
 mess = "Je me promene par-ci, par-là et vous ?"
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_dxsk3"]
@@ -35,6 +38,7 @@ nom_perso = "Brigitte"
 mess = "Je profite du beau temps !"
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_lkcg3"]
@@ -43,6 +47,7 @@ nom_perso = "Brigitte"
 mess = "Après avoir choisi les plus beaux fruits je vais un tour à LaParc."
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_21lr3"]
@@ -51,6 +56,7 @@ nom_perso = "Steven"
 mess = "C'est \"le\" parc non ?"
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_b0bvi"]
@@ -59,6 +65,7 @@ nom_perso = "Brigitte"
 mess = "Oui, mais le notre se nomme \"LaParc\" tout attaché."
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_t3vbl"]
@@ -67,6 +74,7 @@ nom_perso = "Brigitte"
 mess = "Encore des idées de ce maire bizarre ..."
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]

@@ -6,6 +6,7 @@ class_name InteractionComponent
 @onready var steven = $"../../steven"
 
 @export var nom_timeline : String
+@export var nom_timeline_selon_select : Dictionary[String, String]
 
 var in_area : bool = false
 
@@ -25,4 +26,9 @@ func _on_area_exited(body : Node2D) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interagir") and in_area:
-		GestionDialogue.lancer_timeline(nom_timeline)
+		if Globals.selected_item == -1:
+			GestionDialogue.lancer_timeline(nom_timeline)
+		elif Globals.selected_item_name in nom_timeline_selon_select:
+			GestionDialogue.lancer_timeline(nom_timeline_selon_select[Globals.selected_item_name])
+		else:
+			GestionSons.play_sound("no_timeline")

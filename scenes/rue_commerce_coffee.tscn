@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cpwk6rw2kd26i"]
+[gd_scene load_steps=28 format=3 uid="uid://cpwk6rw2kd26i"]
 
 [ext_resource type="Script" uid="uid://ciiaw3wjkdwmd" path="res://scripts/rue_commerce_2.gd" id="1_wp0qm"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_5n7rv"]
@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://cdsdma80trc8w" path="res://sprites/RPG_EPICERIE_0003_Calque-4.png" id="14_5n7rv"]
 [ext_resource type="Texture2D" uid="uid://c7xnbj543cy2t" path="res://sprites/POT DE FLEUR.png" id="15_torih"]
 [ext_resource type="Texture2D" uid="uid://df78sb412tm" path="res://sprites/POT DE FLEUR 3.png" id="16_8l4r6"]
+[ext_resource type="Texture2D" uid="uid://d34aenbdwixl5" path="res://sprites/CLE.png" id="17_p4con"]
+[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="18_0vqv0"]
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="19_sbuuv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
@@ -35,6 +38,17 @@ radius = 24.2304
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqfty"]
 size = Vector2(303.409, 82.2728)
+
+[sub_resource type="Resource" id="Resource_p4con"]
+script = ExtResource("19_sbuuv")
+item_name = &"clé n°1"
+texture_icon = ExtResource("17_p4con")
+pickable = true
+event_on_not_pick = &""
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs2ak"]
+size = Vector2(67.0576, 50)
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -284,6 +298,30 @@ texture = ExtResource("16_8l4r6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PotDeFleur2/StaticBody2D"]
 polygon = PackedVector2Array(-13, 7, -16, 15, -10, 30, 9, 30, 16, 15, 12, 7)
+
+[node name="Cle4" type="Sprite2D" parent="."]
+position = Vector2(503, 180)
+rotation = -1.208
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("17_p4con")
+script = ExtResource("18_0vqv0")
+properties = SubResource("Resource_p4con")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="Cle4"]
+
+[node name="_CollisionShape2D_34019" type="CollisionShape2D" parent="Cle4/Area2D"]
+position = Vector2(-0.000335693, -0.00012207)
+rotation = 1.208
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_bs2ak")
+
+[node name="Polygon2D" parent="Cle4" instance=ExtResource("12_dxsp7")]
+z_index = 4
+position = Vector2(26.3544, -6.05383)
+rotation = 1.208
+scale = Vector2(1, 1)
+color = Color(0.995353, 0.869497, 0.637136, 1)
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="pnj1/Area2D" to="pnj1" method="_on_area_2d_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cdy3i0fsqbxvk"]
+[gd_scene load_steps=41 format=3 uid="uid://cdy3i0fsqbxvk"]
 
 [ext_resource type="Script" uid="uid://deasxn1co6tks" path="res://scripts/rue_residence_parc_1.gd" id="1_55ydb"]
 [ext_resource type="Texture2D" uid="uid://7w7xx3axax0d" path="res://sprites/RPG_PARC_1_0001_Calque-5.png" id="2_dfewk"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bubndnlittn22" path="res://sprites/MONTRE_ITEM.png" id="17_hrolg"]
 [ext_resource type="Texture2D" uid="uid://cxpxcasrfflsc" path="res://sprites/persos/grand_pnj.png" id="18_sufv0"]
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="19_fmisc"]
+[ext_resource type="Texture2D" uid="uid://cattcap0gqcqj" path="res://sprites/persos/grand_pnj_3.png" id="20_fmisc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hoivi"]
 size = Vector2(1.36366, 8.63636)
@@ -33,7 +34,7 @@ size = Vector2(300.909, 6.81818)
 script = ExtResource("8_okygd")
 item_name = &"tondeuse"
 texture_icon = ExtResource("5_muyxg")
-pickable = true
+pickable = false
 event_on_not_pick = &""
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 
@@ -83,6 +84,12 @@ radius = 22.0227
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmisc"]
 size = Vector2(52.5, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s7ji"]
+size = Vector2(17, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qax44"]
+radius = 24.0208
 
 [node name="rue_residence_parc1" type="Node2D"]
 y_sort_enabled = true
@@ -381,9 +388,36 @@ position = Vector2(439, 0)
 position = Vector2(106.75, 192)
 shape = SubResource("RectangleShape2D_fmisc")
 
+[node name="pnjhomme" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(581, 510)
+scale = Vector2(2, 2)
+texture = ExtResource("20_fmisc")
+script = ExtResource("19_fmisc")
+nom_timeline = "pnj_homme3"
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pnjhomme"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pnjhomme/StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_1s7ji")
+
+[node name="Area2D" type="Area2D" parent="pnjhomme"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pnjhomme/Area2D"]
+shape = SubResource("CircleShape2D_qax44")
+
+[node name="Polygon2D" parent="pnjhomme" instance=ExtResource("8_gimey")]
+position = Vector2(0, -20)
+
+[node name="gestion_pnj" type="Node" parent="pnjhomme"]
+
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="Marc/Area2D" to="Marc" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Marc/Area2D" to="Marc" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="goto_maison2" to="." method="_on_goto_maison_2_body_entered"]
 [connection signal="body_entered" from="goto_maison5" to="." method="_on_goto_maison_5_body_entered"]
+[connection signal="body_entered" from="pnjhomme/Area2D" to="pnjhomme" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="pnjhomme/Area2D" to="pnjhomme" method="_on_area_2d_body_exited"]
