@@ -9,3 +9,4 @@ class_name D_Message
 @export_multiline var mess : String
 @export var liste_choix : Array[D_Choix]
 @export var event_at_start : String
+@export var no_end : bool

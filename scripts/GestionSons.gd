@@ -13,6 +13,10 @@ var sounds = {
 	"ding_epicerie" : [
 		preload("res://sons/494565__775noise__shop-door-bell.wav"),
 		-15.0
+	],
+	"balai" : [
+		preload("res://sons/broom.wav"),
+		-5.0
 	]
 }
 

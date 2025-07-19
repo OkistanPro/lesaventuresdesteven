@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://m1b62it2csl7"]
+[gd_scene load_steps=22 format=3 uid="uid://m1b62it2csl7"]
 
 [ext_resource type="Script" uid="uid://b7xjakfqdm58k" path="res://scripts/hotel.gd" id="1_frj80"]
 [ext_resource type="Texture2D" uid="uid://crfx0laxbw18s" path="res://sprites/RPG HALL HOTEL.png" id="1_n8khp"]
@@ -6,6 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="4_nypwa"]
 [ext_resource type="Texture2D" uid="uid://bae4lxv64f0i8" path="res://sprites/persos/dame_hotel.png" id="5_4fgw4"]
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="6_0tfin"]
+[ext_resource type="Script" uid="uid://bc8gqqxfp82wu" path="res://scripts/gestion_hoteliere.gd" id="7_0tfin"]
+[ext_resource type="Texture2D" uid="uid://gc5a1g7h31t4" path="res://sprites/BALAIS_PLACE.png" id="8_1cbbl"]
+[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="9_dq6b4"]
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="10_tltmg"]
+[ext_resource type="Texture2D" uid="uid://3h13e51hjmtj" path="res://sprites/BALAIS_ITEM.png" id="11_73gpd"]
+[ext_resource type="Texture2D" uid="uid://ga58fc6es1we" path="res://sprites/POUSSIERE.png" id="12_73gpd"]
+[ext_resource type="Texture2D" uid="uid://c1vxej1kkg1x5" path="res://sprites/TOILE D ARAIGNEE_2.png" id="13_12elo"]
+[ext_resource type="Script" uid="uid://c426gt7ud3yw" path="res://scripts/balai_affect.gd" id="13_71fdt"]
+[ext_resource type="Texture2D" uid="uid://be4eeu67teycr" path="res://sprites/TOILE D ARAIGNEE.png" id="14_71fdt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ami5"]
 size = Vector2(111.5, 7.5)
@@ -19,6 +28,17 @@ size = Vector2(16.6666, 22.7778)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4fgw4"]
 radius = 40.6506
 
+[sub_resource type="Resource" id="Resource_12elo"]
+script = ExtResource("10_tltmg")
+item_name = &"balai"
+texture_icon = ExtResource("11_73gpd")
+pickable = false
+event_on_not_pick = &""
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71fdt"]
+radius = 36.5762
+
 [node name="Hotel" type="Node2D"]
 script = ExtResource("1_frj80")
 
@@ -30,7 +50,7 @@ texture = ExtResource("1_n8khp")
 [node name="StaticBody2D" type="StaticBody2D" parent="RpgHallHotel"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RpgHallHotel/StaticBody2D"]
-polygon = PackedVector2Array(-53, -3, -49.5, 5.5, -43.5, 12.5, -37, 17.5, -28, 22.5, -18, 24, 6.5, 23.5, 9.5, 22.5, 23.5, 18.5, 35.5, 11.5, 45, -2, 114, -2.5, 114, -25.5, -121, -26, -120, 0, -115.5, 9, -91.5, 14, -76, 14.5, -56.5, 7.5)
+polygon = PackedVector2Array(-53, -3, -49.5, 5.5, -43.5, 12.5, -37, 17.5, -28, 22.5, -18, 24, 6.5, 23.5, 9.5, 22.5, 23.5, 18.5, 35.5, 11.5, 45, -2, 114, -2.5, 114, -25.5, -121, -26, -120, 0, -115.5, 9, -101.5, 10, -85, 7.5, -82.5, -1)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RpgHallHotel/StaticBody2D"]
 polygon = PackedVector2Array(-115, 50.5, -98.5, 49, -91, 43, -87, 35.5, -79, 29, -54.5, 38, -52.5, 45.5, -52.5, 50.5, -39.5, 53.5, -32, 57, -29, 66.5, -28, 84, -115.5, 83)
@@ -71,6 +91,7 @@ texture = ExtResource("5_4fgw4")
 region_enabled = true
 region_rect = Rect2(0, 0, 19, 26.0204)
 script = ExtResource("6_0tfin")
+nom_timeline = "hoteliere_menage"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="DameHotel"]
@@ -84,14 +105,107 @@ shape = SubResource("RectangleShape2D_fwmit")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DameHotel/Area2D"]
 shape = SubResource("CircleShape2D_4fgw4")
 
-[node name="Polygon2D" type="Polygon2D" parent="DameHotel" instance=ExtResource("4_nypwa")]
-visible = false
+[node name="Polygon2D" parent="DameHotel" instance=ExtResource("4_nypwa")]
 position = Vector2(0, -17.7778)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
 
 [node name="gestion_pnj" type="Node" parent="DameHotel"]
+script = ExtResource("7_0tfin")
+
+[node name="balai" type="Sprite2D" parent="."]
+position = Vector2(513.595, 283.532)
+texture = ExtResource("8_1cbbl")
+script = ExtResource("9_dq6b4")
+properties = SubResource("Resource_12elo")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="balai"]
+
+[node name="@CollisionShape2D@78685" type="CollisionShape2D" parent="balai/Area2D"]
+shape = SubResource("CircleShape2D_71fdt")
+
+[node name="Polygon2D" parent="balai" instance=ExtResource("4_nypwa")]
+position = Vector2(-2, -34)
+color = Color(0.366595, 0.366595, 0.366595, 1)
+
+[node name="Poussiere1" type="Sprite2D" parent="."]
+position = Vector2(482, 390)
+texture = ExtResource("12_73gpd")
+
+[node name="Area2D" type="Area2D" parent="Poussiere1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Poussiere1/Area2D"]
+polygon = PackedVector2Array(-15, -4, -25, 0, -18, 2, -7, 5, 5, 4, 20, 5, 25, 3, 24, -1, 14, -2, 4, -2, -1, -7, -9, -6)
+
+[node name="balai_affect" type="Node" parent="Poussiere1"]
+script = ExtResource("13_71fdt")
+
+[node name="Poussiere2" type="Sprite2D" parent="."]
+position = Vector2(562, 350)
+texture = ExtResource("12_73gpd")
+
+[node name="Area2D" type="Area2D" parent="Poussiere2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Poussiere2/Area2D"]
+polygon = PackedVector2Array(-15, -4, -25, 0, -18, 2, -7, 5, 5, 4, 20, 5, 25, 3, 24, -1, 14, -2, 4, -2, -1, -7, -9, -6)
+
+[node name="BalaiComponent" type="Node" parent="Poussiere2"]
+script = ExtResource("13_71fdt")
+metadata/_custom_type_script = "uid://c426gt7ud3yw"
+
+[node name="Poussiere3" type="Sprite2D" parent="."]
+position = Vector2(378, 382)
+texture = ExtResource("12_73gpd")
+
+[node name="Area2D" type="Area2D" parent="Poussiere3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Poussiere3/Area2D"]
+polygon = PackedVector2Array(-15, -4, -25, 0, -18, 2, -7, 5, 5, 4, 20, 5, 25, 3, 24, -1, 14, -2, 4, -2, -1, -7, -9, -6)
+
+[node name="BalaiComponent" type="Node" parent="Poussiere3"]
+script = ExtResource("13_71fdt")
+metadata/_custom_type_script = "uid://c426gt7ud3yw"
+
+[node name="Poussiere4" type="Sprite2D" parent="."]
+position = Vector2(202, 358)
+texture = ExtResource("12_73gpd")
+
+[node name="Area2D" type="Area2D" parent="Poussiere4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Poussiere4/Area2D"]
+polygon = PackedVector2Array(-15, -4, -25, 0, -18, 2, -7, 5, 5, 4, 20, 5, 25, 3, 24, -1, 14, -2, 4, -2, -1, -7, -9, -6)
+
+[node name="BalaiComponent" type="Node" parent="Poussiere4"]
+script = ExtResource("13_71fdt")
+metadata/_custom_type_script = "uid://c426gt7ud3yw"
+
+[node name="ToileDAraignee2" type="Sprite2D" parent="."]
+position = Vector2(597, 307)
+texture = ExtResource("13_12elo")
+
+[node name="Area2D" type="Area2D" parent="ToileDAraignee2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToileDAraignee2/Area2D"]
+polygon = PackedVector2Array(-31, -11, -32, -2, -25, 9, -10, 12, -2, 9, 4, 4, 14, 11, 28, 13, 31, -11)
+
+[node name="BalaiComponent" type="Node" parent="ToileDAraignee2"]
+script = ExtResource("13_71fdt")
+metadata/_custom_type_script = "uid://c426gt7ud3yw"
+
+[node name="ToileDAraignee" type="Sprite2D" parent="."]
+position = Vector2(261, 273)
+texture = ExtResource("14_71fdt")
+
+[node name="Area2D" type="Area2D" parent="ToileDAraignee"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToileDAraignee/Area2D"]
+polygon = PackedVector2Array(-35, -25, -37, -6, -39, 21, -30, 29, 0, 29, 25, 29, 36, 15, 32, -22, 29, -25, -34, -26)
+
+[node name="BalaiComponent" type="Node" parent="ToileDAraignee"]
+script = ExtResource("13_71fdt")
+metadata/_custom_type_script = "uid://c426gt7ud3yw"
 
 [connection signal="body_entered" from="goto_rue" to="." method="_on_goto_rue_body_entered"]
 [connection signal="body_entered" from="fleche" to="." method="_on_fleche_body_entered"]
 [connection signal="body_exited" from="fleche" to="." method="_on_fleche_body_exited"]
+[connection signal="body_entered" from="DameHotel/Area2D" to="DameHotel" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="DameHotel/Area2D" to="DameHotel" method="_on_area_2d_body_exited"]

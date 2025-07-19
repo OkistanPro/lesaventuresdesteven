@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-const SPEED : int = 75.0
+signal balai
+
+const SPEED : int = 100.0
 var direction
 var in_flaque : bool = false
 var direction_flaque : Vector2 = Vector2.ZERO
@@ -49,3 +51,12 @@ func _on_flaque_body_entered(body: Node2D) -> void:
 func _on_flaque_body_exited(body: Node2D) -> void:
 	if body == self:
 		in_flaque = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interagir") and \
+	Globals.selected_item != -1 and \
+	Globals.selected_item_name == "balai" and not \
+	$AnimationPlayer.is_playing():
+		$AnimationPlayer.play("balai")
+		GestionSons.play_sound("balai")
+		balai.emit()

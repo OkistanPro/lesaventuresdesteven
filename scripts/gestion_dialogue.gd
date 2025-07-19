@@ -40,6 +40,20 @@ func lancer_timeline(nom_timeline : String) -> void:
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"fin_quete_menage":
+			GestionQuetes.end_quete("quete_menage_1.tres")
+			event_declencheur.emit("fin_quete_menage")
+			for item in Globals.inventory:
+				if item.item_name == &"balai":
+					Globals.inventory.erase(item)
+					break
+			Globals.inventory_changed.emit(null)
+			Globals.pick_item(kayou)
+			GestionSons.play_sound("collect_item")
+			kayou.picked = true
+		"lancement_quete_hotel":
+			GestionQuetes.lancer_quete("quete_menage_1.tres")
+			event_declencheur.emit("lancement_quete_hotel")
 		"musique_interieur":
 			Musique.stream = Musique.musique_interieur
 			Musique.play()

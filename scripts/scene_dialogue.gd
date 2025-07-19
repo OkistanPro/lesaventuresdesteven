@@ -28,8 +28,9 @@ func next_message() -> void:
 					$boite_message/boite_choix/ItemList.set_item_tooltip_enabled(item_index, false)
 			$boite_message/boite_choix.visible = true
 		else:
-			$boite_message/Polygon2D.visible = true
-			await clicked
+			if not obj_dialogue.no_end:
+				$boite_message/Polygon2D.visible = true
+				await clicked
 			next_message()
 	elif obj_dialogue is D_Pause:
 		$boite_message/message.text = ""

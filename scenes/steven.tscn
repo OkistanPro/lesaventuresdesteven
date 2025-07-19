@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://wh4gxqeqyw78"]
+[gd_scene load_steps=19 format=3 uid="uid://wh4gxqeqyw78"]
 
 [ext_resource type="Script" uid="uid://wrypsson06ay" path="res://scripts/movement_characterBody.gd" id="1_6styb"]
 [ext_resource type="Texture2D" uid="uid://cishhnldm20ss" path="res://steven2d/down2.png" id="2_ngd1c"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bngavpr2hp8iv" path="res://steven2d/st4.png" id="9_4tb43"]
 [ext_resource type="Texture2D" uid="uid://k3k2qatijaem" path="res://steven2d/st5.png" id="10_2c7j6"]
 [ext_resource type="Texture2D" uid="uid://4acwsfxoa11l" path="res://steven2d/st6.png" id="11_hssis"]
+[ext_resource type="Texture2D" uid="uid://gc5a1g7h31t4" path="res://sprites/BALAIS_PLACE.png" id="12_ngd1c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jscy8"]
 animations = [{
@@ -109,6 +110,64 @@ size = Vector2(19, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6deb"]
 size = Vector2(26, 7)
 
+[sub_resource type="Animation" id="Animation_1tcsb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BalaisPlace:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BalaisPlace:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.261799, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_60j4h"]
+resource_name = "balai"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BalaisPlace:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.97),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BalaisPlace:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.261799, -0.25, 0, 0.25, 0, -0.261799, -0.25, 0, 0.25, 0, 0.261799, -0.25, 0, 0.25, 0, -0.261799, -0.25, 0, 0.25, 0, 0.261799, -0.25, 0, 0.25, 0, -0.261799, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.39, 0.59, 0.766667, 0.966667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dqmub"]
+_data = {
+&"RESET": SubResource("Animation_1tcsb"),
+&"balai": SubResource("Animation_60j4h")
+}
+
 [node name="steven" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_6styb")
@@ -136,3 +195,22 @@ shape = SubResource("RectangleShape2D_y6deb")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="BalaisPlace" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-5, -16)
+rotation = 0.261799
+texture = ExtResource("12_ngd1c")
+offset = Vector2(3.08, 12.485)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BalaisPlace"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BalaisPlace/StaticBody2D"]
+polygon = PackedVector2Array(5.08, -13.515, -0.92, -13.515, -0.92, -12.515, -3.92, 3.385, -3.92, 18.485, -5.62, 18.485, -7.62, 24.485, -8.92, 24.485, -8.92, 35.085, -6.92, 36.085, -6.92, 37.685, 1.18, 36.485, 4.78, 36.485, 5.78, 33.485, 7.08, 33.485, 7.08, 25.185, 4.58, 21.485, 4.08, 18.485, 2.08, 18.485, 2.08, 4.685, 5.08, -10.415)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dqmub")
+}

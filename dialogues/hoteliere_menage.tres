@@ -1,40 +1,45 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=23 format=3 uid="uid://b3f2n0vnvybre"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=25 format=3 uid="uid://b3f2n0vnvybre"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_332as"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_0uh5m"]
 [ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_76y55"]
 [ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_xsw6r"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="5_xsw6r"]
 
 [sub_resource type="Resource" id="Resource_oqans"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Bonjour, vous etes surement la nouvelle recrus de ménage que j'ai embauché ..."
+mess = "Bonjour, vous êtes sûrement la nouvelle recrue de ménage que j'ai embauché ..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_76y55"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Steven"
-mess = "Non, je suis Ste..."
+mess = "Alors non, je suis Ste..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = true
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_xsw6r"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Parfait ! Alors, pour vous équiper de quoi nettoyer l'hotel, il suffit de prendre le balais derriere cette porte"
+mess = "Parfait ! Alors, pour vous équiper de quoi nettoyer l'hôtel, il y a un balai que j'ai mis à ma droite"
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_hla0n"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Puis, il suffit simplement de chasser toutes ces toiles d'araignées ..."
+mess = "Il suffit de chasser toutes ces toiles d'araignées..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_c412k"]
@@ -43,30 +48,34 @@ nom_perso = "Steven"
 mess = "Mais, j'ai jamais di...."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = true
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_x0nc8"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Et de balayer ces poussieres par çi par la ..."
+mess = "Et de balayer ces poussières par ci par la..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_i05vj"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Nous nous devons d'acceuillir les nouveaux venus a l'hotel en modestie ..."
+mess = "Nous nous devons d'acceuillir les nouveaux venus a l'hôtel avec une propreté totale ..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_i76be"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Steven"
-mess = "Tres bien, tres bien ... j'y vais ..."
+mess = "Très bien, très bien ... j'y vais ..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_n5bo3"]
@@ -75,24 +84,32 @@ nom_perso = "Hoteliere"
 mess = "Merci, jeune ... poussin ..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_hd6lp"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Bizzare les nouvelles recrues de menages ..."
+mess = "Bizarre les nouvelles recrues de ménage ..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_7oa1q"]
+script = ExtResource("5_xsw6r")
+nom_event = "lancement_quete_hotel"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [sub_resource type="Resource" id="Resource_a68fa"]
 script = ExtResource("2_0uh5m")
-liste_messages = Array[ExtResource("1_332as")]([SubResource("Resource_i76be"), SubResource("Resource_n5bo3"), SubResource("Resource_hd6lp")])
+liste_messages = Array[ExtResource("1_332as")]([SubResource("Resource_i76be"), SubResource("Resource_n5bo3"), SubResource("Resource_hd6lp"), SubResource("Resource_7oa1q")])
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_pfx4w"]
 script = ExtResource("2_76y55")
-libelle_choix = "Aller chercher le balais"
+libelle_choix = "Aller chercher le balai"
 goto = SubResource("Resource_a68fa")
 variable_condition = ""
 metadata/_custom_type_script = "uid://nj3n5qedxbgm"
@@ -103,6 +120,7 @@ nom_perso = "Steven"
 mess = "AAAALLEEEER SALUUUUTT ..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_miihx"]
@@ -111,6 +129,7 @@ nom_perso = "Hoteliere"
 mess = "Qu'es ce qui vous arrive, revenez ... MONSIEUR !"
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_rciry"]
@@ -119,6 +138,7 @@ nom_perso = ""
 mess = "Et Steven s'enfuit de l'hotel."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_r6c47"]
@@ -139,6 +159,7 @@ nom_perso = "Steven"
 mess = "(Bon on dirait que j'ai pas trop le choix ...)"
 liste_choix = Array[ExtResource("2_76y55")]([SubResource("Resource_pfx4w"), SubResource("Resource_a1rwq")])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]

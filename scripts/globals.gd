@@ -44,6 +44,11 @@ var in_reveil : bool = false:
 		in_reveil = value
 
 var nombre_colis : int = 0
+var nombre_salete : int = 0:
+	set(value):
+		nombre_salete = value
+		if nombre_salete == 6:
+			event_declencheur.emit("fin_menage")
 
 var inventory : Array[ItemProperties]
 
