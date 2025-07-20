@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://lks60wflubbl"]
+[gd_scene load_steps=40 format=3 uid="uid://lks60wflubbl"]
 
 [ext_resource type="Script" uid="uid://dhs4f08w3k5so" path="res://scripts/rue_commerce_0.tres.gd" id="1_0ly6x"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_sagis"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="14_l3vmb"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="16_54f4n"]
 [ext_resource type="Texture2D" uid="uid://blkb5s4vwdwh" path="res://sprites/persos/petit_pnj.png" id="18_pscvu"]
+[ext_resource type="Texture2D" uid="uid://82lnv3j1oaln" path="res://sprites/HACKE(1).png" id="19_7qvms"]
 [ext_resource type="Texture2D" uid="uid://2lai25v5u5lf" path="res://sprites/COLIS.png" id="19_dvgto"]
 [ext_resource type="Texture2D" uid="uid://iqjg0sgo4u25" path="res://sprites/COLIS_ITEM.png" id="20_7qvms"]
 
@@ -93,6 +94,17 @@ radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rnxx3"]
 size = Vector2(35, 8)
+
+[sub_resource type="Resource" id="Resource_87m5q"]
+script = ExtResource("11_p1xge")
+item_name = &"hache"
+texture_icon = ExtResource("19_7qvms")
+pickable = false
+event_on_not_pick = &""
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f3bqj"]
+radius = 30.0
 
 [node name="village_ruecomm0" type="Node2D"]
 y_sort_enabled = true
@@ -388,6 +400,25 @@ polygon = PackedVector2Array(-25, 22, 17, 22, 24, 4, 24, -6, -15, -6, -25, 4)
 z_index = 2
 position = Vector2(333.5, 210)
 shape = SubResource("RectangleShape2D_rnxx3")
+
+[node name="hache" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(574.622, 202.126)
+rotation = 1.68858
+texture = ExtResource("19_7qvms")
+script = ExtResource("10_g815p")
+properties = SubResource("Resource_87m5q")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="hache"]
+
+[node name="@CollisionShape2D@453045" type="CollisionShape2D" parent="hache/Area2D"]
+shape = SubResource("CircleShape2D_f3bqj")
+
+[node name="Polygon2D" parent="hache" instance=ExtResource("16_54f4n")]
+position = Vector2(-23.8337, -7.17981)
+rotation = -1.68858
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]

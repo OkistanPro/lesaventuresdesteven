@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_oqans"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Bonjour, vous êtes sûrement la nouvelle recrue de ménage que j'ai embauché ..."
+mess = "Il est 16h, vous êtes sûrement la nouvelle recrue de ménage que j'ai embauché ..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
 no_end = false
@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_xsw6r"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Parfait ! Alors, pour vous équiper de quoi nettoyer l'hôtel, il y a un balai que j'ai mis à ma droite"
+mess = "Parfait ! Alors, pour vous équiper de quoi nettoyer l'hôtel, il y a un balai que j'ai mis à ma gauche."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
 no_end = false

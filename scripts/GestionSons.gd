@@ -16,12 +16,29 @@ var sounds = {
 	],
 	"balai" : [
 		preload("res://sons/broom.wav"),
+		-15.0
+	],
+	"son_dingo" : [
+		preload("res://sons/rire_goofy.wav"),
+		-8.0
+	],
+	"flaque" : [
+		preload("res://sons/FEETHmn_Pas dans l eau (ID 0690)_LS.wav"),
+		0.0
+	],
+	"terre" : [
+		preload("res://sons/DIRTImpt_Pelle qui creuse (ID 1305)_LS.wav"),
+		-10.0
+	],
+	"hache" : [
+		preload("res://sons/SWSH_Whoosh 4 (ID 1796)_LS.wav"),
 		-5.0
 	]
 }
 
 
 func _ready() -> void:
+	bus = &"SFX"
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	stream = AudioStreamPolyphonic.new()
 	play()

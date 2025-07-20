@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://umlhb4qp0rar"]
+[gd_scene load_steps=14 format=3 uid="uid://umlhb4qp0rar"]
 
 [ext_resource type="Texture2D" uid="uid://da80t74536vlq" path="res://sprites/RPG MAISON_2.png" id="1_7l1nc"]
 [ext_resource type="Script" uid="uid://brd1uxyc4ddsf" path="res://scripts/maison_2.gd" id="1_u4bah"]
@@ -6,12 +6,21 @@
 [ext_resource type="Texture2D" uid="uid://ceyd8x5gpksrj" path="res://sprites/RPG-MAISON_pouf_0001_pouf.png" id="3_u4bah"]
 [ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="4_3cv8x"]
 [ext_resource type="Script" uid="uid://bneh5b8qe3cod" path="res://scripts/fleche_maison.gd" id="5_4skea"]
+[ext_resource type="Texture2D" uid="uid://cxpxcasrfflsc" path="res://sprites/persos/grand_pnj.png" id="7_kewnc"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="8_vb5hj"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="9_lp53n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4bah"]
 size = Vector2(76, 10)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3cv8x"]
 radius = 75.71
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p5g4"]
+size = Vector2(19, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tddiw"]
+radius = 22.0227
 
 [node name="Maison2" type="Node2D"]
 y_sort_enabled = true
@@ -80,6 +89,36 @@ script = ExtResource("5_4skea")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fleche_maison/Area2D"]
 shape = SubResource("CircleShape2D_3cv8x")
 
+[node name="Marc" type="Sprite2D" parent="."]
+position = Vector2(389, 312)
+scale = Vector2(2, 2)
+texture = ExtResource("7_kewnc")
+flip_h = true
+script = ExtResource("8_vb5hj")
+nom_timeline = "pnj_homme2"
+nom_timeline_selon_select = Dictionary[String, String]({
+"Colis Pour Marc": "pnj_homme2_colis"
+})
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Marc"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marc/StaticBody2D"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_7p5g4")
+
+[node name="Area2D" type="Area2D" parent="Marc"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marc/Area2D"]
+shape = SubResource("CircleShape2D_tddiw")
+
+[node name="Polygon2D" parent="Marc" instance=ExtResource("9_lp53n")]
+position = Vector2(0, -24)
+
+[node name="gestion_pnj" type="Node" parent="Marc"]
+
 [connection signal="body_entered" from="goto_champ" to="." method="_on_goto_champ_body_entered"]
 [connection signal="body_entered" from="fleche_maison/Area2D" to="fleche_maison" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="fleche_maison/Area2D" to="fleche_maison" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Marc/Area2D" to="Marc" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Marc/Area2D" to="Marc" method="_on_area_2d_body_exited"]

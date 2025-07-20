@@ -31,6 +31,7 @@ func _montre(nom_event  : String) -> void:
 		montre_instance.reparent(self)
 		$trou_de_terre6/Polygon2D.visible = false
 		$trou_de_terre6/Area2D.monitoring = false
+		GestionSons.play_sound("terre")
 
 func _on_goto_maison_2_body_entered(body: Node2D) -> void:
 	if body == $steven:

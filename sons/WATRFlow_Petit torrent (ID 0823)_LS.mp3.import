@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brlovyax45ih4"
+path="res://.godot/imported/WATRFlow_Petit torrent (ID 0823)_LS.mp3-4559502468b46ce268672f9745c7f3fb.mp3str"
+
+[deps]
+
+source_file="res://sons/WATRFlow_Petit torrent (ID 0823)_LS.mp3"
+dest_files=["res://.godot/imported/WATRFlow_Petit torrent (ID 0823)_LS.mp3-4559502468b46ce268672f9745c7f3fb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

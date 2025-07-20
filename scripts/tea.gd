@@ -1,0 +1,16 @@
+extends Node2D
+
+func _ready() -> void:
+	Musique.interieur = true
+	if Globals.direction_from == "rue_commerce_coffee":
+		$steven.position = Vector2(407, 452)
+	
+	if GestionQuetes.liste_quetes["quete_café_1.tres"].state == Quete.Quete_State.EN_COURS:
+		$Cyprien.position = Vector2(468, 220)
+		$Cyprien.flip_h = true
+		$Cyprien.region_enabled = false
+	#468 200
+
+func _on_goto_rue_body_entered(body: Node2D) -> void:
+	if body == $steven:
+		Globals.goto_scene("tea", "rue_commerce_coffee", 0.0, self)

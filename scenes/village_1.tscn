@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dh5dgl6untq10"]
+[gd_scene load_steps=43 format=3 uid="uid://dh5dgl6untq10"]
 
 [ext_resource type="Texture2D" uid="uid://rt7wbbd5v4kf" path="res://sprites/decor_bas.png" id="1_cayyt"]
 [ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="1_e7mge"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://d34aenbdwixl5" path="res://sprites/CLE.png" id="23_432ij"]
 [ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="24_4at2g"]
 [ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="25_r3tfw"]
+[ext_resource type="AudioStream" uid="uid://brlovyax45ih4" path="res://sons/WATRFlow_Petit torrent (ID 0823)_LS.mp3" id="26_4at2g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jibjk"]
 animations = [{
@@ -267,6 +268,7 @@ offset = Vector2(1, -14)
 shape = SubResource("CircleShape2D_jibjk")
 
 [node name="buisson2" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_cayyt")
 position = Vector2(620, 605)
 texture = ExtResource("18_e7mge")
@@ -279,7 +281,7 @@ shape = SubResource("CircleShape2D_jibjk")
 
 [node name="PetitePnj" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(448, 435)
+position = Vector2(448, 315)
 scale = Vector2(2, 2)
 texture = ExtResource("19_jibjk")
 script = ExtResource("12_7sh2r")
@@ -304,7 +306,8 @@ position = Vector2(0, -17)
 
 [node name="Pancarte" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(339, 497)
+position = Vector2(495, 512)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("21_jibjk")
 script = ExtResource("22_4p5rq")
 
@@ -344,6 +347,15 @@ position = Vector2(-20.0518, 0.594147)
 rotation = -1.68961
 scale = Vector2(1, 1)
 color = Color(0.995353, 0.869497, 0.637136, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(358, 374)
+stream = ExtResource("26_4at2g")
+volume_db = -18.0
+autoplay = true
+max_distance = 450.0
+attenuation = 2.37842
+bus = &"SFX"
 
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]

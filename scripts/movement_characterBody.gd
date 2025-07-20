@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
 signal balai
+signal hache
 
 const SPEED : int = 100.0
-var direction
+var direction : Vector2 = Vector2(0.0, 0.0)
 var in_flaque : bool = false
 var direction_flaque : Vector2 = Vector2.ZERO
+var flip : bool = false
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_vector("left", "right", "up", "down")
@@ -22,19 +24,27 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity != Vector2.ZERO:
 		direction_flaque = velocity
-		match direction.normalized():
-			# Bas
-			Vector2(0.0, 1.0):
-				$sprite.play("down")
-			# Haut
-			Vector2(0.0, -1.0):
-				$sprite.play("up")
+		
+		if direction.angle() < -(2.*PI/3.) or direction.angle() >= 2.*PI/3.:
 			# Gauche
-			Vector2(-1.0, 0.0):
-				$sprite.play("left")
+			$sprite.play("left")
+			$hache.position = Vector2(-14, 8.5)
+			$hache.flip_h = false
+			$hache.offset.x = -12.365
+			flip = false
+		if direction.angle() < -(PI/3.) and direction.angle() >= -(2.*PI/3.):
+			# Haut
+			$sprite.play("up")
+		if direction.angle() < PI/3. and direction.angle() >= -(PI/3.):
 			# Droite
-			Vector2(1.0, 0.0):
-				$sprite.play("right")
+			$sprite.play("right")
+			$hache.position = Vector2(14, 8.5)
+			$hache.flip_h = true
+			$hache.offset.x = 12.365
+			flip = true
+		if direction.angle() < 2.*PI/3. and direction.angle() >= PI/3.:
+			# Bas
+			$sprite.play("down")
 	else:
 		$sprite.play("idle")
 	
@@ -46,6 +56,7 @@ func _physics_process(delta: float) -> void:
 func _on_flaque_body_entered(body: Node2D) -> void:
 	if body == self:
 		in_flaque = true
+		GestionSons.play_sound("flaque")
 
 
 func _on_flaque_body_exited(body: Node2D) -> void:
@@ -54,9 +65,15 @@ func _on_flaque_body_exited(body: Node2D) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interagir") and \
-	Globals.selected_item != -1 and \
-	Globals.selected_item_name == "balai" and not \
-	$AnimationPlayer.is_playing():
-		$AnimationPlayer.play("balai")
-		GestionSons.play_sound("balai")
-		balai.emit()
+	Globals.selected_item != -1:
+		if Globals.selected_item_name == "balai" and not $AnimationPlayer.is_playing():
+			$AnimationPlayer.play("balai")
+			GestionSons.play_sound("balai")
+			balai.emit()
+		if Globals.selected_item_name == "hache" and not $AnimationPlayer.is_playing():
+			if flip:
+				$AnimationPlayer.play("hache_back")
+			else:
+				$AnimationPlayer.play("hache")
+			GestionSons.play_sound("hache")
+			hache.emit()

@@ -91,7 +91,7 @@ texture = ExtResource("5_4fgw4")
 region_enabled = true
 region_rect = Rect2(0, 0, 19, 26.0204)
 script = ExtResource("6_0tfin")
-nom_timeline = "hoteliere_menage"
+nom_timeline = "hoteliere"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="DameHotel"]

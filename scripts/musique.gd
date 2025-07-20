@@ -19,6 +19,7 @@ var interieur : bool = true:
 		
 
 func _ready() -> void:
+	bus = &"Musique"
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	if Globals.in_cinematique:
 		stream = musique_cinematique

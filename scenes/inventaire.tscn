@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://da5kxhp50c2xg"]
+[gd_scene load_steps=18 format=3 uid="uid://da5kxhp50c2xg"]
 
 [ext_resource type="Script" uid="uid://r55y6p14kc66" path="res://scripts/inventaire.gd" id="1_c2fa3"]
 [ext_resource type="Texture2D" uid="uid://b2lxkarf8wcvv" path="res://sprites/msg_box2.png" id="2_8anfk"]
 [ext_resource type="FontFile" uid="uid://c6quss0etcsrc" path="res://polices/PixeloidSans-Bold.ttf" id="3_8anfk"]
 [ext_resource type="FontFile" uid="uid://drbpuq1xbfywv" path="res://polices/8bit16.ttf" id="3_o536d"]
+[ext_resource type="Texture2D" uid="uid://dmohpiegkbcn2" path="res://sprites/KAYOU.png" id="4_tnoi0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tnoi0"]
 texture = ExtResource("2_8anfk")
@@ -246,13 +247,14 @@ horizontal_alignment = 1
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 51.0
+offset_left = -182.0
 offset_top = -46.0
-offset_right = -51.0
+offset_right = 182.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
@@ -260,8 +262,20 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_tnoi0")
 theme_override_styles/panel = SubResource("StyleBoxTexture_8anfk")
 theme_override_styles/hovered = SubResource("StyleBoxFlat_c2fa3")
 text_overrun_behavior = 0
+wraparound_items = false
+item_count = 10
 max_columns = 0
 fixed_icon_size = Vector2i(32, 32)
+item_0/icon = ExtResource("4_tnoi0")
+item_1/icon = ExtResource("4_tnoi0")
+item_2/icon = ExtResource("4_tnoi0")
+item_3/icon = ExtResource("4_tnoi0")
+item_4/icon = ExtResource("4_tnoi0")
+item_5/icon = ExtResource("4_tnoi0")
+item_6/icon = ExtResource("4_tnoi0")
+item_7/icon = ExtResource("4_tnoi0")
+item_8/icon = ExtResource("4_tnoi0")
+item_9/icon = ExtResource("4_tnoi0")
 
 [node name="flou" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)

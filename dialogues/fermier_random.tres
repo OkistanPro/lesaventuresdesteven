@@ -11,6 +11,7 @@ nom_perso = "Fermier"
 mess = "Aujourd'hui j'ai eu une vingtaine d'oeufs je suis super content !"
 liste_choix = Array[ExtResource("2_jnm60")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_jnm60"]
@@ -19,6 +20,7 @@ nom_perso = "Steven"
 mess = "Ah c'est trop cool je vais avoir plein de frères et soeurs..."
 liste_choix = Array[ExtResource("2_jnm60")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_iwkgh"]
@@ -27,6 +29,7 @@ nom_perso = "Fermier"
 mess = "Je vais surtout avoir plein de sous !"
 liste_choix = Array[ExtResource("2_jnm60")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_334cn"]
@@ -35,14 +38,16 @@ nom_perso = "Steven"
 mess = "Comment ça ?..."
 liste_choix = Array[ExtResource("2_jnm60")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_8ldsj"]
 script = ExtResource("3_iwkgh")
 nom_perso = "Fermier"
-mess = "En plus je pense être le seul à avoir un aussi bon rendement, je pourrais faire un peu plus de marge."
+mess = "Je pense être le seul à avoir un aussi bon rendement... je pourrais faire un peu de marge."
 liste_choix = Array[ExtResource("2_jnm60")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_d5fij"]
@@ -51,6 +56,7 @@ nom_perso = "Fermier"
 mess = "Ah la misère est finie !"
 liste_choix = Array[ExtResource("2_jnm60")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_r832b"]
@@ -59,6 +65,7 @@ nom_perso = "Steven"
 mess = "(.......IL VEND MES FRÈRES ??!)"
 liste_choix = Array[ExtResource("2_jnm60")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_mgmvk"]
@@ -67,6 +74,7 @@ nom_perso = "Steven"
 mess = "(MAIS C'EST UN MALADE MENTALE !!)"
 liste_choix = Array[ExtResource("2_jnm60")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_k44nv"]
@@ -75,6 +83,7 @@ nom_perso = "Fermier"
 mess = "Tu penses qu'il faudrait que je commence à construire un stand ?"
 liste_choix = Array[ExtResource("2_jnm60")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_dpccy"]
@@ -83,6 +92,7 @@ nom_perso = "Steven"
 mess = "..."
 liste_choix = Array[ExtResource("2_jnm60")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]

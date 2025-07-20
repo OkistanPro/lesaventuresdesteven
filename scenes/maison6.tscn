@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cva6h1oqvc42l" path="res://sprites/RPG-MAISON_pouf_0000_pouf-copie.png" id="3_pkkyg"]
 [ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="4_5ajer"]
 [ext_resource type="Script" uid="uid://bneh5b8qe3cod" path="res://scripts/fleche_maison.gd" id="5_s15i3"]
-[ext_resource type="Texture2D" uid="uid://cw1li6fi84wjm" path="res://sprites/CLE_DU_JARDIN.png" id="7_7dmuc"]
+[ext_resource type="Texture2D" uid="uid://dpokg7vqgbllv" path="res://sprites/CLE_DU_JARDIN.png" id="7_7dmuc"]
 [ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="8_h1ni5"]
 [ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="9_h1ni5"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="9_rgave"]
-[ext_resource type="Texture2D" uid="uid://dtyv7jpolp60j" path="res://sprites/CLE_DU_JARDIN_ITEM.png" id="10_rgave"]
+[ext_resource type="Texture2D" uid="uid://dj81lcxrvmx03" path="res://sprites/CLE_DU_JARDIN_ITEM.png" id="10_rgave"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s163v"]
 size = Vector2(76, 10)

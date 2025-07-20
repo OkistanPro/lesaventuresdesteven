@@ -40,6 +40,8 @@ func lancer_timeline(nom_timeline : String) -> void:
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"son_dingo":
+			GestionSons.play_sound("son_dingo")
 		"ouvre_portail":
 			# Ouvre portail
 			pass

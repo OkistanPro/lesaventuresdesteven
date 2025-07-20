@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://wh4gxqeqyw78"]
+[gd_scene load_steps=22 format=3 uid="uid://wh4gxqeqyw78"]
 
 [ext_resource type="Script" uid="uid://wrypsson06ay" path="res://scripts/movement_characterBody.gd" id="1_6styb"]
 [ext_resource type="Texture2D" uid="uid://cishhnldm20ss" path="res://steven2d/down2.png" id="2_ngd1c"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bngavpr2hp8iv" path="res://steven2d/st4.png" id="9_4tb43"]
 [ext_resource type="Texture2D" uid="uid://k3k2qatijaem" path="res://steven2d/st5.png" id="10_2c7j6"]
 [ext_resource type="Texture2D" uid="uid://4acwsfxoa11l" path="res://steven2d/st6.png" id="11_hssis"]
+[ext_resource type="Texture2D" uid="uid://82lnv3j1oaln" path="res://sprites/HACKE(1).png" id="12_60j4h"]
 [ext_resource type="Texture2D" uid="uid://gc5a1g7h31t4" path="res://sprites/BALAIS_PLACE.png" id="12_ngd1c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jscy8"]
@@ -135,6 +136,29 @@ tracks/1/keys = {
 "points": PackedFloat32Array(0.261799, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hache:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hache:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_60j4h"]
 resource_name = "balai"
@@ -162,10 +186,66 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.39, 0.59, 0.766667, 0.966667)
 }
 
+[sub_resource type="Animation" id="Animation_dqmub"]
+resource_name = "hache"
+length = 0.6
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hache:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.26187, -0.25, 0, 0.333333, 1.24193, -1.70159, -0.433333, -0.896282, 0.25, 0),
+"times": PackedFloat32Array(0, 0.533333)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hache:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.562072),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ywqu3"]
+resource_name = "hache_back"
+length = 0.6
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hache:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1.003, -0.25, 0, 0.466667, -0.810752, 1.468, -0.433333, -0.896282, 0.25, 0),
+"times": PackedFloat32Array(0, 0.533333)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hache:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.562072),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dqmub"]
 _data = {
 &"RESET": SubResource("Animation_1tcsb"),
-&"balai": SubResource("Animation_60j4h")
+&"balai": SubResource("Animation_60j4h"),
+&"hache": SubResource("Animation_dqmub"),
+&"hache_back": SubResource("Animation_ywqu3")
 }
 
 [node name="steven" type="CharacterBody2D"]
@@ -195,6 +275,13 @@ shape = SubResource("RectangleShape2D_y6deb")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="hache" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-11.38, 8.555)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_60j4h")
+offset = Vector2(-14.03, -17.045)
 
 [node name="BalaisPlace" type="Sprite2D" parent="."]
 visible = false

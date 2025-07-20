@@ -19,15 +19,21 @@ func _ready() -> void:
 		$steven.position = Vector2(601, Globals.y_from)
 	if Globals.direction_from == "rue_commerce_souvenirs":
 		$steven.position = Vector2(31, Globals.y_from)
-	if Globals.nombre_colis == 3 and GestionQuetes.liste_quetes["quete_colis_1.tres"].state == Quete.Quete_State.EN_COURS:
-		$Epicerie.nom_timeline = "epicier_colis_finis"
-	if GestionQuetes.liste_quetes["quete_relique_1.tres"].state == Quete.Quete_State.FINI:
+
+	if GestionQuetes.liste_quetes["quete_relique_1.tres"].state == Quete.Quete_State.FINI and \
+	GestionQuetes.liste_quetes["quete_carotte_1.tres"].state == Quete.Quete_State.FINI and \
+	GestionQuetes.liste_quetes["quete_colis_1.tres"].state == Quete.Quete_State.EN_COURS:
 		if get_node_or_null("Colis1"):
 			$Colis1.properties.pickable = true
 		if get_node_or_null("Colis2"):
 			$Colis2.properties.pickable = true
 		if get_node_or_null("Colis3"):
 			$Colis3.properties.pickable = true
+	
+	if GestionQuetes.liste_quetes["quete_colis_1.tres"].state == Quete.Quete_State.FINI:
+		if get_node_or_null("hache"):
+			$hache.visible = true
+			$hache.properties.pickable = true
 
 
 func _on_goto_rue_droite_body_entered(body: Node2D) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cpwk6rw2kd26i"]
+[gd_scene load_steps=32 format=3 uid="uid://cpwk6rw2kd26i"]
 
 [ext_resource type="Script" uid="uid://ciiaw3wjkdwmd" path="res://scripts/rue_commerce_2.gd" id="1_wp0qm"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_5n7rv"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cxpxcasrfflsc" path="res://sprites/persos/grand_pnj.png" id="10_oh4dw"]
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="11_bs2ak"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="12_dxsp7"]
+[ext_resource type="Texture2D" uid="uid://cattcap0gqcqj" path="res://sprites/persos/grand_pnj_3.png" id="13_0vqv0"]
+[ext_resource type="Texture2D" uid="uid://bdf4xwto2nwr3" path="res://sprites/persos/grande_pnj_2.png" id="13_sbuuv"]
 [ext_resource type="Texture2D" uid="uid://bi7snn7iinctr" path="res://sprites/maisons_front.png" id="13_vjt2x"]
 [ext_resource type="Texture2D" uid="uid://cdsdma80trc8w" path="res://sprites/RPG_EPICERIE_0003_Calque-4.png" id="14_5n7rv"]
 [ext_resource type="Texture2D" uid="uid://c7xnbj543cy2t" path="res://sprites/POT DE FLEUR.png" id="15_torih"]
@@ -50,6 +52,12 @@ metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs2ak"]
 size = Vector2(67.0576, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbuuv"]
+size = Vector2(17.5, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sbuuv"]
+radius = 24.7945
+
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_wp0qm")
@@ -75,7 +83,7 @@ centered = false
 shape = SubResource("WorldBoundaryShape2D_0aefm")
 
 [node name="steven" parent="." instance=ExtResource("4_torih")]
-position = Vector2(159, 322)
+position = Vector2(200, 311)
 
 [node name="goto_rue_gauche" type="Area2D" parent="."]
 z_index = 1
@@ -227,7 +235,7 @@ offset = Vector2(0, -50)
 
 [node name="pnj1" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(451, 285)
+position = Vector2(579, 293)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_oh4dw")
 script = ExtResource("11_bs2ak")
@@ -246,6 +254,30 @@ shape = SubResource("CircleShape2D_jqfty")
 debug_color = Color(0.903406, 0.267478, 0.395717, 0.42)
 
 [node name="Polygon2D" parent="pnj1" instance=ExtResource("12_dxsp7")]
+position = Vector2(0, -29.815)
+
+[node name="pnj2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(539, 309)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_0vqv0")
+flip_h = true
+script = ExtResource("11_bs2ak")
+nom_timeline = "pnj_homme5"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pnj2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pnj2/StaticBody2D"]
+position = Vector2(-6.10352e-05, 6.33333)
+shape = SubResource("RectangleShape2D_hgxkv")
+
+[node name="Area2D" type="Area2D" parent="pnj2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pnj2/Area2D"]
+shape = SubResource("CircleShape2D_jqfty")
+debug_color = Color(0.903406, 0.267478, 0.395717, 0.42)
+
+[node name="Polygon2D" parent="pnj2" instance=ExtResource("12_dxsp7")]
 position = Vector2(0, -29.815)
 
 [node name="MaisonsFront" type="Sprite2D" parent="."]
@@ -313,7 +345,6 @@ metadata/_custom_type_script = "uid://b1phsyjs6go0l"
 [node name="_CollisionShape2D_34019" type="CollisionShape2D" parent="Cle4/Area2D"]
 position = Vector2(-0.000335693, -0.00012207)
 rotation = 1.208
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bs2ak")
 
 [node name="Polygon2D" parent="Cle4" instance=ExtResource("12_dxsp7")]
@@ -323,6 +354,49 @@ rotation = 1.208
 scale = Vector2(1, 1)
 color = Color(0.995353, 0.869497, 0.637136, 1)
 
+[node name="goto_coffee" type="Area2D" parent="."]
+z_index = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="goto_coffee"]
+polygon = PackedVector2Array(234, 240, 234, 244, 252, 236, 252, 232)
+
+[node name="goto_tea" type="Area2D" parent="."]
+z_index = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="goto_tea"]
+polygon = PackedVector2Array(402, 235, 420, 244, 420, 241, 405, 233)
+
+[node name="PNJ" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(114.526, 296.381)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("13_sbuuv")
+flip_h = true
+script = ExtResource("11_bs2ak")
+nom_timeline = "pnj_femme6"
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PNJ"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/StaticBody2D"]
+position = Vector2(-0.013237, 8)
+shape = SubResource("RectangleShape2D_sbuuv")
+
+[node name="Area2D" type="Area2D" parent="PNJ"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/Area2D"]
+shape = SubResource("CircleShape2D_sbuuv")
+
+[node name="Polygon2D" parent="PNJ" instance=ExtResource("12_dxsp7")]
+
+[node name="gestion_pnj" type="Node" parent="PNJ"]
+
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="pnj1/Area2D" to="pnj1" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="pnj1/Area2D" to="pnj1" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="pnj2/Area2D" to="pnj2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="pnj2/Area2D" to="pnj2" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="goto_coffee" to="." method="_on_goto_coffee_body_entered"]
+[connection signal="body_entered" from="goto_tea" to="." method="_on_goto_tea_body_entered"]
+[connection signal="body_entered" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_exited"]

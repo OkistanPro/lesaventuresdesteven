@@ -26,6 +26,8 @@ var maison5 = preload("res://scenes/maison5.tscn")
 var maison6 = preload("res://scenes/maison6.tscn")
 var epicerie = preload("res://scenes/epicerie.tscn")
 var hotel = preload("res://scenes/hotel.tscn")
+var coffee = preload("res://scenes/coffee.tscn")
+var tea = preload("res://scenes/tea.tscn")
 
 var direction_from : String
 var y_from : float
@@ -94,6 +96,10 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 			match to:
 				"rue_commerce_hotel":
 					get_tree().change_scene_to_packed.call_deferred(rue_commerce_hotel)
+				"coffee":
+					get_tree().change_scene_to_packed.call_deferred(coffee)
+				"tea":
+					get_tree().change_scene_to_packed.call_deferred(tea)
 		"rue_commerce_souvenirs":
 			rue_commerce_souvenirs.pack(p_scene)
 			match to:
@@ -201,7 +207,16 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 			match to:
 				"rue_commerce_hotel":
 					get_tree().change_scene_to_packed.call_deferred(rue_commerce_hotel)
-
+		"coffee":
+			coffee.pack(p_scene)
+			match to:
+				"rue_commerce_coffee":
+					get_tree().change_scene_to_packed.call_deferred(rue_commerce_coffee)
+		"tea":
+			tea.pack(p_scene)
+			match to:
+				"rue_commerce_coffee":
+					get_tree().change_scene_to_packed.call_deferred(rue_commerce_coffee)
 
 
 

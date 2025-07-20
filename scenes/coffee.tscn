@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=3 uid="uid://bxq20nkloryl5"]
+
+[ext_resource type="Texture2D" uid="uid://6mpp6sn40p3j" path="res://sprites/RPG-INTERRIEUR-TEA-COFFEE(2)_0002_Calque-7.png" id="1_1oinl"]
+[ext_resource type="Script" uid="uid://d2pjo8tdcin7h" path="res://scripts/coffee.gd" id="1_46xm4"]
+[ext_resource type="Texture2D" uid="uid://bf4wlx1ctr72x" path="res://sprites/persos/squeezie.png" id="2_vgd82"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="3_ovig0"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="4_1oinl"]
+[ext_resource type="Texture2D" uid="uid://bbihbsdjhxuoc" path="res://sprites/RPG-INTERRIEUR-TEA-COFFEE(2)_0001_chaise.png" id="5_5yp7a"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="6_5yp7a"]
+[ext_resource type="Texture2D" uid="uid://bpqnekmqawth7" path="res://sprites/MACHINE_A_CAFE.png" id="8_op6nc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovig0"]
+size = Vector2(17, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5yp7a"]
+radius = 29.5
+
+[node name="Coffee" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_46xm4")
+
+[node name="Rpg-interrieur-tea-coffee(2)0001Calque-7" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+scale = Vector2(2, 2)
+texture = ExtResource("1_1oinl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rpg-interrieur-tea-coffee(2)0001Calque-7"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rpg-interrieur-tea-coffee(2)0001Calque-7/StaticBody2D"]
+polygon = PackedVector2Array(-59, -5, -34.5, -2, -28, -1.5, 35, -2.5, 59.5, -6, 65.5, -18.5, 65.5, -29.5, -65.5, -29, -65.5, -15)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Rpg-interrieur-tea-coffee(2)0001Calque-7/StaticBody2D"]
+polygon = PackedVector2Array(-59, -14.5, -59, 56.5, -54, 62, -40.5, 70, -27.5, 77, -34, 82.5, -63, 69.5, -68.5, 47, -67.5, -14.5)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Rpg-interrieur-tea-coffee(2)0001Calque-7/StaticBody2D"]
+polygon = PackedVector2Array(15, 90, 16, 97, 75.5, 100.5, 66, -24, 60, -19.5, 60, 92.5, 37.5, 91.5)
+
+[node name="Squeezie" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(404, 234)
+scale = Vector2(2, 2)
+texture = ExtResource("2_vgd82")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 19, 23.6656)
+script = ExtResource("3_ovig0")
+nom_timeline = "gerant_cafe"
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Squeezie"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Squeezie/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_ovig0")
+
+[node name="Area2D" type="Area2D" parent="Squeezie"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Squeezie/Area2D"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_5yp7a")
+
+[node name="Polygon2D" parent="Squeezie" instance=ExtResource("4_1oinl")]
+position = Vector2(0, -16.5)
+
+[node name="gestion_pnj" type="Node" parent="Squeezie"]
+
+[node name="table1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(335, 333)
+scale = Vector2(2, 2)
+texture = ExtResource("5_5yp7a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="table1/StaticBody2D"]
+position = Vector2(-163.5, -167)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(292, 344, 360, 344, 360, 327, 292, 327)
+
+[node name="table2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(463, 333)
+scale = Vector2(2, 2)
+texture = ExtResource("5_5yp7a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="table2/StaticBody2D"]
+position = Vector2(-163.5, -167)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(292, 344, 360, 344, 360, 327, 292, 327)
+
+[node name="table3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(463, 397)
+scale = Vector2(2, 2)
+texture = ExtResource("5_5yp7a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="table3/StaticBody2D"]
+position = Vector2(-163.5, -167)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(292, 344, 360, 344, 360, 327, 292, 327)
+
+[node name="steven" parent="." instance=ExtResource("6_5yp7a")]
+position = Vector2(394, 444)
+
+[node name="goto_rue" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="goto_rue"]
+position = Vector2(0, 3)
+polygon = PackedVector2Array(334, 460, 434, 493, 434, 504, 322, 469)
+
+[node name="MachineACafe" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(445, 251)
+texture = ExtResource("8_op6nc")
+
+[connection signal="body_entered" from="Squeezie/Area2D" to="Squeezie" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Squeezie/Area2D" to="Squeezie" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="goto_rue" to="." method="_on_goto_rue_body_entered"]

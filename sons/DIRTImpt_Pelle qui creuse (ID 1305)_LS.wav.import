@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crylhqt304b61"
+path="res://.godot/imported/DIRTImpt_Pelle qui creuse (ID 1305)_LS.wav-b9b4a75aa0158b243c49e49bf5358c26.sample"
+
+[deps]
+
+source_file="res://sons/DIRTImpt_Pelle qui creuse (ID 1305)_LS.wav"
+dest_files=["res://.godot/imported/DIRTImpt_Pelle qui creuse (ID 1305)_LS.wav-b9b4a75aa0158b243c49e49bf5358c26.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
