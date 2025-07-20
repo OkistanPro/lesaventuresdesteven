@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=13 format=3 uid="uid://drmjbri1b3wj0"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_ju162"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_cpe3r"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_eo5ga"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_fsbo5"]
+
+[sub_resource type="Resource" id="Resource_g8h7b"]
+script = ExtResource("3_eo5ga")
+nom_perso = "Roger"
+mess = "Salut p'tit, t'en dit quoi de ma maison hein p'tit ?"
+liste_choix = Array[ExtResource("2_cpe3r")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_uv38e"]
+script = ExtResource("3_eo5ga")
+nom_perso = "Roger"
+mess = "Att, mais t'es un poussin nom de dieu... UN POUSSIN DANS MA MAISON !"
+liste_choix = Array[ExtResource("2_cpe3r")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_evc4a"]
+script = ExtResource("3_eo5ga")
+nom_perso = "Roger"
+mess = "ET CAROLE ! Putain ou es ce qu'elle passé encore..."
+liste_choix = Array[ExtResource("2_cpe3r")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_fne5n"]
+script = ExtResource("3_eo5ga")
+nom_perso = "Roger"
+mess = "OOOH, y'a un poussin dans la ferme la Carole..."
+liste_choix = Array[ExtResource("2_cpe3r")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ld6iy"]
+script = ExtResource("3_eo5ga")
+nom_perso = "Steven"
+mess = "(J'ose meme plus bouger, je crois que je fait genre de rien...)"
+liste_choix = Array[ExtResource("2_cpe3r")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_gu3y6"]
+script = ExtResource("3_eo5ga")
+nom_perso = "Roger"
+mess = "OOH ET PUIS FAIT CHIER ! Tu chies pas sur la moquette hein !!"
+liste_choix = Array[ExtResource("2_cpe3r")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ju162"]
+script = ExtResource("3_eo5ga")
+nom_perso = "Steven"
+mess = "(Je vais le dissuader, hum hum...)"
+liste_choix = Array[ExtResource("2_cpe3r")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_cpe3r"]
+script = ExtResource("3_eo5ga")
+nom_perso = "Steven"
+mess = "Piou !"
+liste_choix = Array[ExtResource("2_cpe3r")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("4_fsbo5")
+liste_messages = Array[ExtResource("1_ju162")]([SubResource("Resource_g8h7b"), SubResource("Resource_uv38e"), SubResource("Resource_evc4a"), SubResource("Resource_fne5n"), SubResource("Resource_ld6iy"), SubResource("Resource_gu3y6"), SubResource("Resource_ju162"), SubResource("Resource_cpe3r")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
