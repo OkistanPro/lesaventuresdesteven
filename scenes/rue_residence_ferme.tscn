@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://uq4ks8udgkhu"]
+[gd_scene load_steps=23 format=3 uid="uid://uq4ks8udgkhu"]
 
 [ext_resource type="Script" uid="uid://n5j1yg38wj1d" path="res://scripts/rue_residence_ferme.gd" id="1_dqhc6"]
 [ext_resource type="Texture2D" uid="uid://bvguepu4vppxa" path="res://sprites/RPG-RUE-FERME_ferme.png" id="1_m6sjl"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bll8q2qvww2mx" path="res://sprites/RPG_FERME_0006_poussin4.png" id="8_tqii1"]
 [ext_resource type="Texture2D" uid="uid://dsw3ymu0sh6gs" path="res://sprites/RPG_FERME_0007_chariot.png" id="9_nqt51"]
 [ext_resource type="Texture2D" uid="uid://b86hjikjwwk5n" path="res://sprites/RPG_FERME_0007_poussin_fond.png" id="11_sayq4"]
+[ext_resource type="Texture2D" uid="uid://k8j0rsyq5lph" path="res://sprites/RPG_FERME_0007_chariot_0000_caca.png" id="14_nqt51"]
 [ext_resource type="AudioStream" uid="uid://dagt5vfx8pu51" path="res://sons/BRUITAGE DE POUSSIN.mp3" id="15_qvbws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usxj3"]
@@ -248,6 +249,12 @@ panning_strength = 0.6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goto_maison"]
 position = Vector2(484.5, 240)
 shape = SubResource("RectangleShape2D_tgbdv")
+
+[node name="RpgFerme0007Chariot0000Caca" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(386, 517)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("14_nqt51")
 
 [connection signal="body_entered" from="poussin1/Area2D" to="poussin1" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="poussin1/Area2D" to="poussin1" method="_on_area_2d_body_exited"]

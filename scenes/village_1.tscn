@@ -376,7 +376,9 @@ z_index = 1
 position = Vector2(349.5, 199)
 shape = SubResource("RectangleShape2D_4at2g")
 
-[node name="PNJ" type="Sprite2D" parent="."]
+[node name="mecsombre" type="Sprite2D" parent="."]
+process_mode = 4
+visible = false
 z_index = 1
 position = Vector2(384, 504)
 scale = Vector2(2, 2)
@@ -386,21 +388,21 @@ script = ExtResource("12_7sh2r")
 nom_timeline = "mec_sombre"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PNJ"]
+[node name="StaticBody2D" type="StaticBody2D" parent="mecsombre"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mecsombre/StaticBody2D"]
 position = Vector2(0, 10.75)
 shape = SubResource("RectangleShape2D_r3tfw")
 
-[node name="Area2D" type="Area2D" parent="PNJ"]
+[node name="Area2D" type="Area2D" parent="mecsombre"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mecsombre/Area2D"]
 shape = SubResource("CircleShape2D_r3tfw")
 
-[node name="Polygon2D" parent="PNJ" instance=ExtResource("20_4p5rq")]
+[node name="Polygon2D" parent="mecsombre" instance=ExtResource("20_4p5rq")]
 position = Vector2(0, -24)
 
-[node name="gestion_pnj" type="Node" parent="PNJ"]
+[node name="gestion_pnj" type="Node" parent="mecsombre"]
 script = ExtResource("28_nqcev")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -418,5 +420,5 @@ position = Vector2(344, 216)
 [connection signal="body_entered" from="Pancarte/Area2D" to="Pancarte" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Pancarte/Area2D" to="Pancarte" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="goto_mairie" to="." method="_on_goto_mairie_body_entered"]
-[connection signal="body_entered" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="mecsombre/Area2D" to="mecsombre" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="mecsombre/Area2D" to="mecsombre" method="_on_area_2d_body_exited"]

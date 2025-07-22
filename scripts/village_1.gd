@@ -25,6 +25,8 @@ func _ready() -> void:
 	if quetes_finis:
 		$Maire.visible = false
 		$Maire.process_mode = Node.PROCESS_MODE_DISABLED
+		$mecsombre.process_mode = Node.PROCESS_MODE_PAUSABLE
+		$mecsombre.visible = true
 
 	GestionDialogue.event_declencheur.connect(event_timeline)
 

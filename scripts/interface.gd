@@ -57,7 +57,7 @@ func verif_trappe() -> void:
 			if item.item_name == nom:
 				count_cle += 1
 	
-	if count_cle == 7:
+	if count_cle >= 7:
 		GestionDialogue.lancer_timeline("fin_cles")
 	else:
 		GestionDialogue.lancer_timeline("pas_assez_cles")

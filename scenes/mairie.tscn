@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cm2wcxqw86hrt"]
+[gd_scene load_steps=34 format=3 uid="uid://cm2wcxqw86hrt"]
 
 [ext_resource type="Texture2D" uid="uid://bgsd57pfim1pw" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0003_Calque-4.png" id="1_44gwl"]
 [ext_resource type="Script" uid="uid://bxwbufplhaoe4" path="res://scripts/mairie.gd" id="1_esxgy"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c75oex87p8shy" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0003_fauteuil.png" id="12_axyvi"]
 [ext_resource type="Texture2D" uid="uid://dovw0f5k2m4ok" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0002_chaise_bureau.png" id="13_hi4im"]
 [ext_resource type="Texture2D" uid="uid://dcamqqnooaxye" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0002_table.png" id="13_njdkl"]
+[ext_resource type="Texture2D" uid="uid://52jws6uicdl7" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0003_Calque-4_0000_arbuste.png" id="14_2eixl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hi4im"]
 radius = 40.1123
@@ -276,9 +277,6 @@ shape = SubResource("RectangleShape2D_1bnug")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision_bureau/StaticBody2D"]
 polygon = PackedVector2Array(538, 212, 515, 212, 513, 217, 513, 237, 503, 236, 503, 285, 515, 287, 515, 290, 539, 290)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collision_bureau/StaticBody2D"]
-polygon = PackedVector2Array(529, 192, 514, 197, 514, 208, 519, 212, 531, 212, 535, 209, 535, 195)
-
 [node name="Rpg-mairie-interrieur0003Fauteuil" type="Sprite2D" parent="collision_bureau"]
 z_index = 1
 position = Vector2(394, 295)
@@ -300,6 +298,20 @@ texture = ExtResource("13_hi4im")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision_bureau/Rpg-mairie-interrieur0002ChaiseBureau/StaticBody2D"]
 polygon = PackedVector2Array(-11, 15, -9.5, 14.5, -6, 13, 0.5, 16, 5.5, 16, 9, 12.5, 9, 4.5, -5.5, -0.5, -11, 5)
+
+[node name="Rpg-mairie-interrieur0003Calque-40000Arbuste" type="Sprite2D" parent="collision_bureau"]
+z_index = 1
+position = Vector2(525, 192)
+scale = Vector2(2, 2)
+texture = ExtResource("14_2eixl")
+offset = Vector2(-0.5, -3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="collision_bureau/Rpg-mairie-interrieur0003Calque-40000Arbuste"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collision_bureau/Rpg-mairie-interrieur0003Calque-40000Arbuste/StaticBody2D"]
+position = Vector2(-262.5, -96)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(529, 192, 514, 197, 514, 208, 519, 212, 531, 212, 535, 209, 535, 195)
 
 [node name="Rpg-mairie-interrieur0002Table" type="Sprite2D" parent="collision_bureau"]
 z_index = 1

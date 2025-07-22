@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://lks60wflubbl"]
+[gd_scene load_steps=41 format=3 uid="uid://lks60wflubbl"]
 
 [ext_resource type="Script" uid="uid://dhs4f08w3k5so" path="res://scripts/rue_commerce_0.tres.gd" id="1_0ly6x"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_sagis"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="11_p1xge"]
 [ext_resource type="Texture2D" uid="uid://cirp6d80fsnen" path="res://sprites/RPG_EPICERIE_0005_Calque-4.png" id="12_g815p"]
 [ext_resource type="Texture2D" uid="uid://dipcxa44jnxxl" path="res://sprites/persos/grande_pnj.png" id="13_6asm6"]
+[ext_resource type="Texture2D" uid="uid://bdf4xwto2nwr3" path="res://sprites/persos/grande_pnj_2.png" id="14_7qvms"]
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="14_l3vmb"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="16_54f4n"]
 [ext_resource type="Texture2D" uid="uid://blkb5s4vwdwh" path="res://sprites/persos/petit_pnj.png" id="18_pscvu"]
@@ -243,7 +244,7 @@ texture = ExtResource("12_g815p")
 z_index = 1
 position = Vector2(107, 213)
 scale = Vector2(2, 2)
-texture = ExtResource("13_6asm6")
+texture = ExtResource("14_7qvms")
 script = ExtResource("14_l3vmb")
 nom_timeline = "pnj_femme1"
 nom_timeline_selon_select = Dictionary[String, String]({

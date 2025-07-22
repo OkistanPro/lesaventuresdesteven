@@ -103,6 +103,11 @@ func lancer_event(nom_event : String) -> void:
 			GestionSons.play_sound("son_dingo")
 		"ouvre_portail":
 			event_declencheur.emit("ouvre_portail")
+			for item in Globals.inventory:
+				if item.item_name == &"Clé du jardin":
+					Globals.inventory.erase(item)
+					break
+			Globals.inventory_changed.emit(null)
 		"fin_quete_menage":
 			GestionQuetes.end_quete("quete_menage_1.tres")
 			event_declencheur.emit("fin_quete_menage")

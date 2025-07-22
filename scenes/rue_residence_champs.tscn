@@ -42,9 +42,11 @@ size = Vector2(52.5, 18)
 size = Vector2(12.7273, 91.3636)
 
 [node name="rue_residence_champ" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_o6bdf")
 
 [node name="champ" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(329, 502)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("1_blxw8")
@@ -90,11 +92,11 @@ position = Vector2(260.682, 102.045)
 shape = SubResource("RectangleShape2D_hoivi")
 
 [node name="steven" parent="." instance=ExtResource("2_foary")]
-z_index = 0
 y_sort_enabled = true
 position = Vector2(205, 343)
 
 [node name="ItemObject" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(555, 544)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("5_notw4")
