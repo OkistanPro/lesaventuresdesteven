@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dh5dgl6untq10"]
+[gd_scene load_steps=48 format=3 uid="uid://dh5dgl6untq10"]
 
 [ext_resource type="Texture2D" uid="uid://rt7wbbd5v4kf" path="res://sprites/decor_bas.png" id="1_cayyt"]
 [ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="1_e7mge"]
@@ -26,6 +26,8 @@
 [ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="24_4at2g"]
 [ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="25_r3tfw"]
 [ext_resource type="AudioStream" uid="uid://brlovyax45ih4" path="res://sons/WATRFlow_Petit torrent (ID 0823)_LS.mp3" id="26_4at2g"]
+[ext_resource type="Texture2D" uid="uid://dkpnrglfvc1l7" path="res://sprites/persos/mec-soooombre.png" id="27_r3tfw"]
+[ext_resource type="Script" uid="uid://bkphsupuqmt7m" path="res://scripts/mec_sombre.gd" id="28_nqcev"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jibjk"]
 animations = [{
@@ -91,12 +93,21 @@ radius = 16.5076
 script = ExtResource("25_r3tfw")
 item_name = &"clé n°2"
 texture_icon = ExtResource("23_432ij")
-pickable = true
+pickable = false
 event_on_not_pick = &""
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqcev"]
 size = Vector2(85.8837, 50.5164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4at2g"]
+size = Vector2(29, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3tfw"]
+size = Vector2(21, 14.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3tfw"]
+radius = 25.5049
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -118,7 +129,7 @@ texture = ExtResource("1_e7mge")
 centered = false
 
 [node name="steven" parent="." instance=ExtResource("3_mjclf")]
-position = Vector2(159, 322)
+position = Vector2(208, 270)
 
 [node name="fontaine" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -314,7 +325,7 @@ script = ExtResource("22_4p5rq")
 [node name="StaticBody2D" type="StaticBody2D" parent="Pancarte"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pancarte/StaticBody2D"]
-polygon = PackedVector2Array(-30, 21, -30, 5, 23, 5, 23, 22)
+polygon = PackedVector2Array(-30.6667, 32, -42.6667, -4, 37.3333, -4, 22, 32)
 
 [node name="Area2D" type="Area2D" parent="Pancarte"]
 
@@ -326,6 +337,7 @@ polygon = PackedVector2Array(-28, -23, -38, 8, 34, 7, 25, -23)
 position = Vector2(-4, -33)
 
 [node name="Cle2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(33, 560)
 rotation = 1.68961
 scale = Vector2(0.4, 0.4)
@@ -357,6 +369,43 @@ max_distance = 450.0
 attenuation = 2.37842
 bus = &"SFX"
 
+[node name="goto_mairie" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_mairie"]
+z_index = 1
+position = Vector2(349.5, 199)
+shape = SubResource("RectangleShape2D_4at2g")
+
+[node name="PNJ" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(384, 504)
+scale = Vector2(2, 2)
+texture = ExtResource("27_r3tfw")
+flip_h = true
+script = ExtResource("12_7sh2r")
+nom_timeline = "mec_sombre"
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PNJ"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/StaticBody2D"]
+position = Vector2(0, 10.75)
+shape = SubResource("RectangleShape2D_r3tfw")
+
+[node name="Area2D" type="Area2D" parent="PNJ"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PNJ/Area2D"]
+shape = SubResource("CircleShape2D_r3tfw")
+
+[node name="Polygon2D" parent="PNJ" instance=ExtResource("20_4p5rq")]
+position = Vector2(0, -24)
+
+[node name="gestion_pnj" type="Node" parent="PNJ"]
+script = ExtResource("28_nqcev")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(344, 216)
+
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_bas" to="." method="_on_goto_rue_bas_body_entered"]
@@ -368,3 +417,6 @@ bus = &"SFX"
 [connection signal="body_exited" from="PetitePnj/Area2D" to="PetitePnj" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Pancarte/Area2D" to="Pancarte" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Pancarte/Area2D" to="Pancarte" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="goto_mairie" to="." method="_on_goto_mairie_body_entered"]
+[connection signal="body_entered" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c55fe5aol2tjq"]
+[gd_scene load_steps=17 format=3 uid="uid://c55fe5aol2tjq"]
 
 [ext_resource type="Texture2D" uid="uid://c8y0e6ctwat60" path="res://sprites/RPG-INTERRIEUR-TEA-COFFEE(2)_0000_Calque-8.png" id="1_7yudh"]
 [ext_resource type="Script" uid="uid://q5hwbyb348wr" path="res://scripts/tea.gd" id="1_tklkh"]
@@ -6,14 +6,22 @@
 [ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="3_tklkh"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="4_rnn3a"]
 [ext_resource type="Texture2D" uid="uid://d4asrmqimut7c" path="res://sprites/RPG-INTERRIEUR-TEA-COFFEE(2)_0001_chaise_b.png" id="5_7yudh"]
+[ext_resource type="Script" uid="uid://dhmwc8eyi76mk" path="res://scripts/gestion_pnj_the.gd" id="6_0m3hh"]
 [ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="6_kkiu0"]
+[ext_resource type="Texture2D" uid="uid://ckx4qwpr6pkgu" path="res://sprites/ecouteurs_0001_gauch.png" id="7_hn38v"]
 [ext_resource type="Texture2D" uid="uid://bh1c5xsfipra1" path="res://sprites/MACHINE_A_THE.png" id="8_rnn3a"]
+[ext_resource type="Texture2D" uid="uid://ljct64b70rfq" path="res://sprites/ecouteurs_0000_droit.png" id="8_ws1h4"]
+[ext_resource type="Script" uid="uid://bhsk7fhnl4vyo" path="res://scripts/interaction_component.gd" id="9_gkffl"]
+[ext_resource type="Script" uid="uid://jv8ac5cqq6y7" path="res://scripts/gestion_machine_the.gd" id="10_2ww88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovig0"]
 size = Vector2(17, 12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5yp7a"]
 radius = 29.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkffl"]
+radius = 65.0
 
 [node name="Tea" type="Node2D"]
 y_sort_enabled = true
@@ -61,9 +69,23 @@ position = Vector2(0, 12)
 shape = SubResource("CircleShape2D_5yp7a")
 
 [node name="Polygon2D" parent="Cyprien" instance=ExtResource("4_rnn3a")]
-position = Vector2(0, -16)
+position = Vector2(0, -20)
 
 [node name="gestion_pnj" type="Node" parent="Cyprien"]
+script = ExtResource("6_0m3hh")
+
+[node name="ecouteur_gauche" type="Sprite2D" parent="Cyprien"]
+visible = false
+show_behind_parent = true
+position = Vector2(-5.5, -12)
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("7_hn38v")
+
+[node name="ecouteur_droite" type="Sprite2D" parent="Cyprien"]
+visible = false
+position = Vector2(7.2, -12)
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("8_ws1h4")
 
 [node name="table1" type="Sprite2D" parent="."]
 z_index = 1
@@ -112,11 +134,30 @@ position = Vector2(407, 452)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="goto_rue"]
 polygon = PackedVector2Array(369, 494, 470, 479, 477, 494, 370, 507)
 
-[node name="MachineAThe" type="Sprite2D" parent="."]
-z_index = 1
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(358, 249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 2
+shape = SubResource("CircleShape2D_gkffl")
+
+[node name="InteractionComponent" type="Node" parent="Area2D"]
+script = ExtResource("9_gkffl")
+nom_timeline_selon_select = Dictionary[String, String]({
+"hache": "machine_the_casse"
+})
+metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
+
+[node name="Polygon2D" parent="Area2D" instance=ExtResource("4_rnn3a")]
+position = Vector2(0, -21)
+
+[node name="MachineAThe" type="Sprite2D" parent="Area2D"]
+z_index = 1
 texture = ExtResource("8_rnn3a")
 flip_h = true
+
+[node name="gestion_machine" type="Node" parent="Area2D/MachineAThe"]
+script = ExtResource("10_2ww88")
 
 [connection signal="body_entered" from="Cyprien/Area2D" to="Cyprien" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Cyprien/Area2D" to="Cyprien" method="_on_area_2d_body_exited"]

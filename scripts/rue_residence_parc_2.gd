@@ -8,6 +8,9 @@ func _ready() -> void:
 		$steven.position = Vector2(107, 234)
 	if Globals.direction_from == "maison6":
 		$steven.position = Vector2(545, 234)
+	if Globals.direction_from == "rue_commerce_coffee":
+		$steven.position = Vector2(326, 4)
+	GestionDialogue.event_declencheur.connect(ouvre_portail)
 
 func _on_goto_rue_gauche_body_entered(body: Node2D) -> void:
 	if body == $steven:
@@ -21,3 +24,16 @@ func _on_goto_maison_3_body_entered(body: Node2D) -> void:
 func _on_goto_maison_6_body_entered(body: Node2D) -> void:
 	if body == $steven:
 		Globals.goto_scene("rue_residence_parc2", "maison6", $steven.position.y, self)
+
+func ouvre_portail(nom_event : String) -> void:
+	GestionSons.play_sound("son_portail")
+	if nom_event == "ouvre_portail":
+		$decor_habitation.texture = load("res://sprites/RPG_PARC_2_0001_Calque-2_ouvert.png")
+		$decor_habitation/StaticBody2D_ferme.process_mode = Node.PROCESS_MODE_DISABLED
+		$decor_habitation/StaticBody2D_ouvert.process_mode = Node.PROCESS_MODE_PAUSABLE
+		$portail.queue_free()
+
+
+func _on_goto_coffee_body_entered(body: Node2D) -> void:
+	if body == $steven:
+		Globals.goto_scene("rue_residence_parc2", "rue_commerce_coffee", $steven.position.x, self)

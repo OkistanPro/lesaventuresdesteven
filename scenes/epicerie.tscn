@@ -30,7 +30,7 @@ size = Vector2(221, 144)
 script = ExtResource("13_i758k")
 item_name = &"clé n°4"
 texture_icon = ExtResource("11_d0d2x")
-pickable = true
+pickable = false
 event_on_not_pick = &""
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 
@@ -140,6 +140,7 @@ scale = Vector2(1, 1)
 color = Color(0.442911, 0.442911, 0.442911, 1)
 
 [node name="Cle4" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(161, 312)
 rotation = -0.0703022
 scale = Vector2(0.4, 0.4)

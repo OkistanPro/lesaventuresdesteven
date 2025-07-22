@@ -50,7 +50,7 @@ scale = Vector2(2.2, 2.2)
 texture = ExtResource("1_blxw8")
 
 [node name="limites_bas" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 2
 position = Vector2(326, 739)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("2_aphba")

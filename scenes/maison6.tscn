@@ -97,9 +97,9 @@ script = ExtResource("5_s15i3")
 shape = SubResource("CircleShape2D_5ajer")
 
 [node name="ItemObject" type="Sprite2D" parent="."]
-position = Vector2(249.341, 426.909)
+position = Vector2(246.341, 428.909)
 rotation = -0.526419
-scale = Vector2(0.455, 0.455)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_7dmuc")
 region_enabled = true
 region_rect = Rect2(0, 0, 17.0695, 16)
@@ -110,6 +110,7 @@ metadata/_custom_type_script = "uid://b1phsyjs6go0l"
 [node name="Area2D" type="Area2D" parent="ItemObject"]
 
 [node name="@CollisionShape2D@90989" type="CollisionShape2D" parent="ItemObject/Area2D"]
+position = Vector2(-6.12736e-05, 6.10352e-05)
 shape = SubResource("CircleShape2D_lqblo")
 
 [node name="Polygon2D" parent="ItemObject" instance=ExtResource("9_rgave")]

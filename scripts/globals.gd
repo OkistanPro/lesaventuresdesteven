@@ -28,12 +28,16 @@ var epicerie = preload("res://scenes/epicerie.tscn")
 var hotel = preload("res://scenes/hotel.tscn")
 var coffee = preload("res://scenes/coffee.tscn")
 var tea = preload("res://scenes/tea.tscn")
+var mairie = preload("res://scenes/mairie.tscn")
 
 var direction_from : String
 var y_from : float
 var selected_item : int = -1
 var selected_item_name : String
 
+var machine_the_casse : bool = false
+var machine_cafe_casse : bool = false
+var bataille : bool = false
 var parle_au_fermier : bool = false
 var graine_regarde : bool = false
 var in_cinematique : bool = false
@@ -73,6 +77,8 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 					get_tree().change_scene_to_packed.call_deferred(rue_commerce_hotel)
 				"croisement_residence":
 					get_tree().change_scene_to_packed.call_deferred(croisement_residence)
+				"mairie":
+					get_tree().change_scene_to_packed.call_deferred(mairie)
 		"rue_commerce_hotel":
 			rue_commerce_hotel.pack(p_scene)
 			match to:
@@ -100,6 +106,8 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 					get_tree().change_scene_to_packed.call_deferred(coffee)
 				"tea":
 					get_tree().change_scene_to_packed.call_deferred(tea)
+				"rue_residence_parc2":
+					get_tree().change_scene_to_packed.call_deferred(rue_residence_laparc2)
 		"rue_commerce_souvenirs":
 			rue_commerce_souvenirs.pack(p_scene)
 			match to:
@@ -146,6 +154,8 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 					get_tree().change_scene_to_packed.call_deferred(maison3)
 				"maison6":
 					get_tree().change_scene_to_packed.call_deferred(maison6)
+				"rue_commerce_coffee":
+					get_tree().change_scene_to_packed.call_deferred(rue_commerce_coffee)
 		"rue_residence_ferme":
 			rue_residence_ferme.pack(p_scene)
 			match to:
@@ -217,6 +227,11 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 			match to:
 				"rue_commerce_coffee":
 					get_tree().change_scene_to_packed.call_deferred(rue_commerce_coffee)
+		"mairie":
+			mairie.pack(p_scene)
+			match to:
+				"village_centre":
+					get_tree().change_scene_to_packed.call_deferred(village_centre)
 
 
 

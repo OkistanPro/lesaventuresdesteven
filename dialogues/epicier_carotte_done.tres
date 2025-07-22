@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=9 format=3 uid="uid://f8arp4wqrg7a"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=12 format=3 uid="uid://f8arp4wqrg7a"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_jeuhr"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_1rtx3"]
@@ -24,6 +24,33 @@ event_at_start = ""
 no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
+[sub_resource type="Resource" id="Resource_hyw14"]
+script = ExtResource("3_hyw14")
+nom_perso = "Steven"
+mess = "...un \"kayou\" ?"
+liste_choix = Array[ExtResource("2_lfcub")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_43vyy"]
+script = ExtResource("3_hyw14")
+nom_perso = "Epicier"
+mess = "C'est notre monnaie sacrée !"
+liste_choix = Array[ExtResource("2_lfcub")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_uup3j"]
+script = ExtResource("3_hyw14")
+nom_perso = "Epicier"
+mess = "Tu peux l'utiliser pour acheter des trucs chez moi ou chez le vendeur de la boutique de souvenirs."
+liste_choix = Array[ExtResource("2_lfcub")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
 [sub_resource type="Resource" id="Resource_24a0m"]
 script = ExtResource("4_hyw14")
 nom_event = "fin_quete_carotte"
@@ -32,5 +59,5 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [resource]
 script = ExtResource("2_1rtx3")
-liste_messages = Array[ExtResource("1_jeuhr")]([SubResource("Resource_rjegt"), SubResource("Resource_7l8rq"), SubResource("Resource_24a0m")])
+liste_messages = Array[ExtResource("1_jeuhr")]([SubResource("Resource_rjegt"), SubResource("Resource_7l8rq"), SubResource("Resource_hyw14"), SubResource("Resource_43vyy"), SubResource("Resource_uup3j"), SubResource("Resource_24a0m")])
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

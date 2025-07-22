@@ -6,5 +6,5 @@
 script = ExtResource("1_ejctw")
 titre_quete = "Faire le ménage dans l'hôtel"
 desc_quete = "Vous devez nettoyer l'entrée de l'hôtel."
-state = 0
+state = 2
 metadata/_custom_type_script = "uid://ca284lm2gr3ex"

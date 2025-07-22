@@ -4,6 +4,9 @@ var musique_village = preload("res://musique/OST_VILLAGEe.wav")
 var musique_cinematique = preload("res://sons/OST_CINEMATIQUE.wav")
 var musique_menu = preload("res://sons/OST_MENU.wav")
 var musique_triste = preload("res://musique/OST_TRISTE_STEVEN.wav")
+var musique_bataille = preload("res://sons/OST_COFFEE-THE.wav")
+var musique_mairie = preload("res://sons/OST_MAIRIE.wav")
+var musique_mairie_bug = preload("res://sons/OST_MAIRIE2.wav")
 
 var interieur : bool = true:
 	set(value):

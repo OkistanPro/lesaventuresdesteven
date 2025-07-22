@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemProperties" load_steps=3 format=3 uid="uid://doauxddcsydyc"]
+
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="1_uvhmp"]
+[ext_resource type="Texture2D" uid="uid://d34aenbdwixl5" path="res://sprites/CLE.png" id="2_tte7m"]
+
+[resource]
+script = ExtResource("1_uvhmp")
+item_name = &"clé n°3"
+texture_icon = ExtResource("2_tte7m")
+pickable = true
+event_on_not_pick = &""
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"

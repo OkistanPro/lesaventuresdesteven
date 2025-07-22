@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=7 format=3 uid="uid://cjwmla355r25k"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_ims0i"]
+[ext_resource type="Script" uid="uid://b2khngrg30oaj" path="res://scripts/dialogues/D_pause.gd" id="2_ky51b"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="3_1qoon"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_8cu8o"]
+
+[sub_resource type="Resource" id="Resource_dg5t1"]
+script = ExtResource("2_ky51b")
+temps = 0.3
+affiche_dialogue = false
+metadata/_custom_type_script = "uid://b2khngrg30oaj"
+
+[sub_resource type="Resource" id="Resource_bwn2s"]
+script = ExtResource("3_1qoon")
+nom_event = "machine_cafe_casse"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[resource]
+script = ExtResource("4_8cu8o")
+liste_messages = Array[ExtResource("1_ims0i")]([SubResource("Resource_dg5t1"), SubResource("Resource_bwn2s")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_5gtta"]
 script = ExtResource("4_lomye")
 nom_event = "ouvre_portail"
-parallele = false
+parallele = true
 metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [resource]

@@ -9,6 +9,9 @@ var in_flaque : bool = false
 var direction_flaque : Vector2 = Vector2.ZERO
 var flip : bool = false
 
+func _ready() -> void:
+	GestionDialogue.event_declencheur.connect(revenir_camera)
+
 func _physics_process(delta: float) -> void:
 	direction = Input.get_vector("left", "right", "up", "down")
 	
@@ -17,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		mult = 1.8
 		$sprite.speed_scale = 2.0
 	
-	if not GestionDialogue.active and not interface.in_quetes:
+	if not GestionDialogue.active and not interface.in_quetes and not $AnimationPlayer.is_playing() and not Globals.bataille:
 		velocity = direction.normalized() * SPEED * mult
 	else:
 		velocity = Vector2.ZERO
@@ -77,3 +80,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				$AnimationPlayer.play("hache")
 			GestionSons.play_sound("hache")
 			hache.emit()
+
+func revenir_camera(nom_event : String) -> void:
+	if nom_event == "revenir_camera":
+		$Camera2D.make_current()

@@ -33,6 +33,34 @@ var sounds = {
 	"hache" : [
 		preload("res://sons/SWSH_Whoosh 4 (ID 1796)_LS.wav"),
 		-5.0
+	],
+	"casse" : [
+		preload("res://sons/large-break-363165.mp3"),
+		-5.0
+	],
+	"porte" : [
+		preload("res://sons/door_close_slam_02.wav"),
+		-5.0
+	],
+	"ouverture_ascenceur" : [
+		preload("res://sons/door_open.wav"),
+		-5.0
+	],
+	"son_portail" : [
+		preload("res://sons/metal_door_hatch_open_squeak_02.wav"),
+		-5.0
+	],
+	"door_lock_open" : [
+		preload("res://sons/door_lock_open_03.wav"),
+		-5.0
+	],
+	"bug_fin" : [
+		preload("res://sons/bug_fin.wav"),
+		-5.0
+	],
+	"bip_crash" : [
+		preload("res://sons/bip_crash.wav"),
+		0.0
 	]
 }
 

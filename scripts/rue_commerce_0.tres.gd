@@ -30,7 +30,7 @@ func _ready() -> void:
 		if get_node_or_null("Colis3"):
 			$Colis3.properties.pickable = true
 	
-	if GestionQuetes.liste_quetes["quete_colis_1.tres"].state == Quete.Quete_State.FINI:
+	if GestionQuetes.liste_quetes["quete_café_1.tres"].state == Quete.Quete_State.EN_COURS:
 		if get_node_or_null("hache"):
 			$hache.visible = true
 			$hache.properties.pickable = true

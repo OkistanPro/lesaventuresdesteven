@@ -10,6 +10,7 @@ var liste_timeline = {
 }
 var active : bool = false
 var kayou = preload("res://items/kayou.tres")
+var cle = preload("res://items/cle.tres")
 
 func _ready() -> void :
 	var directories_to_look_at = ["res://dialogues/"]
@@ -40,11 +41,68 @@ func lancer_timeline(nom_timeline : String) -> void:
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"bug_fin_jeu":
+			GestionSons.play_sound("bug_fin")
+			get_tree().paused = true
+			Musique.stream = Musique.musique_mairie_bug
+			Musique.play()
+			await get_tree().create_timer(5.0).timeout
+			get_tree().paused = false
+			filter.get_node("bug").visible = true
+			await get_tree().create_timer(2.0).timeout
+			Musique.stop()
+			Globals.in_cinematique = true
+			filter.get_node("bug").visible = false
+			interface.get_node("trappe").visible = false
+			get_tree().change_scene_to_file("res://scenes/crash_system.tscn")
+		"coffre_devine":
+			interface.get_node("coffre").visible = true
+		"cache_trappe":
+			interface.get_node("trappe").visible = false
+		"afficher_trappe":
+			interface.get_node("trappe").visible = true
+			interface.get_node("trappe/AnimationPlayer").play("entree")
+		"camera_change_mairie":
+			event_declencheur.emit("camera_change_mairie")
+		"camera_revient_mairie":
+			event_declencheur.emit("camera_revient_mairie")
+		"reprendre_musique":
+			Musique.stream = Musique.musique_village
+			Musique.play()
+			GestionQuetes.lancer_quete("quete_clés_1.tres")
+			event_declencheur.emit("reprendre_musique")
+			Globals.pick_item(cle)
+		"stop_musique":
+			Musique.stop()
+		"ouvrir_ascenceur":
+			event_declencheur.emit("ouvrir_ascenceur")
+		"fin_bataille":
+			Globals.bataille = false
+			event_declencheur.emit("fin_bataille")
+		"revenir_camera":
+			event_declencheur.emit("revenir_camera")
+		"bataille_café_thé3":
+			event_declencheur.emit("bataille_café_thé3")
+		"bataille_café_thé2":
+			event_declencheur.emit("bataille_café_thé2")
+		"machine_cafe_casse":
+			if GestionQuetes.liste_quetes["quete_thé_1.tres"].state == Quete.Quete_State.EN_COURS:
+				event_declencheur.emit("machine_cafe_casse")
+				GestionQuetes.end_quete("quete_thé_1.tres")
+		"lancement_quete_the":
+			GestionQuetes.lancer_quete("quete_thé_1.tres")
+			event_declencheur.emit("lancement_quete_the")
+		"machine_the_casse":
+			if GestionQuetes.liste_quetes["quete_café_1.tres"].state == Quete.Quete_State.EN_COURS:
+				event_declencheur.emit("machine_the_casse")
+				GestionQuetes.end_quete("quete_café_1.tres")
+		"lancement_quete_cafe":
+			GestionQuetes.lancer_quete("quete_café_1.tres")
+			event_declencheur.emit("lancement_quete_cafe")
 		"son_dingo":
 			GestionSons.play_sound("son_dingo")
 		"ouvre_portail":
-			# Ouvre portail
-			pass
+			event_declencheur.emit("ouvre_portail")
 		"fin_quete_menage":
 			GestionQuetes.end_quete("quete_menage_1.tres")
 			event_declencheur.emit("fin_quete_menage")

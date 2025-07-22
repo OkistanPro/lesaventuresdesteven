@@ -1,23 +1,21 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=17 format=3 uid="uid://c50a0gqpo6xg6"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=26 format=3 uid="uid://c50a0gqpo6xg6"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_itwtg"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="2_p2s4t"]
 [ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_p4wf8"]
 [ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_p2s4t"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_djsal"]
 
 [sub_resource type="Resource" id="Resource_38mwe"]
-script = ExtResource("3_p2s4t")
-nom_perso = ""
-mess = "Vous appercevez une silhouette cacher dans les arbres ..."
-liste_choix = Array[ExtResource("2_p4wf8")]([])
-event_at_start = ""
-no_end = false
-metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+script = ExtResource("2_p2s4t")
+nom_event = "stop_musique"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [sub_resource type="Resource" id="Resource_lnp16"]
 script = ExtResource("3_p2s4t")
 nom_perso = "???"
-mess = "Bonjour Steven, je te cherchais vois-tu ..."
+mess = "Bonjour Steven."
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -26,7 +24,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_itwtg"]
 script = ExtResource("3_p2s4t")
 nom_perso = "Steven"
-mess = "Co.. Comment vous connaissez mon nom ? ET .. Pourquoi vous me cherchiez ?"
+mess = "Co.. Comment vous connaissez mon nom ? "
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -35,7 +33,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_p4wf8"]
 script = ExtResource("3_p2s4t")
 nom_perso = "???"
-mess = "J'ai une quête tres importante a te donner, serait tu prets ?"
+mess = "J'ai une quête très importante à te donner, le sort du village en dépend."
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -44,7 +42,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_p2s4t"]
 script = ExtResource("3_p2s4t")
 nom_perso = "Steven"
-mess = "Euh ... Et bien, j'imagine que oui ... Mais dite moi qui etes vous ?"
+mess = "Euh ... Et bien, j'imagine que oui ... Mais d'abord qui êtes-vous ?"
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -53,7 +51,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_djsal"]
 script = ExtResource("3_p2s4t")
 nom_perso = "???"
-mess = "Tu ne dois pas le savoir, tu doits seulement savoir ta quete ..."
+mess = "Ça n'a pas d'importance, l'important c'est ce que je vais te demander de faire."
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -62,16 +60,46 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_4iqxr"]
 script = ExtResource("3_p2s4t")
 nom_perso = "???"
-mess = "Tu doits récuperer 7 clés dans village, elles sont toutes cachées dans le village ..."
+mess = "Je ne sais pas si tu l'a remarqué, mais le maire n'est plus là."
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
+[sub_resource type="Resource" id="Resource_pq2gb"]
+script = ExtResource("2_p2s4t")
+nom_event = "camera_change_mairie"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
 [sub_resource type="Resource" id="Resource_c3gvs"]
 script = ExtResource("3_p2s4t")
 nom_perso = "???"
-mess = "Et tu doit les retrouvez afin d'ouvrir une porte qui mene sur la vérité ..."
+mess = "Il est parti se cacher. Ma présence le gène."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_iegiw"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "Il a essayé de se cacher un peu partout, et il a laissé toutes ces clés par terre."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_mnqt7"]
+script = ExtResource("2_p2s4t")
+nom_event = "camera_revient_mairie"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[sub_resource type="Resource" id="Resource_8xbf1"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "7 clés. 7 clés permettant d'ouvrir une porte secrète."
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -80,7 +108,16 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_b2r4j"]
 script = ExtResource("3_p2s4t")
 nom_perso = "???"
-mess = "Une porte unique en ces lieux, une porte que tu doit ouvrir, une vérité que tu doit voir ..."
+mess = "Une porte unique en ces lieux, une porte que tu dois ouvrir..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ggfj5"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "Pour révéler la vérité derrière la misère de ce village."
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -89,7 +126,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_eje2f"]
 script = ExtResource("3_p2s4t")
 nom_perso = "Steven"
-mess = "Et quelle est cette vérité ? ... Pourquoi moi ? ... ET POURQUOI ICI ? ...."
+mess = "Et pourquoi moi ? ... POURQUOI C'EST A MOI DE LE FAIRE ? ...."
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -98,7 +135,16 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_axyv5"]
 script = ExtResource("3_p2s4t")
 nom_perso = "???"
-mess = "A toi de jouer Steven ..."
+mess = "A toi de jouer Steven... Je te donne une des clés que j'ai récupéré..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_53p2q"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "L'avenir du village est entre tes plumes."
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -106,14 +152,29 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_gyiox"]
 script = ExtResource("3_p2s4t")
-nom_perso = ""
-mess = "L'homme encapuchoné disparus dans la pénombre des arbres ..."
+nom_perso = "Steven"
+mess = "Mais EXPLIQUEZ-MOI !!"
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
+[sub_resource type="Resource" id="Resource_pn0wu"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_e5iyb"]
+script = ExtResource("2_p2s4t")
+nom_event = "reprendre_musique"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
 [resource]
 script = ExtResource("4_djsal")
-liste_messages = Array[ExtResource("1_itwtg")]([SubResource("Resource_38mwe"), SubResource("Resource_lnp16"), SubResource("Resource_itwtg"), SubResource("Resource_p4wf8"), SubResource("Resource_p2s4t"), SubResource("Resource_djsal"), SubResource("Resource_4iqxr"), SubResource("Resource_c3gvs"), SubResource("Resource_b2r4j"), SubResource("Resource_eje2f"), SubResource("Resource_axyv5"), SubResource("Resource_gyiox")])
+liste_messages = Array[ExtResource("1_itwtg")]([SubResource("Resource_38mwe"), SubResource("Resource_lnp16"), SubResource("Resource_itwtg"), SubResource("Resource_p4wf8"), SubResource("Resource_p2s4t"), SubResource("Resource_djsal"), SubResource("Resource_4iqxr"), SubResource("Resource_pq2gb"), SubResource("Resource_c3gvs"), SubResource("Resource_iegiw"), SubResource("Resource_mnqt7"), SubResource("Resource_8xbf1"), SubResource("Resource_b2r4j"), SubResource("Resource_ggfj5"), SubResource("Resource_eje2f"), SubResource("Resource_axyv5"), SubResource("Resource_53p2q"), SubResource("Resource_gyiox"), SubResource("Resource_pn0wu"), SubResource("Resource_e5iyb")])
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

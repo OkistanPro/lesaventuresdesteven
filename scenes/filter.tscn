@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://mvocruudr8ps"]
+[gd_scene load_steps=6 format=3 uid="uid://mvocruudr8ps"]
 
 [ext_resource type="Shader" uid="uid://cxtnrc7f56hxg" path="res://shaders/lcd_filter.gdshader" id="1_cetmi"]
+[ext_resource type="Script" uid="uid://x21i2kd8wlgx" path="res://scripts/filter.gd" id="1_i3jku"]
+[ext_resource type="Shader" uid="uid://p2nfdmavkadt" path="res://shaders/bug1.gdshader" id="3_rg8bj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7sh2r"]
 shader = ExtResource("1_cetmi")
@@ -26,7 +28,11 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.1
 shader_parameter/vignette_opacity = 0.5
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yqkek"]
+shader = ExtResource("3_rg8bj")
+
 [node name="filter" type="CanvasLayer"]
+script = ExtResource("1_i3jku")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_7sh2r")
@@ -36,3 +42,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+rect = Rect2(0, 0, 0, 0)
+
+[node name="bug" type="ColorRect" parent="."]
+visible = false
+top_level = true
+z_index = 2
+material = SubResource("ShaderMaterial_yqkek")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://cpwk6rw2kd26i"]
+[gd_scene load_steps=50 format=3 uid="uid://cpwk6rw2kd26i"]
 
 [ext_resource type="Script" uid="uid://ciiaw3wjkdwmd" path="res://scripts/rue_commerce_2.gd" id="1_wp0qm"]
-[ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_5n7rv"]
+[ext_resource type="Texture2D" uid="uid://dwee0awg13gvk" path="res://sprites/zone_commerçante2.png" id="2_0piwl"]
 [ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="3_kghjy"]
 [ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="4_torih"]
 [ext_resource type="Texture2D" uid="uid://clfx165hki6j3" path="res://sprites/coffee_tea/tea_coffee_0001_Calque-3.png" id="5_8l4r6"]
@@ -21,6 +21,13 @@
 [ext_resource type="Texture2D" uid="uid://d34aenbdwixl5" path="res://sprites/CLE.png" id="17_p4con"]
 [ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="18_0vqv0"]
 [ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="19_sbuuv"]
+[ext_resource type="Texture2D" uid="uid://dkk04twmn7gw5" path="res://sprites/persos/RPG-PERSO-PRINCIPEAU(2)_0003_cyprien_fache.png" id="22_oh4dw"]
+[ext_resource type="Texture2D" uid="uid://bahajjxb1fbya" path="res://sprites/persos/RPG-PERSO-PRINCIPEAU(2)_0002_squeezie_fache.png" id="23_bs2ak"]
+[ext_resource type="Texture2D" uid="uid://b7teopy7qtb5p" path="res://sprites/EFFET_PAS_CONTENT.png" id="24_0piwl"]
+[ext_resource type="Texture2D" uid="uid://djirgt8yjrbv4" path="res://sprites/EFFET_PAS_CONTENT_2.png" id="25_pk6at"]
+[ext_resource type="Texture2D" uid="uid://si5wphrv5duc" path="res://sprites/EFFET_PAS_CONTENT_3.png" id="26_euq7t"]
+[ext_resource type="Texture2D" uid="uid://dolor6ux7uwwt" path="res://sprites/COFFRE.png" id="27_pk6at"]
+[ext_resource type="Script" uid="uid://bhsk7fhnl4vyo" path="res://scripts/interaction_component.gd" id="28_euq7t"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
 normal = Vector2(0, 1)
@@ -39,13 +46,16 @@ size = Vector2(17.3333, 26)
 radius = 24.2304
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqfty"]
-size = Vector2(303.409, 82.2728)
+size = Vector2(303.409, 32.7273)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rwh8"]
+size = Vector2(117.273, 71.3636)
 
 [sub_resource type="Resource" id="Resource_p4con"]
 script = ExtResource("19_sbuuv")
 item_name = &"clé n°1"
 texture_icon = ExtResource("17_p4con")
-pickable = true
+pickable = false
 event_on_not_pick = &""
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 
@@ -58,6 +68,359 @@ size = Vector2(17.5, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_sbuuv"]
 radius = 24.7945
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oh4dw"]
+size = Vector2(14, 569)
+
+[sub_resource type="Animation" id="Animation_oh4dw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cyprien:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cyprien:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(413, 245)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("squeezie:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("squeezie:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, 261)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("colere:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("pnj1:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(579, 293)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("pnj2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(539, 309)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("pnj2:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PNJ:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(114.526, 296.381)]
+}
+
+[sub_resource type="Animation" id="Animation_sbuuv"]
+resource_name = "bataille_coffee_the"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.96667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop_music"
+}, {
+"args": ["bataille1"],
+"method": &"timeline_bataille"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D_bataille")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cyprien:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cyprien:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2, 2.3, 2.6, 2.9, 3.2, 3.5, 3.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(413, 245), Vector2(419.34, 261), Vector2(419.34, 277), Vector2(419.34, 293), Vector2(419.34, 309), Vector2(419.34, 325), Vector2(419.34, 341)]
+}
+
+[sub_resource type="Animation" id="Animation_dxsp7"]
+resource_name = "bataille_coffee_the_2"
+length = 2.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.03333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"porte"
+}, {
+"args": ["bataille2"],
+"method": &"timeline_bataille"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squeezie:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("squeezie:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(250, 245), Vector2(200, 261), Vector2(200, 285), Vector2(200, 301), Vector2(200, 317), Vector2(200, 333), Vector2(200, 345)]
+}
+
+[sub_resource type="Animation" id="Animation_8rwh8"]
+resource_name = "bataille_coffee_the_3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cyprien:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.51, 0.69, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(419.34, 341), Vector2(411.34, 341), Vector2(387.34, 341), Vector2(363.34, 341), Vector2(347.34, 341)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squeezie:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.47, 0.62),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(200, 345), Vector2(216, 345), Vector2(280, 345), Vector2(304, 345)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("colere:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.92),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["bataille3"],
+"method": &"timeline_bataille"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("pnj1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.74),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(579, 293), Vector2(571, 333), Vector2(507, 341), Vector2(459, 341)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("pnj2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.5, 0.74, 0.91),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(539, 309), Vector2(539, 317), Vector2(523, 317), Vector2(491, 317), Vector2(443, 317)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("pnj2:flip_h")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.09, 0.17),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PNJ:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.33, 0.47, 0.69),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(114.526, 296.381), Vector2(138.526, 296.381), Vector2(138.526, 312.381), Vector2(154.526, 328.381), Vector2(194.526, 344.381)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oh4dw"]
+_data = {
+&"RESET": SubResource("Animation_oh4dw"),
+&"bataille_coffee_the": SubResource("Animation_sbuuv"),
+&"bataille_coffee_the_2": SubResource("Animation_dxsp7"),
+&"bataille_coffee_the_3": SubResource("Animation_8rwh8")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0piwl"]
+size = Vector2(17, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7d63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_0piwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pk6at")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_euq7t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pk6at"]
+radius = 45.0111
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euq7t"]
+size = Vector2(140, 20)
+
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_wp0qm")
@@ -65,7 +428,7 @@ script = ExtResource("1_wp0qm")
 [node name="DecorBas" type="Sprite2D" parent="."]
 position = Vector2(0, 178)
 scale = Vector2(2.2, 2.2)
-texture = ExtResource("2_5n7rv")
+texture = ExtResource("2_0piwl")
 centered = false
 
 [node name="decor" type="Parallax2D" parent="."]
@@ -236,7 +599,7 @@ offset = Vector2(0, -50)
 [node name="pnj1" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(579, 293)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture = ExtResource("10_oh4dw")
 script = ExtResource("11_bs2ak")
 nom_timeline = "pnj_homme1"
@@ -259,7 +622,7 @@ position = Vector2(0, -29.815)
 [node name="pnj2" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(539, 309)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture = ExtResource("13_0vqv0")
 flip_h = true
 script = ExtResource("11_bs2ak")
@@ -289,8 +652,20 @@ texture = ExtResource("13_vjt2x")
 [node name="StaticBody2D" type="StaticBody2D" parent="MaisonsFront"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
-position = Vector2(0.568253, 7.50003)
+position = Vector2(0.568253, -17.2727)
 shape = SubResource("RectangleShape2D_jqfty")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MaisonsFront/StaticBody2D"]
+position = Vector2(0, -25)
+polygon = PackedVector2Array(9.54546, 18.1818, 12.7273, 28.1818, 13.1818, 31.8182, 20.9091, 31.8182, 21.8182, 28.1818, 24.5454, 18.1818, 25, 16.3636, 16.8182, 12.7273, 9.0909, 16.3636)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
+position = Vector2(-91.3636, 32.9546)
+shape = SubResource("RectangleShape2D_8rwh8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
+position = Vector2(89.5454, 32.9546)
+shape = SubResource("RectangleShape2D_8rwh8")
 
 [node name="mur1" type="Sprite2D" parent="."]
 z_index = 3
@@ -332,6 +707,7 @@ texture = ExtResource("16_8l4r6")
 polygon = PackedVector2Array(-13, 7, -16, 15, -10, 30, 9, 30, 16, 15, 12, 7)
 
 [node name="Cle4" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(503, 180)
 rotation = -1.208
 scale = Vector2(0.4, 0.4)
@@ -388,8 +764,97 @@ shape = SubResource("RectangleShape2D_sbuuv")
 shape = SubResource("CircleShape2D_sbuuv")
 
 [node name="Polygon2D" parent="PNJ" instance=ExtResource("12_dxsp7")]
+position = Vector2(0, -22.2222)
 
 [node name="gestion_pnj" type="Node" parent="PNJ"]
+
+[node name="bataille_cafe_the" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bataille_cafe_the"]
+z_index = 1
+position = Vector2(54, 252.5)
+shape = SubResource("RectangleShape2D_oh4dw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oh4dw")
+}
+
+[node name="Camera2D_bataille" type="Camera2D" parent="."]
+position = Vector2(327.925, 341.955)
+
+[node name="cyprien" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(413, 245)
+scale = Vector2(2, 2)
+texture = ExtResource("22_oh4dw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cyprien"]
+process_mode = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cyprien/StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_0piwl")
+
+[node name="squeezie" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(200, 261)
+scale = Vector2(2, 2)
+texture = ExtResource("23_bs2ak")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="squeezie"]
+process_mode = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="squeezie/StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_0piwl")
+
+[node name="colere" type="AnimatedSprite2D" parent="."]
+visible = false
+modulate = Color(0.79, 0.0711, 0.0711, 0.941176)
+z_index = 3
+position = Vector2(295, 276)
+scale = Vector2(1.545, 1.545)
+sprite_frames = SubResource("SpriteFrames_y7d63")
+autoplay = "default"
+frame = 1
+frame_progress = 0.520474
+centered = false
+
+[node name="Coffre" type="Sprite2D" parent="."]
+position = Vector2(271, 550)
+texture = ExtResource("27_pk6at")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Coffre"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Coffre/StaticBody2D"]
+polygon = PackedVector2Array(0, 34, 7, 41, 67, 41, 66, 20, 0, 20)
+
+[node name="coffre_area" type="Area2D" parent="."]
+
+[node name="InteractionComponent" type="Node" parent="coffre_area"]
+script = ExtResource("28_euq7t")
+nom_timeline = "coffre_devine"
+metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coffre_area"]
+z_index = 1
+position = Vector2(305, 584)
+shape = SubResource("CircleShape2D_pk6at")
+
+[node name="Polygon2D" parent="coffre_area" instance=ExtResource("12_dxsp7")]
+z_index = 3
+position = Vector2(304, 544)
+
+[node name="goto_parc" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_parc"]
+position = Vector2(328, 715)
+shape = SubResource("RectangleShape2D_euq7t")
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="pnj1/Area2D" to="pnj1" method="_on_area_2d_body_entered"]
@@ -400,3 +865,5 @@ shape = SubResource("CircleShape2D_sbuuv")
 [connection signal="body_entered" from="goto_tea" to="." method="_on_goto_tea_body_entered"]
 [connection signal="body_entered" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="PNJ/Area2D" to="PNJ" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="bataille_cafe_the" to="." method="_on_bataille_cafe_the_body_entered"]
+[connection signal="body_entered" from="goto_parc" to="." method="_on_goto_parc_body_entered"]

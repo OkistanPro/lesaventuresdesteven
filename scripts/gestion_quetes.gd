@@ -5,7 +5,7 @@ var liste_quetes : Dictionary = {
 }
 
 func _ready() -> void:
-	var directories_to_look_at = ["res://quetes/"]
+	var directories_to_look_at = ["res://quetes/part1"]
 	while directories_to_look_at:
 		var dir = DirAccess.open(directories_to_look_at[0])
 		if dir:

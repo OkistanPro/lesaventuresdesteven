@@ -8,6 +8,11 @@ func _ready() -> void:
 		$steven.position = Vector2(31, Globals.y_from)
 	elif Globals.direction_from == "hotel":
 		$steven.position = Vector2(223, 330)
+	
+	if GestionQuetes.liste_quetes["quete_clés_1.tres"].state == Quete.Quete_State.EN_COURS:
+		if get_node_or_null("Cle6"):
+			$Cle6.visible = true
+			$Cle6.properties.pickable = true
 
 
 func _on_goto_rue_droite_body_entered(body: Node2D) -> void:

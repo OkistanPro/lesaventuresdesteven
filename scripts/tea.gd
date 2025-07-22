@@ -9,6 +9,10 @@ func _ready() -> void:
 		$Cyprien.position = Vector2(468, 220)
 		$Cyprien.flip_h = true
 		$Cyprien.region_enabled = false
+		$Cyprien.nom_timeline = ""
+		$Cyprien.texture = preload("res://sprites/persos/RPG-PERSO-PRINCIPEAU(2)_0001_cyprien_dos.png")
+		$Cyprien/ecouteur_gauche.visible = true
+		$Cyprien/ecouteur_droite.visible = true
 	#468 200
 
 func _on_goto_rue_body_entered(body: Node2D) -> void:

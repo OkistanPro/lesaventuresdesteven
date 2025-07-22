@@ -6,5 +6,5 @@
 script = ExtResource("1_00jrp")
 titre_quete = "Retrouver la relique perdu du vendeur"
 desc_quete = "Vous devez fouiller les trous des LaParc pour retrouver la relique perdu du vendeur."
-state = 0
+state = 2
 metadata/_custom_type_script = "uid://ca284lm2gr3ex"

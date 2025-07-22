@@ -6,5 +6,5 @@
 script = ExtResource("1_wtc2v")
 titre_quete = "Ramasser les oeufs dans le poulailler"
 desc_quete = "Ramasser les oeufs dans le poulailler pour aider le fermier de Steven."
-state = 0
+state = 2
 metadata/_custom_type_script = "uid://ca284lm2gr3ex"

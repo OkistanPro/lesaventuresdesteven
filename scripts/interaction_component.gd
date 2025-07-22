@@ -26,9 +26,7 @@ func _on_area_exited(body : Node2D) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interagir") and in_area:
-		if Globals.selected_item == -1:
+		if Globals.selected_item == -1 and nom_timeline:
 			GestionDialogue.lancer_timeline(nom_timeline)
 		elif Globals.selected_item_name in nom_timeline_selon_select:
 			GestionDialogue.lancer_timeline(nom_timeline_selon_select[Globals.selected_item_name])
-		else:
-			GestionSons.play_sound("no_timeline")

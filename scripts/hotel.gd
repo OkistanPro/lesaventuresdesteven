@@ -5,6 +5,8 @@ func _ready() -> void:
 	if Globals.direction_from == "rue_commerce_hotel":
 		$steven.position = Vector2(395, 447)
 	GestionDialogue.event_declencheur.connect(event)
+	if GestionQuetes.liste_quetes["quete_oeufs_1.tres"].state == Quete.Quete_State.FINI:
+		$DameHotel.nom_timeline = "hoteliere_menage"
 
 
 func _on_goto_rue_body_entered(body: Node2D) -> void:

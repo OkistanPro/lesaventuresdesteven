@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=9 format=3 uid="uid://cbgdlphb8qfqs"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_7o7j1"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_20oid"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_i4huj"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_v0taw"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="4_v0taw"]
+
+[sub_resource type="Resource" id="Resource_2ysh5"]
+script = ExtResource("3_v0taw")
+nom_perso = "Steven"
+mess = "C'est bon ! J'ai toutes les clés qu'il me faut !"
+liste_choix = Array[ExtResource("2_20oid")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_20oid"]
+script = ExtResource("3_v0taw")
+nom_perso = "Steven"
+mess = "Je vais enfin connaître la vérité !"
+liste_choix = Array[ExtResource("2_20oid")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_00lfa"]
+script = ExtResource("4_v0taw")
+nom_event = "bug_fin_jeu"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[resource]
+script = ExtResource("2_i4huj")
+liste_messages = Array[ExtResource("1_7o7j1")]([SubResource("Resource_2ysh5"), SubResource("Resource_20oid"), SubResource("Resource_00lfa")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

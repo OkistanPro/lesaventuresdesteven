@@ -41,11 +41,17 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interagir") and in_body:
 		if Globals.selected_item == -1:
 			if not random_timeline:
-				GestionDialogue.lancer_timeline(nom_timeline)
+				if nom_timeline:
+					GestionDialogue.lancer_timeline(nom_timeline)
+				else:
+					GestionSons.play_sound("no_timeline")
 			else:
 				if first_time:
-					GestionDialogue.lancer_timeline(nom_timeline)
-					first_time = false
+					if nom_timeline:
+						GestionDialogue.lancer_timeline(nom_timeline)
+						first_time = false
+					else:
+						GestionSons.play_sound("no_timeline")
 				else:
 					GestionDialogue.lancer_timeline(nom_timeline_random[randi_range(0, len(nom_timeline_random)-1)])
 		elif Globals.selected_item_name in nom_timeline_selon_select:
