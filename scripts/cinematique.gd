@@ -12,9 +12,15 @@ var texte_cinematique : Array[String] = [
 func _ready() -> void:
 	Globals.in_cinematique = true
 	Globals.in_menu = false
+	if GestionsEvents.current_event == "event_alter1":
+		await get_tree().create_timer(18.0).timeout
+		GestionSons.play_sound("glitch1")
+		await get_tree().create_timer(0.4).timeout
+		$error.visible = true
+		await get_tree().create_timer(1.0).timeout
+		$error.visible = false
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	await Musique.finished
 	skip()
 	
 func _input(event: InputEvent) -> void:

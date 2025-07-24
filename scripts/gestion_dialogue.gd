@@ -41,6 +41,22 @@ func lancer_timeline(nom_timeline : String) -> void:
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"crash_system":
+			interface.get_node("MecChelouGrand").visible = false
+			Musique.stop()
+			Globals.in_cinematique = true
+			get_tree().change_scene_to_file("res://scenes/crash_system.tscn")
+		"scream":
+			GestionSons.play_sound("scream")
+			interface.get_node("MecChelouGrand").visible = true
+		"affiche_telephone":
+			interface.get_node("glitch1").visible = true
+			interface.get_node("glitch1/AnimationPlayer").play("phone_animation")
+		"play_telephone":
+			GestionSons.play_sound("telephone")
+			await get_tree().create_timer(50.66).timeout
+			interface.get_node("glitch1").visible = false
+			event_declencheur.emit("supprimer_fille")
 		"bug_fin_jeu":
 			GestionSons.play_sound("bug_fin")
 			get_tree().paused = true
@@ -171,7 +187,7 @@ func lancer_event(nom_event : String) -> void:
 			GestionQuetes.end_quete("quete_relique_1.tres")
 			event_declencheur.emit("fin_quete_montre")
 			for item in Globals.inventory:
-				if item.item_name == &"montre":
+				if item.item_name == &"montre" or item.item_name ==  &"██████████████":
 					Globals.inventory.erase(item)
 					break
 			Globals.inventory_changed.emit(null)

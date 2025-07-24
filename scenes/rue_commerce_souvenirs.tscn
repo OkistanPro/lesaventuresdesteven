@@ -27,7 +27,7 @@ distance = 179.0
 size = Vector2(96, 575)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3f2s"]
-size = Vector2(303.409, 82.2728)
+size = Vector2(303.409, 85.4546)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_diepv"]
 size = Vector2(17.3333, 29.3333)
@@ -84,7 +84,7 @@ texture = ExtResource("5_qbycy")
 [node name="StaticBody2D" type="StaticBody2D" parent="MaisonsFront"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
-position = Vector2(0.568253, 7.50003)
+position = Vector2(0.568253, 5.90912)
 shape = SubResource("RectangleShape2D_w3f2s")
 
 [node name="souvenirs" type="Sprite2D" parent="."]
@@ -106,7 +106,8 @@ texture = ExtResource("7_op1yb")
 script = ExtResource("8_2fhiq")
 nom_timeline = "vendeur_montre"
 nom_timeline_selon_select = Dictionary[String, String]({
-"montre": "vendeur_montre_donne"
+"montre": "vendeur_montre_donne",
+"██████████████": "vendeur_montre_donne"
 })
 
 [node name="StaticBody2D" type="StaticBody2D" parent="personnage"]
@@ -282,6 +283,7 @@ texture = ExtResource("16_0gg83")
 polygon = PackedVector2Array(-13, 7, -16, 15, -10, 30, 9, 30, 16, 15, 12, 7)
 
 [node name="carole" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(86.5177, 351.618)
 scale = Vector2(2, 2)
 texture = ExtResource("18_0gg83")

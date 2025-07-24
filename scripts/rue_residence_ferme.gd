@@ -13,6 +13,17 @@ func _ready() -> void:
 	if Globals.direction_from == "ferme":
 		$steven.position = Vector2(482, 272)
 		$steven.z_index = 0
+	
+	if GestionsEvents.current_event == "event_alter1":
+		for item in Globals.inventory:
+			if item.item_name == &"oeufs" and interface.get_node_or_null("glitch0"):
+				Musique.stop()
+				interface.get_node("glitch0").visible = true
+				GestionSons.play_sound("glitch2")
+				await get_tree().create_timer(4.16).timeout
+				Musique.stream = Musique.musique_village
+				Musique.play()
+				interface.get_node("glitch0").queue_free()
 
 func _on_goto_rue_droite_body_entered(body: Node2D) -> void:
 	if body == $steven:

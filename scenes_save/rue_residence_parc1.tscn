@@ -1,0 +1,405 @@
+[gd_scene load_steps=40 format=3 uid="uid://by5j2erlr28r4"]
+
+[ext_resource type="Script" uid="uid://deasxn1co6tks" path="res://scripts/rue_residence_parc_1.gd" id="1_jivu7"]
+[ext_resource type="Texture2D" uid="uid://7w7xx3axax0d" path="res://sprites/RPG_PARC_1_0001_Calque-5.png" id="2_x3yxf"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="3_hgdjf"]
+[ext_resource type="Texture2D" uid="uid://bcseweq1u578a" path="res://sprites/RPG_PARC_1_0002_line.png" id="4_twv6w"]
+[ext_resource type="Texture2D" uid="uid://nob6w0x0qruq" path="res://sprites/RPG_PARC_ITEM_0006_tondeuse.png" id="5_b76v5"]
+[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="6_qx4kg"]
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="7_0pl4j"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="8_faiot"]
+[ext_resource type="Texture2D" uid="uid://b3th7rufjgu7p" path="res://sprites/RPG_PARC_ITEM_0002_balançoire.png" id="9_gwewx"]
+[ext_resource type="Texture2D" uid="uid://ccce1tdl4wl6h" path="res://sprites/RPG_PARC_ITEM_0005_trucla.png" id="10_kppby"]
+[ext_resource type="Texture2D" uid="uid://5xt5ulqnf78t" path="res://sprites/RPG_PARC_2_0002_barriere.png" id="11_unygh"]
+[ext_resource type="Texture2D" uid="uid://bbsela2c1kt2n" path="res://sprites/HERBES HAUTES.png" id="12_fk8cd"]
+[ext_resource type="Shader" uid="uid://bl6nhjph8qnbu" path="res://shaders/fleur.gdshader" id="13_pvtwt"]
+[ext_resource type="Texture2D" uid="uid://rswb04pllwff" path="res://sprites/FLEURS.png" id="14_h638b"]
+[ext_resource type="Shader" uid="uid://c2f140whsd2qu" path="res://shaders/fleur_jaune.gdshader" id="15_njv6a"]
+[ext_resource type="Texture2D" uid="uid://7ioyhkwqfl3o" path="res://sprites/TROU DE TERRRE.png" id="16_ovifo"]
+[ext_resource type="Texture2D" uid="uid://bubndnlittn22" path="res://sprites/MONTRE_ITEM.png" id="17_xj36c"]
+[ext_resource type="Texture2D" uid="uid://cattcap0gqcqj" path="res://sprites/persos/grand_pnj_3.png" id="18_mq37d"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="19_uow3i"]
+[ext_resource type="Texture2D" uid="uid://8lja5wrf21aa" path="res://sprites/RPG_PARC_ITEM_0002_balançoire_0000_Calque-2.png" id="20_2aqep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoivi"]
+size = Vector2(1.36366, 8.63636)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fucvl"]
+size = Vector2(10, 441)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1jxm"]
+size = Vector2(300.909, 6.81818)
+
+[sub_resource type="Resource" id="Resource_55ydb"]
+script = ExtResource("7_0pl4j")
+item_name = &"tondeuse"
+texture_icon = ExtResource("5_b76v5")
+pickable = false
+event_on_not_pick = &""
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_okygd"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qax44"]
+size = Vector2(19.1667, 11.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55ydb"]
+size = Vector2(673, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgp2x"]
+size = Vector2(6.36364, 101.364)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r56y0"]
+shader = ExtResource("13_pvtwt")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gimey"]
+shader = ExtResource("15_njv6a")
+
+[sub_resource type="Resource" id="Resource_hrolg"]
+script = ExtResource("7_0pl4j")
+item_name = &"trou_vide"
+pickable = false
+event_on_not_pick = &"trou_vide"
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrolg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g0t67"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sufv0"]
+
+[sub_resource type="Resource" id="Resource_g0t67"]
+script = ExtResource("7_0pl4j")
+item_name = &"montre"
+texture_icon = ExtResource("17_xj36c")
+pickable = false
+event_on_not_pick = &"montre"
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmisc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmisc"]
+size = Vector2(52.5, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s7ji"]
+size = Vector2(17, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qax44"]
+radius = 24.0208
+
+[node name="rue_residence_parc1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_jivu7")
+
+[node name="decor_habitation" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(330, 301)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_x3yxf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decor_habitation"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="decor_habitation/StaticBody2D"]
+position = Vector2(0, -47.2727)
+polygon = PackedVector2Array(-150, -1.81818, -114.545, -1.81818, -112.727, -6.81818, -89.5455, -6.81818, -88.1818, -1.81818, -37.7273, -2.27273, -37.7273, -13.1818, -17.2727, -13.1818, 11.3636, -13.6364, 35.9091, -13.6364, 35.9091, -1.81818, 84.5454, -1.81818, 86.3636, -7.72727, 109.545, -7.72727, 110.455, -1.81818, 152.727, -1.81818, 152.727, -76.3636, -151.818, -76.3636)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decor_habitation/StaticBody2D"]
+position = Vector2(-113.864, -49.7728)
+shape = SubResource("RectangleShape2D_hoivi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="decor_habitation/StaticBody2D"]
+position = Vector2(-88.4091, -49.7727)
+shape = SubResource("RectangleShape2D_hoivi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="decor_habitation/StaticBody2D"]
+position = Vector2(85.2273, -49.7727)
+shape = SubResource("RectangleShape2D_hoivi")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="decor_habitation/StaticBody2D"]
+position = Vector2(110.682, -49.7727)
+shape = SubResource("RectangleShape2D_hoivi")
+
+[node name="steven" parent="." instance=ExtResource("3_hgdjf")]
+z_index = 0
+y_sort_enabled = true
+position = Vector2(31, 322)
+
+[node name="goto_rue_gauche" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_gauche"]
+position = Vector2(0, 285)
+shape = SubResource("RectangleShape2D_fucvl")
+
+[node name="goto_rue_droite" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite"]
+position = Vector2(662, 411.5)
+shape = SubResource("RectangleShape2D_fucvl")
+
+[node name="barriere" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(330, 410)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("4_twv6w")
+offset = Vector2(0, -42.2727)
+region_enabled = true
+region_rect = Rect2(7.7342, 0, 292.266, 108)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="barriere"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barriere/StaticBody2D"]
+position = Vector2(0, 0.22728)
+shape = SubResource("RectangleShape2D_p1jxm")
+
+[node name="tondeuse" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(192, 453)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_b76v5")
+script = ExtResource("6_qx4kg")
+properties = SubResource("Resource_55ydb")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="tondeuse"]
+
+[node name="@CollisionShape2D@34657" type="CollisionShape2D" parent="tondeuse/Area2D"]
+shape = SubResource("CircleShape2D_okygd")
+
+[node name="Polygon2D" parent="tondeuse" instance=ExtResource("8_faiot")]
+position = Vector2(0, -32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tondeuse"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tondeuse/StaticBody2D"]
+position = Vector2(-2.91667, 13.3333)
+shape = SubResource("RectangleShape2D_qax44")
+
+[node name="balancoire" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(177, 531)
+scale = Vector2(2, 2)
+texture = ExtResource("9_gwewx")
+offset = Vector2(1.5, -29.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="balancoire"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="balancoire/StaticBody2D"]
+position = Vector2(2, -30.5)
+polygon = PackedVector2Array(-59.5, 31.5, -62.5, 44, -55.5, 44.5, -53, 32)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="balancoire/StaticBody2D"]
+position = Vector2(2, -30.5)
+polygon = PackedVector2Array(-2.5, 23, 2.5, 24, 9.5, 10, 3, 8.5)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="balancoire/StaticBody2D"]
+position = Vector2(49, -18)
+polygon = PackedVector2Array(10, 27, 16, 26, 8.5, 8, 2, 8)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="balancoire/StaticBody2D"]
+position = Vector2(-21.5, -4.5)
+polygon = PackedVector2Array(10, 27, 16, 26, 10, 9.5, 1, 9)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="balancoire/StaticBody2D"]
+position = Vector2(2, -28)
+polygon = PackedVector2Array(11, 14.5, -18.5, 16.5, -15.5, 22, 12, 21, 13.5, 16.5)
+
+[node name="balance" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(494, 541)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("10_kppby")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="balance"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="balance/StaticBody2D"]
+position = Vector2(-1.17645, 0)
+polygon = PackedVector2Array(24.7059, 12.9412, 8.82355, 28.8236, -1.17645, 25.2942, -10.5882, 39.4118, -39.4117, 35.2942, -7.05881, -8.82349, 21.1765, -8.23526)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(332, 637)
+shape = SubResource("RectangleShape2D_55ydb")
+
+[node name="barrière" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(6, 513)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("11_unygh")
+region_enabled = true
+region_rect = Rect2(289.181, 0, 10.8192, 108)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="barrière"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrière/StaticBody2D"]
+position = Vector2(0.454542, 6.59091)
+shape = SubResource("RectangleShape2D_kgp2x")
+
+[node name="HerbesHautes1" type="Sprite2D" parent="."]
+position = Vector2(329, 600)
+scale = Vector2(2, 2)
+texture = ExtResource("12_fk8cd")
+offset = Vector2(0, -5)
+
+[node name="HerbesHautes2" type="Sprite2D" parent="."]
+position = Vector2(444, 495)
+scale = Vector2(2, 2)
+texture = ExtResource("12_fk8cd")
+offset = Vector2(0, -5)
+
+[node name="HerbesHautes3" type="Sprite2D" parent="."]
+position = Vector2(79, 571)
+scale = Vector2(2, 2)
+texture = ExtResource("12_fk8cd")
+offset = Vector2(0, -5)
+
+[node name="rouge" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_r56y0")
+position = Vector2(249, 568)
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("14_h638b")
+offset = Vector2(0.5, -5.5)
+region_enabled = true
+region_rect = Rect2(6, 23, 7, 14)
+
+[node name="rouge2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_r56y0")
+position = Vector2(601, 475)
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("14_h638b")
+offset = Vector2(0, -4)
+region_enabled = true
+region_rect = Rect2(6, 23, 7, 14)
+
+[node name="jaune" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gimey")
+position = Vector2(363, 572)
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("14_h638b")
+region_enabled = true
+region_rect = Rect2(24, 21, 7, 17)
+
+[node name="trou_de_terre3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(427, 565)
+scale = Vector2(2, 2)
+texture = ExtResource("16_ovifo")
+offset = Vector2(3.5, -10.5)
+script = ExtResource("6_qx4kg")
+properties = SubResource("Resource_hrolg")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre3"]
+
+[node name="@CollisionShape2D@55401" type="CollisionShape2D" parent="trou_de_terre3/Area2D"]
+shape = SubResource("CircleShape2D_hrolg")
+
+[node name="Polygon2D" parent="trou_de_terre3" instance=ExtResource("8_faiot")]
+position = Vector2(-3, -10)
+
+[node name="trou_de_terre4" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(403, 452)
+scale = Vector2(2, 2)
+texture = ExtResource("16_ovifo")
+offset = Vector2(3.5, -10)
+script = ExtResource("6_qx4kg")
+properties = SubResource("Resource_hrolg")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre4"]
+
+[node name="@CollisionShape2D@55402" type="CollisionShape2D" parent="trou_de_terre4/Area2D"]
+shape = SubResource("CircleShape2D_g0t67")
+
+[node name="Polygon2D" parent="trou_de_terre4" instance=ExtResource("8_faiot")]
+position = Vector2(-3, -10)
+
+[node name="trou_de_terre5" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(42, 457)
+scale = Vector2(2, 2)
+texture = ExtResource("16_ovifo")
+offset = Vector2(4, -8.5)
+script = ExtResource("6_qx4kg")
+properties = SubResource("Resource_hrolg")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre5"]
+
+[node name="@CollisionShape2D@55403" type="CollisionShape2D" parent="trou_de_terre5/Area2D"]
+shape = SubResource("CircleShape2D_sufv0")
+
+[node name="Polygon2D" parent="trou_de_terre5" instance=ExtResource("8_faiot")]
+position = Vector2(-3, -10)
+
+[node name="trou_de_terre6" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(619, 586)
+scale = Vector2(2, 2)
+texture = ExtResource("16_ovifo")
+offset = Vector2(3.5, -9)
+script = ExtResource("6_qx4kg")
+properties = SubResource("Resource_g0t67")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="trou_de_terre6"]
+
+[node name="@CollisionShape2D@55404" type="CollisionShape2D" parent="trou_de_terre6/Area2D"]
+shape = SubResource("CircleShape2D_fmisc")
+
+[node name="Polygon2D" parent="trou_de_terre6" instance=ExtResource("8_faiot")]
+position = Vector2(-3, -10)
+
+[node name="goto_maison2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_maison2"]
+position = Vector2(106.75, 192)
+shape = SubResource("RectangleShape2D_fmisc")
+
+[node name="goto_maison5" type="Area2D" parent="."]
+position = Vector2(439, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_maison5"]
+position = Vector2(106.75, 192)
+shape = SubResource("RectangleShape2D_fmisc")
+
+[node name="pnjhomme" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(581, 510)
+scale = Vector2(2, 2)
+texture = ExtResource("18_mq37d")
+script = ExtResource("19_uow3i")
+nom_timeline = "pnj_homme3"
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pnjhomme"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pnjhomme/StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_1s7ji")
+
+[node name="Area2D" type="Area2D" parent="pnjhomme"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pnjhomme/Area2D"]
+shape = SubResource("CircleShape2D_qax44")
+
+[node name="Polygon2D" parent="pnjhomme" instance=ExtResource("8_faiot")]
+position = Vector2(0, -20)
+
+[node name="gestion_pnj" type="Node" parent="pnjhomme"]
+
+[node name="RpgParcItem0002Balançoire0000Calque-2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(175, 505)
+scale = Vector2(2, 2)
+texture = ExtResource("20_2aqep")
+offset = Vector2(0.5, -21)
+
+[connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
+[connection signal="body_entered" from="goto_maison2" to="." method="_on_goto_maison_2_body_entered"]
+[connection signal="body_entered" from="goto_maison5" to="." method="_on_goto_maison_5_body_entered"]
+[connection signal="body_entered" from="pnjhomme/Area2D" to="pnjhomme" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="pnjhomme/Area2D" to="pnjhomme" method="_on_area_2d_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://t5h8pq3nop40"]
+[gd_scene load_steps=17 format=3 uid="uid://t5h8pq3nop40"]
 
 [ext_resource type="Script" uid="uid://dcoeq7ho0eo0p" path="res://scripts/cinematique.gd" id="1_kppc5"]
 [ext_resource type="Texture2D" uid="uid://ce56sy7rxb6ar" path="res://sprites/textures/grass 3.png" id="2_r0wtw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://c2b0nsjbx2d3h" path="res://shaders/vignette.gdshader" id="5_xib5t"]
 [ext_resource type="Texture2D" uid="uid://cy6qmn0j6mtpm" path="res://sprites/vignette_shader.png" id="6_j8pg7"]
 [ext_resource type="FontFile" uid="uid://04rj6q4gw31c" path="res://polices/PixeloidSans.ttf" id="7_r0wtw"]
+[ext_resource type="FontFile" uid="uid://2ihjtnbho5wm" path="res://polices/MorePerfectDOSVGA.ttf" id="8_x5fem"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v86rl"]
 shader = ExtResource("3_x5fem")
@@ -98,7 +99,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_con2f"]
 resource_name = "cinematique_debut"
-length = 37.41
+length = 38.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -165,6 +166,10 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_x5fem"]
 font = ExtResource("7_r0wtw")
 font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_loff6"]
+font = ExtResource("8_x5fem")
+font_color = Color(1, 0, 0, 1)
 
 [node name="cinematique" type="Control"]
 layout_mode = 3
@@ -240,5 +245,31 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Skip [E]"
 label_settings = SubResource("LabelSettings_x5fem")
+
+[node name="error" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="error"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="error"]
+layout_mode = 0
+offset_right = 99.0
+offset_bottom = 23.0
+scale = Vector2(2, 1)
+text = "DISPLAY_ERR"
+label_settings = SubResource("LabelSettings_loff6")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

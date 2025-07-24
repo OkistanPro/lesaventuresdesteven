@@ -40,7 +40,7 @@ var machine_cafe_casse : bool = false
 var bataille : bool = false
 var parle_au_fermier : bool = false
 var graine_regarde : bool = false
-var in_cinematique : bool = false
+var in_cinematique : bool = true
 var in_menu : bool = false
 var fleche_input = preload("res://scenes/fleche_input.tscn")
 var in_reveil : bool = false:
@@ -57,6 +57,8 @@ var nombre_salete : int = 0:
 			event_declencheur.emit("fin_menage")
 
 var inventory : Array[ItemProperties]
+
+var current_event : String = ""
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS

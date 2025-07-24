@@ -1,0 +1,163 @@
+[gd_scene load_steps=17 format=3 uid="uid://ith3htcgtgom"]
+
+[ext_resource type="Script" uid="uid://d2pjo8tdcin7h" path="res://scripts/coffee.gd" id="1_fwran"]
+[ext_resource type="Texture2D" uid="uid://6mpp6sn40p3j" path="res://sprites/RPG-INTERRIEUR-TEA-COFFEE(2)_0002_Calque-7.png" id="2_juokc"]
+[ext_resource type="Texture2D" uid="uid://bf4wlx1ctr72x" path="res://sprites/persos/squeezie.png" id="3_p30wr"]
+[ext_resource type="Script" uid="uid://c7f5ewx6x32to" path="res://scripts/pnj_1.gd" id="4_onek5"]
+[ext_resource type="Texture2D" uid="uid://ckx4qwpr6pkgu" path="res://sprites/ecouteurs_0001_gauch.png" id="5_n7lgy"]
+[ext_resource type="Texture2D" uid="uid://ljct64b70rfq" path="res://sprites/ecouteurs_0000_droit.png" id="6_edxhq"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="7_dxijw"]
+[ext_resource type="Script" uid="uid://ce3wt56n24aep" path="res://scripts/gestion_cafe_pnj.gd" id="8_h4rhj"]
+[ext_resource type="Texture2D" uid="uid://bbihbsdjhxuoc" path="res://sprites/RPG-INTERRIEUR-TEA-COFFEE(2)_0001_chaise.png" id="9_guu5b"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="10_3knuf"]
+[ext_resource type="Script" uid="uid://bhsk7fhnl4vyo" path="res://scripts/interaction_component.gd" id="11_gnmsq"]
+[ext_resource type="Texture2D" uid="uid://bpqnekmqawth7" path="res://sprites/MACHINE_A_CAFE.png" id="12_cmb1s"]
+[ext_resource type="Script" uid="uid://d17k2ck20pl82" path="res://scripts/gestion_machine_cafe.gd" id="13_48pnj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovig0"]
+size = Vector2(17, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5yp7a"]
+radius = 29.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jxaq"]
+radius = 65.0
+
+[node name="Coffee" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_fwran")
+
+[node name="Rpg-interrieur-tea-coffee(2)0001Calque-7" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+scale = Vector2(2, 2)
+texture = ExtResource("2_juokc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rpg-interrieur-tea-coffee(2)0001Calque-7"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rpg-interrieur-tea-coffee(2)0001Calque-7/StaticBody2D"]
+polygon = PackedVector2Array(-59, -5, -34.5, -2, -28, -1.5, 35, -2.5, 59.5, -6, 65.5, -18.5, 65.5, -29.5, -65.5, -29, -65.5, -15)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Rpg-interrieur-tea-coffee(2)0001Calque-7/StaticBody2D"]
+polygon = PackedVector2Array(-59, -14.5, -59, 56.5, -54, 62, -40.5, 70, -27.5, 77, -34, 82.5, -63, 69.5, -68.5, 47, -67.5, -14.5)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Rpg-interrieur-tea-coffee(2)0001Calque-7/StaticBody2D"]
+polygon = PackedVector2Array(15, 90, 16, 97, 75.5, 100.5, 66, -24, 60, -19.5, 60, 92.5, 37.5, 91.5)
+
+[node name="Squeezie" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(404, 234)
+scale = Vector2(2, 2)
+texture = ExtResource("3_p30wr")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 0, 19, 23.6656)
+script = ExtResource("4_onek5")
+nom_timeline = "gerant_cafe"
+metadata/_custom_type_script = "uid://c7f5ewx6x32to"
+
+[node name="ecouteur_gauche" type="Sprite2D" parent="Squeezie"]
+visible = false
+position = Vector2(-5.5, -12)
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("5_n7lgy")
+
+[node name="ecouteur_droite" type="Sprite2D" parent="Squeezie"]
+visible = false
+show_behind_parent = true
+position = Vector2(6, -12)
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("6_edxhq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Squeezie"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Squeezie/StaticBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_ovig0")
+
+[node name="Area2D" type="Area2D" parent="Squeezie"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Squeezie/Area2D"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_5yp7a")
+
+[node name="Polygon2D" parent="Squeezie" instance=ExtResource("7_dxijw")]
+position = Vector2(0, -20.5)
+
+[node name="gestion_pnj" type="Node" parent="Squeezie"]
+script = ExtResource("8_h4rhj")
+
+[node name="table1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(335, 333)
+scale = Vector2(2, 2)
+texture = ExtResource("9_guu5b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="table1/StaticBody2D"]
+position = Vector2(-163.5, -167)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(292, 344, 360, 344, 360, 327, 292, 327)
+
+[node name="table2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(463, 333)
+scale = Vector2(2, 2)
+texture = ExtResource("9_guu5b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="table2/StaticBody2D"]
+position = Vector2(-163.5, -167)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(292, 344, 360, 344, 360, 327, 292, 327)
+
+[node name="table3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(463, 397)
+scale = Vector2(2, 2)
+texture = ExtResource("9_guu5b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="table3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="table3/StaticBody2D"]
+position = Vector2(-163.5, -167)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(292, 344, 360, 344, 360, 327, 292, 327)
+
+[node name="steven" parent="." instance=ExtResource("10_3knuf")]
+position = Vector2(394, 444)
+
+[node name="goto_rue" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="goto_rue"]
+position = Vector2(0, 3)
+polygon = PackedVector2Array(334, 460, 434, 493, 434, 504, 322, 469)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(446, 249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 2
+shape = SubResource("CircleShape2D_3jxaq")
+
+[node name="InteractionComponent" type="Node" parent="Area2D"]
+script = ExtResource("11_gnmsq")
+nom_timeline_selon_select = Dictionary[String, String]({
+"hache": "machine_cafe_casse"
+})
+metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
+
+[node name="Polygon2D" parent="Area2D" instance=ExtResource("7_dxijw")]
+position = Vector2(0, -21)
+
+[node name="MachineAThe" type="Sprite2D" parent="Area2D"]
+z_index = 1
+texture = ExtResource("12_cmb1s")
+
+[node name="gestion_machine" type="Node" parent="Area2D/MachineAThe"]
+script = ExtResource("13_48pnj")
+
+[connection signal="body_entered" from="Squeezie/Area2D" to="Squeezie" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Squeezie/Area2D" to="Squeezie" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="goto_rue" to="." method="_on_goto_rue_body_entered"]

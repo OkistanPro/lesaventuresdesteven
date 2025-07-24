@@ -1,0 +1,334 @@
+[gd_scene load_steps=34 format=3 uid="uid://byuh7y82531fh"]
+
+[ext_resource type="Script" uid="uid://bxwbufplhaoe4" path="res://scripts/mairie.gd" id="1_lfbs6"]
+[ext_resource type="Texture2D" uid="uid://bgsd57pfim1pw" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0003_Calque-4.png" id="2_mhufu"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="3_2j3ie"]
+[ext_resource type="Script" uid="uid://bhsk7fhnl4vyo" path="res://scripts/interaction_component.gd" id="4_ba3kv"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="5_whte5"]
+[ext_resource type="Texture2D" uid="uid://bnsqkaivj4lbi" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0000__0002_Calque-2.png" id="6_mdcqx"]
+[ext_resource type="Texture2D" uid="uid://6cb0o27ukdgm" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0000_Calque-7.png" id="7_ji3lh"]
+[ext_resource type="Texture2D" uid="uid://dmgf5yscfyi76" path="res://sprites/mairie_ferme.png" id="8_levs2"]
+[ext_resource type="Texture2D" uid="uid://bofddoobjtt1m" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0001_Calque-6.png" id="9_mnb3k"]
+[ext_resource type="Texture2D" uid="uid://dfie020u7o3kg" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0002_Calque-5.png" id="10_h5ejo"]
+[ext_resource type="Script" uid="uid://hnk24o2qo5cf" path="res://scripts/gestion_ascenceur_mairie.gd" id="11_kxjpk"]
+[ext_resource type="Texture2D" uid="uid://c75oex87p8shy" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0003_fauteuil.png" id="12_jbvmf"]
+[ext_resource type="Texture2D" uid="uid://dovw0f5k2m4ok" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0002_chaise_bureau.png" id="13_dk3xv"]
+[ext_resource type="Texture2D" uid="uid://52jws6uicdl7" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0003_Calque-4_0000_arbuste.png" id="14_7a8n5"]
+[ext_resource type="Texture2D" uid="uid://dcamqqnooaxye" path="res://sprites/RPG-MAIRIE-INTERRIEUR_0002_table.png" id="15_eurnb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hi4im"]
+radius = 40.1123
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndark"]
+radius = 27.0046
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eixl"]
+size = Vector2(15, 12.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esxgy"]
+size = Vector2(68.5, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kmr1"]
+size = Vector2(24, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndark"]
+size = Vector2(7.75, 98.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tl5ly"]
+size = Vector2(7.75, 156.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqq6x"]
+size = Vector2(79.5, 6.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axyvi"]
+size = Vector2(22.5, 6.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hi4im"]
+size = Vector2(9, 61)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1kmr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_levs2")
+}],
+"loop": true,
+"name": &"ferme",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_mnb3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h5ejo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_levs2")
+}],
+"loop": false,
+"name": &"fermeture",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_mnb3k")
+}],
+"loop": true,
+"name": &"ouvert",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_levs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h5ejo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mnb3k")
+}],
+"loop": false,
+"name": &"ouverture",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njdkl"]
+size = Vector2(37.5, 9.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_auwd4"]
+size = Vector2(398, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bnug"]
+size = Vector2(61, 242)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hiesn"]
+size = Vector2(224.5, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfp31"]
+size = Vector2(103.5, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_654r0"]
+size = Vector2(76, 24.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktdr6"]
+size = Vector2(62, 16)
+
+[node name="Mairie" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_lfbs6")
+
+[node name="bureau" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(368, 201)
+scale = Vector2(2, 2)
+texture = ExtResource("2_mhufu")
+
+[node name="steven" parent="." instance=ExtResource("3_2j3ie")]
+position = Vector2(460, 461)
+
+[node name="trappe" type="Area2D" parent="."]
+process_mode = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trappe"]
+position = Vector2(326, 213)
+shape = SubResource("CircleShape2D_hi4im")
+
+[node name="InteractionComponent" type="Node" parent="trappe"]
+script = ExtResource("4_ba3kv")
+nom_timeline = "trappe"
+metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
+
+[node name="Polygon2D" parent="trappe" instance=ExtResource("5_whte5")]
+z_index = 3
+position = Vector2(320, 185)
+
+[node name="bouton" type="Area2D" parent="."]
+position = Vector2(400, 396)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bouton"]
+position = Vector2(57.5, -51.5)
+shape = SubResource("CircleShape2D_ndark")
+
+[node name="InteractionComponent" type="Node" parent="bouton"]
+script = ExtResource("4_ba3kv")
+nom_timeline = "ouvrir_ascenceur"
+metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
+
+[node name="Polygon2D" parent="bouton" instance=ExtResource("5_whte5")]
+z_index = 3
+position = Vector2(57.5, -59.5)
+scale = Vector2(0.2, 0.2)
+color = Color(0, 0, 0, 1)
+
+[node name="hall_entree" type="Node2D" parent="."]
+visible = false
+y_sort_enabled = true
+
+[node name="Rpg-mairie-interrieur00000002Calque-2" type="Sprite2D" parent="hall_entree"]
+z_index = 1
+position = Vector2(408, 442)
+scale = Vector2(2, 2)
+texture = ExtResource("6_mdcqx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="hall_entree/Rpg-mairie-interrieur00000002Calque-2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hall_entree/Rpg-mairie-interrieur00000002Calque-2/StaticBody2D"]
+position = Vector2(-3, 12.75)
+shape = SubResource("RectangleShape2D_2eixl")
+
+[node name="Rpg-mairie-interrieur0000Calque-7" type="Sprite2D" parent="hall_entree"]
+position = Vector2(400, 396)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ji3lh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="hall_entree/Rpg-mairie-interrieur0000Calque-7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hall_entree/Rpg-mairie-interrieur0000Calque-7/StaticBody2D"]
+position = Vector2(-43.75, 49.5)
+shape = SubResource("RectangleShape2D_esxgy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="hall_entree/Rpg-mairie-interrieur0000Calque-7/StaticBody2D"]
+position = Vector2(2.5, 74.5)
+shape = SubResource("RectangleShape2D_1kmr1")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="hall_entree/Rpg-mairie-interrieur0000Calque-7/StaticBody2D"]
+position = Vector2(57.5, 74.5)
+shape = SubResource("RectangleShape2D_1kmr1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hall_entree/Rpg-mairie-interrieur0000Calque-7/StaticBody2D"]
+position = Vector2(-74.125, -28.75)
+shape = SubResource("RectangleShape2D_ndark")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="hall_entree/Rpg-mairie-interrieur0000Calque-7/StaticBody2D"]
+position = Vector2(73.375, 0.25)
+shape = SubResource("RectangleShape2D_tl5ly")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="hall_entree/Rpg-mairie-interrieur0000Calque-7/StaticBody2D"]
+position = Vector2(-30.25, -39.25)
+shape = SubResource("RectangleShape2D_uqq6x")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="hall_entree/Rpg-mairie-interrieur0000Calque-7/StaticBody2D"]
+position = Vector2(59.25, -39.25)
+shape = SubResource("RectangleShape2D_axyvi")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="hall_entree/Rpg-mairie-interrieur0000Calque-7/StaticBody2D"]
+position = Vector2(-17, -11.5)
+shape = SubResource("RectangleShape2D_hi4im")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hall_entree/Rpg-mairie-interrieur0000Calque-7/StaticBody2D"]
+polygon = PackedVector2Array(50.5, -23.5, 52, -13, 53.5, 3, 53, 8.5, 53, 15, 57, 16.5, 65.5, 14, 67, 7.5, 66.5, -21.5, 65.5, -26.5, 62.5, -28, 52, -28)
+
+[node name="MairieFerme" type="AnimatedSprite2D" parent="hall_entree"]
+position = Vector2(459, 289)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1kmr1")
+animation = &"ferme"
+script = ExtResource("11_kxjpk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="hall_entree/MairieFerme"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hall_entree/MairieFerme/StaticBody2D"]
+position = Vector2(-0.75, 12.75)
+shape = SubResource("RectangleShape2D_njdkl")
+
+[node name="ColorRect" type="ColorRect" parent="hall_entree"]
+z_index = 3
+offset_left = 192.0
+offset_top = 70.0
+offset_right = 605.0
+offset_bottom = 244.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="hall_entree"]
+z_index = 3
+offset_left = 192.0
+offset_top = 70.0
+offset_right = 257.0
+offset_bottom = 336.0
+color = Color(0, 0, 0, 1)
+
+[node name="collision_bureau" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="collision_bureau"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision_bureau/StaticBody2D"]
+position = Vector2(359, 118)
+shape = SubResource("RectangleShape2D_auwd4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="collision_bureau/StaticBody2D"]
+position = Vector2(190.5, 204)
+shape = SubResource("RectangleShape2D_1bnug")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="collision_bureau/StaticBody2D"]
+position = Vector2(311.75, 340)
+shape = SubResource("RectangleShape2D_hiesn")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="collision_bureau/StaticBody2D"]
+position = Vector2(545.25, 339.5)
+shape = SubResource("RectangleShape2D_nfp31")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="collision_bureau/StaticBody2D"]
+position = Vector2(567.5, 203)
+shape = SubResource("RectangleShape2D_1bnug")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision_bureau/StaticBody2D"]
+polygon = PackedVector2Array(538, 212, 515, 212, 513, 217, 513, 237, 503, 236, 503, 285, 515, 287, 515, 290, 539, 290)
+
+[node name="Rpg-mairie-interrieur0003Fauteuil" type="Sprite2D" parent="collision_bureau"]
+z_index = 1
+position = Vector2(394, 295)
+scale = Vector2(2, 2)
+texture = ExtResource("12_jbvmf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="collision_bureau/Rpg-mairie-interrieur0003Fauteuil"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision_bureau/Rpg-mairie-interrieur0003Fauteuil/StaticBody2D"]
+polygon = PackedVector2Array(-14, 1, -7.5, -3, 4, -5.5, 13, -3.5, 15.5, 0, 12.5, 4.5, 8.5, 9.5, 4.5, 12, -2.5, 12, -9, 10, -12.5, 5)
+
+[node name="Rpg-mairie-interrieur0002ChaiseBureau" type="Sprite2D" parent="collision_bureau"]
+z_index = 1
+position = Vector2(377, 166)
+scale = Vector2(2, 2)
+texture = ExtResource("13_dk3xv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="collision_bureau/Rpg-mairie-interrieur0002ChaiseBureau"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision_bureau/Rpg-mairie-interrieur0002ChaiseBureau/StaticBody2D"]
+polygon = PackedVector2Array(-11, 15, -9.5, 14.5, -6, 13, 0.5, 16, 5.5, 16, 9, 12.5, 9, 4.5, -5.5, -0.5, -11, 5)
+
+[node name="Rpg-mairie-interrieur0003Calque-40000Arbuste" type="Sprite2D" parent="collision_bureau"]
+z_index = 1
+position = Vector2(525, 192)
+scale = Vector2(2, 2)
+texture = ExtResource("14_7a8n5")
+offset = Vector2(-0.5, -3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="collision_bureau/Rpg-mairie-interrieur0003Calque-40000Arbuste"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collision_bureau/Rpg-mairie-interrieur0003Calque-40000Arbuste/StaticBody2D"]
+position = Vector2(-262.5, -96)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(529, 192, 514, 197, 514, 208, 519, 212, 531, 212, 535, 209, 535, 195)
+
+[node name="Rpg-mairie-interrieur0002Table" type="Sprite2D" parent="collision_bureau"]
+z_index = 1
+position = Vector2(361, 215)
+scale = Vector2(2, 2)
+texture = ExtResource("15_eurnb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="collision_bureau/Rpg-mairie-interrieur0002Table"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision_bureau/Rpg-mairie-interrieur0002Table/StaticBody2D"]
+position = Vector2(0, 11.25)
+shape = SubResource("RectangleShape2D_654r0")
+
+[node name="goto_village" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_village"]
+position = Vector2(460, 558)
+shape = SubResource("RectangleShape2D_ktdr6")
+
+[connection signal="body_entered" from="goto_village" to="." method="_on_goto_village_body_entered"]

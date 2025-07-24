@@ -12,6 +12,7 @@ nom_perso = "Steven"
 mess = "Ok, ça marche !"
 liste_choix = Array[ExtResource("2_buto7")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_bri35"]
@@ -20,6 +21,7 @@ nom_perso = "Vendeur"
 mess = "Yes, je savais que je pouvais compter sur toi !"
 liste_choix = Array[ExtResource("2_buto7")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_dfj64"]
@@ -28,6 +30,7 @@ nom_perso = "Vendeur"
 mess = "Si tu veux je t'offrirai un objet gratuit, ce que tu veux dans ma boutique !"
 liste_choix = Array[ExtResource("2_buto7")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_fskkh"]
@@ -36,6 +39,7 @@ nom_perso = "Steven"
 mess = "Giga cool ça !"
 liste_choix = Array[ExtResource("2_buto7")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_ol38h"]
@@ -62,6 +66,7 @@ nom_perso = "Steven"
 mess = "Je vais d'abord continuer à me balader, mais je reviendrais, promis !"
 liste_choix = Array[ExtResource("2_buto7")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_7qor2"]
@@ -70,6 +75,7 @@ nom_perso = "Vendeur"
 mess = "Ok !"
 liste_choix = Array[ExtResource("2_buto7")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_geibq"]
@@ -90,6 +96,7 @@ nom_perso = "Vendeur"
 mess = "Alors, tu voudras m'aider à rapporter ma montre ?"
 liste_choix = Array[ExtResource("2_buto7")]([SubResource("Resource_fgggp"), SubResource("Resource_xwul4")])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]

@@ -93,3 +93,24 @@ func _on_btn_envoie_pressed() -> void:
 	else:
 		GestionSons.play_sound("no_timeline")
 		$coffre.visible = false
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("interagir") and Globals.selected_item != -1 and Globals.selected_item_name == &"██████████████":
+		if not $glitch2.visible:
+			$glitch2.visible = true
+			$glitch2/AudioStreamPlayer.play()
+		else:
+			$glitch2.visible = false
+	if event.is_action_pressed("cancel"):
+		if not get_tree().paused:
+			if not $"Quêtes".visible and not $glitch0.visible and not $glitch1.visible and not $glitch2.visible and not $MecChelouGrand.visible and not GestionDialogue.active:
+				get_tree().paused = true
+				$pause.visible = true
+				get_viewport().set_input_as_handled()
+		else:
+			get_tree().paused = false
+			$pause.visible = false
+			get_viewport().set_input_as_handled()
+func _on_glitch_2_visibility_changed() -> void:
+	if not $glitch2.visible:
+		$glitch2/AudioStreamPlayer.stop()

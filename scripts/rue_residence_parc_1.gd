@@ -1,6 +1,7 @@
 extends Node2D
 
 var montre = preload("res://scenes/montre.tscn")
+var montre_alter1 = preload("res://scenes/montre_alter1.tscn")
 
 func _ready() -> void:
 	Musique.interieur = false
@@ -25,13 +26,22 @@ func _on_goto_rue_droite_body_entered(body: Node2D) -> void:
 
 func _montre(nom_event  : String) -> void:
 	if nom_event == "montre":
-		var montre_instance = montre.instantiate()
-		$trou_de_terre6.add_child(montre_instance)
-		$trou_de_terre6.properties.event_on_not_pick = &"trou_vide"
-		montre_instance.reparent(self)
-		$trou_de_terre6/Polygon2D.visible = false
-		$trou_de_terre6/Area2D.monitoring = false
-		GestionSons.play_sound("terre")
+		if GestionsEvents.current_event == "normal":
+			var montre_instance = montre.instantiate()
+			$trou_de_terre6.add_child(montre_instance)
+			$trou_de_terre6.properties.event_on_not_pick = &"trou_vide"
+			montre_instance.reparent(self)
+			$trou_de_terre6/Polygon2D.visible = false
+			$trou_de_terre6/Area2D.monitoring = false
+			GestionSons.play_sound("terre")
+		if GestionsEvents.current_event == "event_alter1":
+			var montre_instance = montre_alter1.instantiate()
+			$trou_de_terre6.add_child(montre_instance)
+			$trou_de_terre6.properties.event_on_not_pick = &"trou_vide"
+			montre_instance.reparent(self)
+			$trou_de_terre6/Polygon2D.visible = false
+			$trou_de_terre6/Area2D.monitoring = false
+			GestionSons.play_sound("terre")
 
 func _on_goto_maison_2_body_entered(body: Node2D) -> void:
 	if body == $steven:

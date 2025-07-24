@@ -29,6 +29,11 @@ func _ready() -> void:
 		$mecsombre.visible = true
 
 	GestionDialogue.event_declencheur.connect(event_timeline)
+	
+	if GestionsEvents.current_event == "event_alter1":
+		if get_node_or_null("PetitePnj"):
+			$PetitePnj.nom_timeline = "pnj_fille2_alter1"
+		$mecsombre.nom_timeline = "mec_sombre_alter1"
 
 func _on_goto_rue_gauche_body_entered(body: Node2D) -> void:
 	if body == $steven:
@@ -60,3 +65,7 @@ func event_timeline(nom_event : String) -> void:
 	if nom_event == "reprendre_musique":
 		$Cle2.visible = true
 		$Cle2.properties.pickable = true
+	if nom_event == "supprimer_fille":
+		$PetitePnj.queue_free()
+		await get_tree().create_timer(3.0).timeout
+		Musique.play()

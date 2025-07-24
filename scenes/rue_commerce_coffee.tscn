@@ -43,7 +43,7 @@ size = Vector2(17.3333, 26)
 radius = 24.2304
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqfty"]
-size = Vector2(303.409, 32.7273)
+size = Vector2(303.409, 35.9091)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rwh8"]
 size = Vector2(117.273, 71.3636)
@@ -638,7 +638,7 @@ texture = ExtResource("13_vjt2x")
 [node name="StaticBody2D" type="StaticBody2D" parent="MaisonsFront"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
-position = Vector2(0.568253, -17.2727)
+position = Vector2(0.568253, -18.8636)
 shape = SubResource("RectangleShape2D_jqfty")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MaisonsFront/StaticBody2D"]

@@ -29,7 +29,7 @@ distance = 179.0
 size = Vector2(96, 575)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3f2s"]
-size = Vector2(303.409, 82.2728)
+size = Vector2(303.409, 85.4546)
 
 [sub_resource type="Resource" id="Resource_6asm6"]
 script = ExtResource("11_p1xge")
@@ -157,7 +157,7 @@ texture = ExtResource("5_1dxhs")
 [node name="StaticBody2D" type="StaticBody2D" parent="MaisonsFront"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
-position = Vector2(0.568253, 7.50003)
+position = Vector2(0.568253, 5.90912)
 shape = SubResource("RectangleShape2D_w3f2s")
 
 [node name="epicerie" type="Sprite2D" parent="."]
@@ -193,7 +193,7 @@ polygon = PackedVector2Array(-26, 10, -19, 10, -14, 13, 12, 13, 21, 13, 26, 9, 2
 
 [node name="boites_epicerie4" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(50, 192)
+position = Vector2(98, 176)
 texture = ExtResource("7_7jho8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="boites_epicerie4"]

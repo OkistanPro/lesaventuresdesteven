@@ -25,6 +25,7 @@ interface="*res://scenes/interface.tscn"
 filter="*res://scenes/filter.tscn"
 GestionSons="*res://scripts/GestionSons.gd"
 GestionQuetes="*res://scripts/gestion_quetes.gd"
+GestionsEvents="*res://scripts/gestions_events.gd"
 
 [display]
 
@@ -34,6 +35,10 @@ window/size/window_width_override=800
 window/size/window_height_override=600
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
+
+[editor]
+
+export/convert_text_resources_to_binary=false
 
 [input]
 

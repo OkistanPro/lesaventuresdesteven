@@ -39,7 +39,7 @@ size = Vector2(16, 229)
 size = Vector2(52.5, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1isu"]
-size = Vector2(12.7273, 91.3636)
+size = Vector2(15.4546, 102.727)
 
 [node name="rue_residence_champ" type="Node2D"]
 y_sort_enabled = true
@@ -138,6 +138,7 @@ position = Vector2(106.75, 208)
 shape = SubResource("RectangleShape2D_itce0")
 
 [node name="barrière" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(646, 530)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("10_18sym")
@@ -147,7 +148,7 @@ region_rect = Rect2(289.483, 0, 10.5172, 108)
 [node name="StaticBody2D" type="StaticBody2D" parent="barrière"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barrière/StaticBody2D"]
-position = Vector2(3.63635, 3.40909)
+position = Vector2(2.27274, -2.27274)
 shape = SubResource("RectangleShape2D_e1isu")
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]

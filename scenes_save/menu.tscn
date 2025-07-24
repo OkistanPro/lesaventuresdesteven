@@ -1,0 +1,723 @@
+[gd_scene load_steps=13 format=3 uid="uid://cl0yqd1x6y2l6"]
+
+[ext_resource type="Script" uid="uid://b4g4xapwogta7" path="res://scripts/menu.gd" id="1_xasp6"]
+[ext_resource type="Texture2D" uid="uid://b3peavhtav44h" path="res://sprites/textures/ground 1.png" id="2_m4162"]
+[ext_resource type="Texture2D" uid="uid://brdmhulm0jtlw" path="res://sprites/title_screen.png" id="3_ldlsi"]
+[ext_resource type="Texture2D" uid="uid://b2lxkarf8wcvv" path="res://sprites/msg_box2.png" id="4_yc7hc"]
+[ext_resource type="FontFile" uid="uid://04rj6q4gw31c" path="res://polices/PixeloidSans.ttf" id="5_eflao"]
+[ext_resource type="Script" uid="uid://dsxr6osdlnnvc" path="res://scripts/jouer.gd" id="6_up7c5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mhnvy"]
+texture = ExtResource("4_yc7hc")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb58"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.6, 0.6, 0.6, 0.439216)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.34, 0.34, 0.34, 0.439216)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhnvy"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3eks"]
+font = ExtResource("5_eflao")
+
+[sub_resource type="LabelSettings" id="LabelSettings_v86rl"]
+font = ExtResource("5_eflao")
+font_size = 9
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xasp6")
+
+[node name="fond" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -200.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_m4162")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -181.0
+offset_top = 40.0
+offset_right = 181.0
+offset_bottom = 80.0
+grow_horizontal = 2
+texture = ExtResource("3_ldlsi")
+stretch_mode = 2
+
+[node name="menu" type="CanvasLayer" parent="."]
+
+[node name="ItemList" type="Panel" parent="menu"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -127.0
+offset_right = 111.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_mhnvy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu/ItemList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="jouer" type="Button" parent="menu/ItemList/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_eflao")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_vjb58")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_con2f")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhnvy")
+text = "Jouer"
+script = ExtResource("6_up7c5")
+
+[node name="options" type="Button" parent="menu/ItemList/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_eflao")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_vjb58")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_con2f")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhnvy")
+text = "Options"
+
+[node name="quitter" type="Button" parent="menu/ItemList/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_eflao")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_vjb58")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_con2f")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhnvy")
+text = "Quitter"
+
+[node name="options" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="options"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 119.0
+offset_right = -31.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mhnvy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="options/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="musique" type="Control" parent="options/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(336, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="options/Panel/VBoxContainer/musique"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -10.5
+offset_right = 161.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Volume musique :"
+label_settings = SubResource("LabelSettings_g3eks")
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="options/Panel/VBoxContainer/musique"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -7.5
+offset_right = -12.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sfx" type="Control" parent="options/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(336, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="options/Panel/VBoxContainer/sfx"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -10.5
+offset_right = 161.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Volume SFX :"
+label_settings = SubResource("LabelSettings_g3eks")
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="options/Panel/VBoxContainer/sfx"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -7.5
+offset_right = -12.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="qualite" type="Control" parent="options/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(336, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="options/Panel/VBoxContainer/qualite"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -10.5
+offset_right = 161.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Qualité du jeu :"
+label_settings = SubResource("LabelSettings_g3eks")
+horizontal_alignment = 2
+
+[node name="OptionButton" type="OptionButton" parent="options/Panel/VBoxContainer/qualite"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 175.0
+offset_top = -10.0
+offset_right = -11.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_eflao")
+theme_override_font_sizes/font_size = 9
+item_count = 2
+popup/item_0/text = "Faible"
+popup/item_0/id = 0
+popup/item_1/text = "Elevée"
+popup/item_1/id = 1
+
+[node name="controles" type="Control" parent="options/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(336, 30)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="options/Panel/VBoxContainer/controles"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = -9.0
+offset_right = -81.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_eflao")
+theme_override_font_sizes/font_size = 9
+text = "Contrôles"
+
+[node name="retour" type="Control" parent="options/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(336, 30)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="options/Panel/VBoxContainer/retour"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = -2.0
+offset_right = -81.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_eflao")
+theme_override_font_sizes/font_size = 9
+text = "Retour"
+
+[node name="controles" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="controles"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mhnvy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="controles/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 5.0
+offset_bottom = 211.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controles/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="control_instance" type="Control" parent="controles/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+
+[node name="nom_contrôle" type="Label" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = -100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Haut :"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance" groups=["boutons_controles"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "Salut"
+
+[node name="control_instance2" type="Control" parent="controles/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+
+[node name="nom_contrôle" type="Label" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = -100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bas :"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance2" groups=["boutons_controles"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "Salut"
+
+[node name="control_instance3" type="Control" parent="controles/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+
+[node name="nom_contrôle" type="Label" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance3"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = -100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Gauche :"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance3" groups=["boutons_controles"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "Salut"
+
+[node name="control_instance4" type="Control" parent="controles/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+
+[node name="nom_contrôle" type="Label" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance4"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = -100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Droite :"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance4" groups=["boutons_controles"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "Salut"
+
+[node name="control_instance5" type="Control" parent="controles/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+
+[node name="nom_contrôle" type="Label" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance5"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = -100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Courir :"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance5" groups=["boutons_controles"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "Salut"
+
+[node name="control_instance6" type="Control" parent="controles/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+
+[node name="nom_contrôle" type="Label" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance6"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = -100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Interagir :"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance6" groups=["boutons_controles"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "Salut"
+
+[node name="control_instance7" type="Control" parent="controles/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+
+[node name="nom_contrôle" type="Label" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance7"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = -100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Retour :"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="controles/Panel/HBoxContainer/VBoxContainer/control_instance7" groups=["boutons_controles"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "Salut"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="controles/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="control_instance" type="Control" parent="controles/Panel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+
+[node name="nom_contrôle" type="Label" parent="controles/Panel/HBoxContainer/VBoxContainer2/control_instance"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = -100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sélectionner item :"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="controles/Panel/HBoxContainer/VBoxContainer2/control_instance" groups=["boutons_controles"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "Salut"
+
+[node name="control_instance2" type="Control" parent="controles/Panel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+
+[node name="nom_contrôle" type="Label" parent="controles/Panel/HBoxContainer/VBoxContainer2/control_instance2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = -100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Inventaire - gauche :"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="controles/Panel/HBoxContainer/VBoxContainer2/control_instance2" groups=["boutons_controles"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "Salut"
+
+[node name="control_instance3" type="Control" parent="controles/Panel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+
+[node name="nom_contrôle" type="Label" parent="controles/Panel/HBoxContainer/VBoxContainer2/control_instance3"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = -100.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Inventaire - droite :"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="controles/Panel/HBoxContainer/VBoxContainer2/control_instance3" groups=["boutons_controles"]]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+toggle_mode = true
+text = "Salut"
+
+[node name="retour" type="Button" parent="controles/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 92.0
+offset_top = -34.0
+offset_right = -87.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Retour"
+
+[connection signal="pressed" from="menu/ItemList/VBoxContainer/jouer" to="menu/ItemList/VBoxContainer/jouer" method="_on_pressed"]
+[connection signal="pressed" from="menu/ItemList/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="menu/ItemList/VBoxContainer/quitter" to="." method="_on_quitter_pressed"]
+[connection signal="value_changed" from="options/Panel/VBoxContainer/musique/HSlider" to="." method="_on_musique_value_changed"]
+[connection signal="value_changed" from="options/Panel/VBoxContainer/sfx/HSlider" to="." method="_on_sfx_value_changed"]
+[connection signal="item_selected" from="options/Panel/VBoxContainer/qualite/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="options/Panel/VBoxContainer/controles/Button" to="." method="_on_button_controles_pressed"]
+[connection signal="pressed" from="options/Panel/VBoxContainer/retour/Button" to="." method="_on_button_retour_options_pressed"]
+[connection signal="toggled" from="controles/Panel/HBoxContainer/VBoxContainer/control_instance/Button" to="." method="_on_button_up_toggled"]
+[connection signal="toggled" from="controles/Panel/HBoxContainer/VBoxContainer/control_instance2/Button" to="." method="_on_button_down_toggled"]
+[connection signal="toggled" from="controles/Panel/HBoxContainer/VBoxContainer/control_instance3/Button" to="." method="_on_button_left_toggled"]
+[connection signal="toggled" from="controles/Panel/HBoxContainer/VBoxContainer/control_instance4/Button" to="." method="_on_button_right_toggled"]
+[connection signal="toggled" from="controles/Panel/HBoxContainer/VBoxContainer/control_instance5/Button" to="." method="_on_button_run_toggled"]
+[connection signal="toggled" from="controles/Panel/HBoxContainer/VBoxContainer/control_instance6/Button" to="." method="_on_button_interagir_toggled"]
+[connection signal="toggled" from="controles/Panel/HBoxContainer/VBoxContainer/control_instance7/Button" to="." method="_on_button_cancel_toggled"]
+[connection signal="toggled" from="controles/Panel/HBoxContainer/VBoxContainer2/control_instance/Button" to="." method="_on_button_inv1_toggled"]
+[connection signal="toggled" from="controles/Panel/HBoxContainer/VBoxContainer2/control_instance2/Button" to="." method="_on_button_inv2_toggled"]
+[connection signal="toggled" from="controles/Panel/HBoxContainer/VBoxContainer2/control_instance3/Button" to="." method="_on_button_inv3_toggled"]
+[connection signal="pressed" from="controles/Panel/retour" to="." method="_on_retour_controles_pressed"]

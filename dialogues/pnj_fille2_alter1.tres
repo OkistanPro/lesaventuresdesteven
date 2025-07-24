@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=14 format=3 uid="uid://cibldxs8mvx0b"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_l6qud"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_q1k2s"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_m3ng0"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_brxn1"]
+[ext_resource type="Script" uid="uid://b2khngrg30oaj" path="res://scripts/dialogues/D_pause.gd" id="4_m3ng0"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="5_brxn1"]
+
+[sub_resource type="Resource" id="Resource_0v3fq"]
+script = ExtResource("3_m3ng0")
+nom_perso = "Petite fille"
+mess = "Regarde ce que j'ai trouvé dans la fontaine."
+liste_choix = Array[ExtResource("2_q1k2s")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_4pi0l"]
+script = ExtResource("3_m3ng0")
+nom_perso = "Petite fille"
+mess = "‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ "
+liste_choix = Array[ExtResource("2_q1k2s")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_tasd6"]
+script = ExtResource("3_m3ng0")
+nom_perso = "Petite fille"
+mess = "C'est un caillou spécial, qui a la forme d'un PLAY_SOUNDFILE_0001"
+liste_choix = Array[ExtResource("2_q1k2s")]([])
+event_at_start = ""
+no_end = true
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_m3ng0"]
+script = ExtResource("5_brxn1")
+nom_event = "stop_musique"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[sub_resource type="Resource" id="Resource_brxn1"]
+script = ExtResource("5_brxn1")
+nom_event = "play_telephone"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[sub_resource type="Resource" id="Resource_swot4"]
+script = ExtResource("4_m3ng0")
+temps = 6.0
+affiche_dialogue = true
+metadata/_custom_type_script = "uid://b2khngrg30oaj"
+
+[sub_resource type="Resource" id="Resource_6uyo2"]
+script = ExtResource("5_brxn1")
+nom_event = "affiche_telephone"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[resource]
+script = ExtResource("4_brxn1")
+liste_messages = Array[ExtResource("1_l6qud")]([SubResource("Resource_0v3fq"), SubResource("Resource_4pi0l"), SubResource("Resource_tasd6"), SubResource("Resource_m3ng0"), SubResource("Resource_brxn1"), SubResource("Resource_swot4"), SubResource("Resource_6uyo2")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

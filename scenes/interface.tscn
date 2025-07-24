@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cohg5vn5u2qe8"]
+[gd_scene load_steps=33 format=3 uid="uid://cohg5vn5u2qe8"]
 
 [ext_resource type="Script" uid="uid://bhybyokoixsmm" path="res://scripts/interface.gd" id="1_lw6my"]
 [ext_resource type="PackedScene" uid="uid://da5kxhp50c2xg" path="res://scenes/inventaire.tscn" id="1_tg63u"]
@@ -8,6 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://ctkctkvbmk21o" path="res://sprites/FLEURS_0000_fleur3.png" id="4_5tchh"]
 [ext_resource type="Texture2D" uid="uid://vh5xcfw7v8tc" path="res://sprites/RPG SERRURE MAIRIE(1).png" id="4_s0di0"]
 [ext_resource type="Texture2D" uid="uid://drhrskrb75myf" path="res://sprites/FLEURS_0001_fleur2.png" id="5_rlv52"]
+[ext_resource type="Texture2D" uid="uid://creb2fbs7pvhn" path="res://sprites/glitch_found_you0.png" id="9_vceqh"]
+[ext_resource type="Texture2D" uid="uid://d15k24ewhr072" path="res://sprites/telephone.png" id="10_5tchh"]
+[ext_resource type="Shader" uid="uid://ccapoh6clbtek" path="res://shaders/telephone.gdshader" id="10_rlv52"]
+[ext_resource type="FontFile" uid="uid://2ihjtnbho5wm" path="res://polices/MorePerfectDOSVGA.ttf" id="12_6k487"]
+[ext_resource type="Shader" uid="uid://bx0wjudd1qsd4" path="res://shaders/block_glitch.gdshader" id="13_ctaxy"]
+[ext_resource type="Texture2D" uid="uid://d1pvgnrrdoqdb" path="res://sprites/telephone_sms.png" id="13_nwt6j"]
+[ext_resource type="AudioStream" uid="uid://bawuipyh8x7g0" path="res://sons/affichage_telephone.wav" id="15_0qpc3"]
+[ext_resource type="Texture2D" uid="uid://5y4qd54glig3" path="res://sprites/mec_chelou_grand.png" id="16_32vrv"]
+[ext_resource type="FontFile" uid="uid://c6quss0etcsrc" path="res://polices/PixeloidSans-Bold.ttf" id="17_ttflf"]
 
 [sub_resource type="Animation" id="Animation_pr3t4"]
 length = 0.001
@@ -135,7 +144,61 @@ _data = {
 &"fondu_noir": SubResource("Animation_uidac")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vceqh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6k487"]
+shader = ExtResource("10_rlv52")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nwt6j"]
+font = ExtResource("12_6k487")
+font_size = 14
+
+[sub_resource type="Animation" id="Animation_nwt6j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6k487"]
+resource_name = "phone_animation"
+length = 44.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(6.43333, 43.5667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ctaxy"]
+_data = {
+&"RESET": SubResource("Animation_nwt6j"),
+&"phone_animation": SubResource("Animation_6k487")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0qpc3"]
+shader = ExtResource("13_ctaxy")
+
+[sub_resource type="LabelSettings" id="LabelSettings_prp0k"]
+font = ExtResource("17_ttflf")
+font_size = 18
+
 [node name="interface" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_lw6my")
 
 [node name="coffre" type="Control" parent="."]
@@ -361,7 +424,121 @@ libraries = {
 &"": SubResource("AnimationLibrary_mfcci")
 }
 
+[node name="glitch0" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_vceqh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 158.0
+offset_top = -1.0
+offset_right = -18.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_vceqh")
+expand_mode = 1
+
+[node name="glitch1" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_6k487")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_5tchh")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="glitch1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.85)
+text = "--- MESSAGE A TOUS LES EMPLOYES DE RAFOD TECH --- Bonjour. Vous avez reçu un fichier sur vos terminaux respectifs, veuillez le lire et retenir les informations cités en bas de la section vous concernant. Ensuite, supprimer le fichier. Ce fichier doit être supprimé après l'avoir lu. Une inspection de vos terminaux sera réalisé afin de vérifier la bonne réalisation de cette suppression. Une réunion aura lieu le"
+label_settings = SubResource("LabelSettings_nwt6j")
+autowrap_mode = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="glitch1"]
+libraries = {
+&"": SubResource("AnimationLibrary_ctaxy")
+}
+
+[node name="glitch2" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_0qpc3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_right = -63.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_nwt6j")
+expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="glitch2"]
+stream = ExtResource("15_0qpc3")
+bus = &"SFX"
+
+[node name="MecChelouGrand" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -163.0
+offset_right = 467.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.315, 0.890833)
+texture = ExtResource("16_32vrv")
+
+[node name="pause" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.698039)
+
+[node name="Label" type="Label" parent="pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_prp0k")
+
 [connection signal="pressed" from="coffre/TextureRect/violet_c/bas" to="." method="_on_violet_bas_pressed"]
 [connection signal="pressed" from="coffre/TextureRect/rouge_c/bas" to="." method="_on_rouge_bas_pressed"]
 [connection signal="pressed" from="coffre/TextureRect/jaune_c/bas" to="." method="_on_jaune_bas_pressed"]
 [connection signal="pressed" from="coffre/TextureRect/btn_envoie" to="." method="_on_btn_envoie_pressed"]
+[connection signal="visibility_changed" from="glitch2" to="." method="_on_glitch_2_visibility_changed"]

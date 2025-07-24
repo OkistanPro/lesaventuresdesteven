@@ -1,0 +1,198 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=28 format=3 uid="uid://c6gegijbrbx1l"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_g8dde"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="2_phpyq"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="3_40hb8"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="4_wwmut"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="5_of3ry"]
+
+[sub_resource type="Resource" id="Resource_38mwe"]
+script = ExtResource("2_phpyq")
+nom_event = "stop_musique"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[sub_resource type="Resource" id="Resource_lnp16"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Bonjour Steven."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_itwtg"]
+script = ExtResource("4_wwmut")
+nom_perso = "Steven"
+mess = "Co.. Comment vous connaissez mon nom ? "
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_p4wf8"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "J'ai une quête très importante à te donner, le sort du village en dépend."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_p2s4t"]
+script = ExtResource("4_wwmut")
+nom_perso = "Steven"
+mess = "Euh ... Et bien, j'imagine que oui ... Mais d'abord qui êtes-vous ?"
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_djsal"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Ça n'a pas d'importance, l'important c'est ce que je vais te demander de faire."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_4iqxr"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Je ne sais pas si tu l'a remarqué, mais le maire n'est plus là."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_pq2gb"]
+script = ExtResource("2_phpyq")
+nom_event = "camera_change_mairie"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[sub_resource type="Resource" id="Resource_c3gvs"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Il est parti se cacher. Ma présence le gène."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_iegiw"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Il a essa60vc9m0lu2Vq2fpMKVOPc9dBhgv89GeS"
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = true
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_8xbf1"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Il est parti te chercher."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_53p2q"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Tu n'es pas un poussin comme les autres, Steven."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_pn0wu"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Tu n'es pas seulement un poussin qui parle, et qui pense."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_g8dde"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Tu es un poussin oublié."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_phpyq"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Malgré ta détermination, tes actions ne serviront à pas grand chose."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_40hb8"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Personne ne te voit. Tout le monde te demande des choses et sont heureux quand tu les réalises."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_wwmut"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Mais à la moindre acte de bravoure, plus personne ne te vois."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_of3ry"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "..."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ydo7w"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Ferme les yeux Steven."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_4pbmm"]
+script = ExtResource("2_phpyq")
+nom_event = "scream"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[sub_resource type="Resource" id="Resource_vgtr6"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Ḟ̢͖̗̘̭͉̟̼̬͖̽́̋̋ͭ͑ͮ͢͢ḛ̴̷̢̨̛͚̙̩ͦ́̆̉̑̐̆̈̃̋̐͐ͩ͒̊͋͡"
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = true
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_72mqd"]
+script = ExtResource("2_phpyq")
+nom_event = "crash_system"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
+
+[resource]
+script = ExtResource("5_of3ry")
+liste_messages = Array[ExtResource("1_g8dde")]([SubResource("Resource_38mwe"), SubResource("Resource_lnp16"), SubResource("Resource_itwtg"), SubResource("Resource_p4wf8"), SubResource("Resource_p2s4t"), SubResource("Resource_djsal"), SubResource("Resource_4iqxr"), SubResource("Resource_pq2gb"), SubResource("Resource_c3gvs"), SubResource("Resource_iegiw"), SubResource("Resource_8xbf1"), SubResource("Resource_53p2q"), SubResource("Resource_pn0wu"), SubResource("Resource_g8dde"), SubResource("Resource_phpyq"), SubResource("Resource_40hb8"), SubResource("Resource_wwmut"), SubResource("Resource_of3ry"), SubResource("Resource_ydo7w"), SubResource("Resource_4pbmm"), SubResource("Resource_vgtr6"), SubResource("Resource_72mqd")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

@@ -61,6 +61,22 @@ var sounds = {
 	"bip_crash" : [
 		preload("res://sons/bip_crash.wav"),
 		0.0
+	],
+	"glitch1" : [
+		preload("res://musique/GLITCH/SFX_GLITCH2.wav"),
+		0.0
+	],
+	"glitch2" : [
+		preload("res://sons/glitch2.wav"),
+		0.0
+	],
+	"telephone" : [
+		preload("res://sons/BRUITAGE_TELEPHONE.wav"),
+		0.0
+	],
+	"scream" : [
+		preload("res://musique/GLITCH/SFX_GLITCH3.wav"),
+		0.0
 	]
 }
 

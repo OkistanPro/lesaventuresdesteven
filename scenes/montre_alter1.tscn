@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://g1xh3vgs8q7c"]
+
+[ext_resource type="Texture2D" uid="uid://b565qastx8otq" path="res://sprites/montre_glitch.png" id="1_tlh32"]
+[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="2_4ehsf"]
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="3_jqyyq"]
+[ext_resource type="Texture2D" uid="uid://xvc421cjgw8y" path="res://sprites/TELEPHONE_item.png" id="4_tlh32"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="5_wsgrf"]
+
+[sub_resource type="Resource" id="Resource_ydjaa"]
+script = ExtResource("3_jqyyq")
+item_name = &"██████████████"
+texture_icon = ExtResource("4_tlh32")
+pickable = true
+event_on_not_pick = &""
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4pce"]
+radius = 30.0
+
+[node name="Montre" type="Sprite2D"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_tlh32")
+script = ExtResource("2_4ehsf")
+properties = SubResource("Resource_ydjaa")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="@CollisionShape2D@102846" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_y4pce")
+
+[node name="Polygon2D" parent="." instance=ExtResource("5_wsgrf")]
+position = Vector2(0, -10)

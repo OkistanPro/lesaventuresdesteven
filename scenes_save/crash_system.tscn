@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://en2lyyyra6et"]
+
+[ext_resource type="Script" uid="uid://bhiwbhpihpghn" path="res://scripts/crash_system.gd" id="1_4hnf2"]
+[ext_resource type="FontFile" uid="uid://2ihjtnbho5wm" path="res://polices/MorePerfectDOSVGA.ttf" id="2_700w0"]
+[ext_resource type="Shader" uid="uid://vse7ljibs86g" path="res://shaders/crash_system2.gdshader" id="3_hiouf"]
+[ext_resource type="AudioStream" uid="uid://dnhmct3ixs5qr" path="res://sons/bip_crash.wav" id="4_7pgeb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ti3sh"]
+shader = ExtResource("3_hiouf")
+
+[node name="CrashSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hnf2")
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_700w0")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_ti3sh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7pgeb")
+autoplay = true

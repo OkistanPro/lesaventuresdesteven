@@ -42,17 +42,20 @@ func _input(event: InputEvent) -> void:
 		if Globals.selected_item == -1:
 			if not random_timeline:
 				if nom_timeline:
+					interface.get_node("glitch2").visible = false
 					GestionDialogue.lancer_timeline(nom_timeline)
 				else:
 					GestionSons.play_sound("no_timeline")
 			else:
 				if first_time:
 					if nom_timeline:
+						interface.get_node("glitch2").visible = false
 						GestionDialogue.lancer_timeline(nom_timeline)
 						first_time = false
 					else:
 						GestionSons.play_sound("no_timeline")
 				else:
+					interface.get_node("glitch2").visible = false
 					GestionDialogue.lancer_timeline(nom_timeline_random[randi_range(0, len(nom_timeline_random)-1)])
 		elif Globals.selected_item_name in nom_timeline_selon_select:
 			GestionDialogue.lancer_timeline(nom_timeline_selon_select[Globals.selected_item_name])
