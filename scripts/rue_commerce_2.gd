@@ -48,6 +48,7 @@ func _on_bataille_cafe_the_body_entered(body: Node2D) -> void:
 func stop_music() -> void:
 	Musique.stop()
 	GestionSons.play_sound("porte")
+	Globals.dialogue_bataille_passed = true
 
 func porte() -> void:
 	GestionSons.play_sound("porte")
@@ -59,7 +60,10 @@ func timeline_bataille(nom_timeline : String) -> void:
 		"bataille2":
 			GestionDialogue.lancer_timeline("bataille_café_thé2")
 		"bataille3":
-			Musique.stream = Musique.musique_bataille
+			if GestionsEvents.current_event == "event_alter1":
+				Musique.stream = Musique.musique_bataille_bug
+			else:
+				Musique.stream = Musique.musique_bataille
 			Musique.play()
 			GestionDialogue.lancer_timeline("bataille_café_thé3")
 
@@ -77,6 +81,7 @@ func changement_timeline(nom_event : String) -> void:
 func coffre_change_sprite(nom_event : String) -> void:
 	if nom_event == "coffre":
 		$Coffre.texture = load("res://sprites/COFFRE_OUVERT.png")
+		$coffre_area/InteractionComponent.nom_timeline = ""
 
 
 func _on_goto_parc_body_entered(body: Node2D) -> void:

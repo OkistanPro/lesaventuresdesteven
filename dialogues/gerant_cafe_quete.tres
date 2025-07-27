@@ -71,7 +71,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_a1lrn"]
 script = ExtResource("3_y2qgb")
-nom_perso = "Gerent cafe"
+nom_perso = "Gerant cafe"
 mess = "PARFAIT	! vasy vasy jt'attends ici ..."
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
@@ -80,8 +80,8 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_gyumr"]
 script = ExtResource("3_y2qgb")
-nom_perso = "Gerent cafe"
-mess = "Récupère la \"chose\"... il est derrière un des cagots de l'épicier"
+nom_perso = "Gerant cafe"
+mess = "Récupère la \"chose\"... il est derrière un des cageots de l'épicier"
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
 no_end = false

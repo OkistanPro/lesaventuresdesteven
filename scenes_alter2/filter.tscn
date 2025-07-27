@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://617qe6keuwg7"]
+
+[ext_resource type="Script" uid="uid://x21i2kd8wlgx" path="res://scripts/filter.gd" id="1_8e2dd"]
+[ext_resource type="Shader" uid="uid://cxtnrc7f56hxg" path="res://shaders/lcd_filter.gdshader" id="2_6e7ex"]
+[ext_resource type="Shader" uid="uid://p2nfdmavkadt" path="res://shaders/bug1.gdshader" id="3_igy54"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7sh2r"]
+shader = ExtResource("2_6e7ex")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.03
+shader_parameter/scanlines_width = 0.5
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.001
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.03
+shader_parameter/aberration = 0.00500005
+shader_parameter/brightness = 0.9
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.1
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yqkek"]
+shader = ExtResource("3_igy54")
+
+[node name="filter" type="CanvasLayer"]
+script = ExtResource("1_8e2dd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7sh2r")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+rect = Rect2(0, 0, 0, 0)
+
+[node name="bug" type="ColorRect" parent="."]
+visible = false
+top_level = true
+z_index = 2
+material = SubResource("ShaderMaterial_yqkek")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2

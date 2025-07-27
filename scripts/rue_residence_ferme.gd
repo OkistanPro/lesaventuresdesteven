@@ -27,12 +27,15 @@ func _ready() -> void:
 
 func _on_goto_rue_droite_body_entered(body: Node2D) -> void:
 	if body == $steven:
-		if Globals.parle_au_fermier:
-			$poussin1.nom_timeline = "poussin1_2"
-			$poussin_dead.nom_timeline = "poussin_dead2"
+		if GestionsEvents.current_event == "event_alter2":
 			Globals.goto_scene("rue_residence_ferme", "rue_residence_champ", $steven.position.y, self)
 		else:
-			GestionDialogue.lancer_timeline("parler_fermier")
+			if Globals.parle_au_fermier:
+				$poussin1.nom_timeline = "poussin1_2"
+				$poussin_dead.nom_timeline = "poussin_dead2"
+				Globals.goto_scene("rue_residence_ferme", "rue_residence_champ", $steven.position.y, self)
+			else:
+				GestionDialogue.lancer_timeline("parler_fermier")
 
 
 

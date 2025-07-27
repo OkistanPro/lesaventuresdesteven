@@ -29,6 +29,11 @@ func _process(delta: float) -> void:
 	$coffre/TextureRect/violet_c.text = str(code[0])
 	$coffre/TextureRect/rouge_c.text = str(code[1])
 	$coffre/TextureRect/jaune_c.text = str(code[2])
+	if GestionDialogue.active:
+		$glitch2.visible = false
+		$glitch2/AudioStreamPlayer.volume_linear = 0.0
+	else:
+		$glitch2/AudioStreamPlayer.volume_linear = 1.0
 
 func fen_quetes() -> void:
 	if not in_quetes:
@@ -101,16 +106,14 @@ func _input(event: InputEvent) -> void:
 			$glitch2/AudioStreamPlayer.play()
 		else:
 			$glitch2.visible = false
-	if event.is_action_pressed("cancel"):
+	if event.is_action_pressed("pause"):
 		if not get_tree().paused:
 			if not $"Quêtes".visible and not $glitch0.visible and not $glitch1.visible and not $glitch2.visible and not $MecChelouGrand.visible and not GestionDialogue.active:
 				get_tree().paused = true
 				$pause.visible = true
-				get_viewport().set_input_as_handled()
 		else:
 			get_tree().paused = false
 			$pause.visible = false
-			get_viewport().set_input_as_handled()
 func _on_glitch_2_visibility_changed() -> void:
 	if not $glitch2.visible:
 		$glitch2/AudioStreamPlayer.stop()

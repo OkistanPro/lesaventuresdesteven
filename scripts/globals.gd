@@ -35,6 +35,7 @@ var y_from : float
 var selected_item : int = -1
 var selected_item_name : String
 
+var dialogue_bataille_passed : bool = false
 var machine_the_casse : bool = false
 var machine_cafe_casse : bool = false
 var bataille : bool = false

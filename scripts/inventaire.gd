@@ -45,11 +45,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventaire_right") and $ItemList.get_selected_items():
 		if $ItemList.item_count > Globals.selected_item + 1:
 			$ItemList.select(Globals.selected_item + 1)
+			$ItemList.ensure_current_is_visible()
 			select_item_data()
 			$nom_item.text = $ItemList.get_item_metadata(Globals.selected_item).item_name
 	if event.is_action_pressed("inventaire_left") and $ItemList.get_selected_items():
 		if Globals.selected_item > 0:
 			$ItemList.select(Globals.selected_item - 1)
+			$ItemList.ensure_current_is_visible()
 			select_item_data()
 			$nom_item.text = $ItemList.get_item_metadata(Globals.selected_item).item_name
 

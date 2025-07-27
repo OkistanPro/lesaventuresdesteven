@@ -534,7 +534,7 @@ shape = SubResource("RectangleShape2D_hopv8")
 
 [node name="table_tea7" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(56, 282)
+position = Vector2(65, 258)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_q67cm")
 offset = Vector2(0, -2.815)

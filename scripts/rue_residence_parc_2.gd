@@ -11,6 +11,8 @@ func _ready() -> void:
 	if Globals.direction_from == "rue_commerce_coffee":
 		$steven.position = Vector2(326, 4)
 	GestionDialogue.event_declencheur.connect(ouvre_portail)
+	if GestionsEvents.current_event == "event_alter1":
+		$PNJ.nom_timeline = "pnj_fille3_alter1"
 
 func _on_goto_rue_gauche_body_entered(body: Node2D) -> void:
 	if body == $steven:
@@ -26,8 +28,13 @@ func _on_goto_maison_6_body_entered(body: Node2D) -> void:
 		Globals.goto_scene("rue_residence_parc2", "maison6", $steven.position.y, self)
 
 func ouvre_portail(nom_event : String) -> void:
-	GestionSons.play_sound("son_portail")
+	if nom_event == "supprimer_fille":
+		$PNJ.visible = false
+		$PNJ.process_mode = Node.PROCESS_MODE_DISABLED
+		await get_tree().create_timer(8.0).timeout
+		GestionSons.play_sound("glitch_chuchotement")
 	if nom_event == "ouvre_portail":
+		GestionSons.play_sound("son_portail")
 		$decor_habitation.texture = load("res://sprites/RPG_PARC_2_0001_Calque-2_ouvert.png")
 		$decor_habitation/StaticBody2D_ferme.process_mode = Node.PROCESS_MODE_DISABLED
 		$decor_habitation/StaticBody2D_ouvert.process_mode = Node.PROCESS_MODE_PAUSABLE

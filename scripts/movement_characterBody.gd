@@ -25,7 +25,9 @@ func _physics_process(delta: float) -> void:
 	not $AnimationPlayer.is_playing() and \
 	not Globals.bataille and\
 	not (interface.get_node_or_null("glitch0") and interface.get_node("glitch0").visible) and\
-	not (interface.get_node_or_null("glitch1") and interface.get_node("glitch1").visible):
+	not (interface.get_node_or_null("glitch1") and interface.get_node("glitch1").visible) and\
+	not (interface.get_node_or_null("lettre_adieu") and interface.get_node("lettre_adieu").visible) and\
+	not (interface.get_node_or_null("vhs1") and interface.get_node("vhs1").visible):
 		velocity = direction.normalized() * SPEED * mult
 	else:
 		velocity = Vector2.ZERO

@@ -77,6 +77,18 @@ var sounds = {
 	"scream" : [
 		preload("res://musique/GLITCH/SFX_GLITCH3.wav"),
 		0.0
+	],
+	"toc_toc" : [
+		preload("res://musique/GLITCH/SFX_GLITCH6.wav"),
+		0.0
+	],
+	"glitch_chuchotement" : [
+		preload("res://musique/GLITCH/SFX_GLITCH4.wav"),
+		0.0
+	],
+	"poussin_dead" : [
+		preload("res://sons/dead_poussin.wav"),
+		0.0
 	]
 }
 

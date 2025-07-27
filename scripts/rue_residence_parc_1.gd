@@ -31,6 +31,7 @@ func _montre(nom_event  : String) -> void:
 			$trou_de_terre6.add_child(montre_instance)
 			$trou_de_terre6.properties.event_on_not_pick = &"trou_vide"
 			montre_instance.reparent(self)
+			montre_instance.owner = self
 			$trou_de_terre6/Polygon2D.visible = false
 			$trou_de_terre6/Area2D.monitoring = false
 			GestionSons.play_sound("terre")
@@ -39,6 +40,7 @@ func _montre(nom_event  : String) -> void:
 			$trou_de_terre6.add_child(montre_instance)
 			$trou_de_terre6.properties.event_on_not_pick = &"trou_vide"
 			montre_instance.reparent(self)
+			montre_instance.owner = self
 			$trou_de_terre6/Polygon2D.visible = false
 			$trou_de_terre6/Area2D.monitoring = false
 			GestionSons.play_sound("terre")

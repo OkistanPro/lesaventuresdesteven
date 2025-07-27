@@ -1,0 +1,504 @@
+[gd_scene load_steps=31 format=3 uid="uid://bfr7iootbou20"]
+
+[ext_resource type="Script" uid="uid://bhybyokoixsmm" path="res://scripts/interface.gd" id="1_rgbpa"]
+[ext_resource type="Texture2D" uid="uid://ddngnwp3u3knd" path="res://sprites/CADENAS.png" id="2_4wyjk"]
+[ext_resource type="Texture2D" uid="uid://magqwtii3ptc" path="res://sprites/FLEURS_0002_fleur1.png" id="3_4norj"]
+[ext_resource type="Texture2D" uid="uid://ctkctkvbmk21o" path="res://sprites/FLEURS_0000_fleur3.png" id="4_6ffky"]
+[ext_resource type="Texture2D" uid="uid://drhrskrb75myf" path="res://sprites/FLEURS_0001_fleur2.png" id="5_mkjal"]
+[ext_resource type="Texture2D" uid="uid://vh5xcfw7v8tc" path="res://sprites/RPG SERRURE MAIRIE(1).png" id="6_1kisg"]
+[ext_resource type="PackedScene" uid="uid://da5kxhp50c2xg" path="res://scenes/inventaire.tscn" id="7_ex4ac"]
+[ext_resource type="PackedScene" uid="uid://cl883ml5ds4ae" path="res://scenes/quêtes.tscn" id="8_v2cae"]
+[ext_resource type="Texture2D" uid="uid://creb2fbs7pvhn" path="res://sprites/glitch_found_you0.png" id="9_mrii3"]
+[ext_resource type="Shader" uid="uid://ccapoh6clbtek" path="res://shaders/telephone.gdshader" id="10_voag2"]
+[ext_resource type="Texture2D" uid="uid://d15k24ewhr072" path="res://sprites/telephone.png" id="11_6e1iy"]
+[ext_resource type="FontFile" uid="uid://2ihjtnbho5wm" path="res://polices/MorePerfectDOSVGA.ttf" id="12_y6a2e"]
+[ext_resource type="Shader" uid="uid://bx0wjudd1qsd4" path="res://shaders/block_glitch.gdshader" id="13_4m53t"]
+[ext_resource type="Texture2D" uid="uid://d1pvgnrrdoqdb" path="res://sprites/telephone_sms.png" id="14_22tfg"]
+[ext_resource type="AudioStream" uid="uid://bawuipyh8x7g0" path="res://sons/affichage_telephone.wav" id="15_2g05i"]
+[ext_resource type="Texture2D" uid="uid://5y4qd54glig3" path="res://sprites/mec_chelou_grand.png" id="16_tv625"]
+
+[sub_resource type="Animation" id="Animation_pr3t4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.407843)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mfcci"]
+resource_name = "entree"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.407843)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"verif_trappe"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t62tn"]
+_data = {
+&"RESET": SubResource("Animation_pr3t4"),
+&"entree": SubResource("Animation_mfcci")
+}
+
+[sub_resource type="Animation" id="Animation_s0di0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t72xj"]
+resource_name = "fondu_blanc"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uidac"]
+resource_name = "fondu_noir"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfcci"]
+_data = {
+&"RESET": SubResource("Animation_s0di0"),
+&"fondu_blanc": SubResource("Animation_t72xj"),
+&"fondu_noir": SubResource("Animation_uidac")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vceqh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6k487"]
+shader = ExtResource("10_voag2")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nwt6j"]
+font = ExtResource("12_y6a2e")
+font_size = 14
+
+[sub_resource type="Animation" id="Animation_nwt6j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6k487"]
+resource_name = "phone_animation"
+length = 44.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(6.43333, 43.5667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ctaxy"]
+_data = {
+&"RESET": SubResource("Animation_nwt6j"),
+&"phone_animation": SubResource("Animation_6k487")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0qpc3"]
+shader = ExtResource("13_4m53t")
+
+[node name="interface" type="CanvasLayer"]
+script = ExtResource("1_rgbpa")
+
+[node name="coffre" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="coffre"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -96.0
+offset_right = 91.5
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("2_4wyjk")
+
+[node name="fleur1" type="TextureRect" parent="coffre/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -46.0
+offset_right = -8.5
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4norj")
+stretch_mode = 5
+
+[node name="fleur2" type="TextureRect" parent="coffre/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.5
+offset_top = -46.0
+offset_right = 15.5
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6ffky")
+stretch_mode = 5
+
+[node name="fleur3" type="TextureRect" parent="coffre/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 18.5
+offset_top = -46.0
+offset_right = 39.5
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_mkjal")
+stretch_mode = 5
+
+[node name="violet_c" type="Label" parent="coffre/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -19.5
+offset_right = -9.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bas" type="Button" parent="coffre/TextureRect/violet_c"]
+layout_mode = 0
+offset_top = 44.0
+offset_right = 17.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 10
+text = "▼"
+
+[node name="rouge_c" type="Label" parent="coffre/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = -19.5
+offset_right = 15.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bas" type="Button" parent="coffre/TextureRect/rouge_c"]
+layout_mode = 0
+offset_top = 44.0
+offset_right = 17.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 10
+text = "▼"
+
+[node name="jaune_c" type="Label" parent="coffre/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 21.5
+offset_top = -19.5
+offset_right = 40.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bas" type="Button" parent="coffre/TextureRect/jaune_c"]
+layout_mode = 0
+offset_top = 44.0
+offset_right = 17.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 10
+text = "▼"
+
+[node name="btn_envoie" type="Button" parent="coffre/TextureRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -39.0
+offset_right = 30.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "OK"
+
+[node name="trappe" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="trappe"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.407843)
+
+[node name="TextureRect" type="TextureRect" parent="trappe"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -117.0
+offset_right = 152.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_1kisg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="trappe"]
+libraries = {
+&"": SubResource("AnimationLibrary_t62tn")
+}
+
+[node name="Inventaire" parent="." instance=ExtResource("7_ex4ac")]
+visible = false
+mouse_filter = 1
+
+[node name="Quêtes" parent="." instance=ExtResource("8_v2cae")]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mfcci")
+}
+
+[node name="glitch0" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_vceqh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 158.0
+offset_top = -1.0
+offset_right = -18.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_mrii3")
+expand_mode = 1
+
+[node name="glitch1" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_6k487")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_6e1iy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="glitch1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.85)
+text = "--- MESSAGE A TOUS LES EMPLOYES DE RAFOD TECH --- Bonjour. Vous avez reçu un fichier sur vos terminaux respectifs, veuillez le lire et retenir les informations cités en bas de la section vous concernant. Ensuite, supprimer le fichier. Ce fichier doit être supprimé après l'avoir lu. Une inspection de vos terminaux sera réalisé afin de vérifier la bonne réalisation de cette suppression. Une réunion aura lieu le"
+label_settings = SubResource("LabelSettings_nwt6j")
+autowrap_mode = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="glitch1"]
+libraries = {
+&"": SubResource("AnimationLibrary_ctaxy")
+}
+
+[node name="glitch2" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_0qpc3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_right = -63.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_22tfg")
+expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="glitch2"]
+stream = ExtResource("15_2g05i")
+bus = &"SFX"
+
+[node name="MecChelouGrand" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -163.0
+offset_right = 467.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.315, 0.890833)
+texture = ExtResource("16_tv625")
+
+[connection signal="pressed" from="coffre/TextureRect/violet_c/bas" to="." method="_on_violet_bas_pressed"]
+[connection signal="pressed" from="coffre/TextureRect/rouge_c/bas" to="." method="_on_rouge_bas_pressed"]
+[connection signal="pressed" from="coffre/TextureRect/jaune_c/bas" to="." method="_on_jaune_bas_pressed"]
+[connection signal="pressed" from="coffre/TextureRect/btn_envoie" to="." method="_on_btn_envoie_pressed"]
+[connection signal="visibility_changed" from="glitch2" to="." method="_on_glitch_2_visibility_changed"]

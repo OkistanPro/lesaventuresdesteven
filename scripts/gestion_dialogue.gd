@@ -12,6 +12,21 @@ var active : bool = false
 var kayou = preload("res://items/kayou.tres")
 var cle = preload("res://items/cle.tres")
 
+var glitched_dialogues = [
+	preload("res://dialogues_glitched/pnj_glitched_1.tres"),
+	preload("res://dialogues_glitched/pnj_glitched_2.tres"),
+	preload("res://dialogues_glitched/pnj_glitched_3.tres"),
+	preload("res://dialogues_glitched/pnj_glitched_4.tres"),
+]
+
+var vhs_1_dialogue = preload("res://dialogues_glitched/lettre.tres")
+var poussin_dead = preload("res://dialogues_glitched/poussin_dead.tres")
+var rafod_tech_dialogue = preload("res://dialogues_glitched/rafod_tech.tres")
+var rafod_tech_dialogue2 = preload("res://dialogues_glitched/rafod_tech2.tres")
+var harcele = preload("res://dialogues_glitched/poussin_harcele.tres")
+var steven_pleure = preload("res://dialogues_glitched/maire_pleure.tres")
+var rafod_tech_dialogue3 = preload("res://dialogues_glitched/rafod_tech3.tres")
+
 func _ready() -> void :
 	var directories_to_look_at = ["res://dialogues/"]
 	while directories_to_look_at:
@@ -34,13 +49,86 @@ func _ready() -> void :
 
 func lancer_timeline(nom_timeline : String) -> void:
 	if not active:
-		timeline_actuel = liste_timeline[nom_timeline]
-		active = true
-		lancer_dialogue.emit()
+		if GestionsEvents.current_event == "event_alter2":
+			match nom_timeline:
+				"fermier_quete1":
+					timeline_actuel = vhs_1_dialogue
+					active = true
+					lancer_dialogue.emit()
+				"poussin5_dos":
+					timeline_actuel = poussin_dead
+					active = true
+					lancer_dialogue.emit()
+				"pnj_homme4":
+					timeline_actuel = rafod_tech_dialogue
+					active = true
+					lancer_dialogue.emit()
+				"pnj_homme2":
+					timeline_actuel = rafod_tech_dialogue2
+					active = true
+					lancer_dialogue.emit()
+				"pnj_fille2":
+					timeline_actuel = harcele
+					active = true
+					lancer_dialogue.emit()
+				"maire_1":
+					timeline_actuel = steven_pleure
+					active = true
+					lancer_dialogue.emit()
+				"epicier_carotte":
+					timeline_actuel = rafod_tech_dialogue3
+					active = true
+					lancer_dialogue.emit()
+				_:
+					timeline_actuel = glitched_dialogues[randi_range(0, len(glitched_dialogues)-1)]
+					active = true
+					lancer_dialogue.emit()
+		else:
+			timeline_actuel = liste_timeline[nom_timeline]
+			active = true
+			lancer_dialogue.emit()
 
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"fin_alter2":
+			get_tree().change_scene_to_file("res://scenes_alter2/fin_alter2.tscn")
+		"steven_pleure":
+			interface.get_node("maire").visible = true
+			Musique.stream = Musique.steven_pleure
+			Musique.play()
+			AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), true)
+		"steven_fin":
+			interface.get_node("maire").visible = false
+			Musique.stream = Musique.musique_village_bug
+			Musique.play()
+			AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), false)
+			event_declencheur.emit("retourner_maire")
+		"poussin_dead":
+			Musique.stream = Musique.musique_poussin_dead
+			Musique.play()
+			interface.get_node("DeadPoussin").visible = true
+			interface.get_node("DeadPoussin/AnimationPlayer").play("dead_poussin")
+			await interface.get_node("DeadPoussin/AnimationPlayer").animation_finished
+			interface.get_node("DeadPoussin").visible = false
+			Musique.stream = Musique.musique_village_bug
+			Musique.play()
+		"lettre_adieu":
+			Musique.stream = Musique.musicbox
+			Musique.play()
+			interface.get_node("lettre_adieu").visible = true
+			await get_tree().create_timer(20.0).timeout
+			interface.get_node("lettre_adieu").visible = false
+			interface.get_node("vhs1").visible = true
+			interface.get_node("vhs1").play()
+			await interface.get_node("vhs1").finished
+			interface.get_node("vhs1").visible = false
+			event_declencheur.emit("lettre_adieu")
+			Musique.stop()
+		"supprimer_fille":
+			event_declencheur.emit("supprimer_fille")
+		"toc_toc":
+			GestionSons.play_sound("toc_toc")
 		"crash_system":
 			interface.get_node("MecChelouGrand").visible = false
 			Musique.stop()

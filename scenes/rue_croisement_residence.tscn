@@ -362,7 +362,7 @@ shape = SubResource("RectangleShape2D_wessl")
 
 [node name="Cle3" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(631, 574)
+position = Vector2(575, 558)
 rotation = -0.347209
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("15_vex1m")

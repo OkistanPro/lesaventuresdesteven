@@ -126,7 +126,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_yd7al"]
 script = ExtResource("3_e2o4r")
 nom_perso = "Fermier"
-mess = "Oui, à plus tard Steven !"
+mess = "Ferme les yeux Steven."
 liste_choix = Array[ExtResource("2_o0yoc")]([])
 event_at_start = ""
 no_end = false

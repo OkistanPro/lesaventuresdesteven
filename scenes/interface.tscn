@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cohg5vn5u2qe8"]
+[gd_scene load_steps=44 format=3 uid="uid://cohg5vn5u2qe8"]
 
 [ext_resource type="Script" uid="uid://bhybyokoixsmm" path="res://scripts/interface.gd" id="1_lw6my"]
 [ext_resource type="PackedScene" uid="uid://da5kxhp50c2xg" path="res://scenes/inventaire.tscn" id="1_tg63u"]
@@ -17,6 +17,11 @@
 [ext_resource type="AudioStream" uid="uid://bawuipyh8x7g0" path="res://sons/affichage_telephone.wav" id="15_0qpc3"]
 [ext_resource type="Texture2D" uid="uid://5y4qd54glig3" path="res://sprites/mec_chelou_grand.png" id="16_32vrv"]
 [ext_resource type="FontFile" uid="uid://c6quss0etcsrc" path="res://polices/PixeloidSans-Bold.ttf" id="17_ttflf"]
+[ext_resource type="Texture2D" uid="uid://buloy83hgi5j4" path="res://sprites/lettre_steven.png" id="18_prp0k"]
+[ext_resource type="VideoStream" uid="uid://5tibc3t2wpku" path="res://videos/vhs_1.ogv" id="19_dtbhd"]
+[ext_resource type="Texture2D" uid="uid://h7tt4ft3m7uc" path="res://sprites/dead_poussin.png" id="20_mde6w"]
+[ext_resource type="Texture2D" uid="uid://bapvytlv4ngg5" path="res://sprites/maire_corrupted.png" id="21_2noy1"]
+[ext_resource type="Shader" uid="uid://ca8gods41h4jb" path="res://scenes/maire.gdshader" id="21_gq6l6"]
 
 [sub_resource type="Animation" id="Animation_pr3t4"]
 length = 0.001
@@ -196,6 +201,54 @@ shader = ExtResource("13_ctaxy")
 [sub_resource type="LabelSettings" id="LabelSettings_prp0k"]
 font = ExtResource("17_ttflf")
 font_size = 18
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mde6w"]
+shader = ExtResource("10_rlv52")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mde6w"]
+line_spacing = 0.0
+font = ExtResource("12_6k487")
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_2noy1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:lines_skipped")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_mde6w"]
+resource_name = "dead_poussin"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:lines_skipped")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [7, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gq6l6"]
+_data = {
+&"RESET": SubResource("Animation_2noy1"),
+&"dead_poussin": SubResource("Animation_mde6w")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uaspw"]
+shader = ExtResource("21_gq6l6")
 
 [node name="interface" type="CanvasLayer"]
 layer = 2
@@ -494,10 +547,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -89.0
-offset_top = -163.0
-offset_right = 467.0
-offset_bottom = 200.0
+offset_left = -292.0
+offset_top = -138.0
+offset_right = 1556.0
+offset_bottom = 225.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.315, 0.890833)
@@ -536,6 +589,64 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Pause"
 label_settings = SubResource("LabelSettings_prp0k")
+
+[node name="lettre_adieu" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_prp0k")
+expand_mode = 1
+
+[node name="vhs1" type="VideoStreamPlayer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("19_dtbhd")
+
+[node name="DeadPoussin" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_mde6w")
+texture = ExtResource("20_mde6w")
+
+[node name="Label" type="Label" parent="DeadPoussin"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -214.0
+offset_bottom = 184.0
+grow_horizontal = 0
+scale = Vector2(1, 0.675)
+text = "JE N'AI PAS SURVÉCU À L'EXPERIENCE
+JE N'AI PAS SURVÉCU À L'EXPERIENCE
+JE N'AI PAS SURVÉCU À L'EXPERIENCE
+JE N'AI PAS SURVÉCU À L'EXPERIENCE
+JE N'AI PAS SURVÉCU À L'EXPERIENCE
+JE N'AI PAS SURVÉCU À L'EXPERIENCE
+JE N'AI PAS SURVÉCU À L'EXPERIENCE"
+label_settings = SubResource("LabelSettings_mde6w")
+lines_skipped = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeadPoussin"]
+libraries = {
+&"": SubResource("AnimationLibrary_gq6l6")
+}
+
+[node name="maire" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_uaspw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_2noy1")
 
 [connection signal="pressed" from="coffre/TextureRect/violet_c/bas" to="." method="_on_violet_bas_pressed"]
 [connection signal="pressed" from="coffre/TextureRect/rouge_c/bas" to="." method="_on_rouge_bas_pressed"]

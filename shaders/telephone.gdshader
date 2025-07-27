@@ -15,7 +15,7 @@ void vertex() {
 void fragment() {
 	vec2 new_uv = vec2(UV.x, UV.y+noise(TIME*100.)*0.005);
 	COLOR.rgb = texture(TEXTURE, new_uv).rgb*(0.5+noise(TIME*100.));
-	COLOR.a = 1.0;
+	COLOR.a = texture(TEXTURE, new_uv).a;
 }
 
 //void light() {

@@ -163,7 +163,6 @@ scale = Vector2(0.2, 0.2)
 color = Color(0, 0, 0, 1)
 
 [node name="hall_entree" type="Node2D" parent="."]
-visible = false
 y_sort_enabled = true
 
 [node name="Rpg-mairie-interrieur00000002Calque-2" type="Sprite2D" parent="hall_entree"]

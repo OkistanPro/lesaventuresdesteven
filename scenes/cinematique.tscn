@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://t5h8pq3nop40"]
+[gd_scene load_steps=20 format=3 uid="uid://t5h8pq3nop40"]
 
 [ext_resource type="Script" uid="uid://dcoeq7ho0eo0p" path="res://scripts/cinematique.gd" id="1_kppc5"]
 [ext_resource type="Texture2D" uid="uid://ce56sy7rxb6ar" path="res://sprites/textures/grass 3.png" id="2_r0wtw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cy6qmn0j6mtpm" path="res://sprites/vignette_shader.png" id="6_j8pg7"]
 [ext_resource type="FontFile" uid="uid://04rj6q4gw31c" path="res://polices/PixeloidSans.ttf" id="7_r0wtw"]
 [ext_resource type="FontFile" uid="uid://2ihjtnbho5wm" path="res://polices/MorePerfectDOSVGA.ttf" id="8_x5fem"]
+[ext_resource type="Shader" uid="uid://b2vetvvhce68j" path="res://shaders/sharpen.gdshader" id="9_loff6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v86rl"]
 shader = ExtResource("3_x5fem")
@@ -96,6 +97,18 @@ tracks/5/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("blanc:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_con2f"]
 resource_name = "cinematique_debut"
@@ -157,10 +170,83 @@ tracks/4/keys = {
 "times": PackedFloat32Array(35.6509, 36.9959)
 }
 
+[sub_resource type="Animation" id="Animation_x5fem"]
+resource_name = "cinematique_debut_2"
+length = 38.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vignette:material:shader_parameter/percentage")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.566667, -0.893397, 0, 0, 0.962121, 0.25, 0),
+"times": PackedFloat32Array(0, 37)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0, -329.226, -0.25, 0, 0.25, 0, -350, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.96858, 2.2239, 2.53128, 3.22082, 4.19248, 4.4478, 4.75518, 5.18941, 5.7521, 5.98153, 6.41639, 6.97908, 7.13182, 7.95011, 8.51281, 8.81892, 9.10041, 9.27904, 9.6631, 10.1226, 10.4293, 10.7875, 11.2476, 11.3502, 11.8103, 12.0912, 12.3979, 12.4232, 12.4999, 12.6539, 12.9606, 14.3918, 14.417, 14.4684, 14.9545, 15.0311, 15.8, 16.3856, 16.5642, 16.9483, 17.7686, 18.098, 18.3313, 18.5328, 18.8648, 19.0955, 20.0665, 20.6292, 20.8334, 21.1654, 21.3961, 22.6224, 23.134, 23.1593, 23.6967, 24.5396, 24.591, 25.1278, 25.1537, 25.5365, 25.6905, 26.5082, 26.6868, 27.0709, 27.5051, 28.0678, 28.4506, 28.6554, 29.2181, 29.2942, 29.3667, 30.4192, 30.6667, 30.9819, 31.2627, 31.3353, 31.8254, 31.8979, 31.9782, 32.6353, 33.1979, 33.9468, 34.5095, 34.7373, 34.7389, 35.3, 36.7075, 37.2702)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8.20317, 15.5768, 23.5, 31.1667, 32.0667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["ERR", "ERR", "ERR", "ERR", "Si quelqu'un m'entend, je suis enfermée je ne sais pas où je suis, aidez-moi je suis coincée dans une salle sombre j'ai besoin d'aide j'ai besoin d'aide si quelqu'un m'entends je suis enfermée je ne sais pas où je suis, aidez-moi je suis coincée dans une salle sombre j'ai besoin d'aide j'ai besoin d'aide si quelqu'un m'entend par pitié je dois m'enfuir au plus vite ils me torturent", "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:material:shader_parameter/luminosity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -1.57167, 0.00339169, 0.25, 0, 0, -0.25, 0, 1.76772, -0.00691575, -1.00674, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -1.57167, 0.00339169, 0.25, 0, 0, -0.25, 0, 1.76772, -0.00691575, -1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -1.57167, 0.00339169, 0.25, 0, 0, -0.25, 0, 1.76772, -0.00691575, -1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -1.57167, 0.00339169, 0.25, 0, 0, -0.25, 0, 1.76772, -0.00691575, -1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -1.57167, 0.00339169, 0.25, 0),
+"times": PackedFloat32Array(0, 1.57167, 6.03228, 8.23333, 8.25838, 9.79672, 13.3667, 15.6, 15.6531, 17.1591, 21.6197, 23.5333, 23.6176, 25.0893, 29.5499, 31.2, 31.362, 32.8003)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("blanc:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(35.6509, 36.9959)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("blanc:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(34.8, 35.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4ytvr"]
 _data = {
 &"RESET": SubResource("Animation_mhnvy"),
-&"cinematique_debut": SubResource("Animation_con2f")
+&"cinematique_debut": SubResource("Animation_con2f"),
+&"cinematique_debut_2": SubResource("Animation_x5fem")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_x5fem"]
@@ -170,6 +256,11 @@ font_size = 18
 [sub_resource type="LabelSettings" id="LabelSettings_loff6"]
 font = ExtResource("8_x5fem")
 font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xib5t"]
+shader = ExtResource("9_loff6")
+shader_parameter/blur_sharp = -5.0
+shader_parameter/pixel = 3.0
 
 [node name="cinematique" type="Control"]
 layout_mode = 3
@@ -271,5 +362,18 @@ offset_bottom = 23.0
 scale = Vector2(2, 1)
 text = "DISPLAY_ERR"
 label_settings = SubResource("LabelSettings_loff6")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+copy_mode = 2
+
+[node name="sharpen" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_xib5t")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

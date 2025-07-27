@@ -38,7 +38,13 @@ func _ready() -> void:
 		node_custom.owner = get_tree().edited_scene_root
 		
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interagir") and in_body:
+	if event.is_action_pressed("interagir") and in_body and \
+	not (interface.get_node_or_null("glitch0") and interface.get_node("glitch0").visible) and \
+	not (interface.get_node_or_null("glitch1") and interface.get_node("glitch1").visible) and \
+	not (interface.get_node_or_null("glitch2") and interface.get_node("glitch2").visible) and \
+	not (interface.get_node_or_null("DeadPoussin") and interface.get_node("DeadPoussin").visible) and \
+	not (interface.get_node_or_null("lettre_adieu") and interface.get_node("lettre_adieu").visible) and \
+	not (interface.get_node_or_null("vhs1") and interface.get_node("vhs1").visible):
 		if Globals.selected_item == -1:
 			if not random_timeline:
 				if nom_timeline:

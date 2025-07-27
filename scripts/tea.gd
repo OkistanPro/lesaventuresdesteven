@@ -14,6 +14,9 @@ func _ready() -> void:
 		$Cyprien/ecouteur_gauche.visible = true
 		$Cyprien/ecouteur_droite.visible = true
 	#468 200
+	if Globals.dialogue_bataille_passed:
+		$Cyprien.visible = false
+		$Cyprien.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_goto_rue_body_entered(body: Node2D) -> void:
 	if body == $steven:

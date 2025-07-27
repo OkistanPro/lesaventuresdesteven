@@ -24,7 +24,19 @@ func _ready() -> void:
 	$controles/Panel/HBoxContainer/VBoxContainer2/control_instance/Button.text = InputMap.action_get_events("select")[0].as_text()
 	$controles/Panel/HBoxContainer/VBoxContainer2/control_instance2/Button.text = InputMap.action_get_events("inventaire_left")[0].as_text()
 	$controles/Panel/HBoxContainer/VBoxContainer2/control_instance3/Button.text = InputMap.action_get_events("inventaire_right")[0].as_text()
-	
+	$controles/Panel/HBoxContainer/VBoxContainer2/control_instance4/Button.text = InputMap.action_get_events("pause")[0].as_text()
+
+	if GestionsEvents.current_event == "event_alter2":
+		Musique.stream = Musique.musique_menu_bug
+		Musique.play()
+		$TextureRect.texture = preload("res://sprites/title_screen2.png")
+		var grad = GradientTexture1D.new()
+		grad.gradient = Gradient.new()
+		grad.gradient.set_color(0, Color.BLUE)
+		grad.gradient.set_color(1, Color.BLUE)
+		$fond.texture = grad
+		
+		
 func _on_options_pressed() -> void:
 	$menu.visible = false
 	$options.visible = true
@@ -149,6 +161,13 @@ func _on_button_inv3_toggled(toggled_on: bool) -> void:
 		wait_input = true
 		wait_input_action_name = "inventaire_right"
 
+
+func _on_button_pause_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		for node in get_tree().get_nodes_in_group("boutons_controles"):
+			node.disabled = true
+		wait_input = true
+		wait_input_action_name = "pause"
 
 func _on_retour_controles_pressed() -> void:
 	$TextureRect.visible = true

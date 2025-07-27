@@ -16,7 +16,7 @@ void fragment() {
 	} else {
 		COLOR.rgb = texture(TEXTURE, UV).rgb*random(UV);
 	}
-	COLOR.a = 1.0;
+	COLOR.a = texture(TEXTURE, UV).a;
 }
 
 //void light() {

@@ -69,3 +69,5 @@ func event_timeline(nom_event : String) -> void:
 		$PetitePnj.queue_free()
 		await get_tree().create_timer(3.0).timeout
 		Musique.play()
+	if nom_event == "retourner_maire":
+		$Maire.nom_timeline = ""

@@ -1,0 +1,128 @@
+[gd_scene load_steps=18 format=3 uid="uid://drw4vaetp12x7"]
+
+[ext_resource type="Script" uid="uid://bjwvwv4i3a2df" path="res://scripts/maison_6.gd" id="1_ptmce"]
+[ext_resource type="Shader" uid="uid://bemupefxksl5a" path="res://shaders/corrupted.gdshader" id="2_ujuun"]
+[ext_resource type="Texture2D" uid="uid://tuwgrafimt0t" path="res://sprites/RPG MAISON_3.png" id="2_utcg6"]
+[ext_resource type="Texture2D" uid="uid://bcq2jekk7ti1x" path="res://sprites/RPG-MAISON_table_0000_Calque-3.png" id="3_ujuun"]
+[ext_resource type="Texture2D" uid="uid://cva6h1oqvc42l" path="res://sprites/RPG-MAISON_pouf_0000_pouf-copie.png" id="4_2ghos"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="5_it3o4"]
+[ext_resource type="Script" uid="uid://bneh5b8qe3cod" path="res://scripts/fleche_maison.gd" id="6_ibblu"]
+[ext_resource type="Texture2D" uid="uid://dpokg7vqgbllv" path="res://sprites/CLE_DU_JARDIN.png" id="7_lvm00"]
+[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="8_l0qyd"]
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="9_tusdu"]
+[ext_resource type="Texture2D" uid="uid://dj81lcxrvmx03" path="res://sprites/CLE_DU_JARDIN_ITEM.png" id="10_7fof0"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="11_can8j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ghos"]
+shader = ExtResource("2_ujuun")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s163v"]
+size = Vector2(76, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ajer"]
+radius = 75.71
+
+[sub_resource type="Resource" id="Resource_rgave"]
+script = ExtResource("9_tusdu")
+item_name = &"Clé du jardin"
+texture_icon = ExtResource("10_7fof0")
+pickable = true
+event_on_not_pick = &""
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lqblo"]
+radius = 30.0
+
+[node name="Maison6" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_ptmce")
+
+[node name="RpgMaison1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2ghos")
+position = Vector2(400, 300)
+scale = Vector2(-2, 2)
+texture = ExtResource("2_utcg6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RpgMaison1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RpgMaison1/StaticBody2D"]
+polygon = PackedVector2Array(-95, 19, -27, 19, -26.5, -29.5, 25, -29.5, 24.5, -40.5, 42, -40, 43, -35, 71, -12, 85, -14, 94.5, -6.5, 94.5, -59.5, -94.5, -59)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RpgMaison1/StaticBody2D"]
+polygon = PackedVector2Array(-94.5, 13.5, -94.5, 90.5, -14, 90.5, -14, 101.5, -106.5, 101.5, -106.5, 14)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="RpgMaison1/StaticBody2D"]
+polygon = PackedVector2Array(24, 90.5, 24, 101, 106, 101, 108, -13, 94.5, -6.5, 94.5, 90.5)
+
+[node name="Rpg-maisonTable0000Calque-3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(316, 374)
+scale = Vector2(-2, 2)
+texture = ExtResource("3_ujuun")
+offset = Vector2(1, -7.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rpg-maisonTable0000Calque-3"]
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Rpg-maisonTable0000Calque-3/StaticBody2D"]
+position = Vector2(-42, -37.5)
+polygon = PackedVector2Array(-1, 33.5, 0.5, 43.5, 11, 45.5, 13, 38, 16, 38, 17, 51.5, 20.5, 52.5, 20, 44.5, 66.5, 44, 66.5, 52, 70, 52.5, 70.5, 38, 73.5, 38.5, 73.5, 44, 76, 45, 83.5, 45.5, 87.5, 33, 87, 26, 74, 26, 73.5, 14.5, 11.5, 14.5, 11.5, 25.5, 0, 25.5)
+
+[node name="Rpg-maisonPouf0001Pouf" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(513, 431)
+scale = Vector2(-2, 2)
+texture = ExtResource("4_2ghos")
+offset = Vector2(0.5, -7)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rpg-maisonPouf0001Pouf"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rpg-maisonPouf0001Pouf/StaticBody2D"]
+position = Vector2(0, -7.5)
+polygon = PackedVector2Array(-27.5, 19, -24.5, 21, -17.5, 22.5, -8, 25, 1, 26, 13.5, 25, 23, 20, 29.5, 13.5, 32, 6.5, 32, -1, 28, -3.5, 19.5, -6, 11, -7, 0.5, -14.5, -9.5, -20, -21, -15.5, -27.5, -9, -31.5, 0, -32.5, 8.5, -30, 16)
+
+[node name="steven" parent="." instance=ExtResource("5_it3o4")]
+position = Vector2(406, 452)
+
+[node name="goto_champ" type="Area2D" parent="."]
+position = Vector2(-20, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_champ"]
+position = Vector2(410, 501)
+shape = SubResource("RectangleShape2D_s163v")
+
+[node name="fleche_maison" type="Polygon2D" parent="."]
+position = Vector2(389, 468)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-4, -6, -4, -42, 4, -42, 4, -6, 14, -6, 0, 8, -14, -6)
+script = ExtResource("6_ibblu")
+
+[node name="Area2D" type="Area2D" parent="fleche_maison"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fleche_maison/Area2D"]
+shape = SubResource("CircleShape2D_5ajer")
+
+[node name="ItemObject" type="Sprite2D" parent="."]
+position = Vector2(246.341, 428.909)
+rotation = -0.526419
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_lvm00")
+region_enabled = true
+region_rect = Rect2(0, 0, 17.0695, 16)
+script = ExtResource("8_l0qyd")
+properties = SubResource("Resource_rgave")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="ItemObject"]
+
+[node name="@CollisionShape2D@90989" type="CollisionShape2D" parent="ItemObject/Area2D"]
+position = Vector2(-6.12736e-05, 6.10352e-05)
+shape = SubResource("CircleShape2D_lqblo")
+
+[node name="Polygon2D" parent="ItemObject" instance=ExtResource("11_can8j")]
+position = Vector2(11.5303, -21.0933)
+rotation = 0.526419
+scale = Vector2(1.0989, 1.0989)
+
+[connection signal="body_entered" from="goto_champ" to="." method="_on_goto_champ_body_entered"]
+[connection signal="body_entered" from="fleche_maison/Area2D" to="fleche_maison" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="fleche_maison/Area2D" to="fleche_maison" method="_on_area_2d_body_exited"]

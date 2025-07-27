@@ -5,7 +5,8 @@ func _ready() -> void:
 	if Globals.direction_from == "rue_commerce_hotel":
 		$steven.position = Vector2(395, 447)
 	GestionDialogue.event_declencheur.connect(event)
-	if GestionQuetes.liste_quetes["quete_oeufs_1.tres"].state == Quete.Quete_State.FINI:
+	if GestionQuetes.liste_quetes["quete_oeufs_1.tres"].state == Quete.Quete_State.FINI and \
+	GestionQuetes.liste_quetes["quete_menage_1.tres"].state == Quete.Quete_State.INACTIF:
 		$DameHotel.nom_timeline = "hoteliere_menage"
 
 

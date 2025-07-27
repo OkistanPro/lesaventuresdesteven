@@ -1,0 +1,147 @@
+[gd_scene load_steps=21 format=3 uid="uid://brb2hopc1fk7u"]
+
+[ext_resource type="Script" uid="uid://do2gi0jo3igxr" path="res://scripts/village_hotel.gd" id="1_w0n5t"]
+[ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_08s4r"]
+[ext_resource type="Shader" uid="uid://cvvmwj5sbds1p" path="res://shaders/corrupted2.gdshader" id="2_nix6x"]
+[ext_resource type="Texture2D" uid="uid://2gtn3xlwn53u" path="res://sprites/decor.png" id="3_nix6x"]
+[ext_resource type="Shader" uid="uid://bemupefxksl5a" path="res://shaders/corrupted.gdshader" id="4_acv3i"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="4_vper1"]
+[ext_resource type="Texture2D" uid="uid://bi7snn7iinctr" path="res://sprites/maisons_front.png" id="5_acv3i"]
+[ext_resource type="Texture2D" uid="uid://db74q2xm1vphq" path="res://sprites/RPG-HOTEL.png" id="6_obcqg"]
+[ext_resource type="Texture2D" uid="uid://d34aenbdwixl5" path="res://sprites/CLE.png" id="7_jfa41"]
+[ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="8_3f2le"]
+[ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="9_atwdq"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="10_5gxh6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_obcqg"]
+shader = ExtResource("2_nix6x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jfa41"]
+shader = ExtResource("4_acv3i")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0aefm"]
+normal = Vector2(0, 1)
+distance = 179.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_486vb"]
+size = Vector2(96, 575)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3f2s"]
+size = Vector2(303.409, 92.7274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ef3c"]
+size = Vector2(15, 7)
+
+[sub_resource type="Resource" id="Resource_5rq55"]
+script = ExtResource("9_atwdq")
+item_name = &"clé n°6"
+texture_icon = ExtResource("7_jfa41")
+pickable = false
+event_on_not_pick = &""
+metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqnlo"]
+size = Vector2(62.4529, 37.6918)
+
+[node name="village_hotel" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_w0n5t")
+
+[node name="DecorBas" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_obcqg")
+position = Vector2(0, 178)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_08s4r")
+centered = false
+
+[node name="decor" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="decor"]
+material = SubResource("ShaderMaterial_jfa41")
+position = Vector2(0, 15)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("3_nix6x")
+centered = false
+
+[node name="limitesMonde" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limitesMonde"]
+shape = SubResource("WorldBoundaryShape2D_0aefm")
+
+[node name="steven" parent="." instance=ExtResource("4_vper1")]
+position = Vector2(223, 330)
+
+[node name="goto_rue_droite" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_droite"]
+position = Vector2(702, 300)
+shape = SubResource("RectangleShape2D_486vb")
+
+[node name="goto_rue_gauche" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue_gauche"]
+position = Vector2(-42, 300)
+shape = SubResource("RectangleShape2D_486vb")
+
+[node name="MaisonsFront" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(330, 569)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("5_acv3i")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MaisonsFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaisonsFront/StaticBody2D"]
+position = Vector2(0.568253, 9.5455)
+shape = SubResource("RectangleShape2D_w3f2s")
+
+[node name="Rpg-hotel" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(348, 176)
+scale = Vector2(2.1, 2.1)
+texture = ExtResource("6_obcqg")
+offset = Vector2(-3.33334, -28.0952)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rpg-hotel"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rpg-hotel/StaticBody2D"]
+position = Vector2(-3.80952, -23.3333)
+polygon = PackedVector2Array(-107.619, 77.6191, -89.0476, 82.8572, -70, 86.1905, -54.7619, 80.9524, -46.6667, 80.4762, -46.6667, 88.5714, -22.8571, 89.0476, 30.4762, 84.7619, 71.9048, 68.0952, 100, 25.7143, 102.857, -23.8095, -89.0476, -16.6667, -103.81, 15.2381)
+
+[node name="goto_hotel" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_hotel"]
+z_index = 2
+position = Vector2(234.5, 299.5)
+shape = SubResource("RectangleShape2D_1ef3c")
+
+[node name="Cle6" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(386, 488)
+rotation = 1.47857
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_jfa41")
+script = ExtResource("8_3f2le")
+properties = SubResource("Resource_5rq55")
+metadata/_custom_type_script = "uid://b1phsyjs6go0l"
+
+[node name="Area2D" type="Area2D" parent="Cle6"]
+
+[node name="_CollisionShape2D_34019" type="CollisionShape2D" parent="Cle6/Area2D"]
+position = Vector2(0.230285, -2.48934)
+rotation = 1.64729
+shape = SubResource("RectangleShape2D_iqnlo")
+
+[node name="Polygon2D" parent="Cle6" instance=ExtResource("10_5gxh6")]
+z_index = 4
+position = Vector2(-23.2786, -2.14325)
+rotation = -1.47857
+scale = Vector2(1, 1)
+color = Color(0.995353, 0.869497, 0.637136, 1)
+
+[connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
+[connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
+[connection signal="body_entered" from="goto_hotel" to="." method="_on_goto_hotel_body_entered"]
