@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=9 format=3 uid="uid://dm76ch8wexqw8"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_v3mr6"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_26o57"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_51doq"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_s32wf"]
+
+[sub_resource type="Resource" id="Resource_v8l3y"]
+script = ExtResource("3_51doq")
+nom_perso = "Poussin"
+mess = "J'ai pas vu beaucoup de poussin de ton genre."
+liste_choix = Array[ExtResource("2_26o57")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_bm2xy"]
+script = ExtResource("3_51doq")
+nom_perso = "Poussin"
+mess = "Je pense que tu ferais fuir n'importe quelle femelle avec ta façon de parler..."
+liste_choix = Array[ExtResource("2_26o57")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_8gwby"]
+script = ExtResource("3_51doq")
+nom_perso = "Poussin"
+mess = "Ton air intellectuel qui ne sert à rien."
+liste_choix = Array[ExtResource("2_26o57")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_gfxj3"]
+script = ExtResource("3_51doq")
+nom_perso = "Poussin"
+mess = "Franchement je te dis mon avis, c'est ridicule."
+liste_choix = Array[ExtResource("2_26o57")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("4_s32wf")
+liste_messages = Array[ExtResource("1_v3mr6")]([SubResource("Resource_v8l3y"), SubResource("Resource_bm2xy"), SubResource("Resource_8gwby"), SubResource("Resource_gfxj3")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

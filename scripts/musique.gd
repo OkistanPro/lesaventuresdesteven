@@ -15,6 +15,7 @@ var musique_menu_bug = preload("res://musique/GLITCH/OST_MENU_GLITCH1.wav")
 var musique_poussin_dead = preload("res://sons/dead_poussin.wav")
 var musicbox = preload("res://sons/musicbox.wav")
 var steven_pleure = preload("res://sons/steven_pleure.wav")
+var musique_alter3 = preload("res://sons/OST bizzare.wav")
 
 var interieur : bool = true:
 	set(value):

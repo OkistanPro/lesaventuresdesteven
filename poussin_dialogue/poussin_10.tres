@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=7 format=3 uid="uid://cmun17ma4wsve"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_ntrge"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_tedw6"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_1rw5f"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_07l21"]
+
+[sub_resource type="Resource" id="Resource_v8l3y"]
+script = ExtResource("3_1rw5f")
+nom_perso = "Poussin"
+mess = "Pourquoi malgré toutes tes idées stupides tu continues à créer ?"
+liste_choix = Array[ExtResource("2_tedw6")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_bm2xy"]
+script = ExtResource("3_1rw5f")
+nom_perso = "Poussin"
+mess = "Tu n'as donc jamais appris."
+liste_choix = Array[ExtResource("2_tedw6")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("4_07l21")
+liste_messages = Array[ExtResource("1_ntrge")]([SubResource("Resource_v8l3y"), SubResource("Resource_bm2xy")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

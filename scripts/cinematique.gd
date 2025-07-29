@@ -89,6 +89,9 @@ func _ready() -> void:
 		Musique.stream = Musique.musique_cinematique_bug
 		Musique.play()
 		$sharpen.visible = true
+	
+	if GestionsEvents.current_event == "event_alter3":
+		get_tree().change_scene_to_file.call_deferred("res://scenes/alter3.tscn")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	skip()

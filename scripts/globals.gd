@@ -29,6 +29,7 @@ var hotel = preload("res://scenes/hotel.tscn")
 var coffee = preload("res://scenes/coffee.tscn")
 var tea = preload("res://scenes/tea.tscn")
 var mairie = preload("res://scenes/mairie.tscn")
+var souvenirs = preload("res://scenes/souvenirs.tscn")
 
 var direction_from : String
 var y_from : float
@@ -63,7 +64,7 @@ var current_event : String = ""
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	await get_tree().create_timer(2.0).timeout
+	get_tree().set_auto_accept_quit(false)
 	# GestionDialogue.lancer_timeline("boulangere")
 
 func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void:
@@ -116,7 +117,8 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 			match to:
 				"rue_commerce_epicerie":
 					get_tree().change_scene_to_packed.call_deferred(rue_commerce_epicerie)
-		
+				"souvenirs":
+					get_tree().change_scene_to_packed.call_deferred(souvenirs)
 		"croisement_residence":
 			croisement_residence.pack(p_scene)
 			match to:
@@ -235,7 +237,11 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 			match to:
 				"village_centre":
 					get_tree().change_scene_to_packed.call_deferred(village_centre)
-
+		"souvenirs":
+			souvenirs.pack(p_scene)
+			match to:
+				"rue_commerce_souvenirs":
+					get_tree().change_scene_to_packed.call_deferred(rue_commerce_souvenirs)
 
 
 func item_event(name_event : StringName, send_object : ItemProperties = null):

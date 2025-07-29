@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=8 format=3 uid="uid://ce5daugwwnqaw"]
+
+[ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_31dhg"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_6htka"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_2tffd"]
+[ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="4_doxks"]
+
+[sub_resource type="Resource" id="Resource_v8l3y"]
+script = ExtResource("3_2tffd")
+nom_perso = "Poussin"
+mess = "Toi ? Aider les humains ?"
+liste_choix = Array[ExtResource("2_6htka")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_bm2xy"]
+script = ExtResource("3_2tffd")
+nom_perso = "Poussin"
+mess = "Hahahahahahahahahahahahahahahahahahahahahahahahahahahahaha"
+liste_choix = Array[ExtResource("2_6htka")]([])
+event_at_start = ""
+no_end = true
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_8gwby"]
+script = ExtResource("3_2tffd")
+nom_perso = "Poussin"
+mess = "Va picorer tes graines va ! Haha..."
+liste_choix = Array[ExtResource("2_6htka")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[resource]
+script = ExtResource("4_doxks")
+liste_messages = Array[ExtResource("1_31dhg")]([SubResource("Resource_v8l3y"), SubResource("Resource_bm2xy"), SubResource("Resource_8gwby")])
+metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

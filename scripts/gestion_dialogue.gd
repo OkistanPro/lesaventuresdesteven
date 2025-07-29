@@ -19,6 +19,22 @@ var glitched_dialogues = [
 	preload("res://dialogues_glitched/pnj_glitched_4.tres"),
 ]
 
+var poussin_dialogues = [
+	preload("res://poussin_dialogue/poussin_1.tres"),
+	preload("res://poussin_dialogue/poussin_2.tres"),
+	preload("res://poussin_dialogue/poussin_3.tres"),
+	preload("res://poussin_dialogue/poussin_4.tres"),
+	preload("res://poussin_dialogue/poussin_5.tres"),
+	preload("res://poussin_dialogue/poussin_6.tres"),
+	preload("res://poussin_dialogue/poussin_7.tres"),
+	preload("res://poussin_dialogue/poussin_8.tres"),
+	preload("res://poussin_dialogue/poussin_9.tres"),
+	preload("res://poussin_dialogue/poussin_10.tres"),
+	preload("res://poussin_dialogue/poussin_11.tres"),
+	preload("res://poussin_dialogue/poussin_12.tres"),
+	preload("res://poussin_dialogue/poussin_13.tres")
+]
+
 var vhs_1_dialogue = preload("res://dialogues_glitched/lettre.tres")
 var poussin_dead = preload("res://dialogues_glitched/poussin_dead.tres")
 var rafod_tech_dialogue = preload("res://dialogues_glitched/rafod_tech.tres")
@@ -83,6 +99,10 @@ func lancer_timeline(nom_timeline : String) -> void:
 					timeline_actuel = glitched_dialogues[randi_range(0, len(glitched_dialogues)-1)]
 					active = true
 					lancer_dialogue.emit()
+		elif GestionsEvents.current_event == "event_alter3":
+			timeline_actuel = poussin_dialogues[randi_range(0, len(poussin_dialogues)-1)]
+			active = true
+			lancer_dialogue.emit()
 		else:
 			timeline_actuel = liste_timeline[nom_timeline]
 			active = true

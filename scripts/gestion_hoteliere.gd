@@ -9,3 +9,5 @@ func changement_timeline(nom_event : String):
 		$"..".nom_timeline = "hoteliere_wait_menage"
 	if nom_event == "fin_menage":
 		$"..".nom_timeline = "hoteliere_menage_fin"
+	if nom_event == "fin_quete_menage":
+		$"..".nom_timeline = "hoteliere"

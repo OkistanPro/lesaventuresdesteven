@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0rq6eeam76bn"]
+[gd_scene load_steps=3 format=3 uid="uid://d0rq6eeam76bn"]
 
 [ext_resource type="VideoStream" uid="uid://bw2gnptbmvuaf" path="res://videos/end_alter2_ntsc.ogv" id="1_3ywc3"]
+[ext_resource type="Script" uid="uid://dyxo1bo85kjhr" path="res://scripts/fin_alter_2.gd" id="1_baamb"]
 
 [node name="FinAlter2" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_baamb")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
@@ -20,3 +22,5 @@ grow_vertical = 2
 stream = ExtResource("1_3ywc3")
 autoplay = true
 expand = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

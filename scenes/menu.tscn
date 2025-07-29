@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://cd04qxn4txnf2"]
 
 [ext_resource type="Script" uid="uid://b4g4xapwogta7" path="res://scripts/menu.gd" id="1_4ytvr"]
-[ext_resource type="Texture2D" uid="uid://b3peavhtav44h" path="res://sprites/textures/ground 1.png" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://brdmhulm0jtlw" path="res://sprites/title_screen.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://csw15qifyhhjm" path="res://sprites/menu_fond.png" id="2_g3eks"]
 [ext_resource type="Texture2D" uid="uid://b2lxkarf8wcvv" path="res://sprites/msg_box2.png" id="2_vjb58"]
 [ext_resource type="FontFile" uid="uid://04rj6q4gw31c" path="res://polices/PixeloidSans.ttf" id="3_con2f"]
 [ext_resource type="Script" uid="uid://dsxr6osdlnnvc" path="res://scripts/jouer.gd" id="5_4ytvr"]
@@ -55,13 +55,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
 offset_right = -200.0
-offset_bottom = -149.0
+offset_bottom = -148.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-texture = ExtResource("1_mhnvy")
-stretch_mode = 1
+texture = ExtResource("2_g3eks")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

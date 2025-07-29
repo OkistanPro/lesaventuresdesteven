@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://hdxui1dj546j"]
+[gd_scene load_steps=27 format=3 uid="uid://hdxui1dj546j"]
 
 [ext_resource type="Script" uid="uid://vte1qlb04x0a" path="res://scripts/rue_commerce_1.gd" id="1_w87nh"]
 [ext_resource type="Texture2D" uid="uid://c0pgoh688os8b" path="res://sprites/zone_commerçante.png" id="2_lbbow"]
@@ -40,6 +40,9 @@ size = Vector2(17.5, 28.1911)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0gg83"]
 radius = 19.7845
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nyyj"]
+size = Vector2(43.75, 6)
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -96,7 +99,7 @@ texture = ExtResource("6_fgsm5")
 [node name="StaticBody2D" type="StaticBody2D" parent="souvenirs"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="souvenirs/StaticBody2D"]
-polygon = PackedVector2Array(-60, -54.6667, -123.333, -42.6667, -123.333, 54.6667, -59.3333, 58, 61.3333, 56.6667, 61.3333, 48.6667, 89.3333, 48.6667, 89.3333, 56.6667, 116, 56.6667, 116, 18, 122, 10, 122, -8.66666, 117.333, -14.6667, 111, -26.2)
+polygon = PackedVector2Array(-60, -54.6667, -123.333, -42.6667, -123.333, 54.6667, -59.3333, 58, 61.3333, 56.6667, 61.3333, 44, 89.3333, 44, 89.3333, 56.6667, 116, 56.6667, 116, 18, 122, 10, 122, -8.66666, 117.333, -14.6667, 111, -26.2)
 
 [node name="personnage" type="Sprite2D" parent="."]
 z_index = 1
@@ -311,8 +314,16 @@ position = Vector2(0, -24)
 
 [node name="gestion_pnj" type="Node" parent="carole"]
 
+[node name="goto_souvenirs" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_souvenirs"]
+z_index = 2
+position = Vector2(514.125, 207)
+shape = SubResource("RectangleShape2D_5nyyj")
+
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="personnage/Area2D" to="personnage" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="personnage/Area2D" to="personnage" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="carole/Area2D" to="carole" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="carole/Area2D" to="carole" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="goto_souvenirs" to="." method="_on_goto_souvenirs_body_entered"]
