@@ -1,0 +1,187 @@
+[gd_scene load_steps=17 format=3 uid="uid://dmpnmv5stb6t2"]
+
+[ext_resource type="Script" uid="uid://nom27mhr2k2t" path="res://scripts/souvenirs.gd" id="1_sxm4r"]
+[ext_resource type="Texture2D" uid="uid://disopk3iff5cj" path="res://sprites/INTERIEUR BOUTIQUE DE SOUVENIR/fond.png" id="1_ytiuu"]
+[ext_resource type="Shader" uid="uid://cvvmwj5sbds1p" path="res://shaders/corrupted2.gdshader" id="2_b54p0"]
+[ext_resource type="Texture2D" uid="uid://hssn4f13wtq0" path="res://sprites/INTERIEUR BOUTIQUE DE SOUVENIR/tourne1.png" id="2_csuyy"]
+[ext_resource type="Texture2D" uid="uid://dqyoxssqnfuwf" path="res://sprites/INTERIEUR BOUTIQUE DE SOUVENIR/tourne2.png" id="3_1e3vd"]
+[ext_resource type="Texture2D" uid="uid://bg5adbqlqystp" path="res://sprites/INTERIEUR BOUTIQUE DE SOUVENIR/tourne3.png" id="4_ofj5t"]
+[ext_resource type="PackedScene" uid="uid://wh4gxqeqyw78" path="res://scenes/steven.tscn" id="5_ofj5t"]
+[ext_resource type="Texture2D" uid="uid://dclt1cnjbms1t" path="res://sprites/INTERIEUR BOUTIQUE DE SOUVENIR/vitrine.png" id="6_xlss2"]
+[ext_resource type="Script" uid="uid://bhsk7fhnl4vyo" path="res://scripts/interaction_component.gd" id="8_njptc"]
+[ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="9_1qllu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pmmu4"]
+shader = ExtResource("2_b54p0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noqyd"]
+size = Vector2(8.5, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njptc"]
+size = Vector2(164, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlss2"]
+size = Vector2(61, 27.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxm4r"]
+size = Vector2(79, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myuvu"]
+radius = 27.0
+height = 106.0
+
+[node name="Souvenirs" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_sxm4r")
+
+[node name="Fond" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pmmu4")
+position = Vector2(400, 300)
+scale = Vector2(2, 2)
+texture = ExtResource("1_ytiuu")
+flip_h = true
+flip_v = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Fond"]
+scale = Vector2(-1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fond/StaticBody2D"]
+polygon = PackedVector2Array(29.5, -13, 30, 10, 32, 19.5, 37, 23.5, 43.5, 25.5, 50.5, 25, 112.5, 25, 111, -23.5, 30.5, -23, 29.5, -20)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Fond/StaticBody2D"]
+polygon = PackedVector2Array(-101.5, 7.5, -92.5, 12, -64, -13.5, -54, -13.5, -52.5, -7, 11, -6.5, 12.5, -7.5, 13, -13.5, 29.5, -13.5, 30, -49.5, -109, -49.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fond/StaticBody2D"]
+position = Vector2(-105.75, 33)
+shape = SubResource("RectangleShape2D_noqyd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fond/StaticBody2D"]
+position = Vector2(105.25, 33)
+shape = SubResource("RectangleShape2D_noqyd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Fond/StaticBody2D"]
+position = Vector2(75, 77.5)
+shape = SubResource("RectangleShape2D_njptc")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Fond/StaticBody2D"]
+position = Vector2(-126.5, 77.5)
+shape = SubResource("RectangleShape2D_njptc")
+
+[node name="Tourne1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(530, 392)
+scale = Vector2(2, 2)
+texture = ExtResource("2_csuyy")
+offset = Vector2(-0.5, -5.5)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tourne1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tourne1/StaticBody2D"]
+position = Vector2(-1, -5.5)
+polygon = PackedVector2Array(-9.5, 11, -9.5, 16, -6.5, 20, -1.5, 22, 7, 21, 10.5, 17, 9.5, 10.5, 4, 5.5, -4.5, 5.5)
+
+[node name="Tourne2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(448, 340)
+scale = Vector2(2, 2)
+texture = ExtResource("3_1e3vd")
+offset = Vector2(0.5, -5.5)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tourne2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tourne2/StaticBody2D"]
+position = Vector2(0.5, -5.5)
+polygon = PackedVector2Array(-9.5, 11, -9.5, 16, -6.5, 20, -1.5, 22, 7, 21, 10.5, 17, 9.5, 10.5, 4, 5.5, -4.5, 5.5)
+
+[node name="Tourne3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(368, 394)
+scale = Vector2(2, 2)
+texture = ExtResource("4_ofj5t")
+offset = Vector2(-0.5, -6.5)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tourne3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tourne3/StaticBody2D"]
+position = Vector2(-0.5, -6.5)
+polygon = PackedVector2Array(-9.5, 11, -9.5, 16, -6.5, 20, -1.5, 22, 7, 21, 10.5, 17, 9.5, 10.5, 4, 5.5, -4.5, 5.5)
+
+[node name="steven" parent="." instance=ExtResource("5_ofj5t")]
+position = Vector2(452, 423)
+
+[node name="Vitrine" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(269, 398)
+scale = Vector2(2, 2)
+texture = ExtResource("6_xlss2")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Vitrine"]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Vitrine/StaticBody2D"]
+position = Vector2(1.5, 4.75)
+shape = SubResource("RectangleShape2D_xlss2")
+
+[node name="goto_rue" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goto_rue"]
+position = Vector2(452, 465)
+shape = SubResource("RectangleShape2D_sxm4r")
+
+[node name="tourne1_area" type="Area2D" parent="."]
+position = Vector2(528, 320)
+
+[node name="InteractionComponent" type="Node" parent="tourne1_area"]
+script = ExtResource("8_njptc")
+nom_timeline = "tourne_1"
+metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
+
+[node name="Polygon2D" parent="tourne1_area" instance=ExtResource("9_1qllu")]
+z_index = 2
+scale = Vector2(1, 1)
+color = Color(0.517184, 0.517184, 0.517184, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tourne1_area"]
+position = Vector2(0, 64)
+shape = SubResource("CapsuleShape2D_myuvu")
+
+[node name="tourne2_area" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(450, 265)
+
+[node name="InteractionComponent" type="Node" parent="tourne2_area"]
+script = ExtResource("8_njptc")
+nom_timeline = "tourne_2"
+metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
+
+[node name="Polygon2D" parent="tourne2_area" instance=ExtResource("9_1qllu")]
+z_index = 2
+scale = Vector2(1, 1)
+color = Color(0.517647, 0.517647, 0.517647, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tourne2_area"]
+position = Vector2(0, 64)
+shape = SubResource("CapsuleShape2D_myuvu")
+
+[node name="tourne3_area" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(366, 320)
+
+[node name="InteractionComponent" type="Node" parent="tourne3_area"]
+script = ExtResource("8_njptc")
+nom_timeline = "tourne_3"
+metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
+
+[node name="Polygon2D" parent="tourne3_area" instance=ExtResource("9_1qllu")]
+z_index = 2
+scale = Vector2(1, 1)
+color = Color(0.517647, 0.517647, 0.517647, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tourne3_area"]
+position = Vector2(0, 64)
+shape = SubResource("CapsuleShape2D_myuvu")
+
+[connection signal="body_entered" from="goto_rue" to="." method="_on_goto_rue_body_entered"]

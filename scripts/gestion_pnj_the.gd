@@ -5,4 +5,4 @@ func _ready() -> void:
 
 func changement_timeline(nom_event : String) -> void:
 	if nom_event == "lancement_quete_the":
-		$"..".nom_timeline == "gerant_the_wait_quete"
+		$"..".nom_timeline = "gerant_the_wait_quete"

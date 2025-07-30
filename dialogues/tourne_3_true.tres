@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_fixsy"]
 script = ExtResource("3_nnf73")
 nom_event = "prendre_tourne_3"
-parallele = false
+parallele = true
 metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [sub_resource type="Resource" id="Resource_bn837"]

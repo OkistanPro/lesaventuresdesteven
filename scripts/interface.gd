@@ -25,7 +25,7 @@ func _ready() -> void:
 func lancer_dialogue() -> void:
 	add_child(GestionDialogue.dialogue_scene.instantiate())
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$coffre/TextureRect/violet_c.text = str(code[0])
 	$coffre/TextureRect/rouge_c.text = str(code[1])
 	$coffre/TextureRect/jaune_c.text = str(code[2])

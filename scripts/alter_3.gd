@@ -56,14 +56,14 @@ func generate_terrain() -> void:
 				max_value = Vector2i(x*32, y*32)
 			if value_noise > -0.1 or (x < 3 and x > -3 and y < 3 and y > -3):
 				$TileMapLayer2.set_cell(Vector2i(x, y), 5, Vector2i(1, 0))
-				if randi_range(0, 3000) == 9:
+				if randi_range(0, 1700) == 9:
 					var poussin_instance = poussin_glitched.instantiate()
 					add_child(poussin_instance)
 					poussin_instance.position = Vector2i(x*32, y*32)
 					poussin_instance.z_index = 2
 					poussin_instance.nom_timeline = "a"
 			else:
-				if noise_red.get_noise_2d(x, y) > 0.0:
+				if noise_red.get_noise_2d(x, y) > 0.15:
 					$TileMapLayer2.set_cell(Vector2i(x, y), 5, Vector2i(2, 0))
 					$TileMapLayer2.set_cell(Vector2i(x, y-1), 5, Vector2i(2, 0))
 					$TileMapLayer2.set_cell(Vector2i(x, y-2), 5, Vector2i(2, 0))

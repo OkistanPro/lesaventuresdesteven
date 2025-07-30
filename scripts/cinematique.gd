@@ -20,6 +20,7 @@ func _ready() -> void:
 	Globals.selected_item = -1
 	Globals.selected_item_name = ""
 	Globals.dialogue_bataille_passed = false
+	GestionDialogue.pris_objet = false
 	
 	if GestionsEvents.current_event == "event_alter2":
 		Globals.village_centre.pack(preload("res://scenes_alter2/village_1.tscn").instantiate())
@@ -47,6 +48,7 @@ func _ready() -> void:
 		Globals.coffee.pack(preload("res://scenes_alter2/coffee.tscn").instantiate())
 		Globals.tea.pack(preload("res://scenes_alter2/tea.tscn").instantiate())
 		Globals.mairie.pack(preload("res://scenes_alter2/mairie.tscn").instantiate())
+		Globals.souvenirs.pack(preload("res://scenes_alter2/souvenirs.tscn").instantiate())
 	elif GestionsEvents.current_event == "event_alter1":
 		Globals.village_centre.pack(preload("res://scenes_save/village_1.tscn").instantiate())
 		Globals.rue_commerce_epicerie.pack(preload("res://scenes_save/rue_commerce_epicerie.tscn").instantiate())
@@ -73,6 +75,7 @@ func _ready() -> void:
 		Globals.coffee.pack(preload("res://scenes_save/coffee.tscn").instantiate())
 		Globals.tea.pack(preload("res://scenes_save/tea.tscn").instantiate())
 		Globals.mairie.pack(preload("res://scenes_save/mairie.tscn").instantiate())
+		Globals.souvenirs.pack(preload("res://scenes_save/souvenirs.tscn").instantiate())
 
 	Globals.in_cinematique = true
 	Globals.in_menu = false
@@ -93,7 +96,7 @@ func _ready() -> void:
 	if GestionsEvents.current_event == "event_alter3":
 		get_tree().change_scene_to_file.call_deferred("res://scenes/alter3.tscn")
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	skip()
 	
 func _input(event: InputEvent) -> void:

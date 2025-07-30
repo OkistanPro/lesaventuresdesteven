@@ -2,7 +2,7 @@ extends Resource
 class_name D_Timeline
 
 @export var liste_messages : Array[D_Object]
-var current_message : int = 0
+@export var current_message : int = 0
 
 func get_message() -> D_Object:
 	var obj
@@ -10,5 +10,6 @@ func get_message() -> D_Object:
 		obj = liste_messages[current_message]
 	else:
 		obj = null
+		current_message = -1
 	current_message += 1
 	return obj

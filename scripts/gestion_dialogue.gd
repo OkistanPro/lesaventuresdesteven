@@ -3,14 +3,22 @@ extends Node
 signal lancer_dialogue
 signal fin_event
 signal event_declencheur(nom_event : String)
+signal fin_discu
 
 var dialogue_scene : PackedScene = preload("res://scenes/dialogue.tscn")
 var timeline_actuel : D_Timeline
 var liste_timeline = {
 }
-var active : bool = false
+var active : bool = false:
+	set(value):
+		active = value
+		if not active:
+			fin_discu.emit()
 var kayou = preload("res://items/kayou.tres")
 var cle = preload("res://items/cle.tres")
+var statue = preload("res://items/statue.tres")
+var galerie_photo = preload("res://items/galerie_photo.tres")
+var affiche = preload("res://items/affiche_aled.tres")
 
 var glitched_dialogues = [
 	preload("res://dialogues_glitched/pnj_glitched_1.tres"),
@@ -43,6 +51,7 @@ var harcele = preload("res://dialogues_glitched/poussin_harcele.tres")
 var steven_pleure = preload("res://dialogues_glitched/maire_pleure.tres")
 var rafod_tech_dialogue3 = preload("res://dialogues_glitched/rafod_tech3.tres")
 
+var pris_objet : bool = false
 func _ready() -> void :
 	var directories_to_look_at = ["res://dialogues/"]
 	while directories_to_look_at:
@@ -111,6 +120,38 @@ func lancer_timeline(nom_timeline : String) -> void:
 
 func lancer_event(nom_event : String) -> void:
 	match nom_event:
+		"prendre_tourne_1":
+			Globals.pick_item(galerie_photo)
+			GestionSons.play_sound("collect_item")
+			pris_objet = true
+		"prendre_tourne_2":
+			Globals.pick_item(statue)
+			GestionSons.play_sound("collect_item")
+			pris_objet = true
+		"prendre_tourne_3":
+			if GestionsEvents.current_event == "event_alter1":
+				affiche.texture_icon = load("res://sprites/affiche_disparition.png")
+			Globals.pick_item(affiche)
+			GestionSons.play_sound("collect_item")
+			pris_objet = true
+		"test_tourne1":
+			await fin_discu
+			if GestionQuetes.liste_quetes["quete_relique_1.tres"].state == Quete.Quete_State.FINI and not pris_objet:
+				GestionDialogue.lancer_timeline("tourne_1_true")
+			else:
+				GestionDialogue.lancer_timeline("tourne_false")
+		"test_tourne2":
+			await fin_discu
+			if GestionQuetes.liste_quetes["quete_relique_1.tres"].state == Quete.Quete_State.FINI and not pris_objet:
+				GestionDialogue.lancer_timeline("tourne_2_true")
+			else:
+				GestionDialogue.lancer_timeline("tourne_false")
+		"test_tourne3":
+			await fin_discu
+			if GestionQuetes.liste_quetes["quete_relique_1.tres"].state == Quete.Quete_State.FINI and not pris_objet:
+				GestionDialogue.lancer_timeline("tourne_3_true")
+			else:
+				GestionDialogue.lancer_timeline("tourne_false")
 		"fin_alter2":
 			get_tree().change_scene_to_file("res://scenes_alter2/fin_alter2.tscn")
 		"steven_pleure":

@@ -1,9 +1,28 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=3 format=3 uid="uid://rti6yuj4jwlo"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=8 format=3 uid="uid://rti6yuj4jwlo"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_u8eoh"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_8fnel"]
+[ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_aby7w"]
+[ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_pcjaw"]
+[ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="4_pcjaw"]
+
+[sub_resource type="Resource" id="Resource_c6kt8"]
+script = ExtResource("3_pcjaw")
+nom_perso = "Steven"
+mess = "Mmm... un monument miniature en pierre..."
+liste_choix = Array[ExtResource("2_aby7w")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_i7x23"]
+script = ExtResource("4_pcjaw")
+nom_event = "test_tourne2"
+parallele = true
+metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [resource]
 script = ExtResource("2_8fnel")
-liste_messages = Array[ExtResource("1_u8eoh")]([])
+liste_messages = Array[ExtResource("1_u8eoh")]([SubResource("Resource_c6kt8"), SubResource("Resource_i7x23")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

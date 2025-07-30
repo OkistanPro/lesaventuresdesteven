@@ -49,7 +49,7 @@ func next_message() -> void:
 			next_message()
 	else:
 		GestionDialogue.active = false
-		GestionDialogue.timeline_actuel.current_message = 0
+		# GestionDialogue.timeline_actuel.current_message = 0
 		queue_free()
 
 func _input(event: InputEvent) -> void:

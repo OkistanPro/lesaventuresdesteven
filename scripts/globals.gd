@@ -244,7 +244,7 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 					get_tree().change_scene_to_packed.call_deferred(rue_commerce_souvenirs)
 
 
-func item_event(name_event : StringName, send_object : ItemProperties = null):
+func item_event(name_event : StringName, _send_object : ItemProperties = null):
 	match name_event:
 		&"montre":
 			event_declencheur.emit("montre")

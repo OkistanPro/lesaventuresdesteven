@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal balai
 signal hache
 
-const SPEED : int = 100.0
+const SPEED : int = 100
 var direction : Vector2 = Vector2(0.0, 0.0)
 var in_flaque : bool = false
 var direction_flaque : Vector2 = Vector2.ZERO
@@ -12,7 +12,7 @@ var flip : bool = false
 func _ready() -> void:
 	GestionDialogue.event_declencheur.connect(revenir_camera)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	direction = Input.get_vector("left", "right", "up", "down")
 	
 	var mult = 1.0

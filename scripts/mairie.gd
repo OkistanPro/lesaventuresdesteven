@@ -10,7 +10,7 @@ func _ready() -> void:
 		$trappe.process_mode = Node.PROCESS_MODE_PAUSABLE
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if $steven.position.y < 320:
 		$hall_entree.visible = false
 		$collision_bureau.visible = true
