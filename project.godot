@@ -12,7 +12,7 @@ config_version=5
 
 config/name="lesaventuresdesteven"
 config/version="0.1.0.0"
-run/main_scene="uid://t5h8pq3nop40"
+run/main_scene="uid://bfote53v4wl7n"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 

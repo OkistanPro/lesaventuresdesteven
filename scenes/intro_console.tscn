@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfote53v4wl7n"]
+
+[ext_resource type="Script" uid="uid://digma5sfeh5fx" path="res://scripts/intro_console.gd" id="1_y6247"]
+[ext_resource type="FontFile" uid="uid://2ihjtnbho5wm" path="res://polices/MorePerfectDOSVGA.ttf" id="2_srl2j"]
+[ext_resource type="Shader" uid="uid://vse7ljibs86g" path="res://shaders/crash_system2.gdshader" id="3_gjrly"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ti3sh"]
+shader = ExtResource("3_gjrly")
+
+[node name="console" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y6247")
+
+[node name="stdout" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_srl2j")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+scroll_active = false
+scroll_following = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_ti3sh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = -82.0
+offset_top = -42.0
+offset_right = -13.4375
+offset_bottom = -11.0
+focus_mode = 1
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[connection signal="text_change_rejected" from="LineEdit" to="." method="_on_line_edit_text_change_rejected"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

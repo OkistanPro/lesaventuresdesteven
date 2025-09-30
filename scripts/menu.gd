@@ -63,6 +63,7 @@ func _input(event: InputEvent) -> void:
 				node.text = text_event
 			if node.disabled:
 				node.disabled = false
+		wait_input = false
 
 func _on_musique_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Musique"), value/100.)

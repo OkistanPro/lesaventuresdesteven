@@ -107,7 +107,7 @@ func _input(event: InputEvent) -> void:
 			$glitch2/AudioStreamPlayer.play()
 		else:
 			$glitch2.visible = false
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("pause") and not Globals.in_cinematique and not Globals.in_menu:
 		if not get_tree().paused:
 			if not $"Quêtes".visible and not (get_node_or_null("glitch0") and $glitch0.visible) and not $glitch1.visible and not $glitch2.visible and not $MecChelouGrand.visible and not GestionDialogue.active:
 				get_tree().paused = true
