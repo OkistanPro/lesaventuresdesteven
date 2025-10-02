@@ -89,6 +89,10 @@ var sounds = {
 	"poussin_dead" : [
 		preload("res://sons/dead_poussin.wav"),
 		0.0
+	],
+	"bip_command" : [
+		preload("res://sons/bip_command.wav"),
+		0.0
 	]
 }
 

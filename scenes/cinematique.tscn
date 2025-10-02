@@ -145,7 +145,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 8.20317, 15.5768, 23.5, 31.1667, 34.8333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["Dans un village tyrannisé...", "...où les habitants sont exploités...", "...où règne la terreur et le massacre...", "...le sort du village dépendra d'un seul et unique...", "...poussin.", "Attends, poussin ?"]
+"values": ["Dans un village opprimé...", "...où les habitants sont en colère...", "...où règne la terreur et le massacre...", "...le sort du village dépendra d'un seul et unique...", "...poussin.", "Attends, poussin ?"]
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false

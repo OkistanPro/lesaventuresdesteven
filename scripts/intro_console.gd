@@ -39,6 +39,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	input_text = ""
 	
 	$LineEdit.text = ""
+	$LineEdit.release_focus()
 	$LineEdit.unedit()
 	
 	_command(tmp_input_text)
@@ -48,8 +49,9 @@ func _on_line_backspace() -> void:
 	$LineEdit.text = ""
 	
 func _command(command : String) -> void:
+	GestionSons.play_sound("bip_command")
 	# Gestion de la commande
-	match command.left(4):
+	match command:
 		"help":
 			output_text += "Liste des commandes disponibles :\n"
 			output_text += "help : affiche cette liste\n"
@@ -59,27 +61,29 @@ func _command(command : String) -> void:
 		"list":
 			output_text += "Liste des programmes disponibles :\n"
 			output_text += "LESAVENTURESDESTEVEN\n"
-		"exec":
-			if command == "exec LESAVENTURESDESTEVEN":
-				output_text += "Lancement de LESAVENTURESDESTEVEN."
-				await get_tree().create_timer(2.0).timeout
-				output_text += "."
-				await get_tree().create_timer(2.0).timeout
-				output_text += "."
-				await get_tree().create_timer(2.0).timeout
-				match GestionsEvents.current_event:
-					"normal", "event_alter1":
-						Musique.stream = Musique.musique_cinematique
-						Musique.play()
-					"event_alter2":
-						Musique.stream = Musique.musique_cinematique_bug
-						Musique.play()
-				get_tree().change_scene_to_file.call_deferred("res://scenes/cinematique.tscn")
+		"exec LESAVENTURESDESTEVEN":
+			output_text += "Lancement de LESAVENTURESDESTEVEN."
+			await get_tree().create_timer(2.0).timeout
+			output_text += "."
+			await get_tree().create_timer(2.0).timeout
+			output_text += "."
+			await get_tree().create_timer(2.0).timeout
+			match GestionsEvents.current_event:
+				"normal", "event_alter1":
+					Musique.stream = Musique.musique_cinematique
+					Musique.play()
+				"event_alter2":
+					Musique.stream = Musique.musique_cinematique_bug
+					Musique.play()
+			get_tree().change_scene_to_file.call_deferred("res://scenes/cinematique.tscn")
+		"exit":
+			get_tree().quit(0)
 		_:
-			output_text += "[color=red]ERR - Commande introuvable\nTaper \"help\" pour la liste des commandes disponibles.[/color]"
+			output_text += "[color=red]ERR - La commande ne peut pas être exécutée.\nTaper \"help\" pour la liste des commandes disponibles.[/color]"
 	# On ajoute la flèche en bas
 	output_text += "\n> "
 	# On attend le joueur
+	$LineEdit.grab_focus()
 	$LineEdit.edit()
 
 
