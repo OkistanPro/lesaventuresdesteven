@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=9 format=3 uid="uid://t7qsn660al8k"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=8 format=3 uid="uid://t7qsn660al8k"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_mggff"]
 [ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_42dg0"]
@@ -11,14 +11,7 @@ nom_perso = "Poussin"
 mess = "piou piou piou piou piou piou piou piou, ... piooooouuuuu piou piou piou piou piou"
 liste_choix = Array[ExtResource("2_42dg0")]([])
 event_at_start = ""
-metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
-
-[sub_resource type="Resource" id="Resource_o0rlu"]
-script = ExtResource("3_opx24")
-nom_perso = "Poussin"
-mess = "piouou ou piou piou"
-liste_choix = Array[ExtResource("2_42dg0")]([])
-event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_whtqh"]
@@ -27,6 +20,7 @@ nom_perso = "Poussin"
 mess = "... piou ... piou piou piou piou piou piou piou piou piou piou piou piou piou piou piou piou piou piou piou ..."
 liste_choix = Array[ExtResource("2_42dg0")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_8ac3y"]
@@ -35,9 +29,11 @@ nom_perso = "Steven"
 mess = "Eh, fait attention à tes propos quand même !"
 liste_choix = Array[ExtResource("2_42dg0")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_fllbm")
-liste_messages = Array[ExtResource("1_mggff")]([SubResource("Resource_cvf2q"), SubResource("Resource_o0rlu"), SubResource("Resource_whtqh"), SubResource("Resource_8ac3y")])
+liste_messages = Array[ExtResource("1_mggff")]([SubResource("Resource_cvf2q"), SubResource("Resource_whtqh"), SubResource("Resource_8ac3y")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

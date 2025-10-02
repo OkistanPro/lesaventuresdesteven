@@ -11,6 +11,7 @@ nom_perso = "Poussin"
 mess = "piou piou piou piou piou"
 liste_choix = Array[ExtResource("2_hi4ic")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_n5mws"]
@@ -19,6 +20,7 @@ nom_perso = "Steven"
 mess = "Super tranquille et toi ? Alors, toujours à la recherche de la graine que t'a perdu hier ?"
 liste_choix = Array[ExtResource("2_hi4ic")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_sy0fh"]
@@ -27,6 +29,7 @@ nom_perso = "Poussin"
 mess = "piou piou piou piou piou piou piou piou piou piou"
 liste_choix = Array[ExtResource("2_hi4ic")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_s277v"]
@@ -35,6 +38,7 @@ nom_perso = "Steven"
 mess = "C'est vrai que ça se tente, j'espère quand même que tu vas le retrouver..."
 liste_choix = Array[ExtResource("2_hi4ic")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_amegk"]
@@ -43,6 +47,7 @@ nom_perso = "Steven"
 mess = "Faut pas que ça te travaille trop le cerveau ok ?"
 liste_choix = Array[ExtResource("2_hi4ic")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_1t2gp"]
@@ -51,9 +56,11 @@ nom_perso = "Poussin"
 mess = "piou"
 liste_choix = Array[ExtResource("2_hi4ic")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_q44ys")
 liste_messages = Array[ExtResource("1_pogcg")]([SubResource("Resource_3ukhp"), SubResource("Resource_n5mws"), SubResource("Resource_sy0fh"), SubResource("Resource_s277v"), SubResource("Resource_amegk"), SubResource("Resource_1t2gp")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_2vljb")
-item_name = &"clé n°7"
+item_name = &"cle n°7"
 texture_icon = ExtResource("2_roglb")
 pickable = true
 event_on_not_pick = &""

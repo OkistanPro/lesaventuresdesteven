@@ -11,6 +11,7 @@ nom_perso = "Poussin"
 mess = "PIOOOUUUuuuuuuuu POOOUUUuuuuuu"
 liste_choix = Array[ExtResource("2_epube")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_o0rlu"]
@@ -19,6 +20,7 @@ nom_perso = "Poussin"
 mess = "PiOOuuu IOOOUuuu Pi"
 liste_choix = Array[ExtResource("2_epube")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_whtqh"]
@@ -27,6 +29,7 @@ nom_perso = "Poussin"
 mess = "OOOOOOOOUUUU pIOUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"
 liste_choix = Array[ExtResource("2_epube")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_8ac3y"]
@@ -35,9 +38,11 @@ nom_perso = "Steven"
 mess = "Bas mec, tu chantes super bien !"
 liste_choix = Array[ExtResource("2_epube")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("4_s3437")
 liste_messages = Array[ExtResource("1_h1jpk")]([SubResource("Resource_cvf2q"), SubResource("Resource_o0rlu"), SubResource("Resource_whtqh"), SubResource("Resource_8ac3y")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

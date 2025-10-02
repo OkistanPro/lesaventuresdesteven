@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=24 format=3 uid="uid://cnjhujb5f1e2r"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=23 format=3 uid="uid://cnjhujb5f1e2r"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_veyp2"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_8mm1c"]
@@ -11,6 +11,7 @@ nom_perso = "Maire"
 mess = "Et salut à toi, jeune ..."
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_ejox2"]
@@ -19,14 +20,7 @@ nom_perso = "Maire"
 mess = "... poussin ?!?"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
-metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
-
-[sub_resource type="Resource" id="Resource_5t8uv"]
-script = ExtResource("3_guliq")
-nom_perso = "Maire"
-mess = "Qu'es-ce qui t'amenes de beau ? ... à sortir de ton poulailler ?"
-liste_choix = Array[ExtResource("2_su65c")]([])
-event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_su65c"]
@@ -35,6 +29,7 @@ nom_perso = "Steven"
 mess = "Bouh !"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_guliq"]
@@ -43,6 +38,7 @@ nom_perso = "Maire"
 mess = "AAAAAAAAAAAAAAAH ! Un poussin qui parle !!!!!"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_i1ph1"]
@@ -51,6 +47,7 @@ nom_perso = "Maire"
 mess = "Mais, mais, mais, mais, c'est impossible ?"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_qye0n"]
@@ -59,6 +56,7 @@ nom_perso = "Maire"
 mess = "Je me rappelais pas que les poussins pouvait avoir une conscience... "
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_3iqs4"]
@@ -67,6 +65,7 @@ nom_perso = "Maire"
 mess = "ça peut être un problème si... HEIN bah bonne journée ducoup euh... Monsieur ?"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_57waw"]
@@ -75,11 +74,13 @@ nom_perso = "Steven"
 mess = "Steven, je m'appelle Steven..."
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_o242c"]
 script = ExtResource("2_8mm1c")
 liste_messages = Array[ExtResource("1_veyp2")]([SubResource("Resource_su65c"), SubResource("Resource_guliq"), SubResource("Resource_i1ph1"), SubResource("Resource_qye0n"), SubResource("Resource_3iqs4"), SubResource("Resource_57waw")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_43i7l"]
@@ -95,6 +96,7 @@ nom_perso = "Steven"
 mess = "..."
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_t4705"]
@@ -103,14 +105,16 @@ nom_perso = "Maire"
 mess = "..."
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_4g2p3"]
 script = ExtResource("3_guliq")
 nom_perso = "Steven"
-mess = "... piouuu ?"
+mess = "..."
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_viukw"]
@@ -119,6 +123,7 @@ nom_perso = "Maire"
 mess = "....a....aaAAAATCHOUM"
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_u5xvh"]
@@ -127,11 +132,13 @@ nom_perso = "Maire"
 mess = "pardon."
 liste_choix = Array[ExtResource("2_su65c")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_jpluv"]
 script = ExtResource("2_8mm1c")
 liste_messages = Array[ExtResource("1_veyp2")]([SubResource("Resource_msx62"), SubResource("Resource_t4705"), SubResource("Resource_4g2p3"), SubResource("Resource_viukw"), SubResource("Resource_u5xvh")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_71ffn"]
@@ -141,15 +148,17 @@ goto = SubResource("Resource_jpluv")
 variable_condition = ""
 metadata/_custom_type_script = "uid://nj3n5qedxbgm"
 
-[sub_resource type="Resource" id="Resource_bkfkk"]
+[sub_resource type="Resource" id="Resource_5t8uv"]
 script = ExtResource("3_guliq")
 nom_perso = "Maire"
-mess = "... ce fermier va me le payer, il n'a pas encore vu de quoi je suis capable ..."
+mess = "Qu'est-ce qui t'amène de beau ? à sortir de ton poulailler ?"
 liste_choix = Array[ExtResource("2_su65c")]([SubResource("Resource_43i7l"), SubResource("Resource_71ffn")])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_8mm1c")
-liste_messages = Array[ExtResource("1_veyp2")]([SubResource("Resource_cbgqv"), SubResource("Resource_ejox2"), SubResource("Resource_5t8uv"), SubResource("Resource_bkfkk")])
+liste_messages = Array[ExtResource("1_veyp2")]([SubResource("Resource_cbgqv"), SubResource("Resource_ejox2"), SubResource("Resource_5t8uv")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

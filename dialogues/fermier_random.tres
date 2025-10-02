@@ -98,4 +98,5 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [resource]
 script = ExtResource("2_3tb12")
 liste_messages = Array[ExtResource("1_2nwm6")]([SubResource("Resource_t84o8"), SubResource("Resource_jnm60"), SubResource("Resource_iwkgh"), SubResource("Resource_334cn"), SubResource("Resource_8ldsj"), SubResource("Resource_d5fij"), SubResource("Resource_r832b"), SubResource("Resource_mgmvk"), SubResource("Resource_k44nv"), SubResource("Resource_dpccy")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

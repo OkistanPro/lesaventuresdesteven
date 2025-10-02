@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_7sfmb"]
 script = ExtResource("3_rs7j4")
 nom_perso = "Marge"
-mess = "Bonjour, qu'es ce que tu fait de beau toi, en dehors de ton poulailler ?"
+mess = "Bonjour ! Qu'est-ce que tu fais de beau toi, en dehors de ton poulailler ?"
 liste_choix = Array[ExtResource("2_qf5le")]([])
 event_at_start = ""
 no_end = false
@@ -17,10 +17,10 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_6acuj"]
 script = ExtResource("3_rs7j4")
 nom_perso = "Steven"
-mess = "Bonjour madame, je me promene et ..."
+mess = "Bonjour madame ! Je me promene un peu ..."
 liste_choix = Array[ExtResource("2_qf5le")]([])
 event_at_start = ""
-no_end = false
+no_end = true
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_as6j8"]
@@ -35,7 +35,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_lpvgp"]
 script = ExtResource("3_rs7j4")
 nom_perso = "Steven"
-mess = "Mais ... enfin je fait pas peur a ce point ? ..."
+mess = "... je fais si peur que ça ?"
 liste_choix = Array[ExtResource("2_qf5le")]([])
 event_at_start = ""
 no_end = false
@@ -44,7 +44,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_nm3mr"]
 script = ExtResource("3_rs7j4")
 nom_perso = "Marge"
-mess = "AAAAAAAh ... ah non en faite, tu fait pas peur ..."
+mess = "AAAAAAAh ... ah non en faite, tu fais pas si peur ..."
 liste_choix = Array[ExtResource("2_qf5le")]([])
 event_at_start = ""
 no_end = false
@@ -53,4 +53,5 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [resource]
 script = ExtResource("2_8rkgg")
 liste_messages = Array[ExtResource("1_o2dvx")]([SubResource("Resource_7sfmb"), SubResource("Resource_6acuj"), SubResource("Resource_as6j8"), SubResource("Resource_lpvgp"), SubResource("Resource_nm3mr")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

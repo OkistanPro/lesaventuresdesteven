@@ -15,6 +15,7 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 [sub_resource type="Resource" id="Resource_bn837"]
 script = ExtResource("2_i5v2r")
 liste_messages = Array[ExtResource("1_hcjec")]([SubResource("Resource_fixsy")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_xnuba"]
@@ -27,6 +28,7 @@ metadata/_custom_type_script = "uid://nj3n5qedxbgm"
 [sub_resource type="Resource" id="Resource_euw4o"]
 script = ExtResource("2_i5v2r")
 liste_messages = Array[ExtResource("1_hcjec")]([])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_4mrrb"]
@@ -48,4 +50,5 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [resource]
 script = ExtResource("2_i5v2r")
 liste_messages = Array[ExtResource("1_hcjec")]([SubResource("Resource_vtysg")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

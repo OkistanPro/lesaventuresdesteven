@@ -8,12 +8,14 @@
 [sub_resource type="Resource" id="Resource_h0gjy"]
 script = ExtResource("3_udoy1")
 nom_perso = "Fermier"
-mess = "Vas me chercher les oeufs dans le poulailler ..."
+mess = "Va me chercher les oeufs dans le poulailler."
 liste_choix = Array[ExtResource("2_0pkq7")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("5_rn0ur")
 liste_messages = Array[ExtResource("1_2n8do")]([SubResource("Resource_h0gjy")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

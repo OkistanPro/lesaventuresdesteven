@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_as6j8"]
 script = ExtResource("3_0oeoc")
 nom_perso = "Steven"
-mess = "Piou... Vous etes la ?..."
+mess = "Piou ? Vous êtes là madame ?..."
 liste_choix = Array[ExtResource("2_qecd6")]([])
 event_at_start = ""
 no_end = false
@@ -44,4 +44,5 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [resource]
 script = ExtResource("4_81ybt")
 liste_messages = Array[ExtResource("1_3vcsb")]([SubResource("Resource_6acuj"), SubResource("Resource_as6j8"), SubResource("Resource_lpvgp"), SubResource("Resource_nm3mr")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

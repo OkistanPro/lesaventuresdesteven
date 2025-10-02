@@ -11,41 +11,47 @@ nom_perso = "Petit garcon"
 mess = "Bonjour petit monsieur jaune !"
 liste_choix = Array[ExtResource("2_ixque")]([])
 event_at_start = ""
-metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
-
-[sub_resource type="Resource" id="Resource_e0f71"]
-script = ExtResource("3_4ujs8")
-nom_perso = "Steven"
-mess = "Alors, sache que ça peut être interprété comme un peu raciste ce que tu dis..."
-liste_choix = Array[ExtResource("2_ixque")]([])
-event_at_start = ""
-metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
-
-[sub_resource type="Resource" id="Resource_p3l3o"]
-script = ExtResource("3_4ujs8")
-nom_perso = "Petit garcon"
-mess = "Bonjouuur petit monsieur jaune pas raciste !"
-liste_choix = Array[ExtResource("2_ixque")]([])
-event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_s2jbl"]
 script = ExtResource("3_4ujs8")
 nom_perso = "Steven"
-mess = ".... ALORS ..."
+mess = "Coucou toi !"
 liste_choix = Array[ExtResource("2_ixque")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_1u7bp"]
 script = ExtResource("3_4ujs8")
-nom_perso = "Steven"
-mess = "Oh et puis t'es qu'un enfant, laisse tomber ..."
+nom_perso = "Petit garcon"
+mess = "...pourquoi tu as une écharpe ? Il fait super chaud !"
 liste_choix = Array[ExtResource("2_ixque")]([])
 event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_ixque"]
+script = ExtResource("3_4ujs8")
+nom_perso = "Steven"
+mess = "Ah euh..."
+liste_choix = Array[ExtResource("2_ixque")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_4ujs8"]
+script = ExtResource("3_4ujs8")
+nom_perso = "Steven"
+mess = "...bah tiens je sais pas... j'ai toujours eu une écharpe."
+liste_choix = Array[ExtResource("2_ixque")]([])
+event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_xg6nx")
-liste_messages = Array[ExtResource("1_a5dyd")]([SubResource("Resource_v1gdk"), SubResource("Resource_e0f71"), SubResource("Resource_p3l3o"), SubResource("Resource_s2jbl"), SubResource("Resource_1u7bp")])
+liste_messages = Array[ExtResource("1_a5dyd")]([SubResource("Resource_v1gdk"), SubResource("Resource_s2jbl"), SubResource("Resource_1u7bp"), SubResource("Resource_ixque"), SubResource("Resource_4ujs8")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

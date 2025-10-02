@@ -11,6 +11,7 @@ nom_perso = "Steven"
 mess = "Euh, ça va ? Tu veux pas rejoindre les autres ?"
 liste_choix = Array[ExtResource("2_ey0a5")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_pg0wu"]
@@ -19,6 +20,7 @@ nom_perso = "Poussin"
 mess = "...piou...piou..."
 liste_choix = Array[ExtResource("2_ey0a5")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_ibf8j"]
@@ -27,6 +29,7 @@ nom_perso = "Steven"
 mess = "Ah, il a volé la part de tes graines..."
 liste_choix = Array[ExtResource("2_ey0a5")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_ey0a5"]
@@ -35,6 +38,7 @@ nom_perso = "Steven"
 mess = "C'est vrai que c'est pas cool..."
 liste_choix = Array[ExtResource("2_ey0a5")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_qj0qs"]
@@ -43,9 +47,11 @@ nom_perso = "Steven"
 mess = "Mais t'inquiète, le fermier t'en rajoutera quand il le remarquera"
 liste_choix = Array[ExtResource("2_ey0a5")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_qax83")
 liste_messages = Array[ExtResource("1_wtufe")]([SubResource("Resource_7im4u"), SubResource("Resource_pg0wu"), SubResource("Resource_ibf8j"), SubResource("Resource_ey0a5"), SubResource("Resource_qj0qs")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

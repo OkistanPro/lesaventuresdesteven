@@ -12,6 +12,7 @@ nom_perso = "Vendeur"
 mess = "Oh salut toi, tu fais quoi de beau ?"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_uddij"]
@@ -20,6 +21,7 @@ nom_perso = "Steven"
 mess = "Pas grand chose, et vous ?"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_5je10"]
@@ -28,14 +30,16 @@ nom_perso = "Vendeur"
 mess = "Moi ça va, fin, ça peut aller..."
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_0bmmp"]
 script = ExtResource("3_oktdi")
 nom_perso = "Vendeur"
-mess = "Vois-tu, j'ai perdu un objet tout à l'heure dans le parc..."
+mess = "Vois-tu, j'ai perdu un objet tout à l'heure dans LaParc..."
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_iyr40"]
@@ -44,6 +48,7 @@ nom_perso = "Steven"
 mess = "Bah, pourquoi vous y retournez pas ?"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_npo2v"]
@@ -52,14 +57,16 @@ nom_perso = "Vendeur"
 mess = "Euuh bah... à vrai dire.."
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_oktdi"]
 script = ExtResource("3_oktdi")
 nom_perso = "Vendeur"
-mess = "Bon, j'ai peur des enfants voila !"
+mess = "Bon, j'ai peur des enfants voilà !"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_q4ms2"]
@@ -68,6 +75,7 @@ nom_perso = "Vendeur"
 mess = "Ils sont horribles ! Ils courent, ils font un bordel pas possible, ils crient, ils sont chaotiques !"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_avhvq"]
@@ -76,6 +84,7 @@ nom_perso = "Vendeur"
 mess = "J'arrive pas à rester plus de 30 secondes près d'eux."
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_p5213"]
@@ -84,6 +93,7 @@ nom_perso = "Steven"
 mess = "Ok, ça marche !"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_bri35"]
@@ -92,6 +102,7 @@ nom_perso = "Vendeur"
 mess = "Yes, je savais que je pouvais compter sur toi !"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_dfj64"]
@@ -100,6 +111,7 @@ nom_perso = "Vendeur"
 mess = "Si tu veux je t'offrirai un objet gratuit, ce que tu veux dans ma boutique !"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_fskkh"]
@@ -108,6 +120,7 @@ nom_perso = "Steven"
 mess = "Giga cool ça !"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_ymve4"]
@@ -119,6 +132,7 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 [sub_resource type="Resource" id="Resource_tjiti"]
 script = ExtResource("2_3mfcp")
 liste_messages = Array[ExtResource("1_ltvf5")]([SubResource("Resource_p5213"), SubResource("Resource_bri35"), SubResource("Resource_dfj64"), SubResource("Resource_fskkh"), SubResource("Resource_ymve4")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_fgggp"]
@@ -134,6 +148,7 @@ nom_perso = "Steven"
 mess = "Je vais d'abord continuer à me balader, mais je reviendrais, promis !"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_7qor2"]
@@ -142,6 +157,7 @@ nom_perso = "Vendeur"
 mess = "Ok !"
 liste_choix = Array[ExtResource("2_0bmmp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_vl16r"]
@@ -153,6 +169,7 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 [sub_resource type="Resource" id="Resource_geibq"]
 script = ExtResource("2_3mfcp")
 liste_messages = Array[ExtResource("1_ltvf5")]([SubResource("Resource_5ewfe"), SubResource("Resource_7qor2"), SubResource("Resource_vl16r")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_xwul4"]
@@ -168,9 +185,11 @@ nom_perso = "Vendeur"
 mess = "D'ailleurs, ça te dirait pas de m'aider à me le rapporter ?"
 liste_choix = Array[ExtResource("2_0bmmp")]([SubResource("Resource_fgggp"), SubResource("Resource_xwul4")])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_3mfcp")
 liste_messages = Array[ExtResource("1_ltvf5")]([SubResource("Resource_xyt3u"), SubResource("Resource_uddij"), SubResource("Resource_5je10"), SubResource("Resource_0bmmp"), SubResource("Resource_iyr40"), SubResource("Resource_npo2v"), SubResource("Resource_oktdi"), SubResource("Resource_q4ms2"), SubResource("Resource_avhvq"), SubResource("Resource_hq5i5")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

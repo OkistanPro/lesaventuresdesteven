@@ -6,4 +6,5 @@
 [resource]
 script = ExtResource("2_8nh5b")
 liste_messages = Array[ExtResource("1_oebit")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_edyfp"]
 script = ExtResource("3_y2qgb")
 nom_perso = "Steven"
-mess = "Salut, quoi de beau ?"
+mess = "Salut, kwadbo ?"
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
 no_end = false
@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_eqfku"]
 script = ExtResource("3_y2qgb")
 nom_perso = "Gerent cafe"
-mess = "RAS LA CASQUETTE, j'en ai ras la casquette tu m'entends !"
+mess = "RAS LA CASQUETTE, j'en ai ras la casquette, tu m'entends !"
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
 no_end = false
@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_krr5f"]
 script = ExtResource("3_y2qgb")
 nom_perso = "Gerent cafe"
-mess = "aaaaaa, j'en ai marre pourquoi, pourquoi il faut que tout le monde aime le thé ?"
+mess = "Arrgh, j'en ai ma claque. Pourquoi ! Pourquoi faut-il que tout le monde aime le thé ?"
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
 no_end = false
@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_y2qgb"]
 script = ExtResource("3_y2qgb")
 nom_perso = "Steven"
-mess = "Oulaa, mauvais moment j'imagine ..."
+mess = "Dites pas ça, ils sont très bons vos cafés !"
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
 no_end = false
@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_d8ejs"]
 script = ExtResource("3_y2qgb")
 nom_perso = "Steven"
-mess = "Nan juste, l'épicier il voulait vous dire qu'il a réussi à avoir la \"chose\"..."
+mess = "Au fait, l'épicier, il voulait vous dire qu'il a réussi à avoir la \"chose\"..."
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
 no_end = false
@@ -72,7 +72,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_a1lrn"]
 script = ExtResource("3_y2qgb")
 nom_perso = "Gerant cafe"
-mess = "PARFAIT	! vasy vasy jt'attends ici ..."
+mess = "PARFAIT	! Vas-y vas-y, j'tattends ici..."
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
 no_end = false
@@ -81,7 +81,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_gyumr"]
 script = ExtResource("3_y2qgb")
 nom_perso = "Gerant cafe"
-mess = "Récupère la \"chose\"... il est derrière un des cageots de l'épicier"
+mess = "Récupère la \"chose\"... il est derrière un des cageots de l'épicier."
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
 no_end = false
@@ -105,6 +105,7 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 [sub_resource type="Resource" id="Resource_22k5q"]
 script = ExtResource("2_pr8xw")
 liste_messages = Array[ExtResource("1_elh13")]([SubResource("Resource_a1lrn"), SubResource("Resource_gyumr"), SubResource("Resource_t6gma"), SubResource("Resource_hkpek")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_hhm2c"]
@@ -117,7 +118,7 @@ metadata/_custom_type_script = "uid://nj3n5qedxbgm"
 [sub_resource type="Resource" id="Resource_ifpt1"]
 script = ExtResource("3_y2qgb")
 nom_perso = "Gerent cafe"
-mess = "QUOI ? Bon façon t'es team thé toi, viens pas me parler ..."
+mess = "QUOI ? Bon, t'façon t'es team thé toi, viens pas me parler ..."
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
 no_end = false
@@ -126,7 +127,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_4w1jj"]
 script = ExtResource("3_y2qgb")
 nom_perso = "Steven"
-mess = "Mais ..."
+mess = "Mais..."
 liste_choix = Array[ExtResource("2_eqfku")]([])
 event_at_start = ""
 no_end = false
@@ -135,6 +136,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_3q4mv"]
 script = ExtResource("2_pr8xw")
 liste_messages = Array[ExtResource("1_elh13")]([SubResource("Resource_ifpt1"), SubResource("Resource_4w1jj")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_yq728"]
@@ -147,7 +149,7 @@ metadata/_custom_type_script = "uid://nj3n5qedxbgm"
 [sub_resource type="Resource" id="Resource_vlqkm"]
 script = ExtResource("3_y2qgb")
 nom_perso = "Gerent cafe"
-mess = "Et si tu allais discretement dans son salon, pour casser sa machine."
+mess = "Et si tu allais discretement dans son salon, pour casser sa machine ?"
 liste_choix = Array[ExtResource("2_eqfku")]([SubResource("Resource_hhm2c"), SubResource("Resource_yq728")])
 event_at_start = ""
 no_end = false
@@ -156,4 +158,5 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [resource]
 script = ExtResource("2_pr8xw")
 liste_messages = Array[ExtResource("1_elh13")]([SubResource("Resource_edyfp"), SubResource("Resource_eqfku"), SubResource("Resource_krr5f"), SubResource("Resource_y2qgb"), SubResource("Resource_d8ejs"), SubResource("Resource_10f41"), SubResource("Resource_ful88"), SubResource("Resource_vlqkm")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

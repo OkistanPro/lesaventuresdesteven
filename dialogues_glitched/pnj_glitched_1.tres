@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_erm8q"]
 script = ExtResource("3_kn0xe")
 nom_perso = "3xtU69oVyGWd0WvY"
-mess = "szTWjuaRdv50aUNtXaK3wa7CAkI2GeeTe707P26p38mYwihrYAx9dIVgiBgDBR0R7XV8kmWuyeymVBGwsTtORGEx8QshEUaw6MM1nyusvwlERQwK"
+mess = "szTWjuaRdv50aUNtXaK3wa7"
 liste_choix = Array[ExtResource("2_uwedu")]([])
 event_at_start = ""
 no_end = true

@@ -11,9 +11,11 @@ nom_perso = "Steven"
 mess = "Mon frère... mort."
 liste_choix = Array[ExtResource("2_dnx4m")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_qkt4x")
 liste_messages = Array[ExtResource("1_8yy8s")]([SubResource("Resource_ytmnf")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

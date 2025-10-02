@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_oqans"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Il est 16h, vous êtes sûrement la nouvelle recrue de ménage que j'ai embauché ..."
+mess = "Il est 16h, vous êtes sûrement la nouvelle recrue de ménage que j'ai embauchée..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
 no_end = false
@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_76y55"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Steven"
-mess = "Alors non, je suis Ste..."
+mess = "Alors non, moi c'est Ste..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
 no_end = true
@@ -54,7 +54,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_x0nc8"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Et de balayer ces poussières par ci par la..."
+mess = "Et de balayer ces poussières par ci par là..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
 no_end = false
@@ -63,7 +63,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_i05vj"]
 script = ExtResource("3_xsw6r")
 nom_perso = "Hoteliere"
-mess = "Nous nous devons d'acceuillir les nouveaux venus a l'hôtel avec une propreté totale ..."
+mess = "Nous nous devons d'accueillir les nouveaux venus à l'hôtel avec une propreté totale..."
 liste_choix = Array[ExtResource("2_76y55")]([])
 event_at_start = ""
 no_end = false
@@ -105,6 +105,7 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 [sub_resource type="Resource" id="Resource_a68fa"]
 script = ExtResource("2_0uh5m")
 liste_messages = Array[ExtResource("1_332as")]([SubResource("Resource_i76be"), SubResource("Resource_n5bo3"), SubResource("Resource_hd6lp"), SubResource("Resource_7oa1q")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_pfx4w"]
@@ -144,6 +145,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_r6c47"]
 script = ExtResource("2_0uh5m")
 liste_messages = Array[ExtResource("1_332as")]([SubResource("Resource_cccvh"), SubResource("Resource_miihx"), SubResource("Resource_rciry")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_a1rwq"]
@@ -165,4 +167,5 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [resource]
 script = ExtResource("2_0uh5m")
 liste_messages = Array[ExtResource("1_332as")]([SubResource("Resource_oqans"), SubResource("Resource_76y55"), SubResource("Resource_xsw6r"), SubResource("Resource_hla0n"), SubResource("Resource_c412k"), SubResource("Resource_x0nc8"), SubResource("Resource_i05vj"), SubResource("Resource_nxlel")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

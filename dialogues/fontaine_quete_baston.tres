@@ -11,6 +11,7 @@ nom_perso = "Gerent the"
 mess = "AAAAAAH, on n'y vient. Voila monsieur je seme l'embrouille et le chaos !"
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_wn1kb"]
@@ -19,6 +20,7 @@ nom_perso = "Gerent cafe"
 mess = "Alors, tu apprendras que moi je ne casse pas de machine a thé !"
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_cp7ho"]
@@ -27,6 +29,7 @@ nom_perso = "Gerent the"
 mess = "Oui, tout suite les grands mots. ALORS MOI, MA MACHINE HEIN ?"
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_vsx72"]
@@ -35,6 +38,7 @@ nom_perso = "Gerent cafe"
 mess = "NAN MAIS D'ACCORD, ET LA MIENNE ?"
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_lkbkq"]
@@ -43,6 +47,7 @@ nom_perso = "Steven"
 mess = "Vous savez, on peut just...."
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_bud48"]
@@ -51,6 +56,7 @@ nom_perso = "Gerent the"
 mess = "NON ON VA OUBLIER MA MACHINE"
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_tnrrs"]
@@ -59,6 +65,7 @@ nom_perso = "Gerent cafe"
 mess = "NI LA MIENNE !"
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_scvrg"]
@@ -67,6 +74,7 @@ nom_perso = "Steven"
 mess = "Ok ... je ... je comprend ..."
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_2grun"]
@@ -75,6 +83,7 @@ nom_perso = "Gerent cafe"
 mess = "ET DONC, QU'ES CE QUI TE POUSSE A VOLE MES CLIENTS ?"
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_tlm1g"]
@@ -83,6 +92,7 @@ nom_perso = "Gerent the"
 mess = "A PARCE QUE C'EST \"TES\" CLIENTS ?"
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_jr286"]
@@ -91,6 +101,7 @@ nom_perso = ""
 mess = "Les disputes duras encore 10 bonnes minutes ..."
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_0wucg"]
@@ -99,6 +110,7 @@ nom_perso = ""
 mess = "Avant que le maire ne les séparent ..."
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_5lw34"]
@@ -107,6 +119,7 @@ nom_perso = ""
 mess = "Tout deux rentrant dans leurs maisons, bredouille."
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_t6kdc"]
@@ -115,6 +128,7 @@ nom_perso = "Steven"
 mess = "Bon, bas je crois que j'ai fait le tour de ce que je pouvais faire ici ..."
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_ahd1p"]
@@ -123,6 +137,7 @@ nom_perso = "Steven"
 mess = "Aidé les autres et semé la chaos, je suis passé par tout les étapes du social !"
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_apggo"]
@@ -131,9 +146,11 @@ nom_perso = "Steven"
 mess = "Je vais faire dodo hein ..."
 liste_choix = Array[ExtResource("2_wn1kb")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_qtdvh")
 liste_messages = Array[ExtResource("1_apnwi")]([SubResource("Resource_vgres"), SubResource("Resource_wn1kb"), SubResource("Resource_cp7ho"), SubResource("Resource_vsx72"), SubResource("Resource_lkbkq"), SubResource("Resource_bud48"), SubResource("Resource_tnrrs"), SubResource("Resource_scvrg"), SubResource("Resource_2grun"), SubResource("Resource_tlm1g"), SubResource("Resource_jr286"), SubResource("Resource_0wucg"), SubResource("Resource_5lw34"), SubResource("Resource_t6kdc"), SubResource("Resource_ahd1p"), SubResource("Resource_apggo")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

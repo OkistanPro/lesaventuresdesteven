@@ -51,6 +51,7 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 [sub_resource type="Resource" id="Resource_tjiti"]
 script = ExtResource("4_v08ip")
 liste_messages = Array[ExtResource("1_5bbt3")]([SubResource("Resource_p5213"), SubResource("Resource_bri35"), SubResource("Resource_dfj64"), SubResource("Resource_fskkh"), SubResource("Resource_ol38h")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_fgggp"]
@@ -81,6 +82,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_geibq"]
 script = ExtResource("4_v08ip")
 liste_messages = Array[ExtResource("1_5bbt3")]([SubResource("Resource_5ewfe"), SubResource("Resource_7qor2")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
 
 [sub_resource type="Resource" id="Resource_xwul4"]
@@ -102,4 +104,5 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [resource]
 script = ExtResource("4_v08ip")
 liste_messages = Array[ExtResource("1_5bbt3")]([SubResource("Resource_hq5i5")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

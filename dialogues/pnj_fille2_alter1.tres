@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_4pi0l"]
 script = ExtResource("3_m3ng0")
 nom_perso = "Petite fille"
-mess = "‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ "
+mess = "‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ a‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ "
 liste_choix = Array[ExtResource("2_q1k2s")]([])
 event_at_start = ""
 no_end = false
@@ -61,4 +61,5 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 [resource]
 script = ExtResource("4_brxn1")
 liste_messages = Array[ExtResource("1_l6qud")]([SubResource("Resource_0v3fq"), SubResource("Resource_4pi0l"), SubResource("Resource_tasd6"), SubResource("Resource_m3ng0"), SubResource("Resource_brxn1"), SubResource("Resource_swot4"), SubResource("Resource_6uyo2")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

@@ -1,33 +1,14 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=12 format=3 uid="uid://b3qn3gjfa0k0m"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=9 format=3 uid="uid://b3qn3gjfa0k0m"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_sk27r"]
 [ext_resource type="Script" uid="uid://bncgdhvjlrkfh" path="res://scripts/dialogues/D_timeline.gd" id="2_lnbdf"]
 [ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_ttoak"]
 [ext_resource type="Script" uid="uid://cq5kt3ymgwgp8" path="res://scripts/dialogues/D_message.gd" id="3_ara6w"]
-[ext_resource type="Script" uid="uid://b2khngrg30oaj" path="res://scripts/dialogues/D_pause.gd" id="4_mx7li"]
 
 [sub_resource type="Resource" id="Resource_nogbn"]
 script = ExtResource("3_ara6w")
 nom_perso = "Hoteliere"
-mess = "Bonjour à vous et bienvenue dans l'Hotel'O Paulino !"
-liste_choix = Array[ExtResource("2_ttoak")]([])
-event_at_start = ""
-no_end = false
-metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
-
-[sub_resource type="Resource" id="Resource_ngg82"]
-script = ExtResource("3_ara6w")
-nom_perso = "Steven"
-mess = "Bonjour !"
-liste_choix = Array[ExtResource("2_ttoak")]([])
-event_at_start = ""
-no_end = false
-metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
-
-[sub_resource type="Resource" id="Resource_fwbc7"]
-script = ExtResource("3_ara6w")
-nom_perso = "Steven"
-mess = "C'est un hôtel de luxe ?"
+mess = "Bonjour à vous et bienvenue à l'hôtel'O Paulino !"
 liste_choix = Array[ExtResource("2_ttoak")]([])
 event_at_start = ""
 no_end = false
@@ -36,22 +17,25 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_5lk6v"]
 script = ExtResource("3_ara6w")
 nom_perso = "Hoteliere"
-mess = "En quelque sorte, mais surtout un BANGER !"
+mess = "Vous pouvez trouver ici des chambres à partir de 34 kayous !"
 liste_choix = Array[ExtResource("2_ttoak")]([])
 event_at_start = ""
 no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
-[sub_resource type="Resource" id="Resource_y7pbb"]
-script = ExtResource("4_mx7li")
-temps = 1.0
-affiche_dialogue = false
-metadata/_custom_type_script = "uid://b2khngrg30oaj"
-
 [sub_resource type="Resource" id="Resource_b3t2m"]
 script = ExtResource("3_ara6w")
 nom_perso = "Steven"
-mess = "(L'hôtel semble tellement grand ... et sale...)"
+mess = "Est-ce que vos lits ont de la paille haute qualité ?"
+liste_choix = Array[ExtResource("2_ttoak")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
+[sub_resource type="Resource" id="Resource_fbu7b"]
+script = ExtResource("3_ara6w")
+nom_perso = "Hoteliere"
+mess = "hein ?"
 liste_choix = Array[ExtResource("2_ttoak")]([])
 event_at_start = ""
 no_end = false
@@ -59,5 +43,6 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("2_lnbdf")
-liste_messages = Array[ExtResource("1_sk27r")]([SubResource("Resource_nogbn"), SubResource("Resource_ngg82"), SubResource("Resource_fwbc7"), SubResource("Resource_5lk6v"), SubResource("Resource_y7pbb"), SubResource("Resource_b3t2m")])
+liste_messages = Array[ExtResource("1_sk27r")]([SubResource("Resource_nogbn"), SubResource("Resource_5lk6v"), SubResource("Resource_b3t2m"), SubResource("Resource_fbu7b")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

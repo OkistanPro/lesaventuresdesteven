@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=26 format=3 uid="uid://c50a0gqpo6xg6"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=27 format=3 uid="uid://c50a0gqpo6xg6"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_itwtg"]
 [ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="2_p2s4t"]
@@ -75,7 +75,7 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 [sub_resource type="Resource" id="Resource_c3gvs"]
 script = ExtResource("3_p2s4t")
 nom_perso = "???"
-mess = "Il est parti se cacher. Ma présence le gène."
+mess = "Il est parti se cacher. Ma présence le gêne."
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -114,10 +114,19 @@ event_at_start = ""
 no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
+[sub_resource type="Resource" id="Resource_vpcss"]
+script = ExtResource("3_p2s4t")
+nom_perso = "???"
+mess = "Les clés sont éparpillés un peu partout : chez l'épicier, à l'entrée du village, dans des coffres..."
+liste_choix = Array[ExtResource("2_p4wf8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
 [sub_resource type="Resource" id="Resource_ggfj5"]
 script = ExtResource("3_p2s4t")
 nom_perso = "???"
-mess = "Pour révéler la vérité derrière la misère de ce village."
+mess = "Si tu les trouves tous, tu pourras révéler la vérité derrière la misère de ce village."
 liste_choix = Array[ExtResource("2_p4wf8")]([])
 event_at_start = ""
 no_end = false
@@ -176,5 +185,6 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [resource]
 script = ExtResource("4_djsal")
-liste_messages = Array[ExtResource("1_itwtg")]([SubResource("Resource_38mwe"), SubResource("Resource_lnp16"), SubResource("Resource_itwtg"), SubResource("Resource_p4wf8"), SubResource("Resource_p2s4t"), SubResource("Resource_djsal"), SubResource("Resource_4iqxr"), SubResource("Resource_pq2gb"), SubResource("Resource_c3gvs"), SubResource("Resource_iegiw"), SubResource("Resource_mnqt7"), SubResource("Resource_8xbf1"), SubResource("Resource_b2r4j"), SubResource("Resource_ggfj5"), SubResource("Resource_eje2f"), SubResource("Resource_axyv5"), SubResource("Resource_53p2q"), SubResource("Resource_gyiox"), SubResource("Resource_pn0wu"), SubResource("Resource_e5iyb")])
+liste_messages = Array[ExtResource("1_itwtg")]([SubResource("Resource_38mwe"), SubResource("Resource_lnp16"), SubResource("Resource_itwtg"), SubResource("Resource_p4wf8"), SubResource("Resource_p2s4t"), SubResource("Resource_djsal"), SubResource("Resource_4iqxr"), SubResource("Resource_pq2gb"), SubResource("Resource_c3gvs"), SubResource("Resource_iegiw"), SubResource("Resource_mnqt7"), SubResource("Resource_8xbf1"), SubResource("Resource_b2r4j"), SubResource("Resource_vpcss"), SubResource("Resource_ggfj5"), SubResource("Resource_eje2f"), SubResource("Resource_axyv5"), SubResource("Resource_53p2q"), SubResource("Resource_gyiox"), SubResource("Resource_pn0wu"), SubResource("Resource_e5iyb")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

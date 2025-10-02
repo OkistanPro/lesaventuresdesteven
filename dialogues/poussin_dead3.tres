@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=13 format=3 uid="uid://bnu0mndwi0xo5"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=12 format=3 uid="uid://bnu0mndwi0xo5"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_b0d1w"]
 [ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_tuiqp"]
@@ -12,6 +12,7 @@ nom_perso = "Steven"
 mess = "Mec, ça va faire un bail que tu bouges plus ..."
 liste_choix = Array[ExtResource("2_tuiqp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_ehpjo"]
@@ -23,9 +24,10 @@ metadata/_custom_type_script = "uid://b2khngrg30oaj"
 [sub_resource type="Resource" id="Resource_k242y"]
 script = ExtResource("3_71s4b")
 nom_perso = "Steven"
-mess = "Tu devrais peut etre te relever ?"
+mess = "Tu devrais peut-être te relever ?"
 liste_choix = Array[ExtResource("2_tuiqp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_5ki4y"]
@@ -34,14 +36,16 @@ nom_perso = "Poussin"
 mess = "..."
 liste_choix = Array[ExtResource("2_tuiqp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_b0d1w"]
 script = ExtResource("3_71s4b")
 nom_perso = "Steven"
-mess = "En plus tu pue ..."
+mess = "En plus tu pues ..."
 liste_choix = Array[ExtResource("2_tuiqp")]([])
 event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [sub_resource type="Resource" id="Resource_tuiqp"]
@@ -50,17 +54,11 @@ nom_perso = "Poussin"
 mess = "..."
 liste_choix = Array[ExtResource("2_tuiqp")]([])
 event_at_start = ""
-metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
-
-[sub_resource type="Resource" id="Resource_71s4b"]
-script = ExtResource("3_71s4b")
-nom_perso = ""
-mess = "Le Poussin n'as pas l'air de vouloir bouger ..."
-liste_choix = Array[ExtResource("2_tuiqp")]([])
-event_at_start = ""
+no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
 [resource]
 script = ExtResource("5_8iiw6")
-liste_messages = Array[ExtResource("1_b0d1w")]([SubResource("Resource_tnioa"), SubResource("Resource_ehpjo"), SubResource("Resource_k242y"), SubResource("Resource_5ki4y"), SubResource("Resource_b0d1w"), SubResource("Resource_tuiqp"), SubResource("Resource_71s4b")])
+liste_messages = Array[ExtResource("1_b0d1w")]([SubResource("Resource_tnioa"), SubResource("Resource_ehpjo"), SubResource("Resource_k242y"), SubResource("Resource_5ki4y"), SubResource("Resource_b0d1w"), SubResource("Resource_tuiqp")])
+current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"
