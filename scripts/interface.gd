@@ -5,11 +5,11 @@ var anim_quete_scene = preload("res://scenes/animation_quete.tscn")
 var cles : Array[String] = [
 	&"clé n°1",
 	&"clé n°2",
-	&"clé n°3",
+	&"cle n°3",
 	&"clé n°4",
 	&"clé n°5",
 	&"clé n°6",
-	&"clé n°7"
+	&"cle n°7"
 ]
 
 var count_cle = 0

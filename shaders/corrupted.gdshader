@@ -36,8 +36,8 @@ void fragment() {
 	} else {
 		uv_stretch = vec2(UV.x, UV.y);
 	}
-	
-	
+
+
 	if (noise(UV.y*10.0) < 0.4) {
 		COLOR = vec4(random_y_r, random_y_g, random_y_b, 1.0);
 	} else {

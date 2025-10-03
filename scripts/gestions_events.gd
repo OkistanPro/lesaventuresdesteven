@@ -33,7 +33,6 @@ func _init() -> void:
 	else:
 		config.load("user://config.ini")
 		launch_count = config.get_value("Globals", "launch_count", 0)
-
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		config.set_value("Globals", "launch_count", launch_count)

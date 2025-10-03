@@ -65,7 +65,7 @@ script = ExtResource("11_p1xge")
 item_name = &"Colis Pour Carole"
 texture_icon = ExtResource("20_7qvms")
 pickable = false
-event_on_not_pick = &""
+event_on_not_pick = &"pas_col"
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rnxx3"]
@@ -76,7 +76,7 @@ script = ExtResource("11_p1xge")
 item_name = &"Colis Pour Fermier"
 texture_icon = ExtResource("20_7qvms")
 pickable = false
-event_on_not_pick = &""
+event_on_not_pick = &"pas_col"
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_87m5q"]
@@ -87,7 +87,7 @@ script = ExtResource("11_p1xge")
 item_name = &"Colis Pour Marc"
 texture_icon = ExtResource("20_7qvms")
 pickable = false
-event_on_not_pick = &""
+event_on_not_pick = &"pas_col"
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5cycb"]
@@ -263,11 +263,8 @@ shape = SubResource("RectangleShape2D_2j44v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pnj_femme/Area2D"]
 shape = SubResource("CircleShape2D_54f4n")
 
-[node name="Polygon2D" type="Polygon2D" parent="pnj_femme"]
-visible = false
-position = Vector2(0, -29.815)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-10, -6, 10, -6, 0, 4)
+[node name="Polygon2D" parent="pnj_femme" instance=ExtResource("16_54f4n")]
+position = Vector2(0, -22)
 
 [node name="femme_1" type="Sprite2D" parent="."]
 z_index = 1

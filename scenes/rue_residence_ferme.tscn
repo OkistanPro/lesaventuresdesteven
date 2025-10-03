@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://uq4ks8udgkhu"]
+[gd_scene load_steps=24 format=3 uid="uid://uq4ks8udgkhu"]
 
 [ext_resource type="Script" uid="uid://n5j1yg38wj1d" path="res://scripts/rue_residence_ferme.gd" id="1_dqhc6"]
 [ext_resource type="Texture2D" uid="uid://bvguepu4vppxa" path="res://sprites/RPG-RUE-FERME_ferme.png" id="1_m6sjl"]
@@ -23,6 +23,9 @@ size = Vector2(261.136, 35)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cas2x"]
 radius = 11.3636
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqt51"]
+radius = 17.7506
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovgsu"]
 size = Vector2(43, 324)
@@ -159,7 +162,8 @@ polygon = PackedVector2Array(6.81818, 2.27272, 5, 17.2727, -5.45456, 16.3636, -3
 [node name="Area2D" type="Area2D" parent="poussin4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="poussin4/Area2D"]
-shape = SubResource("CircleShape2D_cas2x")
+position = Vector2(0, 3.18181)
+shape = SubResource("CircleShape2D_nqt51")
 
 [node name="Polygon2D" parent="poussin4" instance=ExtResource("6_ovgsu")]
 position = Vector2(0, -18.9059)
@@ -181,7 +185,6 @@ shape = SubResource("CircleShape2D_cas2x")
 
 [node name="Polygon2D" parent="poussin5" instance=ExtResource("6_ovgsu")]
 position = Vector2(0, -18.9059)
-color = Color(0.577008, 0.577008, 0.577008, 1)
 
 [node name="chariot" type="Sprite2D" parent="."]
 position = Vector2(461, 484)
@@ -194,7 +197,7 @@ position = Vector2(-0.909088, -5.90909)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="chariot/StaticBody2D"]
 position = Vector2(-5.45454, -10)
-polygon = PackedVector2Array(41.0954, 6.51819, 29.2773, 13.7909, 31.0954, 20.6091, 22.9136, 25.1545, 18.3682, 22.4273, 18.3682, 17.8818, 3.36818, 24.2455, -7.54091, 18.3364, -21.6318, 26.0636, -24.8136, 24.2455, -12.0864, 15.6091, -26.6318, 3.79091, -27.0864, 0.154541, 12.2727, -18.1818)
+polygon = PackedVector2Array(41.0954, 6.51819, 29.2773, 13.7909, 31.0954, 20.6091, 22.9136, 25.1545, 18.3682, 22.4273, 18.3682, 17.8818, 3.36818, 24.2455, -7.54091, 18.3364, -12.0864, 15.6091, -26.6318, 3.79091, -27.0864, 0.154541, 12.2727, -18.1818)
 
 [node name="goto_rue_droite" type="Area2D" parent="."]
 position = Vector2(11, 0)

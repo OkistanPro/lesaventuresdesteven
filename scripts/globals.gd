@@ -246,6 +246,8 @@ func goto_scene(from : String, to : String, y : float, p_scene : Node2D) -> void
 
 func item_event(name_event : StringName, _send_object : ItemProperties = null):
 	match name_event:
+		&"pas_col":
+			GestionDialogue.lancer_timeline("pas_colis")
 		&"montre":
 			event_declencheur.emit("montre")
 		&"trou_vide":

@@ -44,7 +44,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_lkcg3"]
 script = ExtResource("3_onpbk")
 nom_perso = "Brigitte"
-mess = "Après avoir choisi les plus beaux fruits je vais un tour à LaParc."
+mess = "Après avoir choisi les plus beaux fruits je vais faire un tour à LaParc."
 liste_choix = Array[ExtResource("2_b8hk8")]([])
 event_at_start = ""
 no_end = false

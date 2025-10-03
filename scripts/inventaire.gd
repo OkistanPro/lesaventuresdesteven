@@ -37,11 +37,13 @@ func _input(event: InputEvent) -> void:
 				$ItemList.select(0)
 				select_item_data()
 				$nom_item.visible = true
+				$mode_select.visible = true
 				$nom_item.text = $ItemList.get_item_metadata(0).item_name
 			else:
 				$ItemList.deselect_all()
 				Globals.selected_item = -1
 				$nom_item.visible = false
+				$mode_select.visible = false
 	if event.is_action_pressed("inventaire_right") and $ItemList.get_selected_items():
 		if $ItemList.item_count > Globals.selected_item + 1:
 			$ItemList.select(Globals.selected_item + 1)

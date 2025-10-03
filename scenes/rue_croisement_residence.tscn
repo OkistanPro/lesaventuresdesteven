@@ -383,7 +383,6 @@ z_index = 4
 position = Vector2(8.47913, -18.1804)
 rotation = 0.347209
 scale = Vector2(1, 1)
-color = Color(0.995353, 0.869497, 0.637136, 1)
 
 [node name="Cle5" type="Sprite2D" parent="."]
 visible = false
@@ -408,7 +407,6 @@ z_index = 4
 position = Vector2(-23.4609, -15.9824)
 rotation = -0.964768
 scale = Vector2(1, 1)
-color = Color(0.995353, 0.869497, 0.637136, 1)
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]

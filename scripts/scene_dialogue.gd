@@ -56,7 +56,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if $boite_message/message.is_writing:
-				$boite_message/message.speed = 0.001
+				$boite_message/message.speed = 0.0001
 			clicked.emit()
 
 func verif_cond(string_condition : String) -> bool:

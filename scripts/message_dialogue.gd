@@ -22,14 +22,19 @@ func show_char() -> void:
 	if speed == 1.0:
 		$son_message.volume_db = randi_range(-4, 0)
 		$son_message.play()
-	var c = message_buffer[i]
-	text += c
-	match c:
-		" ":
-			await get_tree().create_timer(0.015*speed).timeout
-		".":
-			await get_tree().create_timer(0.04*speed).timeout
-		_:
-			await get_tree().create_timer(0.018*speed).timeout
-	i += 1
+		var c = message_buffer[i]
+		text += c
+		match c:
+			" ":
+				await get_tree().create_timer(0.015*speed).timeout
+			".":
+				await get_tree().create_timer(0.04*speed).timeout
+			_:
+				await get_tree().create_timer(0.018*speed).timeout
+		i += 1
+	else:
+		var c = message_buffer.substr(i, 3)
+		text += c
+		await get_tree().create_timer(0.018*speed).timeout
+		i += 3
 	return

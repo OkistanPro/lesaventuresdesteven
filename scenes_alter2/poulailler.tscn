@@ -92,7 +92,6 @@ shape = SubResource("CircleShape2D_yt6yf")
 
 [node name="Polygon2D" parent="cache_oeuf" instance=ExtResource("5_y3jaj")]
 position = Vector2(0, -24)
-color = Color(0.396889, 0.396889, 0.396889, 1)
 
 [connection signal="body_entered" from="goto_exterieur" to="." method="_on_goto_exterieur_body_entered"]
 [connection signal="body_entered" from="cache_oeuf/Area2D" to="cache_oeuf" method="_on_area_2d_body_entered"]
