@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bl82wtc5mljsj"]
+[gd_scene load_steps=40 format=3 uid="uid://bl82wtc5mljsj"]
 
 [ext_resource type="Script" uid="uid://8ife12ett742" path="res://scripts/rue_croisement_residence.gd" id="1_k6500"]
 [ext_resource type="Texture2D" uid="uid://bnscvyrcolbut" path="res://sprites/RPG_CROISEMENT_0003_Calque-6.png" id="2_3xqw6"]
@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://b1phsyjs6go0l" path="res://scripts/items/item_object.gd" id="16_d47md"]
 [ext_resource type="Script" uid="uid://wwgdpvpdy0g2" path="res://scripts/items/item_properties.gd" id="17_fgt1u"]
 [ext_resource type="PackedScene" uid="uid://b8bwggny43hdy" path="res://scenes/fleche_input.tscn" id="18_jk48d"]
+[ext_resource type="Shader" uid="uid://ji3jyv11talj" path="res://shaders/cast_shadow.gdshader" id="20_jk48d"]
+[ext_resource type="Texture2D" uid="uid://c4tl3hgqc1uyc" path="res://sprites/pancarte_chemin.png" id="21_4wtjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl0ag"]
 size = Vector2(110.909, 40.9091)
@@ -74,6 +76,16 @@ texture_icon = ExtResource("15_vex1m")
 pickable = false
 event_on_not_pick = &""
 metadata/_custom_type_script = "uid://wwgdpvpdy0g2"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uk1lo"]
+shader = ExtResource("20_jk48d")
+shader_parameter/look_right = true
+shader_parameter/alpha = 0.263
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jk48d"]
+radius = 27.247
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4wtjh"]
 
 [node name="rue_residence_champ" type="Node2D"]
 y_sort_enabled = true
@@ -407,6 +419,44 @@ z_index = 4
 position = Vector2(-23.4609, -15.9824)
 rotation = -0.964768
 scale = Vector2(1, 1)
+
+[node name="pancarte_croisement" type="Area2D" parent="."]
+y_sort_enabled = true
+
+[node name="sprite_pancarte" type="Sprite2D" parent="pancarte_croisement"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(333, 268)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("21_4wtjh")
+offset = Vector2(0, -23)
+
+[node name="shadow_pancarte" type="Sprite2D" parent="pancarte_croisement"]
+material = SubResource("ShaderMaterial_uk1lo")
+position = Vector2(333, 239)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("21_4wtjh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pancarte_croisement"]
+position = Vector2(333, 252)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("CircleShape2D_jk48d")
+
+[node name="InteractionComponent" type="Node" parent="pancarte_croisement"]
+script = ExtResource("5_d47md")
+nom_timeline = "pancarte_croisement"
+metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
+
+[node name="Polygon2D" parent="pancarte_croisement" instance=ExtResource("18_jk48d")]
+position = Vector2(333, 200)
+scale = Vector2(0.625, 0.625)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pancarte_croisement"]
+position = Vector2(333, 264)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pancarte_croisement/StaticBody2D"]
+shape = SubResource("CircleShape2D_4wtjh")
+debug_color = Color(0.927415, 0.159202, 0.542924, 0.42)
 
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
