@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cohg5vn5u2qe8"]
+[gd_scene load_steps=47 format=3 uid="uid://cohg5vn5u2qe8"]
 
 [ext_resource type="Script" uid="uid://bhybyokoixsmm" path="res://scripts/interface.gd" id="1_lw6my"]
 [ext_resource type="PackedScene" uid="uid://da5kxhp50c2xg" path="res://scenes/inventaire.tscn" id="1_tg63u"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://h7tt4ft3m7uc" path="res://sprites/dead_poussin.png" id="20_mde6w"]
 [ext_resource type="Texture2D" uid="uid://bapvytlv4ngg5" path="res://sprites/maire_corrupted.png" id="21_2noy1"]
 [ext_resource type="Shader" uid="uid://ca8gods41h4jb" path="res://scenes/maire.gdshader" id="21_gq6l6"]
+[ext_resource type="Shader" uid="uid://nc2jh2u1bjxy" path="res://shaders/espoir.gdshader" id="23_jgt0t"]
+[ext_resource type="Texture2D" uid="uid://dvobglweqnujc" path="res://sprites/espoir.png" id="24_uixvr"]
 
 [sub_resource type="Animation" id="Animation_pr3t4"]
 length = 0.001
@@ -249,6 +251,9 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uaspw"]
 shader = ExtResource("21_gq6l6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8qqos"]
+shader = ExtResource("23_jgt0t")
 
 [node name="interface" type="CanvasLayer"]
 layer = 2
@@ -647,6 +652,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("21_2noy1")
+
+[node name="espoir" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_8qqos")
+offset_left = -65.0
+offset_top = 25.0
+offset_right = 455.0
+offset_bottom = 275.0
+texture = ExtResource("24_uixvr")
+expand_mode = 1
 
 [connection signal="pressed" from="coffre/TextureRect/violet_c/bas" to="." method="_on_violet_bas_pressed"]
 [connection signal="pressed" from="coffre/TextureRect/rouge_c/bas" to="." method="_on_rouge_bas_pressed"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=20 format=3 uid="uid://dht81yhlu1gyw"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=21 format=3 uid="uid://dht81yhlu1gyw"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_ud4y4"]
 [ext_resource type="Script" uid="uid://nj3n5qedxbgm" path="res://scripts/dialogues/D_choix.gd" id="2_du607"]
@@ -94,10 +94,19 @@ event_at_start = ""
 no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
+[sub_resource type="Resource" id="Resource_3481m"]
+script = ExtResource("3_stdvy")
+nom_perso = "Fermier"
+mess = "Et puis moi je suis triste et puis"
+liste_choix = Array[ExtResource("2_du607")]([])
+event_at_start = ""
+no_end = true
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
 [sub_resource type="Resource" id="Resource_stdvy"]
 script = ExtResource("3_stdvy")
 nom_perso = "Steven"
-mess = "Bon, j'y vais... Mais seulement parce que c'est toi, hein."
+mess = "OK OK, j'ai compris, j'y vais... Mais seulement parce que c'est toi, hein."
 liste_choix = Array[ExtResource("2_du607")]([])
 event_at_start = ""
 no_end = false
@@ -120,6 +129,6 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [resource]
 script = ExtResource("2_x3crq")
-liste_messages = Array[ExtResource("1_ud4y4")]([SubResource("Resource_q178y"), SubResource("Resource_h0gjy"), SubResource("Resource_1bevf"), SubResource("Resource_4l3oi"), SubResource("Resource_yvxwq"), SubResource("Resource_cxe03"), SubResource("Resource_p86rb"), SubResource("Resource_mg8f0"), SubResource("Resource_du607"), SubResource("Resource_d4jut"), SubResource("Resource_stdvy"), SubResource("Resource_1u2yq"), SubResource("Resource_kclpm")])
+liste_messages = Array[ExtResource("1_ud4y4")]([SubResource("Resource_q178y"), SubResource("Resource_h0gjy"), SubResource("Resource_1bevf"), SubResource("Resource_4l3oi"), SubResource("Resource_yvxwq"), SubResource("Resource_cxe03"), SubResource("Resource_p86rb"), SubResource("Resource_mg8f0"), SubResource("Resource_du607"), SubResource("Resource_d4jut"), SubResource("Resource_3481m"), SubResource("Resource_stdvy"), SubResource("Resource_1u2yq"), SubResource("Resource_kclpm")])
 current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

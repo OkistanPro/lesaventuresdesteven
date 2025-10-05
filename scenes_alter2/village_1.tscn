@@ -210,7 +210,7 @@ texture = ExtResource("10_3ba4q")
 [node name="StaticBody2D" type="StaticBody2D" parent="BancLampe"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BancLampe/StaticBody2D"]
-polygon = PackedVector2Array(-12.5, 18, -10, 47, -17, 110.5, -3.5, 25, 26.5, 2.5, -10.5, 2.5, -13.5, 13)
+polygon = PackedVector2Array(-12.5, 18, -10, 26.5, -3.5, 25, 26.5, 2.5, -10.5, 2.5, -13.5, 13)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="BancLampe/StaticBody2D"]
 polygon = PackedVector2Array(-27.5, 27, -24.5, 27, -24.5, -7.5, -22, -19.5, -18.5, -23.5, -22, -25.5, -27, -16.5, -27.5, -8.5)

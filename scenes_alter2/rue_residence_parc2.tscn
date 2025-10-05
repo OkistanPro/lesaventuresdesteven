@@ -151,7 +151,7 @@ position = Vector2(244.222, 578.938)
 scale = Vector2(2, 2)
 texture = ExtResource("3_nu1ls")
 script = ExtResource("4_32fbe")
-nom_timeline = "pnj_fille3"
+nom_timeline = "pnj_fille3_alter2"
 metadata/_custom_type_script = "uid://c7f5ewx6x32to"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="PNJ"]
@@ -380,7 +380,6 @@ metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
 z_index = 1
 position = Vector2(0, -90)
 scale = Vector2(1, 1)
-color = Color(0.450648, 0.450648, 0.450648, 1)
 
 [node name="PorteHabitation" type="Sprite2D" parent="."]
 z_index = 1

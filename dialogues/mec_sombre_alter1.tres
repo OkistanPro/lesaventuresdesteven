@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="D_Timeline" load_steps=38 format=3 uid="uid://c6gegijbrbx1l"]
+[gd_resource type="Resource" script_class="D_Timeline" load_steps=39 format=3 uid="uid://c6gegijbrbx1l"]
 
 [ext_resource type="Script" uid="uid://ctpne3lmpo1ph" path="res://scripts/dialogues/D_object.gd" id="1_g8dde"]
 [ext_resource type="Script" uid="uid://cabiwo3t0qckr" path="res://scripts/dialogues/D_event.gd" id="2_phpyq"]
@@ -171,6 +171,15 @@ event_at_start = ""
 no_end = false
 metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 
+[sub_resource type="Resource" id="Resource_7fypi"]
+script = ExtResource("4_wwmut")
+nom_perso = "???"
+mess = "Ferme les yeux Steven."
+liste_choix = Array[ExtResource("3_40hb8")]([])
+event_at_start = ""
+no_end = false
+metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
+
 [sub_resource type="Resource" id="Resource_bbnxi"]
 script = ExtResource("4_wwmut")
 nom_perso = "???"
@@ -284,6 +293,6 @@ metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [resource]
 script = ExtResource("5_of3ry")
-liste_messages = Array[ExtResource("1_g8dde")]([SubResource("Resource_38mwe"), SubResource("Resource_lnp16"), SubResource("Resource_itwtg"), SubResource("Resource_p4wf8"), SubResource("Resource_p2s4t"), SubResource("Resource_djsal"), SubResource("Resource_4iqxr"), SubResource("Resource_pq2gb"), SubResource("Resource_c3gvs"), SubResource("Resource_iegiw"), SubResource("Resource_8xbf1"), SubResource("Resource_53p2q"), SubResource("Resource_pn0wu"), SubResource("Resource_g8dde"), SubResource("Resource_phpyq"), SubResource("Resource_40hb8"), SubResource("Resource_wwmut"), SubResource("Resource_of3ry"), SubResource("Resource_ydo7w"), null, SubResource("Resource_bbnxi"), SubResource("Resource_sgbqs"), SubResource("Resource_kabbf"), SubResource("Resource_4ofo0"), SubResource("Resource_n5p60"), SubResource("Resource_ekyi4"), SubResource("Resource_0qvqi"), SubResource("Resource_u6sx1"), SubResource("Resource_fb2b0"), SubResource("Resource_jaydl"), SubResource("Resource_4pbmm"), SubResource("Resource_vgtr6"), SubResource("Resource_72mqd")])
+liste_messages = Array[ExtResource("1_g8dde")]([SubResource("Resource_38mwe"), SubResource("Resource_lnp16"), SubResource("Resource_itwtg"), SubResource("Resource_p4wf8"), SubResource("Resource_p2s4t"), SubResource("Resource_djsal"), SubResource("Resource_4iqxr"), SubResource("Resource_pq2gb"), SubResource("Resource_c3gvs"), SubResource("Resource_iegiw"), SubResource("Resource_8xbf1"), SubResource("Resource_53p2q"), SubResource("Resource_pn0wu"), SubResource("Resource_g8dde"), SubResource("Resource_phpyq"), SubResource("Resource_40hb8"), SubResource("Resource_wwmut"), SubResource("Resource_of3ry"), SubResource("Resource_ydo7w"), SubResource("Resource_7fypi"), SubResource("Resource_bbnxi"), SubResource("Resource_sgbqs"), SubResource("Resource_kabbf"), SubResource("Resource_4ofo0"), SubResource("Resource_n5p60"), SubResource("Resource_ekyi4"), SubResource("Resource_0qvqi"), SubResource("Resource_u6sx1"), SubResource("Resource_fb2b0"), SubResource("Resource_jaydl"), SubResource("Resource_4pbmm"), SubResource("Resource_vgtr6"), SubResource("Resource_72mqd")])
 current_message = 0
 metadata/_custom_type_script = "uid://bncgdhvjlrkfh"

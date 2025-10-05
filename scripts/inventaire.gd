@@ -23,6 +23,7 @@ func refresh_list(added : ItemProperties) -> void:
 	if not $ItemList.get_selected_items() or ($ItemList.get_selected_items() and $ItemList.item_count > $ItemList.get_selected_items()[0]):
 		Globals.selected_item = -1
 		$nom_item.visible = false
+		$mode_select.visible = false
 
 func _process(_delta: float) -> void:
 	if GestionDialogue.active or Globals.in_cinematique or Globals.in_menu or Globals.in_reveil or Globals.bataille or interface.get_node("trappe").visible or interface.get_node("coffre").visible:

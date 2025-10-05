@@ -52,6 +52,7 @@ var steven_pleure = preload("res://dialogues_glitched/maire_pleure.tres")
 var rafod_tech_dialogue3 = preload("res://dialogues_glitched/rafod_tech3.tres")
 var pancarte_croisement_glitch = preload("res://dialogues/pancarte_croisement_glitch.tres")
 var pancarte_village_glitch = preload("res://dialogues/pancarte_village_glitch.tres")
+var pnj_fille3_alter2 = preload("res://dialogues/pnj_fille3_alter2.tres")
 
 var pris_objet : bool = false
 func _ready() -> void :
@@ -112,6 +113,10 @@ func lancer_timeline(nom_timeline : String) -> void:
 					lancer_dialogue.emit()
 				"pancarte_village_glitch":
 					timeline_actuel = pancarte_village_glitch
+					active = true
+					lancer_dialogue.emit()
+				"pnj_fille3_alter2":
+					timeline_actuel = pnj_fille3_alter2
 					active = true
 					lancer_dialogue.emit()
 				_:
@@ -374,5 +379,13 @@ func lancer_event(nom_event : String) -> void:
 		"degourdir_jambe":
 			event_declencheur.emit("degourdir_jambe")
 			Globals.parle_au_fermier = true
+		"lettre_espoir":
+			Musique.stream = Musique.musique_espoir
+			Musique.play()
+			interface.get_node("espoir").visible = true
+			await get_tree().create_timer(15.30).timeout
+			interface.get_node("espoir").visible = false
+			GestionDialogue.fin_event.emit("lettre_espoir")
+			Musique.stop()
 		"quitter_jeu":
 			get_tree().quit()
