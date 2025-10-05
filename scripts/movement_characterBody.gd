@@ -17,7 +17,7 @@ func _physics_process(_delta: float) -> void:
 	
 	var mult = 1.0
 	if Input.is_action_pressed("run"):
-		mult = 1.8
+		mult = 2.2
 		$sprite.speed_scale = 2.0
 	
 	if not GestionDialogue.active and \

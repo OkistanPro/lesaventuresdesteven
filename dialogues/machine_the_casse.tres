@@ -82,7 +82,7 @@ metadata/_custom_type_script = "uid://cq5kt3ymgwgp8"
 [sub_resource type="Resource" id="Resource_vcpn8"]
 script = ExtResource("3_e5fc1")
 nom_event = "lancement_quete_the"
-parallele = false
+parallele = true
 metadata/_custom_type_script = "uid://cabiwo3t0qckr"
 
 [resource]

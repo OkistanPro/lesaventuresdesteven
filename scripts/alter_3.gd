@@ -40,6 +40,9 @@ func _ready() -> void:
 					$TileMapLayer2.set_cell(Vector2i(x, y-1), 5, Vector2i(3, 0))
 					$TileMapLayer2.set_cell(Vector2i(x, y-2), 5, Vector2i(3, 0))
 					$TileMapLayer2.set_cell(Vector2i(x, y-3), 5, Vector2i(4, 0))
+	await get_tree().create_timer(40.0).timeout
+	$AnimationPlayer.play("finjeu")
+	
 
 func _process(delta: float) -> void:
 	if zone != Vector2i(floor($steven.position.x/416), floor($steven.position.y/320)):
@@ -77,6 +80,7 @@ func generate_terrain() -> void:
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		$fin/AnimationPlayer.play("fin")
+		$CanvasLayer/Label.queue_free()
 
 func _fin_jeu() -> void:
 	get_tree().quit()

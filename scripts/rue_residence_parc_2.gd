@@ -39,6 +39,8 @@ func ouvre_portail(nom_event : String) -> void:
 		$decor_habitation/StaticBody2D_ferme.process_mode = Node.PROCESS_MODE_DISABLED
 		$decor_habitation/StaticBody2D_ouvert.process_mode = Node.PROCESS_MODE_PAUSABLE
 		$portail.queue_free()
+	if nom_event == "lettre_espoir":
+		$PNJ.nom_timeline = ""
 
 
 func _on_goto_coffee_body_entered(body: Node2D) -> void:

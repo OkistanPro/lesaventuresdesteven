@@ -7,6 +7,7 @@ func _ready() -> void:
 	next_message()
 
 func next_message() -> void:
+	grab_focus()
 	var obj_dialogue = GestionDialogue.timeline_actuel.get_message()
 	$boite_message/Polygon2D.visible = false
 	if obj_dialogue is D_Message:
@@ -54,7 +55,7 @@ func next_message() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and not interface.get_node("MecChelouGrand").visible:
 			if $boite_message/message.is_writing:
 				$boite_message/message.speed = 0.0001
 			clicked.emit()

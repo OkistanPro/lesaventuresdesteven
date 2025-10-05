@@ -19,8 +19,8 @@ var sounds = {
 		-15.0
 	],
 	"son_dingo" : [
-		preload("res://sons/rire_goofy.wav"),
-		-8.0
+		preload("res://sons/clown_horn.wav"),
+		-12.0
 	],
 	"flaque" : [
 		preload("res://sons/FEETHmn_Pas dans l eau (ID 0690)_LS.wav"),

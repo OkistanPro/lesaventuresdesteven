@@ -382,6 +382,7 @@ func lancer_event(nom_event : String) -> void:
 		"lettre_espoir":
 			Musique.stream = Musique.musique_espoir
 			Musique.play()
+			event_declencheur.emit("lettre_espoir")
 			interface.get_node("espoir").visible = true
 			await get_tree().create_timer(15.30).timeout
 			interface.get_node("espoir").visible = false
