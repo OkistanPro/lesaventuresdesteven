@@ -142,7 +142,6 @@ visible = true
 z_index = 1
 position = Vector2(304, 184)
 scale = Vector2(1, 1)
-color = Color(0.442911, 0.442911, 0.442911, 1)
 
 [node name="Cle4" type="Sprite2D" parent="."]
 visible = false
@@ -166,7 +165,6 @@ z_index = 4
 position = Vector2(2.80975, -39.9011)
 rotation = 0.0703022
 scale = Vector2(1, 1)
-color = Color(0.995353, 0.869497, 0.637136, 1)
 
 [connection signal="body_entered" from="goto_rue" to="." method="_on_goto_rue_body_entered"]
 [connection signal="body_entered" from="Epicerie2/Area2D" to="Epicerie2" method="_on_area_2d_body_entered"]

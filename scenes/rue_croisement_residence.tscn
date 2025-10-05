@@ -422,23 +422,24 @@ scale = Vector2(1, 1)
 
 [node name="pancarte_croisement" type="Area2D" parent="."]
 y_sort_enabled = true
+position = Vector2(332, 268)
 
 [node name="sprite_pancarte" type="Sprite2D" parent="pancarte_croisement"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(333, 268)
+position = Vector2(0.375031, 16.375)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("21_4wtjh")
 offset = Vector2(0, -23)
 
 [node name="shadow_pancarte" type="Sprite2D" parent="pancarte_croisement"]
 material = SubResource("ShaderMaterial_uk1lo")
-position = Vector2(333, 239)
+position = Vector2(0.375031, -12.625)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("21_4wtjh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pancarte_croisement"]
-position = Vector2(333, 252)
+position = Vector2(0.375031, 0.375015)
 scale = Vector2(1.25, 1.25)
 shape = SubResource("CircleShape2D_jk48d")
 
@@ -448,11 +449,11 @@ nom_timeline = "pancarte_croisement"
 metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
 
 [node name="Polygon2D" parent="pancarte_croisement" instance=ExtResource("18_jk48d")]
-position = Vector2(333, 200)
+position = Vector2(0, -51)
 scale = Vector2(0.625, 0.625)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="pancarte_croisement"]
-position = Vector2(333, 264)
+position = Vector2(0.375, 12.375)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pancarte_croisement/StaticBody2D"]
 shape = SubResource("CircleShape2D_4wtjh")

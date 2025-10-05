@@ -9,8 +9,8 @@
 script = ExtResource("3_hcxnc")
 nom_perso = ""
 mess = "↑ Vers Centre du village
-← Vers Ferme
-→ Vers LaParc"
+← Ferme
+→ LaParc"
 liste_choix = Array[ExtResource("2_2mfpb")]([])
 event_at_start = ""
 no_end = false

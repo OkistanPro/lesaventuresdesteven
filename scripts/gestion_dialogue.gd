@@ -50,6 +50,8 @@ var rafod_tech_dialogue2 = preload("res://dialogues_glitched/rafod_tech2.tres")
 var harcele = preload("res://dialogues_glitched/poussin_harcele.tres")
 var steven_pleure = preload("res://dialogues_glitched/maire_pleure.tres")
 var rafod_tech_dialogue3 = preload("res://dialogues_glitched/rafod_tech3.tres")
+var pancarte_croisement_glitch = preload("res://dialogues/pancarte_croisement_glitch.tres")
+var pancarte_village_glitch = preload("res://dialogues/pancarte_village_glitch.tres")
 
 var pris_objet : bool = false
 func _ready() -> void :
@@ -102,6 +104,14 @@ func lancer_timeline(nom_timeline : String) -> void:
 					lancer_dialogue.emit()
 				"epicier_carotte":
 					timeline_actuel = rafod_tech_dialogue3
+					active = true
+					lancer_dialogue.emit()
+				"pancarte_croisement_glitch":
+					timeline_actuel = pancarte_croisement_glitch
+					active = true
+					lancer_dialogue.emit()
+				"pancarte_village_glitch":
+					timeline_actuel = pancarte_village_glitch
 					active = true
 					lancer_dialogue.emit()
 				_:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://h83ymukyfanb"]
+[gd_scene load_steps=58 format=3 uid="uid://h83ymukyfanb"]
 
 [ext_resource type="Script" uid="uid://vmv31vsmgoux" path="res://scripts/village_1.gd" id="1_ib2y2"]
 [ext_resource type="Shader" uid="uid://bemupefxksl5a" path="res://shaders/corrupted.gdshader" id="2_1a2pv"]
@@ -30,6 +30,9 @@
 [ext_resource type="AudioStream" uid="uid://brlovyax45ih4" path="res://sons/WATRFlow_Petit torrent (ID 0823)_LS.mp3" id="26_8lkmo"]
 [ext_resource type="Texture2D" uid="uid://dkpnrglfvc1l7" path="res://sprites/persos/mec-soooombre.png" id="27_fpd0s"]
 [ext_resource type="Script" uid="uid://bkphsupuqmt7m" path="res://scripts/mec_sombre.gd" id="28_0iqhx"]
+[ext_resource type="Texture2D" uid="uid://c4tl3hgqc1uyc" path="res://sprites/pancarte_chemin.png" id="31_02kg4"]
+[ext_resource type="Shader" uid="uid://ji3jyv11talj" path="res://shaders/cast_shadow.gdshader" id="32_p1737"]
+[ext_resource type="Script" uid="uid://bhsk7fhnl4vyo" path="res://scripts/interaction_component.gd" id="33_wsxgh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_02kg4"]
 shader = ExtResource("2_1a2pv")
@@ -116,6 +119,16 @@ size = Vector2(21, 14.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r3tfw"]
 radius = 25.5049
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7o18n"]
+shader = ExtResource("32_p1737")
+shader_parameter/look_right = true
+shader_parameter/alpha = 0.263
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ba4q"]
+radius = 27.247
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jg0rs"]
 
 [node name="village1" type="Node2D"]
 y_sort_enabled = true
@@ -370,7 +383,6 @@ z_index = 4
 position = Vector2(-20.0518, 0.594147)
 rotation = -1.68961
 scale = Vector2(1, 1)
-color = Color(0.995353, 0.869497, 0.637136, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(358, 374)
@@ -419,6 +431,45 @@ script = ExtResource("28_0iqhx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(344, 216)
+
+[node name="pancarte_croisement" type="Area2D" parent="."]
+y_sort_enabled = true
+position = Vector2(340, 516)
+
+[node name="sprite_pancarte" type="Sprite2D" parent="pancarte_croisement"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0.375031, 16.375)
+scale = Vector2(4.34, 0.83)
+texture = ExtResource("31_02kg4")
+offset = Vector2(0, -23)
+
+[node name="shadow_pancarte" type="Sprite2D" parent="pancarte_croisement"]
+material = SubResource("ShaderMaterial_7o18n")
+position = Vector2(0.375031, -12.625)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("31_02kg4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pancarte_croisement"]
+position = Vector2(0.375031, 0.375015)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("CircleShape2D_3ba4q")
+
+[node name="InteractionComponent" type="Node" parent="pancarte_croisement"]
+script = ExtResource("33_wsxgh")
+nom_timeline = "pancarte_village_glitch"
+metadata/_custom_type_script = "uid://bhsk7fhnl4vyo"
+
+[node name="Polygon2D" parent="pancarte_croisement" instance=ExtResource("20_w1q4x")]
+position = Vector2(0, -51)
+scale = Vector2(0.625, 0.625)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pancarte_croisement"]
+position = Vector2(0.375, 12.375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pancarte_croisement/StaticBody2D"]
+shape = SubResource("CircleShape2D_jg0rs")
+debug_color = Color(0.927415, 0.159202, 0.542924, 0.42)
 
 [connection signal="body_entered" from="goto_rue_droite" to="." method="_on_goto_rue_droite_body_entered"]
 [connection signal="body_entered" from="goto_rue_gauche" to="." method="_on_goto_rue_gauche_body_entered"]
